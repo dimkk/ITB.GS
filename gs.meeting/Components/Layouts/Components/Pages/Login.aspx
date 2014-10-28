@@ -61,12 +61,19 @@
                 <img class="logo-img" src="../Content/logo.png?rev=23" />
             </div>
             <div class="title">
-                <label>
+                <% if (IsAisGs)
+                   { %>
                     АИС Градостроительного Совета
-                </label>
+                <% }
+                   else
+                   { %>
+                    Система автоматизации мониторинга развития территорий
+                <% } %>
             </div>
         </div>
         <div class="subheader"></div>
+        <% if (IsAisGs)
+           { %>
         <div id="SignInInfo" style="width:375px;font-size:medium; font-style:italic">
             <div style="position:absolute; top: 25px;">
                 Для получения доступа к системе необходимо обратиться в службу поддержки по адресу<br/>gradsovet@inform-tb.ru<br/>или по телефону +7(499)372-16-92
@@ -79,6 +86,7 @@
                 <a href="/files/requirements.docx" target="_blank">Требования для работы АИС ГС</a>
             </div>
         </div>
+        <% } %>
     </header>
 
     <div class="content">
@@ -105,23 +113,28 @@
             </div>
         </center>
     
-        <SharePoint:EncodedLiteral runat="server" EncodeMethod="HtmlEncode" ID="ClaimsFormsPageMessage" Visible="false">
-        </SharePoint:EncodedLiteral>
+        <SharePoint:EncodedLiteral runat="server" EncodeMethod="HtmlEncode" ID="ClaimsFormsPageMessage" Visible="false"/>
     </div>
 
     <footer>
         <div class="subheader"></div>
         <div class="header">
             <div class="footer-title">
+            <% if (IsAisGs)
+               { %>
                 Автоматизированная информационная система Градостроительного Совета Московской области
+            <% }
+               else
+               { %>
+                Система автоматизации мониторинга развития территорий
+            <% } %>
             </div>
         </div>
     </footer>
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">
-    <SharePoint:EncodedLiteral runat="server" EncodeMethod="HtmlEncode" ID="ClaimsFormsPageTitle" Visible="false">
-    </SharePoint:EncodedLiteral>
+    <SharePoint:EncodedLiteral runat="server" EncodeMethod="HtmlEncode" ID="ClaimsFormsPageTitle" Visible="false"/>
     Вход в систему
 </asp:Content>
 

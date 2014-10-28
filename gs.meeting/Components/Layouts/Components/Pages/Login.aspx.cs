@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
@@ -10,6 +11,23 @@ namespace gs.meeting.Components
 {
     public partial class Login : FormsSignInPage
     {
+        private bool _isInited;
+        private bool _isAisGs;
+
+        protected bool IsAisGs
+        {
+            get
+            {
+                if (!_isInited)
+                {
+                    string url = HttpUtility.ParseQueryString(Request.Url.Query).Get("ReturnUrl");
+                    _isAisGs = !url.StartsWith("/sites/gca/", StringComparison.OrdinalIgnoreCase);
+                    _isInited = true;
+                }
+                return _isAisGs;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
         }
