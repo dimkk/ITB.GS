@@ -49,5 +49,14 @@ namespace GS.Model.Definitions
             Description = "",
             ContentTypesEnabled = true
         };
+
+        public static ListDefinition Builder = new ListDefinition
+        {
+            Title = "Застройщики",
+            Url = "BuilderList",
+            TemplateType = (int)ListTemplateType.GenericList,
+            Description = "",
+            ContentTypesEnabled = true
+        };
     }
 }

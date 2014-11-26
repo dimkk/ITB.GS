@@ -67,15 +67,16 @@ namespace GS.Receivers
             }
             catch (Exception e)
             {
-                Log.Unexpected(e, "При установке поля с информацией отчета по поручению произошло неожиданное исключение");
+                Log.Unexpected(e, "При установке поля с информацией отчета по поручению (ID = {0}) произошло неожиданное исключение", properties.AfterProperties["ID"]);
             }
         }
 
         public void UpdateAssignment(SPItemEventProperties properties)
         {
+            int assignmentId = 0;
             try
             {
-                int assignmentId = properties.ListItem.GetFieldLookup("AssignmentLink").LookupId;
+                assignmentId = properties.ListItem.GetFieldLookup("AssignmentLink").LookupId;
                 if (assignmentId > 0)
                 {
                     SPListItem assignment = properties.Web.GetListByUrl("AssignmentList").GetItemById(assignmentId);
@@ -112,7 +113,7 @@ namespace GS.Receivers
             }
             catch (Exception e)
             {
-                Log.Unexpected(e, "При обновлении полей поручения произошло неожиданное исключение", properties.ListItemId);
+                Log.Unexpected(e, "При обновлении полей поручения (ID = {0}) в обработчике событий отчета по поручению (ID = {1}) произошло неожиданное исключение", assignmentId, properties.ListItemId);
             }
         }
         #endregion

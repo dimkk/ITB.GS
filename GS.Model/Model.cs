@@ -48,7 +48,8 @@ namespace GS.Model
             //AddIgMessageContentTypes(siteModel);
             //AddMunicipalityContentTypes(siteModel);
             //AddConfigurationContentTypes(siteModel);
-            AddStatusContentTypes(siteModel);
+            //AddStatusContentTypes(siteModel);
+            AddBuilderContentTypes(siteModel);
 
             Service.DeployModel(siteModelHost, siteModel);
 
@@ -59,7 +60,8 @@ namespace GS.Model
             //AddIgMessageList(webModel);
             //AddMunicipalityList(webModel);
             //AddConfigurationList(webModel);
-            AddStatusList(webModel);
+            //AddStatusList(webModel);
+            AddBuilderList(webModel);
 
             Service.DeployModel(webModelHost, webModel);
 
@@ -67,7 +69,8 @@ namespace GS.Model
             //CleanListContentTypes(ListModel.IgMessage.Url, ContentTypeModel.IgMessage.Name);
             //CleanListContentTypes(ListModel.Municipality.Url, ContentTypeModel.Municipality.Name);
             //CleanListContentTypes(ListModel.Configuration.Url, ContentTypeModel.Configuration.Name);
-            CleanListContentTypes(ListModel.Status.Url, ContentTypeModel.Status.Name);
+            //CleanListContentTypes(ListModel.Status.Url, ContentTypeModel.Status.Name);
+            CleanListContentTypes(ListModel.Builder.Url, ContentTypeModel.Builder.Name);
         }
 
         #region ContentTypes
@@ -189,7 +192,6 @@ namespace GS.Model
                             ConfigurationModel.ConfigurationKey,
                             ConfigurationModel.ConfigurationValue)
                     ));
-
         }
 
         protected void AddStatusContentTypes(ModelNode modelNode)
@@ -204,6 +206,31 @@ namespace GS.Model
                             StatusModel.StatusKey)
                     ));
 
+        }
+
+        protected void AddBuilderContentTypes(ModelNode modelNode)
+        {
+            List builderList = AllLists.Single(s => s.RootFolder.Name == ListModel.Builder.Url);
+
+            modelNode
+                .WithFields(fields => fields
+                    .AddField(BuilderModel.BuilderParent, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, builderList.Id, "Title")))
+                    .AddField(BuilderModel.BuilderInn)
+                    .AddField(BuilderModel.BuilderForm)
+                    .AddField(BuilderModel.BuilderLegalAddress)
+                    .AddField(BuilderModel.BuilderFactAddress)
+                )
+                .WithContentTypes(contentTypes => contentTypes
+                    .AddContentType(ContentTypeModel.Builder, contentType => contentType
+                        .AddContentTypeFieldLinks(
+                            BuilderModel.BuilderParent,
+                            BuilderModel.BuilderInn,
+                            BuilderModel.BuilderForm,
+                            BuilderModel.BuilderLegalAddress,
+                            BuilderModel.BuilderFactAddress)
+                    ));
         }
         #endregion
 
@@ -251,6 +278,15 @@ namespace GS.Model
                     lists =>
                         lists.AddList(ListModel.Status,
                             list => list.AddContentTypeLink(ContentTypeModel.Status)));
+        }
+
+        protected void AddBuilderList(ModelNode modelNode)
+        {
+            modelNode
+                .WithLists(
+                    lists =>
+                        lists.AddList(ListModel.Builder,
+                            list => list.AddContentTypeLink(ContentTypeModel.Builder)));
         }
         #endregion
 

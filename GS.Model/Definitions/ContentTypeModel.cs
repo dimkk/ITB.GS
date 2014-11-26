@@ -52,5 +52,14 @@ namespace GS.Model.Definitions
             Id = new Guid("{AD72B250-C9D9-4DD8-B1A8-24F02A9395AE}"),
             ParentContentTypeId = BuiltInSiteContentTypeId.Item
         };
+
+        public static ContentTypeDefinition Builder = new ContentTypeDefinition
+        {
+            Name = "Builder",
+            Description = "",
+            Group = GroupName,
+            Id = new Guid("{1C140657-3DCD-481D-BBF4-6FA551B4C3EC}"),
+            ParentContentTypeId = BuiltInSiteContentTypeId.Item
+        };
     }
 }

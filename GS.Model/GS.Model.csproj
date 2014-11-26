@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Definitions\Constants.cs" />
     <Compile Include="Definitions\ContentTypeModel.cs" />
+    <Compile Include="Definitions\Fields\BuilderModel.cs" />
     <Compile Include="Definitions\Fields\ConfigurationModel.cs" />
     <Compile Include="Definitions\Fields\IgHistoryModel.cs" />
     <Compile Include="Definitions\Fields\IgMessageModel.cs" />
