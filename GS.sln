@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Model", "GS.Model\GS.Model.csproj", "{595962A7-D943-4232-B42F-8F85DCBEAC7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationConfiguration", "ApplicationConfiguration", "{82877E5D-ADB7-4EF2-B92C-961D9E1884B6}"
+	ProjectSection(SolutionItems) = preProject
+		Application.config = Application.config
+		FxCop.targets = FxCop.targets
+		FxCopConsoleOutput.xsl = FxCopConsoleOutput.xsl
+		FxCopDictionary.xml = FxCopDictionary.xml
+		Settings.FxCop = Settings.FxCop
+		Settings.spruleset = Settings.spruleset
+		Settings.StyleCop = Settings.StyleCop
+		SharePointConfiguration.xml = SharePointConfiguration.xml
+		SPDisposeChecker.targets = SPDisposeChecker.targets
+		SPSF.targets = SPSF.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deployment", "Deployment\Deployment.csproj", "{30579276-7E1C-4AB0-86B9-381E66B404CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{360608AF-2CF4-4F09-9BA7-F762CCA53853} = {360608AF-2CF4-4F09-9BA7-F762CCA53853}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Receivers", "GS.Receivers\GS.Receivers.csproj", "{360608AF-2CF4-4F09-9BA7-F762CCA53853}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Key", "Key", "{B49DDDFF-2DE0-425C-B8BA-E01BE6DE9733}"
+	ProjectSection(SolutionItems) = preProject
+		key.snk = key.snk
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{595962A7-D943-4232-B42F-8F85DCBEAC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595962A7-D943-4232-B42F-8F85DCBEAC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595962A7-D943-4232-B42F-8F85DCBEAC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595962A7-D943-4232-B42F-8F85DCBEAC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30579276-7E1C-4AB0-86B9-381E66B404CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30579276-7E1C-4AB0-86B9-381E66B404CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30579276-7E1C-4AB0-86B9-381E66B404CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30579276-7E1C-4AB0-86B9-381E66B404CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360608AF-2CF4-4F09-9BA7-F762CCA53853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360608AF-2CF4-4F09-9BA7-F762CCA53853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360608AF-2CF4-4F09-9BA7-F762CCA53853}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{360608AF-2CF4-4F09-9BA7-F762CCA53853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360608AF-2CF4-4F09-9BA7-F762CCA53853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360608AF-2CF4-4F09-9BA7-F762CCA53853}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
