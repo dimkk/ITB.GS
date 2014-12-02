@@ -202,7 +202,9 @@
     <Content Include="Layouts\GradSovetPages\Scripts\bootstrap.min.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\camljs.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\clienttemplates.debug.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentList.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentMVK.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentMVKList.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderIssueMVK.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAgendaQuestion.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignment.js" />
@@ -210,6 +212,7 @@
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderIssueObjectObjectMVKField.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderLinkedField.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderMVKReport.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderMVKReportList.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderObjectCharacteristicList.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderObjectDocumentObjectField.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderObjectForm.js" />
@@ -222,6 +225,7 @@
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderQuestionSense.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReport.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReportAttach.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReportList.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\executorModel.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\gsUtils.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\init.debug.js" />
