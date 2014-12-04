@@ -117,7 +117,7 @@ var isCancelAddAttach = false;
     function getQuestionData(Id, onsuccess, onfail) {
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
             var ctx = SP.ClientContext.get_current();
-            var List = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
+            var List = ctx.get_web().get_lists().getByTitle("МВК - Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + Id + "</Value></Eq></Where></Query></View>");
             var Instance = List.getItems(query);
@@ -188,7 +188,7 @@ var isCancelAddAttach = false;
         renderCore.ifget(prefix + 'Modified', function (e) { e.innerHTML = modified; });
 
 		//Если резолюция уже проставлена, то запрещаем добавление материалов
-		isCancelAddAttach = context.ListData.Items[0].AssignmentReportResolutionDecision != '';
+		isCancelAddAttach = context.ListData.Items[0].ReportDecisionMVK != '';
 		
         // текст ссылки на поручение заменяем на форматированный текст
         if (context.ControlMode === SPClientTemplates.ClientControlMode.DisplayForm) {

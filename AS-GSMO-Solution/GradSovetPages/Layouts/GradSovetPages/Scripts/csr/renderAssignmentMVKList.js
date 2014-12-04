@@ -6,6 +6,8 @@
     }
 
     function OnPostRender(ctx) {
+		if (!ctx.listUrlDir)
+			return;
 		if (!ctx.listUrlDir.endsWith("/Lists/AssignmentMVKList"))
 			return;
 		
