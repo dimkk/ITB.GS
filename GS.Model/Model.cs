@@ -49,7 +49,7 @@ namespace GS.Model
             //AddMunicipalityContentTypes(siteModel);
             //AddConfigurationContentTypes(siteModel);
             //AddStatusContentTypes(siteModel);
-            AddBuilderContentTypes(siteModel);
+            //AddBuilderContentTypes(siteModel);
 
             Service.DeployModel(siteModelHost, siteModel);
 
@@ -61,7 +61,7 @@ namespace GS.Model
             //AddMunicipalityList(webModel);
             //AddConfigurationList(webModel);
             //AddStatusList(webModel);
-            AddBuilderList(webModel);
+            //AddBuilderList(webModel);
 
             Service.DeployModel(webModelHost, webModel);
 
@@ -70,7 +70,7 @@ namespace GS.Model
             //CleanListContentTypes(ListModel.Municipality.Url, ContentTypeModel.Municipality.Name);
             //CleanListContentTypes(ListModel.Configuration.Url, ContentTypeModel.Configuration.Name);
             //CleanListContentTypes(ListModel.Status.Url, ContentTypeModel.Status.Name);
-            CleanListContentTypes(ListModel.Builder.Url, ContentTypeModel.Builder.Name);
+            //CleanListContentTypes(ListModel.Builder.Url, ContentTypeModel.Builder.Name);
         }
 
         #region ContentTypes
@@ -221,6 +221,7 @@ namespace GS.Model
                     .AddField(BuilderModel.BuilderForm)
                     .AddField(BuilderModel.BuilderLegalAddress)
                     .AddField(BuilderModel.BuilderFactAddress)
+                    .AddField(BuilderModel.BuilderExtId)
                 )
                 .WithContentTypes(contentTypes => contentTypes
                     .AddContentType(ContentTypeModel.Builder, contentType => contentType
@@ -229,7 +230,8 @@ namespace GS.Model
                             BuilderModel.BuilderInn,
                             BuilderModel.BuilderForm,
                             BuilderModel.BuilderLegalAddress,
-                            BuilderModel.BuilderFactAddress)
+                            BuilderModel.BuilderFactAddress,
+                            BuilderModel.BuilderExtId)
                     ));
         }
         #endregion

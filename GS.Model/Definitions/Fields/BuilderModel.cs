@@ -57,5 +57,15 @@ namespace GS.Model.Definitions.Fields
             Id = new Guid("{E77EAB2F-EFA3-4C53-8B6B-D611888A5720}"),
             Title = "Вышестоящая организация"
         };
+
+        public static FieldDefinition BuilderExtId = new FieldDefinition
+        {
+            InternalName = "BuilderExtId",
+            Description = "",
+            FieldType = FieldType.Text.ToString(),
+            Group = GroupName,
+            Id = new Guid("{EE091682-EB18-4C0F-9E2F-039318854672}"),
+            Title = "Внешний ID"
+        };
     }
 }

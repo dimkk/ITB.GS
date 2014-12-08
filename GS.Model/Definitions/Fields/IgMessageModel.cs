@@ -93,7 +93,7 @@ namespace GS.Model.Definitions.Fields
         {
             InternalName = "IgMessageContent",
             Description = "",
-            FieldType = FieldType.Text.ToString(),
+            FieldType = FieldType.Note.ToString(),
             Group = GroupName,
             Id = new Guid("{E25E9C66-F749-47A7-952E-212997F2BDED}"),
             Title = "Содержимое сообщения"
@@ -113,7 +113,7 @@ namespace GS.Model.Definitions.Fields
         {
             InternalName = "IgMessageError",
             Description = "",
-            FieldType = FieldType.Text.ToString(),
+            FieldType = FieldType.Note.ToString(),
             Group = GroupName,
             Id = new Guid("{01AD8699-2DF9-4E9A-876A-272D185DD767}"),
             Title = "Описание ошибки"

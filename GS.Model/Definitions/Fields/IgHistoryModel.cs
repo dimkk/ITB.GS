@@ -72,7 +72,7 @@ namespace GS.Model.Definitions.Fields
         {
             InternalName = "IgHistoryError",
             Description = "",
-            FieldType = FieldType.Text.ToString(),
+            FieldType = FieldType.Note.ToString(),
             Group = GroupName,
             Id = new Guid("{D9FD69AB-9F42-43FE-A6B6-B5E8445F1A73}"),
             Title = "Описание ошибки"
