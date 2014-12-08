@@ -372,7 +372,7 @@
                 ctx.load(assignmentInst, "Include(AssignmentNumberMVK, AssignmentTextMVK)");
             }
             
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
+            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК - Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + questionId + "</Value></Eq></Where></Query></View>");
             var questionInstance = agendaQuestionList.getItems(query);
