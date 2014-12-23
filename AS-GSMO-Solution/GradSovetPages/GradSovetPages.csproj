@@ -45,9 +45,16 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GS.Common">
+      <HintPath>..\..\GS.Common\bin\Debug\GS.Common.dll</HintPath>
+    </Reference>
     <Reference Include="gs.meeting.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=98b8bbe69daf0ccc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\gs.meeting.Components\v4.0_1.0.0.0__98b8bbe69daf0ccc\gs.meeting.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="ITB.SP.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58c67d7e59a9117f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ITB.SAMRT\ITB.SP.Tools\bin\Debug\ITB.SP.Tools.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Server.FilterControls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -61,6 +68,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
@@ -225,7 +233,9 @@
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderQuestionSense.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReport.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReportAttach.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReportAttachMVK.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReportList.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\selectIssuePDialog.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\executorModel.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\gsUtils.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\init.debug.js" />

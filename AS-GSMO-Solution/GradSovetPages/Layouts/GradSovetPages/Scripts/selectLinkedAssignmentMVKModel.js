@@ -23,7 +23,7 @@
             if (self.isWarn()) return;
             
             var ctx = SP.ClientContext.get_current();
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
+            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК - Вопросы повестки заседания");
             var camlQuery = new CamlBuilder().Where().LookupField("IssueMeetingMVK").Id().EqualTo(window.gsLinkedData.MeetingLink);
             var spQuery = new SP.CamlQuery();
             spQuery.set_viewXml("<View><Query>" + camlQuery.ToString() + "</Query></View>");

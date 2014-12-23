@@ -489,6 +489,43 @@
         SP.UI.ModalDialog.showModalDialog(options);
         setCssForModalDialog();
     }
+    
+    function openIssuePAddDialog(title) {
+        var options = {
+            title: title,
+            url: _spPageContextInfo.webAbsoluteUrl + "/Lists/IssuePList/Unused.aspx",
+            width: 1024,
+            height: 768,
+            dialogReturnValueCallback: function (dialogResult, returnValue) {
+                if (dialogResult == SP.UI.DialogResult.OK) {
+                    var selectedOrdersId = JSON.parse(returnValue);
+                    if (selectedOrdersId.length <= 0)
+                        return;
+                    console.log(selectedOrdersId);
+                    var queryUrl = _spPageContextInfo.serverRequestPath + "/AddIssuesP";
+                    var newData = { meetingMvkId: $.listItemId };
+                    newData.issuePIdList = [];
+                    selectedOrdersId.map(function (el) { newData.issuePIdList.push(el.id); });
+                    $.ajax({
+                        url: encodeURI(queryUrl),
+                        data: JSON.stringify(newData),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        type: "POST",
+                        success: function (data) {
+                            console.log(data);
+                            SP.UI.ModalDialog.RefreshPage(dialogResult);
+                        },
+                        error: function (msg) {
+                            console.log("RequestError! " + msg);
+                        }
+                    });
+                }
+            }
+        };
+        SP.UI.ModalDialog.showModalDialog(options);
+        setCssForModalDialog();
+    }
 
     function getNewParticipantLookupValue(id) {
         var result = new SP.FieldLookupValue();
@@ -1809,6 +1846,10 @@
             self.selectedAgendaQuestion(new agendaQuestion(e));
             self.selectedAgendaQuestion().editAgendaQuestionNumber(self.agendaQuestions().length + 1);
             self.selectedAgendaQuestion().mode("full");
+        };
+
+        self.addIssueP = function () {
+            openIssuePAddDialog("Добавить плановые вопросы");
         };
 
         // remove agenda question

@@ -2,6 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="49cfd327-42b5-4867-9afe-83d4787d69df" solutionId="49cfd327-42b5-4867-9afe-83d4787d69df" resetWebServer="false" sharePointProductVersion="15.0" name="GS.Receivers" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <features>
     <featureReference itemId="85967bd2-45e6-4e3f-9177-7e467c4f433c" />
+    <featureReference itemId="05e2552f-03d3-499d-ba33-4ce68043c93a" />
   </features>
   <projectItems>
     <projectItemReference itemId="401184d9-2dbc-4d61-9e15-b53d75e9e2ba" />

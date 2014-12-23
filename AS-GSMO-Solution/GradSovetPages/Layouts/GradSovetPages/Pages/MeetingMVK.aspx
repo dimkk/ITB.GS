@@ -123,13 +123,13 @@
                                     <th>Описание</th>
                                     <th>Докладчики</th>
                                     <% if (IsQuestionCommentEnabled) { %>
-                                    <th>Комментарий</th>
+                                    <%--<th>Комментарий</th>--%>
                                     <% } %>
 									<th></th>
                                     <th></th>
                                     <th></th>
                                     <% if (IsQuestionCommentEnabled) { %>
-                                    <th></th>
+                                    <%--<th></th>--%>
                                     <% } %>
                                 </tr>
                             </thead>
@@ -162,6 +162,10 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <% if (IsIssueEditAccessible)
+                           { %>
+                        <button type="button" class="btn btn-default" data-bind="click: addIssueP">Добавить из плановых вопросов</button>
+                        <% } %>
                         <%--<button type="button" class="btn btn-primary" data-bind="click: addAgendaQuestion, enable: editEnabled" id="AddAgendaQuestionButton" name="AddAgendaQuestionButton">Добавить</button>--%>
                     </div>
                 </div>

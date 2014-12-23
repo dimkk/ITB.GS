@@ -50,6 +50,7 @@ namespace GS.Model
             //AddConfigurationContentTypes(siteModel);
             //AddStatusContentTypes(siteModel);
             //AddBuilderContentTypes(siteModel);
+            AddIssueGsContentTypes(siteModel);
 
             Service.DeployModel(siteModelHost, siteModel);
 
@@ -232,6 +233,27 @@ namespace GS.Model
                             BuilderModel.BuilderLegalAddress,
                             BuilderModel.BuilderFactAddress,
                             BuilderModel.BuilderExtId)
+                    ));
+        }
+
+        protected void AddIssueGsContentTypes(ModelNode modelNode)
+        {
+            List municipalityList = AllLists.Single(s => s.RootFolder.Name == ListModel.Municipality.Url);
+
+            modelNode
+                .WithFields(fields => fields
+                    .AddField(IssueGsModel.IssueMunicipalityGs, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, "Title")))
+                    .AddField(IssueGsModel.IssueSettlementGs, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, "Title")))
+                )
+                .WithContentTypes(contentTypes => contentTypes
+                    .AddContentType(ContentTypeModel.IssueGs, contentType => contentType
+                        .AddContentTypeFieldLinks(
+                            IssueGsModel.IssueMunicipalityGs,
+                            IssueGsModel.IssueSettlementGs)
                     ));
         }
         #endregion

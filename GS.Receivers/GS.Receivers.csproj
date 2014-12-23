@@ -38,6 +38,10 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GS.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76fad1f12ae5d8a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GS.Common\bin\Debug\GS.Common.dll</HintPath>
+    </Reference>
     <Reference Include="ITB.SP.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58c67d7e59a9117f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ITB.SAMRT\ITB.SP.Tools\bin\Debug\ITB.SP.Tools.dll</HintPath>
@@ -60,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventReceivers\AssignmentReportItem\AssignmentReportItem.cs" />
+    <Compile Include="EventReceivers\IssuePItem\IssuePItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,8 +74,14 @@
     <None Include="EventReceivers\AssignmentReportItem\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{56604cb0-d7d3-41c9-8743-cac2d725328b}</SharePointProjectItemId>
     </None>
+    <None Include="EventReceivers\IssuePItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c10e26e9-7b87-479d-b776-7bae301a48a8}</SharePointProjectItemId>
+    </None>
     <None Include="Features\GS.Receivers.AssignmentReportItem\GS.Receivers.AssignmentReportItem.feature">
       <FeatureId>{85967bd2-45e6-4e3f-9177-7e467c4f433c}</FeatureId>
+    </None>
+    <None Include="Features\GS.Receivers.IssuePItem\GS.Receivers.IssuePItem.feature">
+      <FeatureId>{05e2552f-03d3-499d-ba33-4ce68043c93a}</FeatureId>
     </None>
     <None Include="Package\Package.package">
       <PackageId>{49CFD327-42B5-4867-9AFE-83D4787D69DF}</PackageId>
@@ -82,11 +93,20 @@
       <SharePointProjectItemId>{401184d9-2dbc-4d61-9e15-b53d75e9e2ba}</SharePointProjectItemId>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GS.Ig.Core\GS.Ig.Core.csproj">
+      <Project>{3B61E947-99E2-478F-A369-F70DD8834E47}</Project>
+      <Name>GS.Ig.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="EventReceivers\AssignmentReportItem\Elements.xml" />
+    <Content Include="EventReceivers\IssuePItem\Elements.xml" />
     <Content Include="Features\GS.Receivers.AssignmentReportItem\GS.Receivers.AssignmentReportItem.Template.xml">
       <DependentUpon>GS.Receivers.AssignmentReportItem.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Receivers.IssuePItem\GS.Receivers.IssuePItem.Template.xml">
+      <DependentUpon>GS.Receivers.IssuePItem.feature</DependentUpon>
     </Content>
     <Content Include="Template\Images\GS\Feature.gif" />
   </ItemGroup>

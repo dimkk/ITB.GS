@@ -112,7 +112,69 @@
         return resultHtml;
     }
 
+    var AllMunicipalities;
+    var SettlementOptions;
+    function GetMunicipalityControl() {
+        return $('[id^="IssueMunicipalDistrictMVK"]');
+    }
+    function GetSettlementControl() {
+        return $('[id^="IssueSettlementMVK"]');
+    }
+    function InitMunicipality() {
+        var municipalityControl = GetMunicipalityControl();
+        var settlementControl = GetSettlementControl();
+
+        AllMunicipalities = SC.GetItems('Municipality', new SP.CamlQuery());
+        SC.Execute(function () {
+            AllMunicipalities = AllMunicipalities.get_data();
+            console.log(AllMunicipalities.length + ' Municipalities loaded');
+
+            var municipalitiesId = $.map(AllMunicipalities, function (e) {
+                return !e.get_item('MunicipalityParentMunicipality') ? e.get_id().toString() : null;
+            });
+
+            municipalityControl.find('option').filter(function () {
+                return this.value != '0' && $.inArray(this.value, municipalitiesId) == -1;
+            }).remove();
+
+            settlementControl.find('option').filter(function () {
+                return this.value != '0' && $.inArray(this.value, municipalitiesId) == 1;
+            }).remove();
+
+            SettlementOptions = settlementControl.html();
+            FillSettlement(municipalityControl.val());
+        }, function (sender, args) {
+            alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+        });
+
+        municipalityControl.change(function () {
+            FillSettlement(this.value);
+        });
+    }
+    function FillSettlement(parentId) {
+        var filteredSettlementsId = $.map(AllMunicipalities, function (e) {
+            var parent = e.get_item('MunicipalityParentMunicipality');
+            return parent && parent.get_lookupId() == parentId ? e.get_id().toString() : null;
+        });
+
+        var settlementControl = GetSettlementControl();
+        settlementControl.html(SettlementOptions);
+        settlementControl.find('option').filter(function () {
+            return this.value != '0' && $.inArray(this.value, filteredSettlementsId) == -1;
+        }).remove();
+        if (settlementControl.children().length <= 1)
+            settlementControl.attr('disabled', 'disabled');
+        else
+            settlementControl.removeAttr('disabled');
+    }
+	
     function OnPostRender(context) {
+        if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
+            SC.OnLoaded(function () {
+                InitMunicipality();
+            });
+        }
+
         var prefix = context.FormUniqueId + context.FormContext.listAttributes.Id;
         $get(prefix + 'Author').innerHTML   = author;
         $get(prefix + 'Created').innerHTML  = created;

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="80f77299-f9dd-483c-aa6f-4c7f8d5f4fb5" solutionId="80f77299-f9dd-483c-aa6f-4c7f8d5f4fb5" resetWebServer="false" sharePointProductVersion="15.0" name="GS.Ig" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="GS.Ig.Core.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\GS.Ig.Core\GS.Ig.Core.csproj" />
+  </assemblies>
+</package>

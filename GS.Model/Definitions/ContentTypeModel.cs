@@ -61,5 +61,14 @@ namespace GS.Model.Definitions
             Id = new Guid("{1C140657-3DCD-481D-BBF4-6FA551B4C3EC}"),
             ParentContentTypeId = BuiltInSiteContentTypeId.Item
         };
+
+        public static ContentTypeDefinition IssueGs = new ContentTypeDefinition
+        {
+            Name = "IssueGs",
+            Description = "",
+            Group = GroupName,
+            Id = new Guid("{3C18ED48-E747-4D6E-A294-3047D32504BE}"),
+            ParentContentTypeId = BuiltInSiteContentTypeId.Item
+        };
     }
 }

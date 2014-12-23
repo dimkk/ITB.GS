@@ -1,4 +1,74 @@
-﻿var gsUtils;
+﻿var SC;
+(function (SC) {
+    SC.OnLoaded = function (onLoaded) {
+        if (allLists) {
+            onLoaded();
+            return;
+        }
+        if (onLoaded)
+            subscribers.push(onLoaded);
+    };
+
+    SC.GetList = function (name) {
+        checkLoad();
+
+        var n1 = name.toLowerCase();
+        var n2 = n1 + 'list';
+        var findLists = $.grep(allLists, function (e) {
+            return e.name == n1 || e.name == n2;
+        });
+
+        if (findLists.length != 1)
+            throw new Error('Список ' + name + ' не найден');
+
+        return findLists[0];
+    };
+
+    SC.GetItems = function (listName, query, include) {
+        var list = SC.GetList(listName);
+        var items = list.getItems(query);
+        if (include)
+            SC.Context.load(items, include);
+        else
+            SC.Context.load(items);
+        return items;
+    };
+
+    SC.Execute = function (success, error) {
+        SC.Context.executeQueryAsync(success, error);
+    };
+
+    function checkLoad() {
+        if (!allLists)
+            throw new Error('Список allLists ещё не инициализирован');
+    }
+
+    var subscribers = [];
+    var allLists;
+    function loadLists() {
+        var lists = SC.Context.get_web().get_lists();
+        SC.Context.load(lists, 'Include(Id,EntityTypeName)');
+        SC.Context.executeQueryAsync(function () {
+            allLists = lists.get_data();
+            allLists.forEach(function (e) {
+                e.name = e.get_entityTypeName().toLowerCase();
+            });
+            if (subscribers.length > 0)
+                for (var i = 0; i < subscribers.length; i++)
+                    subscribers[i]();
+        }, function (sender, args) {
+            throw new Error('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+        });
+    }
+
+    SP.SOD.executeOrDelayUntilScriptLoaded(function () {
+        SC.Context = SP.ClientContext.get_current();
+        loadLists();
+    }, 'sp.js');
+
+})(SC || (SC = {}));
+
+var gsUtils;
 
 (function (gsUtils) {
 

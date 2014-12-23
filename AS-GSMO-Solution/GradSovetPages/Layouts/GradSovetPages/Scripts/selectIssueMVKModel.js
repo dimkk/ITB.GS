@@ -40,7 +40,7 @@
             self.selectedMeeting(data);
             self.selectedAgendaQuestion('');
             var ctx = SP.ClientContext.get_current();
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
+            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК - Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml('<View><Query><Where><Eq><FieldRef Name="IssueMeetingMVK" LookupId="True" /><Value Type="Integer">' + data.ID + '</Value></Eq></Where></Query></View>');
             var questionListInstance = agendaQuestionList.getItems(query);
