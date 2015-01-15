@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Receivers ListUrl="Lists/AssignmentList" Scope="Web">
+		<Receiver>
+			<Name>AssignmentItemAdding</Name>
+			<Type>ItemAdding</Type>
+			<SequenceNumber>100</SequenceNumber>
+			<Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+			<Class>GS.Receivers.AssignmentItem</Class>
+			<Data></Data>
+			<Filter></Filter>
+		</Receiver>
+		<Receiver>
+			<Name>AssignmentItemUpdating</Name>
+			<Type>ItemUpdating</Type>
+			<SequenceNumber>100</SequenceNumber>
+			<Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+			<Class>GS.Receivers.AssignmentItem</Class>
+			<Data></Data>
+			<Filter></Filter>
+		</Receiver>
+	</Receivers>
+</Elements>

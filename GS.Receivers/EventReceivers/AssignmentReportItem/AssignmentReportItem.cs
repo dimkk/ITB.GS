@@ -1,4 +1,4 @@
-using ITB.SP.Tools;
+п»їusing ITB.SP.Tools;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Security;
 using System;
@@ -46,11 +46,11 @@ namespace GS.Receivers
         {
             try
             {
-                properties.AfterProperties["Title"] = "Просмотреть отчет";
+                properties.AfterProperties["Title"] = "РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ РѕС‚С‡РµС‚";
             }
             catch (Exception e)
             {
-                Log.Unexpected(e, "При установке названия отчета по поручению произошло неожиданное исключение");
+                Log.Unexpected(e, "РџСЂРё СѓСЃС‚Р°РЅРѕРІРєРµ РЅР°Р·РІР°РЅРёСЏ РѕС‚С‡РµС‚Р° РїРѕ РїРѕСЂСѓС‡РµРЅРёСЋ РїСЂРѕРёР·РѕС€Р»Рѕ РЅРµРѕР¶РёРґР°РЅРЅРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ");
             }
         }
 
@@ -62,12 +62,12 @@ namespace GS.Receivers
                 if (int.TryParse(Convert.ToString(properties.AfterProperties["AssignmentLink"]), out assignmentId) && assignmentId > 0)
                 {
                     SPListItem assignment = properties.Web.GetListByUrl("AssignmentList").GetItemById(assignmentId);
-                    properties.AfterProperties["AssignmentReportRequestText"] = assignment["Инфо"];
+                    properties.AfterProperties["AssignmentReportRequestText"] = assignment["РРЅС„Рѕ"];
                 }
             }
             catch (Exception e)
             {
-                Log.Unexpected(e, "При установке поля с информацией отчета по поручению (ID = {0}) произошло неожиданное исключение", properties.AfterProperties["ID"]);
+                Log.Unexpected(e, "РџСЂРё СѓСЃС‚Р°РЅРѕРІРєРµ РїРѕР»СЏ СЃ РёРЅС„РѕСЂРјР°С†РёРµР№ РѕС‚С‡РµС‚Р° РїРѕ РїРѕСЂСѓС‡РµРЅРёСЋ (ID = {0}) РїСЂРѕРёР·РѕС€Р»Рѕ РЅРµРѕР¶РёРґР°РЅРЅРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ", properties.AfterProperties["ID"]);
             }
         }
 
@@ -80,24 +80,24 @@ namespace GS.Receivers
                 if (assignmentId > 0)
                 {
                     SPListItem assignment = properties.Web.GetListByUrl("AssignmentList").GetItemById(assignmentId);
-                    assignment["Последний отчет"] = new SPFieldLookupValue(properties.ListItemId, properties.ListItem.Title);
+                    assignment["РџРѕСЃР»РµРґРЅРёР№ РѕС‚С‡РµС‚"] = new SPFieldLookupValue(properties.ListItemId, properties.ListItem.Title);
 
                     string status = null;
                     string controlStatus = null;
 
                     var decision = properties.ListItem.GetFieldValue<string>("AssignmentReportResolutionDecision");
-                    if (decision == "Снять с контроля")
+                    if (decision == "РЎРЅСЏС‚СЊ СЃ РєРѕРЅС‚СЂРѕР»СЏ")
                     {
-                        status = "Исполнено";
-                        controlStatus = "Снято с контроля";
+                        status = "РСЃРїРѕР»РЅРµРЅРѕ";
+                        controlStatus = "РЎРЅСЏС‚Рѕ СЃ РєРѕРЅС‚СЂРѕР»СЏ";
                         var newFactDate = properties.ListItem.GetFieldValue<DateTime?>("AssignmentReportFactAnswerDate");
                         if (newFactDate.HasValue)
                             assignment["AssignmentFactDate"] = newFactDate.Value;
                     }
-                    else if (decision == "Перенести срок")
+                    else if (decision == "РџРµСЂРµРЅРµСЃС‚Рё СЃСЂРѕРє")
                     {
-                        status = "На исполнении";
-                        controlStatus = "На контроле";
+                        status = "РќР° РёСЃРїРѕР»РЅРµРЅРёРё";
+                        controlStatus = "РќР° РєРѕРЅС‚СЂРѕР»Рµ";
                         var newDate = properties.ListItem.GetFieldValue<DateTime?>("AssignmentReportResolutionNewDate");
                         if (newDate.HasValue && newDate.Value > new DateTime(2010, 1, 1))
                             assignment["AssignmentPlanDate"] = newDate.Value;
@@ -113,7 +113,7 @@ namespace GS.Receivers
             }
             catch (Exception e)
             {
-                Log.Unexpected(e, "При обновлении полей поручения (ID = {0}) в обработчике событий отчета по поручению (ID = {1}) произошло неожиданное исключение", assignmentId, properties.ListItemId);
+                Log.Unexpected(e, "РџСЂРё РѕР±РЅРѕРІР»РµРЅРёРё РїРѕР»РµР№ РїРѕСЂСѓС‡РµРЅРёСЏ (ID = {0}) РІ РѕР±СЂР°Р±РѕС‚С‡РёРєРµ СЃРѕР±С‹С‚РёР№ РѕС‚С‡РµС‚Р° РїРѕ РїРѕСЂСѓС‡РµРЅРёСЋ (ID = {1}) РїСЂРѕРёР·РѕС€Р»Рѕ РЅРµРѕР¶РёРґР°РЅРЅРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ", assignmentId, properties.ListItemId);
             }
         }
         #endregion

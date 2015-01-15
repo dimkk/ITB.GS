@@ -63,6 +63,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventReceivers\AssignmentItem\AssignmentItem.cs" />
     <Compile Include="EventReceivers\AssignmentReportItem\AssignmentReportItem.cs" />
     <Compile Include="EventReceivers\IssuePItem\IssuePItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +71,9 @@
   <ItemGroup>
     <None Include="..\key.snk">
       <Link>key.snk</Link>
+    </None>
+    <None Include="EventReceivers\AssignmentItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f658ef68-010c-48bf-a1cd-972ac1f6d510}</SharePointProjectItemId>
     </None>
     <None Include="EventReceivers\AssignmentReportItem\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{56604cb0-d7d3-41c9-8743-cac2d725328b}</SharePointProjectItemId>
@@ -82,6 +86,9 @@
     </None>
     <None Include="Features\GS.Receivers.IssuePItem\GS.Receivers.IssuePItem.feature">
       <FeatureId>{05e2552f-03d3-499d-ba33-4ce68043c93a}</FeatureId>
+    </None>
+    <None Include="Features\GS.Receivers.AssignmentItem\GS.Receivers.AssignmentItem.feature">
+      <FeatureId>{845153c7-ee0c-4c73-952a-764d04ebf5e9}</FeatureId>
     </None>
     <None Include="Package\Package.package">
       <PackageId>{49CFD327-42B5-4867-9AFE-83D4787D69DF}</PackageId>
@@ -100,6 +107,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EventReceivers\AssignmentItem\Elements.xml" />
     <Content Include="EventReceivers\AssignmentReportItem\Elements.xml" />
     <Content Include="EventReceivers\IssuePItem\Elements.xml" />
     <Content Include="Features\GS.Receivers.AssignmentReportItem\GS.Receivers.AssignmentReportItem.Template.xml">
@@ -107,6 +115,9 @@
     </Content>
     <Content Include="Features\GS.Receivers.IssuePItem\GS.Receivers.IssuePItem.Template.xml">
       <DependentUpon>GS.Receivers.IssuePItem.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Receivers.AssignmentItem\GS.Receivers.AssignmentItem.Template.xml">
+      <DependentUpon>GS.Receivers.AssignmentItem.feature</DependentUpon>
     </Content>
     <Content Include="Template\Images\GS\Feature.gif" />
   </ItemGroup>
