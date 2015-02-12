@@ -21,7 +21,7 @@ namespace gs.meeting.Components
                 if (!_isInited)
                 {
                     string url = HttpUtility.ParseQueryString(Request.Url.Query).Get("ReturnUrl");
-                    _isAisGs = !url.StartsWith("/sites/gca/", StringComparison.OrdinalIgnoreCase);
+                    _isAisGs = string.IsNullOrEmpty(url) || !url.StartsWith("/sites/gca/", StringComparison.OrdinalIgnoreCase);
                     _isInited = true;
                 }
                 return _isAisGs;

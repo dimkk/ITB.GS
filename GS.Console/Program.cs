@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,55 @@ namespace GS.Console
 {
     class Program
     {
+        static Dictionary<string, string> issueMappingToTemp = new Dictionary<string, string>()
+        {
+            { "AgendaQuestionAddress", "AgendaQuestionAddress1" },
+            { "AgendaQuestionExtResources", "AgendaQuestionExtResources1" },
+            { "AgendaQuestionIncomingDate", "AgendaQuestionIncomingDate1" },
+            //{ "AgendaQuestionReporter", "AgendaQuestionReporter1" },
+            { "AgendaQuestionReporterFullNameLink", "AgendaQuestionReporter1" },
+            { "MeetingLink", "MeetingLink1" },
+            { "AgendaQuestionDeclarant", "AgendaQuestionDeclarant1" },
+            { "AgendaQuestionInvestor", "AgendaQuestionInvestor1" },
+            { "_x0418__x043d__x0444__x043e_", "AgendaQuestionInfo" },
+            { "CadastreNumber", "CadastreNumber1" },
+            { "QuestionCategoryLink", "QuestionCategoryLink1" },
+            { "AgendaQuestionComment", "AgendaQuestionComment1" },
+            { "IssueMunicipalityGs", "IssueMunicipalityGs1" },
+            { "AgendaQuestionSiteName", "AgendaQuestionSiteName1" },
+            { "AgendaQuestionNumber", "AgendaQuestionNumber1" },
+            { "AgendaQuestionDescription", "AgendaQuestionDescription1" },
+            { "AgendaQuestionReason", "AgendaQuestionReason1" },
+            { "IssueGsIssueP", "IssueGsIssueP1" },
+            { "IssueSettlementGs", "IssueSettlementGs1" },
+            { "AgendaQuestionIsConsidered", "AgendaQuestionIsConsidered1" },
+            { "AgendaQuestionProtocolDecision", "AgendaQuestionProtocolDecision1" },
+            { "AgendaLinkedQuestionLink", "AgendaLinkedQuestionLink1" },
+            //{ "AgendaQuestionCoreporter", "AgendaQuestionCoreporter1" },
+            { "AgendaQuestionSoreporterFullNameLink", "AgendaQuestionCoreporter1" },
+            { "AgendaQuestionTheme", "AgendaQuestionTheme1" },
+            { "_x0422__x0438__x043f__x0020__x04", "AgendaQuestionObjectType" },
+            { "AgendaQuestionProjectType", "AgendaQuestionProjectType1" },
+            { "AgendaQuestionDecisionType", "AgendaQuestionDecisionType1" }
+        };
+
         static void Main(string[] args)
         {
+            CleanAttachments("http://gs.msk.mosreg.ru:8080", "Вложения отчета по поручению");
+            //CleanOldVersions("http://gs.msk.mosreg.ru:8080", "Вложения наборы вопроса повестки");
+            //AddUsersToGroup("http://gs.msk.mosreg.ru", "users.csv", "ignored.csv", "ДТП - ОМСУ");
+
             using (var site = new SPSite("http://gs.msk.mosreg.ru"))
             {
+                //SPList issueList = site.RootWeb.GetListByUrl("AgendaQuestionList");
+                //var issueMappingFromTemp = new Dictionary<string, string>();
+                //foreach (string key in issueMappingToTemp.Values)
+                //    issueMappingFromTemp.Add(key, issueMappingToTemp.Keys.Where(s => issueMappingToTemp[s] == key).Single());
+
+                //CopyFields(issueList, issueMappingToTemp);
+                //SetContentType(issueList, "0x01003C18ED48E7474D6EA2943047D32504BE0034919DBB6BDF62458C7ACB53AB30C2A6");
+                //CopyFields(issueList, issueMappingFromTemp);
+
                 //SPList oldMunicipalityList = site.RootWeb.GetListByUrl("List1");
                 //SPList oldSettlementList = site.RootWeb.GetListByUrl("List");
                 //SPList newMunicipalityList = site.RootWeb.GetListByUrl("Municipality");
@@ -30,9 +76,13 @@ namespace GS.Console
 
                 //CopyFields(issueMvkList, new Dictionary<string, string>() { { "MunicipalityMvk", "IssueMunicipalDistrictMVK" }, { "SettlementMvk", "IssueSettlementMVK" } });
 
-                SPList municipalityList = site.RootWeb.GetListByUrl("List1");
-                ShowListUsages(municipalityList);
+                //SPList municipalityList = site.RootWeb.GetListByUrl("List1");
+                //ShowListUsages(municipalityList);
+
             }
+
+            System.Console.WriteLine("Завершено");
+            System.Console.ReadLine();
         }
 
         private static void ShowListUsages(SPList targetList)
@@ -127,20 +177,142 @@ namespace GS.Console
         {
             SPQuery query = Camlex.Query().ToSPQuery();
             query.RowLimit = 1000;
-
+            int count = 0;
             do
             {
                 SPListItemCollection targets = targetList.GetItems(query);
                 foreach (SPListItem target in targets)
                 {
                     foreach (string source in fieldsMapping.Keys)
+                    {
                         target[fieldsMapping[source]] = target[source];
+                    }
 
                     using (var scope = new DisabledItemEventsScope())
                         target.SystemUpdate();
+
+                    System.Console.WriteLine(++count);
                 }
                 query.ListItemCollectionPosition = targets.ListItemCollectionPosition;
             } while (query.ListItemCollectionPosition != null);
+        }
+
+        private static void SetContentType(SPList targetList, string contentTypeId)
+        {
+            SPQuery query = Camlex.Query().ToSPQuery();
+            query.RowLimit = 1000;
+            int count = 0;
+            do
+            {
+                SPListItemCollection targets = targetList.GetItems(query);
+                foreach (SPListItem target in targets)
+                {
+                    target["ContentTypeId"] = contentTypeId;
+
+                    using (var scope = new DisabledItemEventsScope())
+                        target.SystemUpdate();
+
+                    System.Console.WriteLine(++count);
+                }
+                query.ListItemCollectionPosition = targets.ListItemCollectionPosition;
+            } while (query.ListItemCollectionPosition != null);
+        }
+
+
+        public static void CleanOldVersions(string siteUrl, string libraryTitle)
+        {
+            int counter = 0;
+            using (var site = new SPSite(siteUrl))
+            {
+                using (SPWeb web = site.OpenWeb())
+                using (var fileLog = new StreamWriter("log.txt", false))
+                {
+                    SPList list = web.Lists[libraryTitle];
+                    foreach (SPListItem item in list.Items)
+                    {
+                        if (item.ContentType.Name != "Набор документов")
+                        {
+
+                        }
+                        SPListItemVersionCollection versions = item.Versions;
+                        int count = versions.Count;
+                        int deleteCount = 0;
+                        for (int i = versions.Count - 1; i > 0; i--)
+                        {
+                            if (versions[i].VersionId != versions[0].VersionId)
+                            {
+                                try
+                                {
+                                    versions[i].Delete();
+                                    deleteCount++;
+                                }
+                                catch (Exception ex)
+                                {
+                                    fileLog.WriteLine("Ошибка при удалении версии {0} файла {1}:\r\n{2}", i, item.File.ToString(), ex.ToString());
+                                }
+                            }
+                        }
+                        if (count > 1)
+                            fileLog.WriteLine("Удалено {0} из {1} версий файла {2}", deleteCount, count, item.File.ToString());
+
+                        System.Console.WriteLine(++counter);
+                    }
+                    fileLog.Flush();
+                }
+            }
+        }
+
+        public static void CleanAttachments(string siteUrl, string libraryTitle)
+        {
+            using (var site = new SPSite(siteUrl))
+            {
+                using (SPWeb web = site.OpenWeb())
+                {
+                    SPList list = web.Lists[libraryTitle];
+                    for (int i = list.Items.Count - 1; i >= 0; i--)
+                    {
+                        System.Console.WriteLine(i);
+                        SPListItem item = list.Items[i];
+                        if (item.ContentType.Name != "Набор документов")
+                        {
+                            System.Console.WriteLine(item.Name);
+                            item.Delete();
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void AddUsersToGroup(string targetUrl, string inFile, string outFile, string groupName)
+        {
+            using (var usersStream = new StreamReader(inFile))
+            using (var outStream = new StreamWriter(outFile))
+            using (var site = new SPSite(targetUrl))
+            {
+                var group = site.RootWeb.Groups.GetByName(groupName);
+                while (!usersStream.EndOfStream)
+                {
+                    string line = usersStream.ReadLine();
+                    int index = line.IndexOf(';');
+                    if (index < 0 || line.IndexOf(';', index + 1) < 0 || line[0] == '"')
+                        continue;
+
+                    string name = line.Substring(0, index);
+                    List<SPUser> allUsers = site.RootWeb.AllUsers.Cast<SPUser>().Where(s => s.Name == name).ToList();
+                    SPUser user = allUsers.SingleOrDefault(s => s.LoginName.ToLower().Contains("fbamembershipprovider"));
+
+                    if (user == null)
+                        outStream.WriteLine(line);
+                    else
+                    {
+                        if (allUsers.Count > 1)
+                        {
+                        }
+                        group.AddUser(user);
+                        System.Console.WriteLine(user.Name);
+                    }
+                }
+            }
         }
     }
 

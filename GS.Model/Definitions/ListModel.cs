@@ -58,5 +58,14 @@ namespace GS.Model.Definitions
             Description = "",
             ContentTypesEnabled = true
         };
+
+        public static ListDefinition IssueGs = new ListDefinition
+        {
+            Title = "Вопросы повестки заседания",
+            Url = "AgendaQuestionList",
+            TemplateType = (int)ListTemplateType.GenericList,
+            Description = "",
+            ContentTypesEnabled = true
+        };
     }
 }

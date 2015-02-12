@@ -8,7 +8,7 @@ var renderCore;
     renderCore.init = function init(context) {
         this.ctx = context;
         return this;
-    }
+    };
 
     renderCore.getInternalFieldName = function (displayName) {
         var res = '';
@@ -21,52 +21,97 @@ var renderCore;
         }
 
         return res;
-    }
+    };
+
+    renderCore.getField = function (fieldName) {
+        var fields = $.grep(this.ctx.ListSchema.Field, function (item) { return item.Name == fieldName; });
+        return fields.length == 1 ? fields[0] : null;
+    };
+
+    renderCore.getControlByFieldName = function (fieldName) {
+        var field = renderCore.getField(fieldName);
+        var fieldType = field.FieldType + 'Field';
+        if (field.FieldType == 'Choice')
+            fieldType = 'DropDownChoice';
+        return renderCore.getControlById(field.Name + '_' + field.Id + '_$' + fieldType);
+    };
+
+    renderCore.getFieldTitle = function (fieldName) {
+        var field = renderCore.getField(fieldName);
+        return field ? field.Title : '';
+    };
 
     renderCore.renderFieldByName = function (fieldName) {
         return this.ctx.RenderFieldByName(this.ctx, fieldName);
-    }
+    };
 
     renderCore.renderFieldByDisplayName = function (displayName) {
         var fieldName = this.getInternalFieldName(displayName);
         if (!fieldName) return;
 
         return this.ctx.RenderFieldByName(this.ctx, fieldName);
-    }
+    };
+
+    renderCore.getControlFromRenderedHtml = function (html, controlType) {
+        var htmldoc = $("<div></div>").append(html);
+        return htmldoc.find(controlType);
+    };
 
     renderCore.getLookupFromRenderedHtml = function (html) {
-        var htmldoc = $("<div></div>").append(html);
-        var select = htmldoc.find('select')[0];
-        return select;
-    }
+        return this.getControlFromRenderedHtml(html, 'select');
+    };
+
+    renderCore.getInputFromRenderedHtml = function (html) {
+        return this.getControlFromRenderedHtml(html, 'input');
+    };
+
+    renderCore.getControlById = function (id) {
+        return $('#' + id.replace(/[!"#$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&"));
+    };
 
     renderCore.formatDate = function (date) {
         if (date === undefined) return;
 
-        var day =   date.getDate();
+        var day = date.getDate();
         var month = date.getMonth() + 1;
-        var year =  date.getFullYear();
-        
+        var year = date.getFullYear();
+
         return (String).format("{0}/{1}/{2}", day < 10 ? "0" + day : day, month < 10 ? "0" + month : month, year);
-    }
+    };
 
     renderCore.ifget = function (elId, callback) {
         var element = $get(elId);
         if (element) {
             callback(element);
         }
-    }
+    };
+
+    renderCore.getParentListItemId = function getLinkId(parentUrlContainsList) {
+        if (!document.referrer ||
+            document.referrer.indexOf('?') < 0 ||
+            !parentUrlContainsList.some(function (e) { return ~document.referrer.indexOf(e); }))
+            return null;
+
+        var params = document.referrer.split('?')[1].split('&');
+        for (var i = 0; i < params.length; i++) {
+            var param = params[i].split('=');
+            if (param[0] !== 'ID')
+                continue;
+            return param[1];
+        }
+        return null;
+    };
 
     renderCore.hasParentContext = function (parentListName) {
         var hasContext = document.referrer &&
-            (~document.referrer.indexOf(parentListName + '/DispForm') ||
+        (~document.referrer.indexOf(parentListName + '/DispForm') ||
             ~document.referrer.indexOf(parentListName + '/EditForm'));
         return hasContext;
-    }
+    };
 
     renderCore.getParentIdFromContext = function (parentListName) {
         var hasContext = document.referrer &&
-            (~document.referrer.indexOf(parentListName + '/DispForm') ||
+        (~document.referrer.indexOf(parentListName + '/DispForm') ||
             ~document.referrer.indexOf(parentListName + '/EditForm'));
         if (!hasContext) return null;
 
@@ -79,7 +124,7 @@ var renderCore;
         }
 
         return null;
-    }
+    };
 
     // bootstrap
     renderCore.bs = {
@@ -144,7 +189,7 @@ var renderCore;
             resultHtml +=
                 '</div>';
 
-            return { html: resultHtml, modalId: elementId};
+            return { html: resultHtml, modalId: elementId };
         }
     };
 })(renderCore || (renderCore = {}));

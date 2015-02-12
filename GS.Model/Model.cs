@@ -50,7 +50,7 @@ namespace GS.Model
             //AddConfigurationContentTypes(siteModel);
             //AddStatusContentTypes(siteModel);
             //AddBuilderContentTypes(siteModel);
-            AddIssueGsContentTypes(siteModel);
+            AddIssueGsContentTypes1(siteModel);
 
             Service.DeployModel(siteModelHost, siteModel);
 
@@ -63,6 +63,7 @@ namespace GS.Model
             //AddConfigurationList(webModel);
             //AddStatusList(webModel);
             //AddBuilderList(webModel);
+            AddIssueGsList(webModel);
 
             Service.DeployModel(webModelHost, webModel);
 
@@ -72,6 +73,7 @@ namespace GS.Model
             //CleanListContentTypes(ListModel.Configuration.Url, ContentTypeModel.Configuration.Name);
             //CleanListContentTypes(ListModel.Status.Url, ContentTypeModel.Status.Name);
             //CleanListContentTypes(ListModel.Builder.Url, ContentTypeModel.Builder.Name);
+            //CleanListContentTypes(ListModel.IssueGs.Url, ContentTypeModel.IssueGs.Name);
         }
 
         #region ContentTypes
@@ -236,24 +238,232 @@ namespace GS.Model
                     ));
         }
 
+        protected void AddIssueGsContentTypes1(ModelNode modelNode)
+        {
+            List issueGsList = AllLists.Single(s => s.RootFolder.Name == "AgendaQuestionList");
+            List municipalityList = AllLists.Single(s => s.RootFolder.Name == ListModel.Municipality.Url);
+            List participantList = AllLists.Single(s => s.RootFolder.Name == "ParticipantBookList");
+            List meetingList = AllLists.Single(s => s.RootFolder.Name == "MeetingList");
+            List organizationList = AllLists.Single(s => s.RootFolder.Name == "OrganizationBookList");
+            List issuePList = AllLists.Single(s => s.RootFolder.Name == "IssuePList");
+            List categoryList = AllLists.Single(s => s.RootFolder.Name == "AgendaQuestionCategoryBookList");
+            List objectTypeList = AllLists.Single(s => s.RootFolder.Name == "List2");
+            List decisionTypeList = AllLists.Single(s => s.RootFolder.Name == "DecisionTypeBookList");
+
+            modelNode
+                .WithFields(fields => fields
+                    .AddField(IssueGsModel1.IssueMunicipalityGs, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, IssueGsModel1.IssueMunicipalityGs.ShowField)))
+                    .AddField(IssueGsModel1.IssueSettlementGs, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, IssueGsModel1.IssueSettlementGs.ShowField)))
+                    .AddField(IssueGsModel1.AgendaQuestionReporter, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, participantList.Id, IssueGsModel1.AgendaQuestionReporter.ShowField)))
+                    .AddField(IssueGsModel1.MeetingLink, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, meetingList.Id, IssueGsModel1.MeetingLink.ShowField)))
+                    .AddField(IssueGsModel1.AgendaQuestionDeclarant, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, organizationList.Id, IssueGsModel1.AgendaQuestionDeclarant.ShowField)))
+                    .AddField(IssueGsModel1.QuestionCategoryLink, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, categoryList.Id, IssueGsModel1.QuestionCategoryLink.ShowField)))
+                    .AddField(IssueGsModel1.IssueGsIssueP, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, issuePList.Id, IssueGsModel1.IssueGsIssueP.ShowField)))
+                    .AddField(IssueGsModel1.AgendaLinkedQuestionLink, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, issueGsList.Id, IssueGsModel1.AgendaLinkedQuestionLink.ShowField)))
+                    .AddField(IssueGsModel1.AgendaQuestionCoreporter, field =>  //MULTI
+                        field.OnCreated((fieldDef, spField) =>
+                        {
+                            spField.MakeLookupConnectionToList(Context.Web.Id, participantList.Id, IssueGsModel1.AgendaQuestionCoreporter.ShowField);
+                            ((FieldLookup)spField).AllowMultipleValues = true;
+                        }))
+                    .AddField(IssueGsModel1.AgendaQuestionObjectType, field =>  //MULTI
+                        field.OnCreated((fieldDef, spField) =>
+                        {
+                            spField.MakeLookupConnectionToList(Context.Web.Id, objectTypeList.Id, IssueGsModel1.AgendaQuestionObjectType.ShowField);
+                            ((FieldLookup)spField).AllowMultipleValues = true;
+                        }))
+                    .AddField(IssueGsModel1.AgendaQuestionDecisionType, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, decisionTypeList.Id, IssueGsModel1.AgendaQuestionDecisionType.ShowField)))
+                    //.AddField(IssueGsModel1.MeetingDate, field =>
+                    //    field.OnCreated((fieldDef, spField) =>
+                    //        spField.MakeLookupConnectionToList(Context.Web.Id, meetingList.Id, IssueGsModel1.MeetingDate.ShowField)))
+                    //.AddField(IssueGsModel1.MeetingDateText, field =>
+                    //    field.OnCreated((fieldDef, spField) =>
+                    //        spField.MakeLookupConnectionToList(Context.Web.Id, meetingList.Id, IssueGsModel1.MeetingDateText.ShowField)))
+                    //.AddField(IssueGsModel1.AgendaQuestionDeclarantId, field =>
+                    //    field.OnCreated((fieldDef, spField) =>
+                    //        spField.MakeLookupConnectionToList(Context.Web.Id, organizationList.Id, IssueGsModel1.AgendaQuestionDeclarantId.ShowField)))
+                    //.AddField(IssueGsModel1.AgendaQuestionForAssignment)
+                    .AddField(IssueGsModel1.AgendaQuestionAddress)
+                    .AddField(IssueGsModel1.AgendaQuestionComment)
+                    .AddField(IssueGsModel1.AgendaQuestionDescription)
+                    .AddField(IssueGsModel1.AgendaQuestionExtResources)
+                    .AddField(IssueGsModel1.AgendaQuestionIncomingDate)
+                    .AddField(IssueGsModel1.AgendaQuestionInfo)
+                    .AddField(IssueGsModel1.AgendaQuestionInvestor)
+                    .AddField(IssueGsModel1.AgendaQuestionIsConsidered)
+                    .AddField(IssueGsModel1.AgendaQuestionNumber)
+                    .AddField(IssueGsModel1.AgendaQuestionProjectType)
+                    .AddField(IssueGsModel1.AgendaQuestionProtocolDecision)
+                    .AddField(IssueGsModel1.AgendaQuestionReason)
+                    .AddField(IssueGsModel1.AgendaQuestionSiteName)
+                    .AddField(IssueGsModel1.AgendaQuestionTheme)
+                    .AddField(IssueGsModel1.CadastreNumber)
+                )
+                .WithContentTypes(contentTypes => contentTypes
+                    .AddContentType(ContentTypeModel.IssueGs, contentType => contentType
+                        .AddContentTypeFieldLinks(
+                            IssueGsModel1.IssueMunicipalityGs,
+                            IssueGsModel1.IssueSettlementGs,
+                            IssueGsModel1.AgendaQuestionReporter,
+                            IssueGsModel1.MeetingLink,
+                            IssueGsModel1.AgendaQuestionDeclarant,
+                            IssueGsModel1.QuestionCategoryLink,
+                            IssueGsModel1.IssueGsIssueP,
+                            IssueGsModel1.AgendaLinkedQuestionLink,
+                            IssueGsModel1.AgendaQuestionCoreporter,
+                            IssueGsModel1.AgendaQuestionObjectType,
+                            IssueGsModel1.AgendaQuestionDecisionType,
+                        //IssueGsModel1.MeetingDate,
+                        //IssueGsModel1.MeetingDateText,
+                        //IssueGsModel1.AgendaQuestionDeclarantId,
+                        //IssueGsModel1.AgendaQuestionForAssignment,
+                            IssueGsModel1.AgendaQuestionAddress,
+                            IssueGsModel1.AgendaQuestionComment,
+                            IssueGsModel1.AgendaQuestionDescription,
+                            IssueGsModel1.AgendaQuestionExtResources,
+                            IssueGsModel1.AgendaQuestionIncomingDate,
+                            IssueGsModel1.AgendaQuestionInfo,
+                            IssueGsModel1.AgendaQuestionInvestor,
+                            IssueGsModel1.AgendaQuestionIsConsidered,
+                            IssueGsModel1.AgendaQuestionNumber,
+                            IssueGsModel1.AgendaQuestionProjectType,
+                            IssueGsModel1.AgendaQuestionProtocolDecision,
+                            IssueGsModel1.AgendaQuestionReason,
+                            IssueGsModel1.AgendaQuestionSiteName,
+                            IssueGsModel1.AgendaQuestionTheme,
+                            IssueGsModel1.CadastreNumber
+                            )
+                    ));
+        }
+
         protected void AddIssueGsContentTypes(ModelNode modelNode)
         {
+            List issueGsList = AllLists.Single(s => s.RootFolder.Name == "AgendaQuestionList");
             List municipalityList = AllLists.Single(s => s.RootFolder.Name == ListModel.Municipality.Url);
+            List participantList = AllLists.Single(s => s.RootFolder.Name == "ParticipantBookList");
+            List meetingList = AllLists.Single(s => s.RootFolder.Name == "MeetingList");
+            List organizationList = AllLists.Single(s => s.RootFolder.Name == "OrganizationBookList");
+            List issuePList = AllLists.Single(s => s.RootFolder.Name == "IssuePList");
+            List categoryList = AllLists.Single(s => s.RootFolder.Name == "AgendaQuestionCategoryBookList");
+            List objectTypeList = AllLists.Single(s => s.RootFolder.Name == "List2");
+            List decisionTypeList = AllLists.Single(s => s.RootFolder.Name == "DecisionTypeBookList");
 
             modelNode
                 .WithFields(fields => fields
                     .AddField(IssueGsModel.IssueMunicipalityGs, field =>
                         field.OnCreated((fieldDef, spField) =>
-                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, "Title")))
+                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, IssueGsModel.IssueMunicipalityGs.ShowField)))
                     .AddField(IssueGsModel.IssueSettlementGs, field =>
                         field.OnCreated((fieldDef, spField) =>
-                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, "Title")))
+                            spField.MakeLookupConnectionToList(Context.Web.Id, municipalityList.Id, IssueGsModel.IssueSettlementGs.ShowField)))
+                    .AddField(IssueGsModel.AgendaQuestionReporter, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, participantList.Id, IssueGsModel.AgendaQuestionReporter.ShowField)))
+                    .AddField(IssueGsModel.MeetingLink, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, meetingList.Id, IssueGsModel.MeetingLink.ShowField)))
+                    .AddField(IssueGsModel.AgendaQuestionDeclarant, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, organizationList.Id, IssueGsModel.AgendaQuestionDeclarant.ShowField)))
+                    .AddField(IssueGsModel.QuestionCategoryLink, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, categoryList.Id, IssueGsModel.QuestionCategoryLink.ShowField)))
+                    .AddField(IssueGsModel.IssueGsIssueP, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, issuePList.Id, IssueGsModel.IssueGsIssueP.ShowField)))
+                    .AddField(IssueGsModel.AgendaLinkedQuestionLink, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, issueGsList.Id, IssueGsModel.AgendaLinkedQuestionLink.ShowField)))
+                    .AddField(IssueGsModel.AgendaQuestionCoreporter, field =>  //MULTI
+                        field.OnCreated((fieldDef, spField) => {
+                            spField.MakeLookupConnectionToList(Context.Web.Id, participantList.Id, IssueGsModel.AgendaQuestionCoreporter.ShowField);
+                            ((FieldLookup)spField).AllowMultipleValues = true;
+                        }))
+                    .AddField(IssueGsModel.AgendaQuestionObjectType, field =>  //MULTI
+                        field.OnCreated((fieldDef, spField) => {
+                            spField.MakeLookupConnectionToList(Context.Web.Id, objectTypeList.Id, IssueGsModel.AgendaQuestionObjectType.ShowField);
+                            ((FieldLookup)spField).AllowMultipleValues = true;
+                        }))
+                    .AddField(IssueGsModel.AgendaQuestionDecisionType, field =>
+                        field.OnCreated((fieldDef, spField) =>
+                            spField.MakeLookupConnectionToList(Context.Web.Id, decisionTypeList.Id, IssueGsModel.AgendaQuestionDecisionType.ShowField)))
+                    //.AddField(IssueGsModel.MeetingDate, field =>
+                    //    field.OnCreated((fieldDef, spField) =>
+                    //        spField.MakeLookupConnectionToList(Context.Web.Id, meetingList.Id, IssueGsModel.MeetingDate.ShowField)))
+                    //.AddField(IssueGsModel.MeetingDateText, field =>
+                    //    field.OnCreated((fieldDef, spField) =>
+                    //        spField.MakeLookupConnectionToList(Context.Web.Id, meetingList.Id, IssueGsModel.MeetingDateText.ShowField)))
+                    //.AddField(IssueGsModel.AgendaQuestionDeclarantId, field =>
+                    //    field.OnCreated((fieldDef, spField) =>
+                    //        spField.MakeLookupConnectionToList(Context.Web.Id, organizationList.Id, IssueGsModel.AgendaQuestionDeclarantId.ShowField)))
+                    //.AddField(IssueGsModel.AgendaQuestionForAssignment)
+                    .AddField(IssueGsModel.AgendaQuestionAddress)
+                    .AddField(IssueGsModel.AgendaQuestionComment)
+                    .AddField(IssueGsModel.AgendaQuestionDescription)
+                    .AddField(IssueGsModel.AgendaQuestionExtResources)
+                    .AddField(IssueGsModel.AgendaQuestionIncomingDate)
+                    .AddField(IssueGsModel.AgendaQuestionInfo)
+                    .AddField(IssueGsModel.AgendaQuestionInvestor)
+                    .AddField(IssueGsModel.AgendaQuestionIsConsidered)
+                    .AddField(IssueGsModel.AgendaQuestionNumber)
+                    .AddField(IssueGsModel.AgendaQuestionProjectType)
+                    .AddField(IssueGsModel.AgendaQuestionProtocolDecision)
+                    .AddField(IssueGsModel.AgendaQuestionReason)
+                    .AddField(IssueGsModel.AgendaQuestionSiteName)
+                    .AddField(IssueGsModel.AgendaQuestionTheme)
+                    .AddField(IssueGsModel.CadastreNumber)
                 )
                 .WithContentTypes(contentTypes => contentTypes
                     .AddContentType(ContentTypeModel.IssueGs, contentType => contentType
                         .AddContentTypeFieldLinks(
                             IssueGsModel.IssueMunicipalityGs,
-                            IssueGsModel.IssueSettlementGs)
+                            IssueGsModel.IssueSettlementGs,
+                            IssueGsModel.AgendaQuestionReporter,
+                            IssueGsModel.MeetingLink,
+                            IssueGsModel.AgendaQuestionDeclarant,
+                            IssueGsModel.QuestionCategoryLink,
+                            IssueGsModel.IssueGsIssueP,
+                            IssueGsModel.AgendaLinkedQuestionLink,
+                            IssueGsModel.AgendaQuestionCoreporter,
+                            IssueGsModel.AgendaQuestionObjectType,
+                            IssueGsModel.AgendaQuestionDecisionType,
+                            //IssueGsModel.MeetingDate,
+                            //IssueGsModel.MeetingDateText,
+                            //IssueGsModel.AgendaQuestionDeclarantId,
+                            //IssueGsModel.AgendaQuestionForAssignment,
+                            IssueGsModel.AgendaQuestionAddress,
+                            IssueGsModel.AgendaQuestionComment,
+                            IssueGsModel.AgendaQuestionDescription,
+                            IssueGsModel.AgendaQuestionExtResources,
+                            IssueGsModel.AgendaQuestionIncomingDate,
+                            IssueGsModel.AgendaQuestionInfo,
+                            IssueGsModel.AgendaQuestionInvestor,
+                            IssueGsModel.AgendaQuestionIsConsidered,
+                            IssueGsModel.AgendaQuestionNumber,
+                            IssueGsModel.AgendaQuestionProjectType,
+                            IssueGsModel.AgendaQuestionProtocolDecision,
+                            IssueGsModel.AgendaQuestionReason,
+                            IssueGsModel.AgendaQuestionSiteName,
+                            IssueGsModel.AgendaQuestionTheme,
+                            IssueGsModel.CadastreNumber)
                     ));
         }
         #endregion
@@ -311,6 +521,15 @@ namespace GS.Model
                     lists =>
                         lists.AddList(ListModel.Builder,
                             list => list.AddContentTypeLink(ContentTypeModel.Builder)));
+        }
+
+        protected void AddIssueGsList(ModelNode modelNode)
+        {
+            modelNode
+                .WithLists(
+                    lists =>
+                        lists.AddList(ListModel.IssueGs,
+                            list => list.AddContentTypeLink(ContentTypeModel.IssueGs)));
         }
         #endregion
 

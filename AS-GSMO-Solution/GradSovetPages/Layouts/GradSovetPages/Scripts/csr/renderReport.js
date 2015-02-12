@@ -47,7 +47,7 @@ var isCancelAddAttach = false;
 
         resultHtml += '<div class="form-horizontal" role="form">';
 
-        resultHtml += '<div class="form-group">';
+        resultHtml += '<div class="form-group" id="assignment">';
         var assignmentLinkHtml = renderFieldBlock('Поручение', 2, 4, "AssignmentLink");
         var lookupElement = renderCore.getLookupFromRenderedHtml(assignmentLinkHtml)
         assignmentLinkId = $(lookupElement).attr('id');
@@ -323,6 +323,9 @@ var isCancelAddAttach = false;
                     break;
                 }
 
+				if (!found)
+					$('[id^="AssignmentLink"]').attr('disabled', 'disabled');
+					
                 if (found) {
                     renderCore.ifget('decision', function (e) {
                         $(e).css('display', 'block');
@@ -343,6 +346,8 @@ var isCancelAddAttach = false;
                                 $(e).css('display', 'block');
                             });
                         }
+						
+						$('#assignment').css('display', 'block');
                     });
                 }
             }, function () {
@@ -367,8 +372,11 @@ var isCancelAddAttach = false;
 
 //Настройка интерфейса
 $(function () {
-	if (isCancelAddAttach) {
-		$(".ms-addnew").css("display", "none");
-		$("#idHomePageNewItem").css("display", "none");
-	}
+	Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(
+		function() {
+			if (isCancelAddAttach) {
+				$(".ms-addnew").css("display", "none");
+				$("#idHomePageNewItem").css("display", "none");
+			}
+		});
 });
