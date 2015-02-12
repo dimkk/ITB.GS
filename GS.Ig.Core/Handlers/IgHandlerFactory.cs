@@ -1,12 +1,10 @@
-﻿using System;
+﻿using GS.Common.BL;
+using GS.Ig.Core.Handlers;
+using GS.Ig.Interfaces;
+using Microsoft.SharePoint;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GS.Common.BL;
-using GS.Ig.Core.Handlers;
-using GS.Ig.Core.Interfaces;
-using Microsoft.SharePoint;
 
 namespace GS.Ig
 {

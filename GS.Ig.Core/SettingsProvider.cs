@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CamlexNET;
-using GS.Ig.Core.Interfaces;
+﻿using CamlexNET;
+using ITB.Ig.Interface;
 using ITB.SP.Tools;
 using Microsoft.SharePoint;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
 namespace GS.Ig.Core
 {
     public class SettingsProvider : ISettingsProvider

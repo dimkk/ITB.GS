@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GS.Common.BL;
 using Microsoft.SharePoint;
 
-namespace GS.Ig.Core.Interfaces
+namespace GS.Ig.Interfaces
 {
     public interface IIgHandler
     {

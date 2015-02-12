@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Factory="Ninject.Extensions.Wcf.NinjectServiceHostFactory" Service="GS.Ig.Module.Sivgk.v1.Services.NotificationService" CodeBehind="NotificationService.svc.cs" %>
+

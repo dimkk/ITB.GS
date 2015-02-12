@@ -1,11 +1,10 @@
-﻿using ITB.SP.Tools;
+﻿using ITB.Ig.Interface;
+using ITB.SP.Tools;
 using Microsoft.SharePoint;
 using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using SAMRT.Ig.Interface;
-using ISettingsProvider = GS.Ig.Core.Interfaces.ISettingsProvider;
 
 namespace GS.Ig.Core
 {

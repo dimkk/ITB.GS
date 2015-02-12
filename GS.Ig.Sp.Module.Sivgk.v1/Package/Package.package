@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ce08ef82-c163-4088-8d42-c2c97e2bd9d9" solutionId="ce08ef82-c163-4088-8d42-c2c97e2bd9d9" resetWebServer="false" sharePointProductVersion="15.0" name="GS.Ig.Sp.Module.Sivgk.v1" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="GS.Ig.Module.Sivgk.v1.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\GS.Ig.Module.Sivgk.v1\GS.Ig.Module.Sivgk.v1.csproj" />
+    <customAssembly location="ITB.Ig.Module.Sivgk.v1.Common.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\ITB.SAMRT\ITB.Ig.Module.Sivgk.v1.Common\bin\Debug\ITB.Ig.Module.Sivgk.v1.Common.dll" />
+  </assemblies>
+</package>

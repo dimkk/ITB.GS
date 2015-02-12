@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GS.Common.BL;
+﻿using GS.Common.BL;
+using GS.Ig.Interfaces;
+using ITB.Ig.Interface;
 using ITB.SP.Tools;
 using Microsoft.SharePoint;
-using SAMRT.Ig.Interface;
-using IIgHandler = GS.Ig.Core.Interfaces.IIgHandler;
+using System;
 
 namespace GS.Ig.Core.Handlers
 {
