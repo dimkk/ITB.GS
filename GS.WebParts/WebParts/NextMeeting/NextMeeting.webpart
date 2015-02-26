@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+	<webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+		<metaData>
+			<type name="GS.WebParts.NextMeeting, $SharePoint.Project.AssemblyFullName$" />
+			<importErrorMessage>Cannot import NextMeeting Web Part.</importErrorMessage>
+		</metaData>
+		<data>
+			<properties>
+        <property name="Title" type="string">Объявление о следующем заседании</property>
+        <property name="Description" type="string">Веб-часть для отображения объявления о следующем заседании</property>
+				<property name="CatalogIconImageUrl" type="string">/_layouts/15/images/GS/WebPartIcon_NextMeeting.gif</property>
+				<property name="TitleIconImageUrl" type="string">/_layouts/15/images/GS/WebPartIcon_NextMeeting.gif</property>
+			</properties>
+		</data>
+	</webPart>
+</webParts>

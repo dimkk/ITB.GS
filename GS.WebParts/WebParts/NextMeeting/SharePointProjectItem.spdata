@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.WebPart" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="NextMeeting\" Type="ElementManifest" />
+    <ProjectItemFile Source="NextMeeting.webpart" Target="NextMeeting\" Type="ElementFile" />
+    <ProjectItemFile Source="WebPartIcon_NextMeeting.gif" Target="Images\GS\" Type="TemplateFile" />
+    <ProjectItemFile Source="NextMeetingUserControl.ascx" Target="CONTROLTEMPLATES\GS\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="GS.WebParts" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-12 17:51:11Z
+        Created by: PK\developer
+              Name: NextMeeting
+       Description: NextMeeting Description          
+    ************************************************************************
+    -->
+	<Module
+		Name="NextMeeting"
+		List="113"
+		Url="_catalogs/wp">
+		<File
+			Path="NextMeeting\NextMeeting.webpart"
+			Url="NextMeeting.webpart"
+			Type="GhostableInLibrary">
+			<Property
+				Name="Group"
+				Value="ГС" />
+			<Property
+				Name="QuickAddGroups"
+				Value="GS QuickAdd Webparts" />
+		</File>
+	</Module>
+</Elements>
