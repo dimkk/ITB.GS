@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Land.ContentTypes", "GS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Zkh.ContentTypes", "GS.Zkh.ContentTypes\GS.Zkh.ContentTypes.csproj", "{C971877B-B9F5-4FF7-9502-8CD2043588BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradSovetPages", "GradSovetPages\GradSovetPages.csproj", "{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,12 @@ Global
 		{C971877B-B9F5-4FF7-9502-8CD2043588BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C971877B-B9F5-4FF7-9502-8CD2043588BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C971877B-B9F5-4FF7-9502-8CD2043588BE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

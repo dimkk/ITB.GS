@@ -45,9 +45,6 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GS.Common">
-      <HintPath>..\..\GS.Common\bin\Debug\GS.Common.dll</HintPath>
-    </Reference>
     <Reference Include="gs.meeting.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=98b8bbe69daf0ccc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\gs.meeting.Components\v4.0_1.0.0.0__98b8bbe69daf0ccc\gs.meeting.Components.dll</HintPath>
@@ -285,6 +282,12 @@
     <Content Include="Scripts\SP.Runtime.js" />
     <Content Include="Scripts\SP.UI.Dialog.js" />
     <Content Include="Scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GS.Common\GS.Common.csproj">
+      <Project>{e953cb2a-c956-4435-b843-8ea3a331459b}</Project>
+      <Name>GS.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
