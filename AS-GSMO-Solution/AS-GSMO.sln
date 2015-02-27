@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradSovetApp", "GradSovetApp\GradSovetApp.csproj", "{88C25893-C12B-47F0-AA40-4A7C56E523FC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradSovetPages", "GradSovetPages\GradSovetPages.csproj", "{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradSovetLists", "GradSovetLists\GradSovetLists.csproj", "{B1B05367-3C95-4014-A8D8-0067C706142C}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -33,33 +33,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportToExcel", "ExportToExcel\ExportToExcel.csproj", "{A07A09FE-1241-4A57-9938-5F12FC2D5297}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://sp2013:8080/tfs/gradsovetmo
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = GradSovetApp\\GradSovetApp.csproj
-		SccProjectName1 = GradSovetApp
-		SccLocalPath1 = GradSovetApp
-		SccProjectUniqueName2 = GradSovetPages\\GradSovetPages.csproj
-		SccProjectName2 = GradSovetPages
-		SccLocalPath2 = GradSovetPages
-		SccProjectUniqueName3 = GradSovetLists\\GradSovetLists.csproj
-		SccProjectName3 = GradSovetLists
-		SccLocalPath3 = GradSovetLists
-		SccProjectUniqueName4 = GSWeb\\GSWeb.csproj
-		SccProjectName4 = GSWeb
-		SccLocalPath4 = GSWeb
-		SccProjectUniqueName5 = GradSovetMeetingCalendar\\GradSovetMeetingCalendar.csproj
-		SccProjectName5 = GradSovetMeetingCalendar
-		SccLocalPath5 = GradSovetMeetingCalendar
-		SccProjectUniqueName6 = GSJobs\\GSJobs.csproj
-		SccProjectName6 = GSJobs
-		SccLocalPath6 = GSJobs
-		SccProjectUniqueName7 = ExportToExcel\\ExportToExcel.csproj
-		SccProjectName7 = ExportToExcel
-		SccLocalPath7 = ExportToExcel
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -71,12 +44,6 @@ Global
 		{88C25893-C12B-47F0-AA40-4A7C56E523FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88C25893-C12B-47F0-AA40-4A7C56E523FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88C25893-C12B-47F0-AA40-4A7C56E523FC}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A32F7D32-E1D1-4CB6-A03D-EB935F93E49A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{B1B05367-3C95-4014-A8D8-0067C706142C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1B05367-3C95-4014-A8D8-0067C706142C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B05367-3C95-4014-A8D8-0067C706142C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
