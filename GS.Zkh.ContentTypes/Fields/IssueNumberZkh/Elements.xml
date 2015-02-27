@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Номер вопроса"
+		ID="{5D8D9358-B381-46C5-AD44-BBE4A4C12018}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueNumberZkh"
+		Name="IssueNumberZkh"
+		Type="Integer"
+		Required="TRUE"
+		Percentage="FALSE"
+		Min="0"
+		Commas="FALSE"
+		Description="Номер вопроса заседания ЖКХ (основная часть номера)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

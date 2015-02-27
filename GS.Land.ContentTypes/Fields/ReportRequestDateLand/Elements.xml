@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Отчеты"
+		DisplayName="Дата запроса"
+		ID="{D384F20A-FE9B-44F1-87CF-79F412A5352C}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportRequestDateLand"
+		Name="ReportRequestDateLand"
+		Type="DateTime"
+		Required="FALSE"
+		Format="DateTime"
+		Description="Дата запроса отчета Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Количество продлений"
+		ID="{3F1CAE91-FCEC-4BD6-B2DE-29E9D2061139}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentProlongationCountZkh"
+		Name="AssignmentProlongationCountZkh"
+		Type="Number"
+		Required="FALSE"
+		Percentage="FALSE"
+		Min="0"
+		Decimals="0"
+		Description="Количество продлений поручения ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+    <Default>0</Default>
+  </Field>
+</Elements>

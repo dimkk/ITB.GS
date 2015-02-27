@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Должность исполнителя"
+		ID="{6FAF87E5-4D65-4DA0-9451-44ECB4889A2A}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentExecutorPositionLand"
+		Name="AssignmentExecutorPositionLand"
+		Type="Lookup"
+		List="Lists/PositionBookList"
+		ShowField="Title"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Должность исполнителя по поручению Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

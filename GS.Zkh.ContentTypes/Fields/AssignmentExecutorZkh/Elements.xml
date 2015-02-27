@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Исполнитель"
+		ID="{00E573D5-F127-45E7-9B3F-5CA27D7620A2}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentExecutorZkh"
+		Name="AssignmentExecutorZkh"
+		Type="Lookup"
+		List="Lists/ParticipantBookList"
+		ShowField="ParticipantFullName"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Исполнитель по поручению ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

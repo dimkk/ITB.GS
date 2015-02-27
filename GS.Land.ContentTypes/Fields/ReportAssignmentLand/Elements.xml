@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Отчеты"
+		DisplayName="Поручение"
+		ID="{24B6A002-B3AA-476C-B1B1-91BAFD9D2A01}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportAssignmentLand"
+		Name="ReportAssignmentLand"
+		Type="Lookup"
+		List="Lists/AssignmentLandList"
+		ShowField="AssignmentNumberLand"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на поручение Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

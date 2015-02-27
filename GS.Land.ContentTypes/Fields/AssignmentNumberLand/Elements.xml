@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Номер поручения"
+		ID="{0E7E040F-A90E-4E89-90B2-F3BD4BF940D8}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentNumberLand"
+		Name="AssignmentNumberLand"
+		Type="Text"
+		Required="TRUE"
+		MaxLength="255"
+		Description="Номер поручения Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

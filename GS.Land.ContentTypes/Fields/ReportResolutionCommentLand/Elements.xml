@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Отчеты"
+		DisplayName="Комментарий к резолюции"
+		ID="{872F853E-A71E-486E-9E82-8E34119C30A5}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportResolutionCommentLand"
+		Name="ReportResolutionCommentLand"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="6"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Комментарий к резолюции отчета по поручению Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

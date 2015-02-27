@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Тип зависимости планируемой даты"
+		ID="{8C29C8DB-3AFC-41E3-B838-A0C1EC934BB4}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentPlanIsDependentLand"
+		Name="AssignmentPlanIsDependentLand"
+		Type="Text"
+		Required="FALSE"
+		MaxLength="255"
+		Description="Тип зависимости планируемой даты поручения Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<Default>ByDate</Default>
+	</Field>
+</Elements>

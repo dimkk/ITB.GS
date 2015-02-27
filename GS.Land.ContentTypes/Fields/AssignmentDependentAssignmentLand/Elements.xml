@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Зависимое поручение"
+		ID="{9BD247E2-7E15-4D4F-BE0E-1427F9AA869A}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentDependentAssignmentLand"
+		Name="AssignmentDependentAssignmentLand"
+		Type="Lookup"
+		List="Lists/AssignmentLandList"
+		ShowField="AssignmentNumberLand"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на зависимое поручение Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

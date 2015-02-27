@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Заседания"
+		DisplayName="Номер заседания"
+		ID="{8CCF8F53-B17A-409A-8889-9C0F314D1E8D}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="MeetingNumberZkh"
+		Name="MeetingNumberZkh"
+		Type="Text"
+		Required="TRUE"
+		MaxLength="25"
+		Description="Номер заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Подномер вопроса"
+		ID="{B9F5C921-C0FE-4072-9C94-FCB6EA97ECCF}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueSubnumberZkh"
+		Name="IssueSubnumberZkh"
+		Type="Integer"
+		Required="TRUE"
+		Percentage="FALSE"
+		Min="0"
+		Commas="FALSE"
+		Description="Подномер вопроса заседания ЖКХ (дополнительная часть номера)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<Default>0</Default>
+	</Field>
+</Elements>

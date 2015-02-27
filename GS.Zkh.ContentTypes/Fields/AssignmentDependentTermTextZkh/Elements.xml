@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Зависимый срок"
+		ID="{EE00990E-5E82-473D-919E-EBCB53F5A5E6}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentDependentTermTextZkh"
+		Name="AssignmentDependentTermTextZkh"
+		Type="Text"
+		Required="FALSE"
+		MaxLength="255"
+		Description="Зависимый срок (текстовое представление зависимости от другого поручения ЖКХ)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

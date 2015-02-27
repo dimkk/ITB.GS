@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Заседания"
+		DisplayName="Комментарий"
+		ID="{34A2BBA2-C5A8-44C4-BFB3-67259CC94A56}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="MeetingCommentZkh"
+		Name="MeetingCommentZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="6"
+		Required="FALSE"
+		AppendOnly="TRUE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Комментарий к заседанию ЖКХ"
+    AllowDeletion="FALSE"></Field>
+</Elements>

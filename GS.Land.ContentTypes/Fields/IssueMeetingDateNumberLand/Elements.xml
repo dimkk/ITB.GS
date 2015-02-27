@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Name                            ="IssueMeetingDateNumberLand"
+		StaticName                      ="IssueMeetingDateNumberLand"
+		Group                           ="Земля.Вопросы"
+		DisplayName                     ="Дата и номер заседания"
+		Description                     ="Дата проведения и номер заседания Земля"
+    FieldRef                        ="{DCBACCD3-DE7D-4D9A-8003-CE477DD66FF8}"
+		ID                              ="{100F19BD-F8EA-4762-A38B-6EE274F9A7DD}"
+		SourceID                        ="http://schemas.microsoft.com/sharepoint/v3"
+		Type                            ="Lookup"
+		List                            ="Lists/MeetingLandList"
+		ShowField                       ="MeetingDateNumberLand"
+		UnlimitedLengthInDocumentLibrary="False"
+		ReadOnly                        ="TRUE"
+    Overwrite                       ="TRUE"
+    AllowDeletion                   ="FALSE"/>
+</Elements>

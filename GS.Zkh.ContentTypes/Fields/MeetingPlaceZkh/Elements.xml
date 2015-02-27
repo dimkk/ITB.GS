@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Заседания"
+		DisplayName="Место проведения заседания"
+		ID="{8DE78DF5-E3E6-4479-8E00-7927BE3691A6}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="MeetingPlaceZkh"
+		Name="MeetingPlaceZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="6"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Место проведения заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

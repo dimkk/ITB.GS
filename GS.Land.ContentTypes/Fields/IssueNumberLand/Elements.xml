@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Номер вопроса"
+		ID="{13073982-0FED-419B-9238-4983899A9906}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueNumberLand"
+		Name="IssueNumberLand"
+		Type="Integer"
+		Required="TRUE"
+		Percentage="FALSE"
+		Min="0"
+		Commas="FALSE"
+		Description="Номер вопроса заседания Земля (основная часть номера)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

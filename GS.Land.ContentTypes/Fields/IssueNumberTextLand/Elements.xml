@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Field  Name          ="IssueNumberTextLand"
+          StaticName    ="IssueNumberTextLand"
+          Group         ="Земля.Вопросы"
+          DisplayName   ="Номер"
+          Description   ="Номер вопроса повестки заседания Земля (с подномером)"
+          ID            ="{A105EC40-710D-4089-AD7B-39CEE397C956}"
+          SourceID      ="http://schemas.microsoft.com/sharepoint/v3"
+          Type          ="Calculated"
+          ResultType    ="Text"
+          ReadOnly      ="TRUE"
+          Overwrite     ="TRUE"
+          AllowDeletion ="FALSE">
+    <Formula>=[IssueNumberLand]&amp;IF([IssueSubnumberLand]>0,"."&amp;[IssueSubnumberLand],"")</Formula>
+    <FieldRefs>
+      <FieldRef Name="IssueNumberLand" />
+      <FieldRef Name="IssueSubnumberLand" />
+    </FieldRefs>
+  </Field>
+</Elements>

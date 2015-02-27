@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Зависимое поручение"
+		ID="{15F59E2C-49B8-442A-B5EA-F8B4ED928F83}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentDependentAssignmentZkh"
+		Name="AssignmentDependentAssignmentZkh"
+		Type="Lookup"
+		List="Lists/AssignmentZkhList"
+		ShowField="AssignmentNumberZkh"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на зависимое поручение ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

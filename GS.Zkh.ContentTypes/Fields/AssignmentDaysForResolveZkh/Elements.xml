@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Количество дней на решение"
+		ID="{98D3758C-2AD7-4D51-A788-372E6B293113}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentDaysForResolveZkh"
+		Name="AssignmentDaysForResolveZkh"
+		Type="Integer"
+    Commas="FALSE"
+		Required="FALSE"
+		Percentage="FALSE"
+		Min="0"
+		Description="Количество дней на решение (поручение ЖКХ)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

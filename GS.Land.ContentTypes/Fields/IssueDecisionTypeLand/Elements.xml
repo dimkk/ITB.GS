@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Тип решения"
+		ID="{81E089DB-D3AD-427C-B4E4-B1C02EC2211B}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueDecisionTypeLand"
+		Name="IssueDecisionTypeLand"
+		Type="Lookup"
+		List="Lists/DecisionTypeBookList"
+		ShowField="LinkTitle"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Тип решения по вопросу Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

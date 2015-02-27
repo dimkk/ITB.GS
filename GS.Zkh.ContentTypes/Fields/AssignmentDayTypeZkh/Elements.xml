@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Тип дней"
+		ID="{3930F287-1889-40B7-8E2F-DA88767ED696}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentDayTypeZkh"
+		Name="AssignmentDayTypeZkh"
+		Type="Choice"
+		Format="Dropdown"
+		Required="FALSE"
+		FillInChoice="FALSE"
+		Description="Тип дней (зависимость от другого поручения ЖКХ)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<CHOICES>
+			<CHOICE>Календарные</CHOICE>
+			<CHOICE>Рабочие</CHOICE>
+		</CHOICES>
+	</Field>
+</Elements>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Заседания"
+		DisplayName="Статус"
+		ID="{5CDA3D92-D541-459B-A3BF-38E8188391F1}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="MeetingStatusZkh"
+		Name="MeetingStatusZkh"
+		Type="Choice"
+		Format="Dropdown"
+		Required="FALSE"
+		FillInChoice="FALSE"
+		Description="Статус заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<CHOICES>
+			<CHOICE>Планируемое</CHOICE>
+			<CHOICE>Завершенное</CHOICE>
+		</CHOICES>
+	</Field>
+</Elements>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Отчеты"
+		DisplayName="Решение по отчету"
+		ID="{7C7B371E-1516-498C-8034-7BB275C24543}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportDecisionLand"
+		Name="ReportDecisionLand"
+		Type="Choice"
+		Format="Dropdown"
+		Required="FALSE"
+		FillInChoice="FALSE"
+		Description="Решение по отчету Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<CHOICES>
+			<CHOICE>Снять с контроля</CHOICE>
+			<CHOICE>Перенести срок</CHOICE>
+			<CHOICE>Отправить на доработку</CHOICE>
+		</CHOICES>
+	</Field>
+</Elements>

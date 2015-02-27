@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-10 14:22:08Z
+        Created by: SPDEV\developer
+              Name: IssueAttachmentZkh
+       Description: Тип содержимого для вложений вопроса повестки заседания ЖКХ
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x01002AB5B26BBFA84DA2AD64134E8E96B715"
+		Name="IssueAttachmentZkh"
+		Description="Тип содержимого для вложений вопроса повестки заседания ЖКХ"
+		Group="ЖКХ.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{C29F63F5-81EB-4B64-B9A0-091448CAD4AF}"
+				Name="IssueAttachmentIssueZkh"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

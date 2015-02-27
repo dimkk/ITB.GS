@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Тип поручения"
+		ID="{B577FFE6-EC76-4051-BB7F-2AFCFADF17EF}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentTypeZkh"
+		Name="AssignmentTypeZkh"
+		Type="Lookup"
+		List="Lists/AssignmentTypeList"
+		ShowField="AssignmentTypeName"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Тип поручения ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

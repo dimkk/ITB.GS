@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Ответственный исполнитель"
+		ID="{57AF7BA3-97D5-4C0A-8D58-3F5596AA7ED3}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentResponsibleExecutorLand"
+		Name="AssignmentResponsibleExecutorLand"
+		Type="Text"
+		Required="FALSE"
+		MaxLength="255"
+		Description="Ответственный исполнитель по поручению Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

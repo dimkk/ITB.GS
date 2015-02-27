@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Количество продлений"
+		ID="{59AF0FB0-5AA1-485E-B7C3-DC1AE1A0DFFD}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentProlongationCountLand"
+		Name="AssignmentProlongationCountLand"
+		Type="Number"
+		Required="FALSE"
+		Percentage="FALSE"
+		Min="0"
+		Decimals="0"
+		Description="Количество продлений поручения Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+    <Default>0</Default>
+  </Field>
+</Elements>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Name                            ="MeetingAttachmentMeetingZkh"
+		StaticName                      ="MeetingAttachmentMeetingZkh"
+		Group                           ="ЖКХ.Вложения.Заседания"
+		DisplayName                     ="Заседание"
+		Description                     ="Ссылка на заседание ЖКХ"
+		ID                              ="{1F3732EB-A345-4D9B-BBCB-93F17393CFCC}"
+		SourceID                        ="http://schemas.microsoft.com/sharepoint/v3"
+		Type                            ="Lookup"
+		List                            ="Lists/MeetingZkhList"
+		ShowField                       ="MeetingNumberZkh"
+		Mult                            ="False"
+		UnlimitedLengthInDocumentLibrary="False"
+    Overwrite                       ="TRUE"
+    AllowDeletion                   ="FALSE"/>
+</Elements>

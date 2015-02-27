@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Количество дней на решение"
+		ID="{EB3E37BA-697A-4CB4-A375-080ABBD9B99F}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentDaysForResolveLand"
+		Name="AssignmentDaysForResolveLand"
+		Type="Integer"
+    Commas="FALSE"
+		Required="FALSE"
+		Percentage="FALSE"
+		Min="0"
+		Description="Количество дней на решение (поручение Земля)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

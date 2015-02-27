@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Отчеты"
+		DisplayName="Информация по отчету"
+		ID="{FE82758A-3805-4FA8-A4CF-226DD698EEC2}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportInfoLand"
+		Name="ReportInfoLand"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="6"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Дополнительная информация по отчету Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

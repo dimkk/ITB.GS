@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Ответственный исполнитель"
+		ID="{157654DE-48C2-49C2-9F82-CA61048A2F3B}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentResponsibleExecutorZkh"
+		Name="AssignmentResponsibleExecutorZkh"
+		Type="Text"
+		Required="FALSE"
+		MaxLength="255"
+		Description="Ответственный исполнитель по поручению ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

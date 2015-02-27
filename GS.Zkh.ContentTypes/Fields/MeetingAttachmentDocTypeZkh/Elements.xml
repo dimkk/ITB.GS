@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Name                            ="MeetingAttachmentDocTypeZkh"
+		StaticName                      ="MeetingAttachmentDocTypeZkh"
+		Group                           ="ЖКХ.Вложения.Заседания"
+		DisplayName                     ="Тип документа"
+		Description                     ="Ссылка на тип документа вложения заседания ЖКХ"
+		ID                              ="{4BC9B4EA-48CA-4E76-B3FB-F952AA35F5A5}"
+		SourceID                        ="http://schemas.microsoft.com/sharepoint/v3"
+		Type                            ="Lookup"
+		List                            ="Lists/DocTypeBookList"
+		ShowField                       ="Title"
+		Mult                            ="False"
+		UnlimitedLengthInDocumentLibrary="False"
+    Overwrite                       ="TRUE"
+    AllowDeletion                   ="FALSE"/>
+</Elements>

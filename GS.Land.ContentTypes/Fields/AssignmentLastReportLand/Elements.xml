@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Последний отчет"
+		ID="{55F1DCAB-7F48-4FE2-AE21-C6DB81731352}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentLastReportLand"
+		Name="AssignmentLastReportLand"
+		Type="Lookup"
+		List="Lists/AssignmentReportLandList"
+		ShowField="ID"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Последний отчет по поручению Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

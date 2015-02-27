@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Статус поручения"
+		ID="{D502B30F-5612-429C-A249-C597B3FD2C79}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentStatusZkh"
+		Name="AssignmentStatusZkh"
+		Type="Choice"
+		Format="Dropdown"
+		Required="FALSE"
+		FillInChoice="FALSE"
+		Description="Статус поручения ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<CHOICES>
+			<CHOICE>На исполнении</CHOICE>
+			<CHOICE>Срок истек</CHOICE>
+      <CHOICE>Исполнено</CHOICE>
+		</CHOICES>
+	</Field>
+</Elements>

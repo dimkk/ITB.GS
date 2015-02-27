@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-20 17:04:37Z
+        Created by: SPDEV\developer
+              Name: ReportLand
+       Description: Тип содержимого для отчетов по поручениям Земля
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x01007FDCB2687F2146D09DC863F8CA7B636F"
+		Name="ReportLand"
+		Description="Тип содержимого для отчетов по поручениям Земля"
+		Group="Земля.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{24B6A002-B3AA-476C-B1B1-91BAFD9D2A01}"
+				Name="ReportAssignmentLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{F602E3E4-E182-4042-8B25-A3323A09656A}"
+				Name="ReportDateLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{7C7B371E-1516-498C-8034-7BB275C24543}"
+				Name="ReportDecisionLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{F7197F50-01AF-4949-A559-DF738B686E57}"
+				Name="ReportExpectedDateLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{FE82758A-3805-4FA8-A4CF-226DD698EEC2}"
+				Name="ReportInfoLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{6B4762FB-A60E-43C1-B544-BDAF8325AFD8}"
+				Name="ReportNewDeadlineLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{D384F20A-FE9B-44F1-87CF-79F412A5352C}"
+				Name="ReportRequestDateLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{872F853E-A71E-486E-9E82-8E34119C30A5}"
+				Name="ReportResolutionCommentLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{218F4B3E-D503-4448-A1BB-EA67C267732F}"
+				Name="ReportTextLand"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

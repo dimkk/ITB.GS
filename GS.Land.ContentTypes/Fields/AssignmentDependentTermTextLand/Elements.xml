@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Зависимый срок"
+		ID="{52750479-3240-4257-B703-743C3D9FB969}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentDependentTermTextLand"
+		Name="AssignmentDependentTermTextLand"
+		Type="Text"
+		Required="FALSE"
+		MaxLength="255"
+		Description="Зависимый срок (текстовое представление зависимости от другого поручения Земля)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

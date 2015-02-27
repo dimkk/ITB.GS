@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Решение"
+		ID="{D6DAFBE7-49FF-42FC-A6C7-C9C8BA70B7FF}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueDecisionLand"
+		Name="IssueDecisionLand"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="15"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Решение по вопросу заседания Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

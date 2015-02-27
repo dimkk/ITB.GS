@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Подномер вопроса"
+		ID="{BD4C74B7-3DC5-485E-A1B1-922871EA0056}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueSubnumberLand"
+		Name="IssueSubnumberLand"
+		Type="Integer"
+		Required="TRUE"
+		Percentage="FALSE"
+		Min="0"
+		Commas="FALSE"
+		Description="Подномер вопроса заседания Земля (дополнительная часть номера)"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<Default>0</Default>
+	</Field>
+</Elements>

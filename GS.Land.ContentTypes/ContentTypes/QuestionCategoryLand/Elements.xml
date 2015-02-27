@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-26 12:46:15Z
+        Created by: SPDEV\developer
+              Name: QuestionCategoryLand
+       Description: Тип контента для справочника категорий
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x01000C03675F0BBC44219ABE44FA57DEBB7D"
+		Name="QuestionCategoryLand"
+		Description="Тип контента для справочника категорий"
+		Group="Земля.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{8B3E15C7-5481-4D1E-8ABB-8F991CF1A519}"
+				Name="QuestionCategoryNameLand"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ListInstance
+		Title="ЖКХ: Вопросы повестки заседания"
+		Description="Вопросы повестки заседания ЖКХ"
+		FeatureId="aa4f90db-41b8-47b1-b9d9-9bff1ea683c2"
+		Id="F7A55621-4C89-456F-890B-EA05EBE21068"
+		Url="Lists/IssueZkhList"
+		OnQuickLaunch="TRUE"
+		QuickLaunchUrl="Lists/IssueZkhList/AllItems.aspx"
+		RootWebOnly="FALSE"
+		TemplateType="10151">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Вопрос повестки заседания МВК 1</Field>
+          <Field Name="IssueDescriptionZkh">Описание "Вопрос повестки заседания МВК 1"</Field>
+          <Field Name="IssueInvestorZkh">Инвестор "Вопрос повестки заседания МВК 1"</Field>
+          <Field Name="IssueCadastreIdZkh">Кадастровый номер "Вопрос повестки заседания МВК 1"</Field>
+          <Field Name="IssueDecisionZkh">Решение "Вопрос повестки заседания МВК 1"</Field>
+          <Field Name="IssueAddressZkh">Адрес "Вопрос повестки заседания МВК 1"</Field>
+          <Field Name="IssueThemeZkh">Тема "Вопрос повестки заседания МВК 1"</Field>
+          <Field Name="IssueNumberZkh">1</Field>
+          <Field Name="IssueSubnumberZkh">2</Field>
+          <Field Name="IssueInfoZkh">Информация "Вопрос повестки заседания МВК 1"</Field>
+          <Field Name="IssueCategoryZkh">1</Field>
+          <Field Name="IssueCoReportersZkh">1</Field>
+          <Field Name="IssueDecisionTypeZkh">1</Field>
+          <Field Name="IssueMeetingZkh">1</Field>
+          <Field Name="IssueMunicipalDistrictZkh">1</Field>
+          <Field Name="IssueReporterZkh">1</Field>
+          <Field Name="IssueSettlementZkh">1</Field>
+          <Field Name="IssueOrderZkh">1</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

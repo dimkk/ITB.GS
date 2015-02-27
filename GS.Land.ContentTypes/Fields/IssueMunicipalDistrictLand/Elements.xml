@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Муниципальный район\Городской округ"
+		ID="{37C58DB8-7316-4344-BDB3-CEA8F4A7724A}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueMunicipalDistrictLand"
+		Name="IssueMunicipalDistrictLand"
+		Type="Lookup"
+		List="Lists/Municipality"
+		ShowField="LinkTitle"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на муниципальный район/городской округ вопроса Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

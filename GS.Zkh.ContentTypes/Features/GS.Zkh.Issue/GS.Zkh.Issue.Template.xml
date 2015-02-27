@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+************************************************************************
+       Company: ITB
+   Application: GS
+  Created date: 2015-02-10 12:59:27Z
+    Created by: SPDEV\developer
+  Feature Name: GS.Zkh.Issue
+ Feature Title: ГС.ЖКХ: 04. Столбцы для списка вопросов повестки заседания
+   Description: Столбцы сайта, типы содержимого и определения списка вопросов повестки заседания ЖКХ
+       History: Initial Version 1.0.0.0 
+************************************************************************
+-->
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ElementManifests></ElementManifests>
+</Feature>

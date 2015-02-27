@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Организация исполнителя"
+		ID="{12A19BD6-9C0D-429D-963E-235CFC2A62DC}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentExecutorOrgLand"
+		Name="AssignmentExecutorOrgLand"
+		Type="Lookup"
+		List="Lists/OrganizationBookList"
+		ShowField="OrganizationName"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Организация исполнителя по поручению Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

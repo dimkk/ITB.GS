@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Состояние контроля поручения"
+		ID="{EA5E1148-D219-4B90-8D0A-CB225629A47D}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentControlStateLand"
+		Name="AssignmentControlStateLand"
+		Type="Choice"
+		Format="Dropdown"
+		Required="FALSE"
+		FillInChoice="FALSE"
+		Description="Состояние контроля поручения Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+		<CHOICES>
+			<CHOICE>На контроле</CHOICE>
+			<CHOICE>Снято с контроля</CHOICE>
+		</CHOICES>
+	</Field>
+</Elements>

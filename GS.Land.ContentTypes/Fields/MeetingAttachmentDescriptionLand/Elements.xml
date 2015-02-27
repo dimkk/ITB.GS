@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Name                            ="MeetingAttachmentDescriptionLand"
+		StaticName                      ="MeetingAttachmentDescriptionLand"
+		Group                           ="Земля.Вложения.Заседания"
+		DisplayName                     ="Описание вложения"
+		Description                     ="Описание вложения заседания Земля"
+		ID                              ="{1505291F-370D-44D4-B88D-3776EBF29936}"
+		SourceID                        ="http://schemas.microsoft.com/sharepoint/v3"
+		Type                            ="Note"
+		Sortable                        ="FALSE"
+		NumLines                        ="7"
+		Required                        ="FALSE"
+		AppendOnly                      ="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText                        ="FALSE"
+    Overwrite                       ="TRUE"
+    AllowDeletion                   ="FALSE"/>
+</Elements>

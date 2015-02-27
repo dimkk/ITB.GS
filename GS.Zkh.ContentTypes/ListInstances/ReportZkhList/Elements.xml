@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ListInstance
+		Title="ЖКХ: Отчеты по поручениям"
+		Description="ReportZkhList Description"
+		FeatureId="8734425f-8b4b-4c9e-b55c-77fa9f607ec1"
+		Id="BD00ACCA-A465-4ACA-9284-84ABEA551522"
+		Url="Lists/ReportZkhList"
+		OnQuickLaunch="TRUE"
+		QuickLaunchUrl="Lists/ReportZkhList/AllItems.aspx"
+		RootWebOnly="FALSE"
+		TemplateType="10153">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Отчет по поручению МВК 1</Field>
+          <Field Name="ReportAssignmentZkh">1</Field>
+          <Field Name="ReportDateZkh">2014-07-15 15:30:00</Field>
+          <Field Name="ReportDecisionZkh">1</Field>
+          <Field Name="ReportExpectedDateZkh">2014-07-16 16:30:00</Field>
+          <Field Name="ReportInfoZkh">Информация "Отчет по поручению МВК 1"</Field>
+          <Field Name="ReportNewDeadlineZkh">2014-07-17 17:30:00</Field>
+          <Field Name="ReportRequestDateZkh">2014-07-14 14:30:00</Field>
+          <Field Name="ReportResolutionCommentZkh">Комментарий к резолюции "Отчет по поручению МВК 1"</Field>
+          <Field Name="ReportTextZkh">Текст "Отчет по поручению МВК 1"</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

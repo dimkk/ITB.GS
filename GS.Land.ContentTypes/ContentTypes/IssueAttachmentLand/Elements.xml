@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-20 12:09:15Z
+        Created by: SPDEV\developer
+              Name: IssueAttachmentLand
+       Description: Тип содержимого для вложений вопроса повестки заседания Земля
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x0100BECB02A9639D4C5F840C486648C30337"
+		Name="IssueAttachmentLand"
+		Description="Тип содержимого для вложений вопроса повестки заседания Земля"
+		Group="Земля.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{8FA402DA-0997-4066-B38E-DE1DEAECBC88}"
+				Name="IssueAttachmentIssueLand"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

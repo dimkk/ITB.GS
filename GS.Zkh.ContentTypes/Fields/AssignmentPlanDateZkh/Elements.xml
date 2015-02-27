@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Срок исполнения поручения"
+		ID="{A208BED3-B87E-4685-B2D6-0715E76D638B}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentPlanDateZkh"
+		Name="AssignmentPlanDateZkh"
+		Type="DateTime"
+		Required="FALSE"
+		Format="DateOnly"
+		Description="Планируемый срок исполнения поручения ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

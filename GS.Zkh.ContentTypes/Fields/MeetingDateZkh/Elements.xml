@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Заседания"
+		DisplayName="Дата проведения"
+		ID="{B88DB9A2-0013-4D58-9EC7-EDD4D879E384}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="MeetingDateZkh"
+		Name="MeetingDateZkh"
+		Type="DateTime"
+		Required="TRUE"
+		Format="DateTime"
+		Description="Дата проведения заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

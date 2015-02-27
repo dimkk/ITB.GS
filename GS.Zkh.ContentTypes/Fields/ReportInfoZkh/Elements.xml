@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Отчеты"
+		DisplayName="Информация по отчету"
+		ID="{E69D2956-623A-4BAA-A56B-DD4249175A50}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportInfoZkh"
+		Name="ReportInfoZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="6"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Дополнительная информация по отчету ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

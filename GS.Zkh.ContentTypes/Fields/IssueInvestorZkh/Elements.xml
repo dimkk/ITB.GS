@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Инвестор"
+		ID="{CD7EFF4C-90F7-4885-AA4A-F57746406634}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueInvestorZkh"
+		Name="IssueInvestorZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="1"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Инвестор по вопросу заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c312542e-547b-4557-a5fa-99b5c657ce24" description="Набор списков для поручений Земля" featureId="c312542e-547b-4557-a5fa-99b5c657ce24" imageUrl="GS\FeatureIcon_GS.Land.AssignmentLists.gif" imageAltText="ГС.Земля: 07. Списки для поручений" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="$SharePoint.Type.82577d19-6d85-4fde-95a1-dccf54c1bc9c.FullName$" scope="Site" solutionId="070a12fe-8292-479f-ab3a-f73e6711fa72" title="ГС.Земля: 07. Списки для поручений" version="AAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0ZW0uVmVyc2lvbgQAAAAGX01ham9yBl9NaW5vcgZfQnVpbGQJX1JldmlzaW9uAAAAAAgICAgBAAAAAAAAAAAAAAAAAAAACw==" deploymentPath="$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+  <projectItems>
+    <projectItemReference itemId="59d3899a-ec1e-435c-ab69-347d97ff95e0" />
+  </projectItems>
+</feature>

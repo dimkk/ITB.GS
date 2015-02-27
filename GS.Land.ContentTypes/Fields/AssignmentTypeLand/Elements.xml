@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Поручения"
+		DisplayName="Тип поручения"
+		ID="{630577FD-D08D-457D-A43B-402C43F54292}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentTypeLand"
+		Name="AssignmentTypeLand"
+		Type="Lookup"
+		List="Lists/AssignmentTypeList"
+		ShowField="AssignmentTypeName"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Тип поручения Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

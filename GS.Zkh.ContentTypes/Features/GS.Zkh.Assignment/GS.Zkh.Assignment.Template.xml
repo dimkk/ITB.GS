@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+************************************************************************
+       Company: ITB
+   Application: GS
+  Created date: 2015-02-10 16:19:57Z
+    Created by: SPDEV\developer
+  Feature Name: GS.Zkh.Assignment
+ Feature Title: ГС.ЖКХ: 06. Столбцы для списка поручений
+   Description: Столбцы сайта, типы содержимого и определения списка поручений ЖКХ
+       History: Initial Version 1.0.0.0 
+************************************************************************
+-->
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ElementManifests></ElementManifests>
+</Feature>

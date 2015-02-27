@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Содокладчики"
+		ID="{E2959683-FF29-4FDB-99B3-2F8B45464493}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueCoReportersZkh"
+		Name="IssueCoReportersZkh"
+		Type="LookupMulti"
+		List="Lists/ParticipantBookList"
+		ShowField="ParticipantFullName"
+		Mult="TRUE"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылки на содокладчиков по вопросу заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

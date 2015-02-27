@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Отчеты"
+		DisplayName="Комментарий к резолюции"
+		ID="{40BA073B-A67B-4A58-A9BE-49EB6933015A}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportResolutionCommentZkh"
+		Name="ReportResolutionCommentZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="6"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Комментарий к резолюции отчета по поручению ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

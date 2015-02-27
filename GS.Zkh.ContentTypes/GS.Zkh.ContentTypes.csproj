@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GS.Zkh.ContentTypes</RootNamespace>
+    <AssemblyName>GS.Zkh.ContentTypes</AssemblyName>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
+    <ProjectGuid>{C971877B-B9F5-4FF7-9502-8CD2043588BE}</ProjectGuid>
+    <IncludeAssemblyInPackage>True</IncludeAssemblyInPackage>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ITB.SP.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58c67d7e59a9117f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ITB.SAMRT\ITB.SP.Tools\bin\Debug\ITB.SP.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\GS.Zkh.AssignmentLists\GS.Zkh.EventReceiver.cs">
+      <DependentUpon>GS.Zkh.AssignmentLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ContentTypes\AssignmentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e04c6055-9630-4ed3-ae21-00c4f15e37de}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\IssueAttachmentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9382f800-4466-4a15-8574-620b15d90a04}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\IssueZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ff24cd82-109e-4468-b150-e8bf008bfbba}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\MeetingAttachmentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1eb6de12-0158-4154-84d6-2d030db44ba9}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\MeetingZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{252d29d6-8fcc-4aa8-a475-291bf425361c}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\ReportZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{73aeb0c1-167d-404d-af89-c2fd13a62541}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\GS.Zkh.Meeting\GS.Zkh.Meeting.feature">
+      <FeatureId>{e8ba2a3f-bf41-4e56-bd6f-94da7f577790}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.MeetingLists\GS.Zkh.MeetingLists.feature">
+      <FeatureId>{ad702f57-5acf-446c-8309-b2dbc084a532}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.Issue\GS.Zkh.Issue.feature">
+      <FeatureId>{3640f154-182e-444e-a189-d846c04e5ef6}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.IssueLists\GS.Zkh.IssueLists.feature">
+      <FeatureId>{172e73c6-9b91-4299-90fd-daa3253059d4}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.MeetingAttachment\GS.Zkh.MeetingAttachment.feature">
+      <FeatureId>{35a7f199-8918-4a08-9262-fbd4242382c6}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.MeetingAttachmentLists\GS.Zkh.MeetingAttachmentLists.feature">
+      <FeatureId>{c23d3ff8-7b97-43d5-8afd-f8e02eb853af}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.IssueAttachment\GS.Zkh.IssueAttachment.feature">
+      <FeatureId>{ad55ae78-4e7e-4db1-a6e5-f473579747b7}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.IssueAttachmentLists\GS.Zkh.IssueAttachmentLists.feature">
+      <FeatureId>{eb5803f0-be78-47ca-8855-d310ee30812a}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.Assignment\GS.Zkh.Assignment.feature">
+      <FeatureId>{7fde7361-3b10-4cbf-b9fe-09bd6a8f8b7c}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.AssignmentLists\GS.Zkh.AssignmentLists.feature">
+      <FeatureId>{0c543810-a45e-495e-879a-9745aa8a8e0f}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.Report\GS.Zkh.Report.feature">
+      <FeatureId>{d94f0a71-2f7d-4d44-9e36-21e4de64ea55}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.ReportLists\GS.Zkh.ReportLists.feature">
+      <FeatureId>{00ec5dc7-2a84-4c99-924f-935c679175be}</FeatureId>
+    </None>
+    <None Include="Fields\AssignmentCoExecutorsZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f3018ef0-94e1-4136-b5f9-5724e5a3cf65}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentControllerZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{21e4d731-4487-4542-af60-ff0d72f6ac18}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentControlStateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b8272523-b714-4cd6-9392-7a38568be957}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDaysForResolveZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e3c56aeb-acd5-4632-ad7a-a0e08452fd8e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDayTypeZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ef220a2e-4b8a-40fe-95b3-ef6819f9f1d8}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDependentAssignmentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{30c8ee5a-33f0-4d9c-bf37-dd02933a95da}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDependentAssignTextZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a15a36bd-0e46-4fdd-b351-8d022b6478f2}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDependentTermTextZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{53dce2c0-8366-4657-8e74-ff6f87f16a33}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentExecutorZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{93005646-1d92-47c2-9880-3db1a3861614}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentExecutorOrgZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d64c2c2a-569b-4e01-8dd5-7c82b239c0aa}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentExecutorPositionZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7f9dc069-6d9a-4ce0-b4e4-d573d85ae21a}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentFactDateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{75d1b2a5-bea2-4388-9ec6-b1db4e17455b}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentIssueZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f7063b5d-9684-4bad-b546-2deba3f0d096}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentLastReportZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3945286f-cd9d-441f-ad07-5ff3d991564b}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentNoteZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e7d158f4-e2b1-4fd4-9b0d-b5220c3d41f4}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentNumberZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d8604509-1637-47b4-986f-f071085e1d13}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentPlanDateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8a3345a5-71e7-4956-a35a-d756df4b3e74}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentPlanIsDependentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{01606f51-6a56-43a0-bfee-01de08a509fa}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentProlongationCountZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{543fe4f6-d5f5-404e-8a10-edb5282c5fba}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentResponsibleExecutorZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f78a6486-9ce9-4b5c-bf2c-d30aafa5e19d}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentStatusZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1e4c5432-bf71-4a7b-9280-b7f2cac7e5e9}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentTextZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{46561de5-277b-4027-b635-d5746e000a1e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentTypeZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7f435e4b-a5f3-424e-ad4b-8e880718a15f}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueAddressZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{aeec9865-2b30-4da6-9a54-e27f9ee4e8a7}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueAttachmentIssueZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{88a5423e-47df-4710-aa92-644b457f11ed}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueCadastreIdZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e791d96e-834f-4500-8c0e-296ea3aff806}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueCategoryZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a62925a5-8cb5-4331-99a9-9ed978c57035}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingOtherParticipantsZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f281ed97-12d5-4de1-8233-253d4d86f277}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingParticipantsZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{67ba7cd7-01fa-43e6-9b63-f522c8049d63}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueCoReportersZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f07f95fa-ef0c-4cf4-aed5-d80acb2d7aa5}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDecisionZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1101b365-f934-46e1-ba65-a103559838c7}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDecisionTypeZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{742b6740-fbf6-455f-8b12-d72475dc2a02}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDescriptionZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{32c6217f-e331-44b8-8c7f-8066590a4d35}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueInfoZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{48dc9ba7-0dee-47e0-acfd-98fbea0f0f69}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueInvestorZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ccb7d590-165c-48e5-8e22-f4092b9ba877}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingDateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d2d4a6f7-6ea0-4e8a-bb80-f5fce02e582c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingDateNumberZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{22fb1b8d-0297-428d-8340-541359c8140f}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{15b92bd3-7258-4a0b-97b3-54e0282c05e3}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingNumberZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ae01d106-c9db-4998-b07a-3877e1cd6303}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMunicipalDistrictZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1302455b-bd71-43a7-a7cd-a2ebd02c8f6e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueNumberZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f76b2dfa-1d33-4a07-9024-951ed582f0bf}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueNumberTextZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d826842a-2696-4f8c-aacb-4368e66f830c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueReporterZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f81cf8f0-7939-45fa-be45-bb80fca4241f}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueSettlementZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ae29217a-f97b-4b83-b6b4-37cfe321fc5c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueSubnumberZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1b42f66f-7b5c-4bb9-b60c-e05c39a441dc}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueThemeZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c67dccad-dbea-465a-b5f9-0c1dad9e91eb}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentDescriptionZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6e392938-fa1a-454a-a615-2ec8d9d9ca11}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentDocTypeZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{03867012-fbde-4cb5-85e4-f5c1ff4b1da9}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentMeetingZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{461e2970-f72b-495e-9029-e21ba5d6c9cc}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentProtocolCopyZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{58c99009-eb86-4013-a509-43ad5d6a12e1}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingCommentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ff251ab1-5bf0-4223-a525-bb349fab3972}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingDateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f1e37f31-f81b-4ae7-b6d8-aaa1f98f1bf3}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingDateNumberZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fff1e776-470d-433e-a050-ae759210e3cf}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingNumberZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b4c1635a-31e3-432a-9706-00a81eac2dc7}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingPlaceZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7dd70827-fd23-4eb3-a3c3-e13facfad514}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingStatusZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{07dca598-8096-4d55-9275-6939951eb87e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportAssignmentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{baecd2ac-093d-4fe3-98de-e340b779f9a5}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportDateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d8c50d05-d921-4f2b-8548-a0526d7784bf}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportDecisionZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0fb3d54b-e598-4f95-b2b6-b3c2caeb7f21}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportExpectedDateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7f1df33e-1d25-4a51-a0e6-371c7e14102a}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportInfoZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d8648763-3733-4dfd-83fa-a729ec6b7de3}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportNewDeadlineZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{65bfe74f-5a3e-4603-b396-86c333b9122c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportRequestDateZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{34f011fb-ea05-4b97-9762-9bd15d315ea2}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportResolutionCommentZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a3c2f75c-6b07-4271-823d-d38cc6661631}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportTextZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2c6659f2-3a1c-420d-9f6f-95e650c48c84}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\AssignmentZkhListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9ad01ce4-2a5c-46a6-954f-cbed4414138c}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\IssueAttachmentZkhListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{04215fb6-0fe0-4dbc-94a5-bc85c3e722da}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\IssueZkhListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2b30f1a7-2f79-4350-ba2d-6f7eaa13186d}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\MeetingAttachmentZkhListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{490a344e-0941-4eae-8947-ca8d595c9e4e}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\MeetingZkhListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b7399b16-b781-4f76-8e94-c3bfb0d6c394}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\ReportZkhListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2d27845f-e5b7-4529-92c9-b9cde42e1c74}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\AssignmentZkhList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9f2b8a8e-58ce-4509-a430-0c0bc79a39e5}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\IssueAttachmentZkhList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{45f4808d-70b3-4ae4-97dd-4c92e3ffde63}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\IssueZkhList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{14c5edb6-9188-449e-af25-e32bf051a7d2}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\MeetingAttachmentZkhList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{454edc66-c40f-40f9-9d3d-8fd9d8f985a7}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\MeetingZkhList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{26b13924-f2b2-49da-be3d-a751d017c62c}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\ReportZkhList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1b4c29ee-a2a6-4d19-8388-796e2686787b}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{070A12FE-8292-479F-AB3A-F73E6711FA72}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Template\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e3790c3b-c77b-48e4-b06a-6501eb70349d}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ContentTypes\AssignmentZkh\Elements.xml" />
+    <Content Include="ContentTypes\IssueAttachmentZkh\Elements.xml" />
+    <Content Include="ContentTypes\IssueZkh\Elements.xml" />
+    <Content Include="ContentTypes\MeetingAttachmentZkh\Elements.xml" />
+    <Content Include="ContentTypes\MeetingZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ContentTypes\ReportZkh\Elements.xml" />
+    <Content Include="Features\GS.Zkh.Meeting\GS.Zkh.Meeting.Template.xml">
+      <DependentUpon>GS.Zkh.Meeting.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.MeetingLists\GS.Zkh.MeetingLists.Template.xml">
+      <DependentUpon>GS.Zkh.MeetingLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.Issue\GS.Zkh.Issue.Template.xml">
+      <DependentUpon>GS.Zkh.Issue.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.IssueLists\GS.Zkh.IssueLists.Template.xml">
+      <DependentUpon>GS.Zkh.IssueLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.MeetingAttachment\GS.Zkh.MeetingAttachment.Template.xml">
+      <DependentUpon>GS.Zkh.MeetingAttachment.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.MeetingAttachmentLists\GS.Zkh.MeetingAttachmentLists.Template.xml">
+      <DependentUpon>GS.Zkh.MeetingAttachmentLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.IssueAttachment\GS.Zkh.IssueAttachment.Template.xml">
+      <DependentUpon>GS.Zkh.IssueAttachment.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.IssueAttachmentLists\GS.Zkh.IssueAttachmentLists.Template.xml">
+      <DependentUpon>GS.Zkh.IssueAttachmentLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.Assignment\GS.Zkh.Assignment.Template.xml">
+      <DependentUpon>GS.Zkh.Assignment.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.AssignmentLists\GS.Zkh.AssignmentLists.Template.xml">
+      <DependentUpon>GS.Zkh.AssignmentLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.Report\GS.Zkh.Report.Template.xml">
+      <DependentUpon>GS.Zkh.Report.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.ReportLists\GS.Zkh.ReportLists.Template.xml">
+      <DependentUpon>GS.Zkh.ReportLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Fields\AssignmentCoExecutorsZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\AssignmentControllerZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentControlStateZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentDaysForResolveZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentDayTypeZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\AssignmentDependentAssignmentZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentDependentAssignTextZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentDependentTermTextZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentExecutorZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentExecutorOrgZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentExecutorPositionZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentFactDateZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentIssueZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentLastReportZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentNoteZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentNumberZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentPlanDateZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentPlanIsDependentZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentProlongationCountZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentResponsibleExecutorZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentStatusZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentTextZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentTypeZkh\Elements.xml" />
+    <Content Include="Fields\IssueAddressZkh\Elements.xml" />
+    <Content Include="Fields\IssueAttachmentIssueZkh\Elements.xml" />
+    <Content Include="Fields\IssueCadastreIdZkh\Elements.xml" />
+    <Content Include="Fields\IssueCategoryZkh\Elements.xml" />
+    <Content Include="Fields\MeetingOtherParticipantsZkh\Elements.xml" />
+    <Content Include="Fields\MeetingParticipantsZkh\Elements.xml" />
+    <Content Include="Fields\IssueCoReportersZkh\Elements.xml" />
+    <Content Include="Fields\IssueDecisionZkh\Elements.xml" />
+    <Content Include="Fields\IssueDecisionTypeZkh\Elements.xml" />
+    <Content Include="Fields\IssueDescriptionZkh\Elements.xml" />
+    <Content Include="Fields\IssueInfoZkh\Elements.xml" />
+    <Content Include="Fields\IssueInvestorZkh\Elements.xml" />
+    <Content Include="Fields\IssueMeetingDateZkh\Elements.xml" />
+    <Content Include="Fields\IssueMeetingDateNumberZkh\Elements.xml" />
+    <Content Include="Fields\IssueMeetingZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\IssueMeetingNumberZkh\Elements.xml" />
+    <Content Include="Fields\IssueMunicipalDistrictZkh\Elements.xml" />
+    <Content Include="Fields\IssueNumberZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\IssueNumberTextZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\IssueReporterZkh\Elements.xml" />
+    <Content Include="Fields\IssueSettlementZkh\Elements.xml" />
+    <Content Include="Fields\IssueSubnumberZkh\Elements.xml" />
+    <Content Include="Fields\IssueThemeZkh\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentDescriptionZkh\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentDocTypeZkh\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentMeetingZkh\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentProtocolCopyZkh\Elements.xml" />
+    <Content Include="Fields\MeetingCommentZkh\Elements.xml" />
+    <Content Include="Fields\MeetingDateZkh\Elements.xml" />
+    <Content Include="Fields\MeetingDateNumberZkh\Elements.xml" />
+    <Content Include="Fields\MeetingNumberZkh\Elements.xml" />
+    <Content Include="Fields\MeetingPlaceZkh\Elements.xml" />
+    <Content Include="Fields\MeetingStatusZkh\Elements.xml" />
+    <Content Include="Fields\ReportAssignmentZkh\Elements.xml" />
+    <Content Include="Fields\ReportDateZkh\Elements.xml" />
+    <Content Include="Fields\ReportDecisionZkh\Elements.xml" />
+    <Content Include="Fields\ReportExpectedDateZkh\Elements.xml" />
+    <Content Include="Fields\ReportInfoZkh\Elements.xml" />
+    <Content Include="Fields\ReportNewDeadlineZkh\Elements.xml" />
+    <Content Include="Fields\ReportRequestDateZkh\Elements.xml" />
+    <Content Include="Fields\ReportResolutionCommentZkh\Elements.xml" />
+    <Content Include="Fields\ReportTextZkh\Elements.xml" />
+    <Content Include="ListDefinitions\AssignmentZkhListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\AssignmentZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueAttachmentZkhListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\IssueAttachmentZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueZkhListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\IssueZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\MeetingAttachmentZkhListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\MeetingAttachmentZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\MeetingZkhListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\MeetingZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\ReportZkhListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\ReportZkhListDefinition\schema.xml" />
+    <Content Include="ListInstances\AssignmentZkhList\Elements.xml" />
+    <Content Include="ListInstances\IssueAttachmentZkhList\Elements.xml" />
+    <Content Include="ListInstances\IssueZkhList\Elements.xml" />
+    <Content Include="ListInstances\MeetingAttachmentZkhList\Elements.xml" />
+    <Content Include="ListInstances\MeetingZkhList\Elements.xml" />
+    <Content Include="ListInstances\ReportZkhList\Elements.xml" />
+    <Content Include="Template\Images\GS\FeatureIcon_AssignmentZkhList.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_AssignmentZkhList2.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.MVK.IssueAttachment.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.Assignment.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.AssignmentLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.Issue.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.IssueAttachment.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.IssueAttachmentLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_Gs.Zkh.IssueLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.Meeting.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.MeetingAttachment.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.MeetingAttachmentList.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.MeetingAttachmentLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.MeetingLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.Report.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.ReportLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_Assignment.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_Issue.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_IssueAttachmentZkhList.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_MeetingZkh.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_MeetingZkh2.gif" />
+    <Content Include="Template\Images\GS\ListIcon_AssignmentZkhListDefinition.gif" />
+    <Content Include="Template\Images\GS\ListIcon_GS_MeetingLists2.gif" />
+    <Content Include="Template\Images\GS\ListIcon_IssueAttachmentZkhListDefinition.gif" />
+    <Content Include="Template\Images\GS\ListIcon_IssueZkhListDefinition.gif" />
+    <Content Include="Template\Images\GS\ListIcon_IssueZkhListDefinition2.gif" />
+    <Content Include="Template\Images\GS\ListIcon_MeetingAttachmentZkhListDefinition.gif" />
+    <Content Include="Template\Images\GS\ListIcon_MeetingZkhDef.gif" />
+    <Content Include="Template\Images\GS\ListIcon_ReportZkhListDefinition.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Condition="!Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(SolutionDir)\SPSF.targets" />
+  <Import Condition=" Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(MSBuildProjectDirectory)\..\SPSF.targets" />
+  <Target Name="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)" />
+  <Target Name="AfterBuild" DependsOnTargets="$(AfterBuildDependsOn)" />
+</Project>

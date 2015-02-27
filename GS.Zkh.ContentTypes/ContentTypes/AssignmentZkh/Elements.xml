@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-10 16:20:00Z
+        Created by: SPDEV\developer
+              Name: AssignmentZkh
+       Description: Тип содержимого для поручения ЖКХ
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x0100014F5719DD534821B6A8A339827FB1D4"
+		Name="AssignmentZkh"
+		Description="Тип содержимого для поручения ЖКХ"
+		Group="ЖКХ.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{AEA74B74-F9B3-4725-AF3B-DFE4AEEA400F}"
+				Name="AssignmentCoExecutorsZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{36A21217-65EC-46AE-8C4F-58D81F93D26C}"
+				Name="AssignmentControllerZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{0CBA25AF-509B-40CB-B80E-C30832DDDFE0}"
+				Name="AssignmentControlStateZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{98D3758C-2AD7-4D51-A788-372E6B293113}"
+				Name="AssignmentDaysForResolveZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{3930F287-1889-40B7-8E2F-DA88767ED696}"
+				Name="AssignmentDayTypeZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{783DB21F-5018-4C0D-9664-67A541589219}"
+				Name="AssignmentExecutorOrgZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{D02BD806-F6DC-45B3-AC74-A3A278FBED9A}"
+				Name="AssignmentExecutorPositionZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{00E573D5-F127-45E7-9B3F-5CA27D7620A2}"
+				Name="AssignmentExecutorZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{184E2CF9-492C-4E4C-AB29-B5A8698120F0}"
+				Name="AssignmentFactDateZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{B2610A79-30AB-474B-B16E-1FCFCF871C28}"
+				Name="AssignmentIssueZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{3ACBC0D3-885E-4296-BC3C-7BBBCD60F432}"
+				Name="AssignmentLastReportZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{18FA2687-E1B2-429C-A0E9-306BB97DA3C4}"
+				Name="AssignmentNoteZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{8226C6AF-E8D4-46F8-AB25-7CD85BFCC742}"
+				Name="AssignmentNumberZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{A208BED3-B87E-4685-B2D6-0715E76D638B}"
+				Name="AssignmentPlanDateZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{5A9E3F70-D376-4BD3-904B-4ADF216EABDF}"
+				Name="AssignmentPlanIsDependentZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{3F1CAE91-FCEC-4BD6-B2DE-29E9D2061139}"
+				Name="AssignmentProlongationCountZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{157654DE-48C2-49C2-9F82-CA61048A2F3B}"
+				Name="AssignmentResponsibleExecutorZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{D502B30F-5612-429C-A249-C597B3FD2C79}"
+				Name="AssignmentStatusZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{BE4E005D-8DCB-4B1F-8CDF-852F95BC4203}"
+				Name="AssignmentTextZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{B577FFE6-EC76-4051-BB7F-2AFCFADF17EF}"
+				Name="AssignmentTypeZkh"
+				Required="FALSE" />
+      <FieldRef
+  ID="{FFF91BC3-E183-412F-A69A-C509B330C237}"
+  Name="AssignmentDependentAssignTextZkh"
+  Required="FALSE" />
+      <FieldRef
+  ID="{EE00990E-5E82-473D-919E-EBCB53F5A5E6}"
+  Name="AssignmentDependentTermTextZkh"
+  Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

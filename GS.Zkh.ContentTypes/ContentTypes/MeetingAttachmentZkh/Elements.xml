@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-10 13:41:49Z
+        Created by: SPDEV\developer
+              Name: MeetingAttachmentZkh
+       Description: Тип содержимого для вложений заседания ЖКХ
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x0100D7BAA78582FC4DBBB1D3E8BE799D2D88"
+		Name="MeetingAttachmentZkh"
+		Description="Тип содержимого для вложений заседания ЖКХ"
+		Group="ЖКХ.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{BC490592-10AA-4588-AAD6-FD339277E06A}"
+				Name="MeetingAttachmentDescriptionZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{4BC9B4EA-48CA-4E76-B3FB-F952AA35F5A5}"
+				Name="MeetingAttachmentDocTypeZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{1F3732EB-A345-4D9B-BBCB-93F17393CFCC}"
+				Name="MeetingAttachmentMeetingZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{B2A5AFF0-FFFF-4A31-A2DA-2296BAC49380}"
+				Name="MeetingAttachmentProtocolCopyZkh"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

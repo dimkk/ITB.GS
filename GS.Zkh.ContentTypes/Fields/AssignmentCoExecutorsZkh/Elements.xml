@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Поручения"
+		DisplayName="Соисполнители"
+		ID="{AEA74B74-F9B3-4725-AF3B-DFE4AEEA400F}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="AssignmentCoExecutorsZkh"
+		Name="AssignmentCoExecutorsZkh"
+		Type="LookupMulti"
+		List="Lists/ParticipantBookList"
+		ShowField="ParticipantFullName"
+		Mult="TRUE"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Соисполнители по поручению"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

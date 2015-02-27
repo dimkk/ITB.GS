@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Муниципальный район\Городской округ"
+		ID="{AF15B142-CA26-45F7-AC30-B457C9D89CC8}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueMunicipalDistrictZkh"
+		Name="IssueMunicipalDistrictZkh"
+		Type="Lookup"
+		List="Lists/Municipality"
+		ShowField="LinkTitle"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на муниципальный район/городской округ вопроса ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

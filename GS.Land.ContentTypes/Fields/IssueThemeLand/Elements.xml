@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Тема"
+		ID="{02A07603-D2D2-4FA0-AEC4-68DCDBB3E246}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueThemeLand"
+		Name="IssueThemeLand"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="3"
+		Required="TRUE"
+    AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Тема вопроса заседания Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

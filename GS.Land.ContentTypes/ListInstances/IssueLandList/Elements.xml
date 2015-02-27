@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ListInstance
+		Title="Земля: Вопросы повестки заседания"
+		Description="Вопросы повестки заседания Земля"
+		FeatureId="ab0b58ff-31f1-433a-ac6b-bdfb3dcf096e"
+		Id="EFFE806A-4A79-463B-95FD-03269A777D38"
+		Url="Lists/IssueLandList"
+		OnQuickLaunch="TRUE"
+		QuickLaunchUrl="Lists/IssueLandList/AllItems.aspx"
+		RootWebOnly="FALSE"
+		TemplateType="10251" />
+</Elements>

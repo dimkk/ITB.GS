@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Отчеты"
+		DisplayName="Дата отчета"
+		ID="{61E02FA1-CB19-478F-A6AC-631644641A6C}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportDateZkh"
+		Name="ReportDateZkh"
+		Type="DateTime"
+		Required="FALSE"
+		Format="DateTime"
+		Description="Дата отчета по поручению ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

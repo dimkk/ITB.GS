@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-20 11:49:01Z
+        Created by: SPDEV\developer
+              Name: MeetingAttachmentLand
+       Description: Тип содержимого для вложений заседания Земля
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x0100EEDCE90C1868487CB5DB6734BB841DCF"
+		Name="MeetingAttachmentLand"
+		Description="Тип содержимого для вложений заседания Земля"
+		Group="Земля.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{1505291F-370D-44D4-B88D-3776EBF29936}"
+				Name="MeetingAttachmentDescriptionLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{EA001020-2CF9-468D-9774-6285DC8E9023}"
+				Name="MeetingAttachmentDocTypeLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{C2DC7650-FB2E-4751-9566-8CEBA9C3CDEE}"
+				Name="MeetingAttachmentMeetingLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{1A1A1911-4BF0-4FD3-B049-23A4D7C440E5}"
+				Name="MeetingAttachmentProtocolCopyLand"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

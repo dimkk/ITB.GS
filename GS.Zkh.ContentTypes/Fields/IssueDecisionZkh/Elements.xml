@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Решение"
+		ID="{0B763194-60EE-4EFA-B7D4-C32A00327A69}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueDecisionZkh"
+		Name="IssueDecisionZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="15"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Решение по вопросу заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

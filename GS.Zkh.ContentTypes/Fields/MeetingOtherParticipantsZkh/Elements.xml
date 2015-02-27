@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Заседания"
+		DisplayName="Список остальных участников"
+		ID="{9FF61F87-5E22-4C92-B840-584C1D1657EC}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="MeetingOtherParticipantsZkh"
+		Name="MeetingOtherParticipantsZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="6"
+		Required="FALSE"
+		AppendOnly="TRUE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Список остальных участников МВК"></Field>
+</Elements>

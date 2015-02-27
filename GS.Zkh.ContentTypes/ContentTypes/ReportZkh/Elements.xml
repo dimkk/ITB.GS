@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-11 11:25:07Z
+        Created by: SPDEV\developer
+              Name: ReportZkh
+       Description: Тип содержимого для отчетов по поручениям ЖКХ
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x010079D5436B20114EDAB0B4862649FEBE5F"
+		Name="ReportZkh"
+		Description="Тип содержимого для отчетов по поручениям ЖКХ"
+		Group="ЖКХ.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{273667FF-0281-4D96-8F36-E320E6EE5959}"
+				Name="ReportAssignmentZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{61E02FA1-CB19-478F-A6AC-631644641A6C}"
+				Name="ReportDateZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{2F194FD7-7BB6-4052-A778-3A05EE39CB33}"
+				Name="ReportDecisionZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{B7629463-2A49-4C5B-B303-9FFAECBC7994}"
+				Name="ReportExpectedDateZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{E69D2956-623A-4BAA-A56B-DD4249175A50}"
+				Name="ReportInfoZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{1D576B27-8F1E-425B-AC45-76581C188D82}"
+				Name="ReportNewDeadlineZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{0E64E6EB-7B28-4F4A-A931-40BC23389D67}"
+				Name="ReportRequestDateZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{40BA073B-A67B-4A58-A9BE-49EB6933015A}"
+				Name="ReportResolutionCommentZkh"
+				Required="FALSE" />
+			<FieldRef
+				ID="{81A858FD-0554-4853-995A-DAC9054F8C71}"
+				Name="ReportTextZkh"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Информация"
+		ID="{D432FDC3-4A2D-4FD8-90AA-8AA37D3CE332}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueInfoLand"
+		Name="IssueInfoLand"
+		Type="Text"
+		Required="FALSE"
+		MaxLength="255"
+		Description="Дополнительная информация по вопросу Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

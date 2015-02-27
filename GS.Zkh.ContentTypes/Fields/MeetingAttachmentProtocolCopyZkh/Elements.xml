@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Name       ="MeetingAttachmentProtocolCopyZkh"
+		StaticName ="MeetingAttachmentProtocolCopyZkh"
+		Group      ="ЖКХ.Вложения.Заседания"
+		DisplayName="Скан-копия протокола"
+		Description="Скан-копия протокола заседания ЖКХ"
+		ID         ="{B2A5AFF0-FFFF-4A31-A2DA-2296BAC49380}"
+		SourceID   ="http://schemas.microsoft.com/sharepoint/v3"
+		Type       ="Boolean">
+		<Default>1</Default>
+	</Field>
+</Elements>

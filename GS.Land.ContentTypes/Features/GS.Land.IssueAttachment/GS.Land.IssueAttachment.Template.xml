@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+************************************************************************
+       Company: ITB
+   Application: GS
+  Created date: 2015-02-20 12:09:14Z
+    Created by: SPDEV\developer
+  Feature Name: GS.Land.IssueAttachment
+ Feature Title: ГС.Земля: 14. Столбцы для списка вложений вопроса повестки заседания
+   Description: Столбцы сайта, типы содержимого и определения списка вложений вопроса повестки заседания Земля
+       History: Initial Version 1.0.0.0 
+************************************************************************
+-->
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ElementManifests></ElementManifests>
+</Feature>

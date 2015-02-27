@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Поселение"
+		ID="{8218912F-8EED-41A2-889F-D981BDC0F841}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueSettlementLand"
+		Name="IssueSettlementLand"
+		Type="Lookup"
+		List="Lists/Municipality"
+		ShowField="LinkTitle"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на справочник поселений"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

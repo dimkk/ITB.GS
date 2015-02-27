@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Отчеты"
+		DisplayName="Ожидаемая дата"
+		ID="{F7197F50-01AF-4949-A559-DF738B686E57}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportExpectedDateLand"
+		Name="ReportExpectedDateLand"
+		Type="DateTime"
+		Required="FALSE"
+		Format="DateTime"
+		Description="Ожидаемая дата готовности отчета по поручению Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

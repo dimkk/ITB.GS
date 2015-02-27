@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ListInstance
+		Title="ЖКХ: Вложения вопроса повестки заседания"
+		Description="Список вложений вопроса повестки заседания ЖКХ"
+		FeatureId="7f50fc61-7098-4867-b567-9cfd69880f06"
+		Id="093A3793-94A3-461D-8B86-406553143D4F"
+		Url="Lists/IssueAttachmentZkhList"
+		OnQuickLaunch="TRUE"
+		QuickLaunchUrl="Lists/IssueAttachmentZkhList/AllItems.aspx"
+		RootWebOnly="FALSE"
+		TemplateType="10156" />
+</Elements>

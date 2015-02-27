@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Адрес"
+		ID="{BA3FE129-4D65-46A9-98B1-60BC05827F37}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueAddressZkh"
+		Name="IssueAddressZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="2"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+		Description="Адрес рассмотрения вопроса повестки заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

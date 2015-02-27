@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ListInstance
+		Title="Земля: Заседания"
+		Description="Заседания Земля"
+		FeatureId="16182dfc-b9e8-4ef3-80c1-2bc1ae1b2d4f"
+		Id="7E729138-F6DF-4949-81EB-5631B2F4EAFF"
+		Url="Lists/MeetingLandList"
+		OnQuickLaunch="TRUE"
+		QuickLaunchUrl="Lists/MeetingLandList/AllItems.aspx"
+		RootWebOnly="FALSE"
+		TemplateType="10250" />
+</Elements>

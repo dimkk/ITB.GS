@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field  Name          ="MeetingDateNumberZkh"
+          StaticName    ="MeetingDateNumberZkh"
+          Group         ="ЖКХ.Заседания"
+          DisplayName   ="Дата и номер"
+          Description   ="Дата проведения и номер заседания ЖКХ"
+          ID            ="{AC04B13F-61C7-4ABA-8BF6-B53EE2F801C0}"
+          SourceID      ="http://schemas.microsoft.com/sharepoint/v3"
+          Type          ="Calculated"
+          ResultType    ="Text"
+          ReadOnly      ="TRUE"
+          Overwrite     ="TRUE"
+          AllowDeletion ="FALSE">
+    <Formula>=CONCATENATE(TEXT([MeetingDateZkh],"yyyy.mm.dd"),", №",[MeetingNumberZkh])</Formula>
+    <FieldRefs>
+      <FieldRef Name="MeetingDateZkh" />
+      <FieldRef Name="MeetingNumberZkh" />
+    </FieldRefs>
+  </Field>
+</Elements>
