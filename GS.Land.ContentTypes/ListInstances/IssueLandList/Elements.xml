@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<ListInstance
+  <ListInstance
 		Title="Земля: Вопросы повестки заседания"
 		Description="Вопросы повестки заседания Земля"
 		FeatureId="ab0b58ff-31f1-433a-ac6b-bdfb3dcf096e"
@@ -10,5 +10,27 @@
 		OnQuickLaunch="TRUE"
 		QuickLaunchUrl="Lists/IssueLandList/AllItems.aspx"
 		RootWebOnly="FALSE"
-		TemplateType="10251" />
+		TemplateType="10251">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Вопрос заседания МВК.Земля №1</Field>
+          <Field Name="IssueDescriptionLand">Описание "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueInvestorLand">Инвестор "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueCadastreIdLand">Кадастровый номер "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueDecisionLand">Решение "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueAddressLand">Адрес "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueThemeLand">Тема "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueNumberLand">1</Field>
+          <Field Name="IssueSubnumberLand">2</Field>
+          <Field Name="IssueInfoLand">Информация "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueCategoryLand">1</Field>
+          <Field Name="IssueCoReportersLand">1</Field>
+          <Field Name="IssueDecisionTypeLand">1</Field>
+          <Field Name="IssueMeetingLand">1</Field>
+          <Field Name="IssueReporterLand">1</Field>
+        </Row>
+      </Rows>
+    </Data>    
+  </ListInstance>
 </Elements>

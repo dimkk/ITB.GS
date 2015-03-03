@@ -61,7 +61,7 @@
 				Name="IssueMeetingDateLand"
 				Required="FALSE" />
 			<FieldRef
-				ID="{100F19BD-F8EA-4762-A38B-6EE274F9A7DD}"
+				ID="{08D8CB5E-3FA2-4976-874D-067601D0CFB7}"
 				Name="IssueMeetingDateNumberLand"
 				Required="FALSE" />
 			<FieldRef
@@ -69,7 +69,7 @@
 				Name="IssueMeetingLand"
 				Required="FALSE" />
 			<FieldRef
-				ID="{B2F157EF-A829-44FF-9AD2-AADE273543EC}"
+				ID="{5A99DCBC-3B2B-46C7-81F9-D799D431F289}"
 				Name="IssueMeetingNumberLand"
 				Required="FALSE" />
 			<FieldRef

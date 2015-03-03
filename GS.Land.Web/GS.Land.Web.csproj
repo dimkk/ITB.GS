@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GS.Land.Web</RootNamespace>
+    <AssemblyName>GS.Land.Web</AssemblyName>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
+    <ProjectGuid>{0165B7AC-34BA-4875-AD0B-CE67C803A057}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ITB.SP.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58c67d7e59a9117f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ITB.SAMRT\ITB.SP.Tools\bin\Debug\ITB.SP.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="SAMRT.WebParts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3f3087b80f01a99d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ITB.SAMRT\SAMRT.WebParts\bin\Debug\SAMRT.WebParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Layouts\GS.Land.Web\Pages\AgendaQuestion.aspx.cs">
+      <DependentUpon>AgendaQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\AgendaQuestion.aspx.designer.cs">
+      <DependentUpon>AgendaQuestion.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\ExecutorSelection.aspx.cs">
+      <DependentUpon>ExecutorSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\ExecutorSelection.aspx.designer.cs">
+      <DependentUpon>ExecutorSelection.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\MeetingLand.aspx.cs">
+      <DependentUpon>MeetingLand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\MeetingLand.aspx.designer.cs">
+      <DependentUpon>MeetingLand.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\ParticipantsSelection.aspx.cs">
+      <DependentUpon>ParticipantsSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\ParticipantsSelection.aspx.designer.cs">
+      <DependentUpon>ParticipantsSelection.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\SearchQuestion.aspx.cs">
+      <DependentUpon>SearchQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\SearchQuestion.aspx.designer.cs">
+      <DependentUpon>SearchQuestion.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Layouts\GS.Land.Web\Content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\GS.Land.Web\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\GS.Land.Web\Content\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\GS.Land.Web\Scripts\bootstrap.min.js.map" />
+    <None Include="Layouts\GS.Land.Web\Scripts\jquery-1.9.1.min.js.map" />
+    <None Include="Layouts\GS.Land.Web\Scripts\Model\MeetingLand.min.js.map">
+      <DependentUpon>MeetingLand.min.js</DependentUpon>
+    </None>
+    <None Include="Layouts\GS.Land.Web\Scripts\moment-datepicker.min.js.map" />
+    <None Include="Layouts\GS.Land.Web\Scripts\moment-with-langs.min.js.map" />
+    <None Include="Layouts\GS.Land.Web\Scripts\moment.min.js.map" />
+    <None Include="Layouts\GS.Land.Web\Scripts\spin.min.js.map" />
+    <None Include="Layouts\GS.Land.Web\Scripts\typeahead.min.js.map" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{24af7cd5-e607-4fb0-8275-1fe6461a8676}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{28057F3F-B070-4970-9C16-D32B96F903B7}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Layouts\GS.Land.Web\Content\App.css" />
+    <Content Include="Layouts\GS.Land.Web\Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Layouts\GS.Land.Web\Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Layouts\GS.Land.Web\Content\bootstrap\bootstrap.css" />
+    <Content Include="Layouts\GS.Land.Web\Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Layouts\GS.Land.Web\Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\GS.Land.Web\Content\moment-datepicker\datepicker.css" />
+    <Content Include="Layouts\GS.Land.Web\Content\participantsDialog.css" />
+    <Content Include="Layouts\GS.Land.Web\Content\typeahead.js-bootstrap.css" />
+    <Content Include="Layouts\GS.Land.Web\Pages\AgendaQuestion.aspx" />
+    <Content Include="Layouts\GS.Land.Web\Pages\ExecutorSelection.aspx" />
+    <Content Include="Layouts\GS.Land.Web\Pages\IssueAttachmentLand.aspx" />
+    <Content Include="Layouts\GS.Land.Web\Pages\MeetingLand.aspx" />
+    <Content Include="Layouts\GS.Land.Web\Pages\ParticipantsSelection.aspx" />
+    <Content Include="Layouts\GS.Land.Web\Pages\SearchQuestion.aspx" />
+    <Content Include="Layouts\GS.Land.Web\Pages\selectAgendaQuestion.html" />
+    <Content Include="Layouts\GS.Land.Web\Pages\selectExecutor.html" />
+    <Content Include="Layouts\GS.Land.Web\Pages\selectIssueMVK.html" />
+    <Content Include="Layouts\GS.Land.Web\Pages\selectLinkedAssignment.html" />
+    <Content Include="Layouts\GS.Land.Web\Pages\selectLinkedAssignmentMVK.html" />
+    <Content Include="Layouts\GS.Land.Web\Pages\selectObject.html" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\bootstrap.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\bootstrap.min.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\camljs.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\clienttemplates.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderAgendaQuestion.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderAssignment.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderAssignmentMVK.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderCore.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderDocumentTp.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderIssueMVK.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderIssueObjectObjectMVKField.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderLinkedField.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMeetingAk.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMeetingAttachAk.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMeetingAttachRg.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMeetingRg.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMVKReport.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderObjectCharacteristicList.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderObjectDocumentObjectField.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderObjectForm.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderObjectLinkField.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderOrderMVK.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderOrderMVKObjectField.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderParentLink.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderQuestionObjectObjectField.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderQuestionObjectTitleField.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderQuestionSense.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderReport.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderReportAttach.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderTasksView.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\selectIssueRgDialog.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\selectOrderRgDialog.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\executorModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\gsUtils.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\init.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\jquery-1.9.1.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\jquery.cookie.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\knockout-2.3.0.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\knockout-2.3.0.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\mainmenuAccessDeny.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\Model\MeetingLand.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\Model\MeetingLand.min.js">
+      <DependentUpon>MeetingLand.js</DependentUpon>
+    </Content>
+    <Content Include="Layouts\GS.Land.Web\Scripts\moment-datepicker-ko.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\moment-datepicker.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\moment-datepicker.min.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\moment-with-langs.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\moment-with-langs.min.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\moment.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\moment.min.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\participantModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\searchQuestionModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\selectAgendaQuestionModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\selectIssueMVKModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\selectLinkedAssignmentModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\selectLinkedAssignmentMVKModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\selectObjectModel.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\SolidQ-SPS-JS.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\SP.Core.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\SP.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\SP.RequestExecutor.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\SP.runtime.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\SP.UI.Dialog.debug.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\spin.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\spin.min.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\typeahead.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\typeahead.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Layouts\GS.Land.Web\Scripts\moment-datepicker.d.ts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Condition="!Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(SolutionDir)\SPSF.targets" />
+  <Import Condition=" Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(MSBuildProjectDirectory)\..\SPSF.targets" />
+  <Target Name="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)" />
+  <Target Name="AfterBuild" DependsOnTargets="$(AfterBuildDependsOn)" />
+</Project>

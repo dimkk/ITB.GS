@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="28057f3f-b070-4970-9c16-d32b96f903b7" solutionId="28057f3f-b070-4970-9c16-d32b96f903b7" resetWebServer="false" sharePointProductVersion="15.0" name="GS.Land.Web" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <projectItems>
+    <projectItemReference itemId="24af7cd5-e607-4fb0-8275-1fe6461a8676" />
+  </projectItems>
+</package>

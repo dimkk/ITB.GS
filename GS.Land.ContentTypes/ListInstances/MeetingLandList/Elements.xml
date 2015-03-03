@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<ListInstance
+  <ListInstance
 		Title="Земля: Заседания"
 		Description="Заседания Земля"
 		FeatureId="16182dfc-b9e8-4ef3-80c1-2bc1ae1b2d4f"
@@ -10,5 +10,18 @@
 		OnQuickLaunch="TRUE"
 		QuickLaunchUrl="Lists/MeetingLandList/AllItems.aspx"
 		RootWebOnly="FALSE"
-		TemplateType="10250" />
+		TemplateType="10250">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Заседание Земля №1</Field>
+          <Field Name="MeetingCommentLand">Комментарий "Заседание Земля №1"</Field>
+          <Field Name="MeetingDateLand">2015-03-08 13:30:00</Field>
+          <Field Name="MeetingNumberLand">1</Field>
+          <Field Name="MeetingPlaceLand">Место проведения "Заседание Земля №1"</Field>
+          <Field Name="MeetingStatusLand">Планируемое</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
 </Elements>

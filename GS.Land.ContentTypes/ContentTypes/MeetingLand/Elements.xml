@@ -29,10 +29,6 @@
 				Name="MeetingDateLand"
 				Required="FALSE" />
 			<FieldRef
-				ID="{DCBACCD3-DE7D-4D9A-8003-CE477DD66FF8}"
-				Name="MeetingDateNumberLand"
-				Required="FALSE" />
-			<FieldRef
 				ID="{BADC562D-ACB0-4FE0-B0A7-6A4F011B98BD}"
 				Name="MeetingNumberLand"
 				Required="FALSE" />
@@ -52,6 +48,20 @@
 				ID="{9956FF03-7CF4-46A4-A4C3-9914BBD47CD7}"
 				Name="MeetingStatusLand"
 				Required="FALSE" />
-		</FieldRefs>
+    </FieldRefs>
+    <XmlDocuments>
+      <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+        <FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+          <Display>ListForm</Display>
+          <Edit>ListForm</Edit>
+          <New>ListForm</New>
+        </FormTemplates>
+      </XmlDocument>
+      <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
+        <FormUrls xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
+          <Display>~siteLayouts/GS.Land.Web/Pages/MeetingLand.aspx</Display>
+        </FormUrls>
+      </XmlDocument>
+    </XmlDocuments>
 	</ContentType>
 </Elements>

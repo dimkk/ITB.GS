@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GS.GS.Land.ContentTypes</RootNamespace>
-    <AssemblyName>GS.GS.Land.ContentTypes</AssemblyName>
+    <RootNamespace>GS.Land.ContentTypes</RootNamespace>
+    <AssemblyName>GS.Land.ContentTypes</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -61,6 +61,9 @@
   <ItemGroup>
     <Compile Include="Features\GS.Land.AssignmentLists\GS.Land.EventReceiver.cs">
       <DependentUpon>GS.Land.AssignmentLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GS.Land.MeetingLists\GS.Land.EventReceiver.cs">
+      <DependentUpon>GS.Land.MeetingLists.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\GS.Land.QuestionCategoryLists\GS.Land.EventReceiver.cs">
       <DependentUpon>GS.Land.QuestionCategoryLists.feature</DependentUpon>

@@ -7,7 +7,7 @@
 		Group                           ="Земля.Вопросы"
 		DisplayName                     ="Заседание: Дата проведения"
 		Description                     ="Дата заседания Земля"
-    FieldRef                        ="{FA46884F-BAE2-4593-B996-6452341B1897}"
+    FieldRef                        ="{A53B2A01-E906-44F7-814F-1ED9AAA339EA}"
 		ID                              ="{81AB83B1-3894-4490-8D43-8B6066FF722A}"
 		SourceID                        ="http://schemas.microsoft.com/sharepoint/v3"
 		Type                            ="Lookup"
