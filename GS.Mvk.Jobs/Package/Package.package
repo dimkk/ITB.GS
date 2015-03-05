@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4203a211-5b89-4253-90b9-86f9d14e3347" solutionId="4203a211-5b89-4253-90b9-86f9d14e3347" resetWebServer="false" sharePointProductVersion="15.0" name="GS.Mvk.Jobs" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="31048ab9-4f6a-47a3-9fb7-4330c362f171" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="dd113f19-cba6-4811-b096-a461ba24227b" />
+  </projectItems>
+</package>
