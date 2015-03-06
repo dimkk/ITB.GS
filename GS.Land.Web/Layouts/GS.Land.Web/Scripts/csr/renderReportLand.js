@@ -16,7 +16,7 @@ var isCancelAddAttach = false;
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10053,
+            ListTemplateType: 10253,
         });
     }
 
@@ -47,7 +47,7 @@ var isCancelAddAttach = false;
         resultHtml += '<div class="form-horizontal" role="form">';
 
         resultHtml += '<div class="form-group">';
-        var assignmentLinkHtml = renderFieldBlock('Поручение', 2, 4, "ReportAssignmentMVK");
+        var assignmentLinkHtml = renderFieldBlock('Поручение', 2, 4, "ReportAssignmentLand");
         var lookupElement = renderCore.getLookupFromRenderedHtml(assignmentLinkHtml)
         assignmentLinkId = $(lookupElement).attr('id');
         // в режиме просмотра текст ссылки нужно будет заменить
@@ -55,13 +55,13 @@ var isCancelAddAttach = false;
             var htmldoc = $("<div></div>").append(assignmentLinkHtml);
             var a = htmldoc.find('a')[0];
             if (a) {
-                $(a).attr("id", "ReportAssignmentMVK");
+                $(a).attr("id", "ReportAssignmentLand");
                 assignmentLinkHtml = htmldoc.html();
             }
         }
         resultHtml += assignmentLinkHtml;
 
-        resultHtml += renderFieldBlock('Дата', 2, 4, "ReportDateMVK");
+        resultHtml += renderFieldBlock('Дата', 2, 4, "ReportDateLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
@@ -70,22 +70,22 @@ var isCancelAddAttach = false;
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock('Текст отчета', 2, 10, "ReportTextMVK");
+        resultHtml += renderFieldBlock('Текст отчета', 2, 10, "ReportTextLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group" id="decision" style="display:none">';
-        var resolutionHtml = renderFieldBlock('Резолюция', 2, 10, "ReportDecisionMVK");
+        var resolutionHtml = renderFieldBlock('Резолюция', 2, 10, "ReportDecisionLand");
         lookupElement = renderCore.getLookupFromRenderedHtml(resolutionHtml);
         resolutionId = $(lookupElement).attr('id');
         resultHtml += resolutionHtml;
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group" id="newdeadline" style="display:none">';
-        resultHtml += renderFieldBlockNoFormControl('Новый срок', 2, 10, "ReportNewDeadlineMVK");
+        resultHtml += renderFieldBlockNoFormControl('Новый срок', 2, 10, "ReportNewDeadlineLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group" id="changeRequestComment" style="display:none">';
-        resultHtml += renderFieldBlock('Комментарий', 2, 10, "ReportResolutionCommentMVK");
+        resultHtml += renderFieldBlock('Комментарий', 2, 10, "ReportResolutionCommentLand");
         resultHtml += '</div>';
 
         resultHtml += '</div>';
@@ -117,11 +117,11 @@ var isCancelAddAttach = false;
     function getQuestionData(Id, onsuccess, onfail) {
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
             var ctx = SP.ClientContext.get_current();
-            var List = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
+            var List = ctx.get_web().get_lists().getByTitle("Земля: Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + Id + "</Value></Eq></Where></Query></View>");
             var Instance = List.getItems(query);
-            ctx.load(Instance, "Include(IssueMeetingMVK)");
+            ctx.load(Instance, "Include(IssueMeetingLand)");
             ctx.executeQueryAsync(function () {
                 if (!Instance.get_data()[0]) {
                     console.error('Не удалось запросить данные вопроса повестки');
@@ -149,11 +149,11 @@ var isCancelAddAttach = false;
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
             var assignmentId = Id;
             var ctx = SP.ClientContext.get_current();
-            var assignmentList = ctx.get_web().get_lists().getByTitle("МВК: Поручения");
+            var assignmentList = ctx.get_web().get_lists().getByTitle("Земля: Поручения");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + assignmentId + "</Value></Eq></Where></Query></View>");
             var assignmentInstance = assignmentList.getItems(query);
-            ctx.load(assignmentInstance, "Include(AssignmentIssueMVK, AssignmentTextMVK, AssignmentNumberMVK)");
+            ctx.load(assignmentInstance, "Include(AssignmentIssueLand, AssignmentTextLand, AssignmentNumberLand)");
             ctx.executeQueryAsync(function () {
                 if (!assignmentInstance.get_data()[0]) {
                     console.error('Не удалось запросить данные поручения');
@@ -196,7 +196,7 @@ var isCancelAddAttach = false;
             renderCore.ifget('decision', function (e) {
                 $(e).css('display', 'block');
 
-                if (context.ListData.Items[0].ReportDecisionMVK == deadlineTriggeredValue) {
+                if (context.ListData.Items[0].ReportDecisionLand == deadlineTriggeredValue) {
                     renderCore.ifget('newdeadline', function (e) {
                         $(e).css('display', 'block');
                     });
@@ -205,7 +205,7 @@ var isCancelAddAttach = false;
                     });
                 }
 
-                if (context.ListData.Items[0].ReportDecisionMVK == changeRequestTriggeredValue) {
+                if (context.ListData.Items[0].ReportDecisionLand == changeRequestTriggeredValue) {
                     renderCore.ifget('changeRequestComment', function (e) {
                         $(e).css('display', 'block');
                     });
@@ -213,13 +213,13 @@ var isCancelAddAttach = false;
             });
 
 
-            getAssignmentData(context.ListData.Items[0].ReportAssignmentMVK.split(';')[0], function (e) {
-                var questionNumber = e.get_item("AssignmentIssueMVK").get_lookupValue();
-                var assignmentText = e.get_item("AssignmentTextMVK"); 
-                var assignmentNumber = e.get_item("AssignmentNumberMVK");;
+            getAssignmentData(context.ListData.Items[0].ReportAssignmentLand.split(';')[0], function (e) {
+                var questionNumber = e.get_item("AssignmentIssueLand").get_lookupValue();
+                var assignmentText = e.get_item("AssignmentTextLand"); 
+                var assignmentNumber = e.get_item("AssignmentNumberLand");;
 
-                getQuestionData(e.get_item("AssignmentIssueMVK").get_lookupId(), function (e) {
-                    var meetingNumber = e.get_item("IssueMeetingMVK").get_lookupValue();
+                getQuestionData(e.get_item("AssignmentIssueLand").get_lookupId(), function (e) {
+                    var meetingNumber = e.get_item("IssueMeetingLand").get_lookupValue();
                     // текст ссылки на поручение
                     $('#AssignmentLinkLink').text((String).format(
                         "Заседание №{0} - Вопрос №{1} - Поручение №{2}",
@@ -269,7 +269,7 @@ var isCancelAddAttach = false;
         $('#' + assignmentLinkId.replace(/(:|\.|\[|\]|\$)/g, "\\$1")).on("change", function (event) {
             if (this.value) {
                 getAssignmentData(this.value, function (e) {
-                    $('#LinkedAssignmentText').html(e.get_item("AssignmentTextMVK"));
+                    $('#LinkedAssignmentText').html(e.get_item("AssignmentTextLand"));
                 });
             }
             else {
@@ -282,7 +282,7 @@ var isCancelAddAttach = false;
         // при создании нового элемента в случае наличия контекста устанавливаем 
         // значение связанного поручения
         if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm) {
-            var hasContext = document.referrer && ~document.referrer.indexOf('Lists/AssignmentMVKList');
+            var hasContext = document.referrer && ~document.referrer.indexOf('Lists/AssignmentLandList');
             if (hasContext) {
                 var params = document.referrer.split('?')[1].split('&');
                 for (var i = 0; i < params.length; i++) {
@@ -291,7 +291,7 @@ var isCancelAddAttach = false;
                     $('#' + assignmentLinkId.replace(/(:|\.|\[|\]|\$)/g, "\\$1")).val(param[1]);
                     // заодно инициализируем текст поручения
                     getAssignmentData(param[1], function (e) {
-                        $('#LinkedAssignmentText').html(e.get_item("AssignmentTextMVK"));
+                        $('#LinkedAssignmentText').html(e.get_item("AssignmentTextLand"));
                     });
                     break;
                 }
@@ -300,9 +300,9 @@ var isCancelAddAttach = false;
 
         // для режима редактирования также проинициализируем текст поручения
         if (context.ControlMode === SPClientTemplates.ClientControlMode.EditForm) {
-            if (context.ListData.Items[0].ReportAssignmentMVK) {
-                getAssignmentData(context.ListData.Items[0].ReportAssignmentMVK.split(';')[0], function (e) {
-                    $('#LinkedAssignmentText').html(e.get_item("AssignmentTextMVK"));
+            if (context.ListData.Items[0].ReportAssignmentLand) {
+                getAssignmentData(context.ListData.Items[0].ReportAssignmentLand.split(';')[0], function (e) {
+                    $('#LinkedAssignmentText').html(e.get_item("AssignmentTextLand"));
                 });
             }
         }
@@ -351,16 +351,10 @@ var isCancelAddAttach = false;
     }
 
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-        
         init();
-
-        // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderAssignmentMVK.js"), init);
-
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~siteLayouts/15/GS.Land.Web/Scripts/csr/renderReportLand.js"), init);
         }, 'sp.js');
-
     }, 'clienttemplates.js');
 })();
 

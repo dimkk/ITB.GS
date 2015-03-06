@@ -3,5 +3,8 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="IssueLandListDefinition\" Type="ElementManifest" />
     <ProjectItemFile Source="schema.xml" Target="IssueLandListDefinition\" Type="ElementFile" />
+    <ProjectItemFile Source="DispForm2.aspx" Target="IssueLandListDefinition\" Type="ElementFile" />
+    <ProjectItemFile Source="EditForm2.aspx" Target="IssueLandListDefinition\" Type="ElementFile" />
+    <ProjectItemFile Source="NewForm2.aspx" Target="IssueLandListDefinition\" Type="ElementFile" />
   </Files>
 </ProjectItem>

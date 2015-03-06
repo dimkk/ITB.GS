@@ -70,9 +70,51 @@
       </View>
     </Views>
     <Forms>
-      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="DisplayForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="DispForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\AssignmentLandListDefinition\DispForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:wp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_0fb6b814_b3a7_418b_bbbd_6a524ef6788f</ID>
+              <wp:PageType>PAGE_DISPLAYFORM</wp:PageType>
+              <wp:TemplateName>CSRListForm</wp:TemplateName>
+              <wp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderAssignmentLand.js</wp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
+      <Form Type="EditForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="EditForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\AssignmentLandListDefinition\EditForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:wp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_54851d06-61af-4ead-bd33-748770279fa0</ID>
+              <wp:PageType>PAGE_EDITFORM</wp:PageType>
+              <wp:TemplateName>CSRListForm</wp:TemplateName>
+              <wp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderAssignmentLand.js</wp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
+      <Form Type="NewForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="NewForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\AssignmentLandListDefinition\NewForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:lfwp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_661b0d6b-b820-4c5e-acf9-7aa5d4a5a99f</ID>
+              <lfwp:PageType>PAGE_NEWFORM</lfwp:PageType>
+              <lfwp:TemplateName>CSRListForm</lfwp:TemplateName>
+              <lfwp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderAssignmentLand.js</lfwp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
     </Forms>
   </MetaData>
 </List>

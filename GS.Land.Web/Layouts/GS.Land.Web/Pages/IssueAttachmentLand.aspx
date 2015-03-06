@@ -1,4 +1,4 @@
-﻿<%@ Assembly Name="GS.Land.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76fad1f12ae5d8a7" %>
+﻿<%@ Assembly Name="$SharePoint.Project.AssemblyFullName$" %>
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IssueAttachmentMVK.aspx.cs" Inherits="SAMRT.Web.IssueAttachmentMVK" DynamicMasterPageFile="~masterurl/default.master" %>
 <%@ Assembly Name="Microsoft.Office.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register TagPrefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>

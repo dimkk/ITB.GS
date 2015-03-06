@@ -514,11 +514,17 @@
     <Content Include="Fields\ReportTextLand\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\EditForm2.aspx" />
     <Content Include="ListDefinitions\AssignmentLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\NewForm2.aspx" />
     <Content Include="ListDefinitions\AssignmentLandListDefinition\schema.xml" />
     <Content Include="ListDefinitions\IssueAttachmentLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\IssueAttachmentLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\EditForm2.aspx" />
     <Content Include="ListDefinitions\IssueLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\NewForm2.aspx" />
     <Content Include="ListDefinitions\IssueLandListDefinition\schema.xml" />
     <Content Include="ListDefinitions\MeetingAttachmentLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\MeetingAttachmentLandListDefinition\schema.xml" />
@@ -526,7 +532,10 @@
     <Content Include="ListDefinitions\MeetingLandListDefinition\schema.xml" />
     <Content Include="ListDefinitions\QuestionCategoryLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\QuestionCategoryLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\EditForm2.aspx" />
     <Content Include="ListDefinitions\ReportLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\NewForm2.aspx" />
     <Content Include="ListDefinitions\ReportLandListDefinition\schema.xml" />
     <Content Include="ListInstances\AssignmentLandList\Elements.xml" />
     <Content Include="ListInstances\IssueAttachmentLandList\Elements.xml">

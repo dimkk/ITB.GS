@@ -9,21 +9,13 @@
     var exceptList = [];
     var renderCore;
 
-    function getMeetingControl() {
-        return renderCore.getControlByFieldName('IssueMeetingMVK');
-    }
-
-    function getNumberControl() {
-        return renderCore.getControlByFieldName('IssueNumberMVK');
-    }
-
     function init() {
         SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
             Templates: {
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10051,
+            ListTemplateType: 10251,
         });
     }
 
@@ -55,55 +47,43 @@
         resultHtml += '<div class="form-horizontal" role="form">';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "IssueAddressMVK");
+        resultHtml += renderFieldBlock(context, 2, 10, "IssueAddressLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "IssueDescriptionMVK");
+        resultHtml += renderFieldBlock(context, 2, 10, "IssueDescriptionLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueDeclarantRg");
-        resultHtml += renderFieldBlock(context, builderButtonSpan, 4, "IssueCustomerRg");
+        resultHtml += renderFieldBlock(context, 2, 10, "IssueInvestorLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, builderButtonSpan, 4, "OrderBuilderMVK");
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueProjectOrgRg");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueCadastreIdLand");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueDecisionTypeLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueCadastreIdMVK");
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueDecisionTypeMVK");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueCategoryLand");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueReporterLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueCategoryMVKLink");
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueReporterRg");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueMunicipalDistrictLand");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueSettlementLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueMunicipalityRg");
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueSettlementRg");
+        resultHtml += renderFieldBlock(context, 2, 10, "IssueDecisionLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "IssueDecisionMVK");
+        resultHtml += renderFieldBlock(context, 2, 10, "IssueThemeLand");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueNumberMVK");
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueMeetingMVK");
-        resultHtml += '</div>';
-
-        if (context.ControlMode === SPClientTemplates.ClientControlMode.DisplayForm) {
-            resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock(context, 2, 10, "IssueOrderMVK");
-            resultHtml += '</div>';
-        }
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "IssueStatusRg");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueNumberLand");
+        resultHtml += renderFieldBlock(context, 2, 4, "IssueMeetingLand");
         resultHtml += '</div>';
 
         author = context.RenderFieldByName(context, "Author");
@@ -124,10 +104,10 @@
     var AllMunicipalities;
     var SettlementOptions;
     function GetMunicipalityControl() {
-        return $('[id^="IssueMunicipalityRg"]');
+        return $('[id^="IssueMunicipalityDistrictLan"]');
     }
     function GetSettlementControl() {
-        return $('[id^="IssueSettlementRg"]');
+        return $('[id^="IssueSettlementLand"]');
     }
     function InitMunicipality() {
         var municipalityControl = GetMunicipalityControl();
@@ -177,54 +157,12 @@
             settlementControl.removeAttr('disabled');
     }
 
-    function FillNumber(meetingId) {
-        var numberControl = getNumberControl();
-        numberControl.val('');
-        if (!meetingId || meetingId == 0)
-            return;
-
-        var query = new SP.CamlQuery();
-        query.set_viewXml(String.format("<View><Query><Where><Eq><FieldRef Name='{0}' LookupId='TRUE'/><Value Type='Lookup'>{1}</Value></Eq></Where><OrderBy><FieldRef Name='{2}' Ascending='FALSE'/></OrderBy></Query><RowLimit>1</RowLimit></View>", 'IssueMeetingMVK', meetingId, 'IssueNumberMVK'));
-        var issueMaxNumber = SC.GetItems('IssueMVKList', query, 'Include(IssueNumberMVK)');
-        SC.Execute(function () {
-            var issueNumber = issueMaxNumber.get_count() > 0 ? issueMaxNumber.getItemAtIndex(0).get_item('IssueNumberMVK') + 1 : 1;
-            numberControl.val(issueNumber);
-        }, function (sender, args) {
-            alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
-        });
-    }
-
     function OnPostRender(context) {
-        var numberControl = getNumberControl();
-        var meetingControl = getMeetingControl();
-
-        var meetingId = renderCore.getParentListItemId(['/Lists/MeetingMVKList/EditForm', '/Pages/MeetingRg.aspx']);
-        if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm && meetingId) {
-            meetingControl.val(meetingId);
-            meetingControl.attr('disabled', 'disabled');
-        }
-
         if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
-            $('[id^="IssueStatusRg"]').attr('disabled', 'disabled');
             SC.OnLoaded(function () {
-                var builderListId = SC.GetList('builder').get_id().toString();
-                var url = String.format('{0}/{1}/listform.aspx?PageType=8&ListId={2}', _spPageContextInfo.webAbsoluteUrl, _spPageContextInfo.layoutsUrl, builderListId);
-                var element = String.format('<div class="col-lg-1"><button type="button" class="btn btn-default" style="margin: 0 0 5px 0" title="Добавить нового застройщика" onclick="window.open(&#039{0}&#039)">+</button></div>', url);
-                $('[id^="IssueCustomerRg"]').parent().parent().before(element);
-                $('[id^="OrderBuilderMVK"]').parent().parent().before(element);
-
                 InitMunicipality();
-
-                if (!numberControl.val())
-                    FillNumber(meetingControl.val());
             });
         }
-
-        meetingControl.change(function () {
-            FillNumber(this.value);
-        });
-
-        numberControl.attr('disabled', 'disabled');
 
         var prefix = context.FormUniqueId + context.FormContext.listAttributes.Id;
         $get(prefix + 'Author').innerHTML = author;
@@ -274,7 +212,7 @@
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {
         init();
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderIssueMVK.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~siteLayouts/GS.Land.Web/Scripts/csr/renderIssueLand.js"), init);
         }, 'sp.js');
     }, 'clienttemplates.js');
 })();

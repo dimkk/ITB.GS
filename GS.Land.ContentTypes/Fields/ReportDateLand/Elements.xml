@@ -10,8 +10,11 @@
 		Name="ReportDateLand"
 		Type="DateTime"
 		Required="FALSE"
-		Format="DateTime"
+		Format="DateOnly"
+    FriendlyDisplayFormat="Disabled"
 		Description="Дата отчета по поручению Земля"
     Overwrite="TRUE"
-    AllowDeletion="FALSE"></Field>
+    AllowDeletion="FALSE">
+    <Default>[today]</Default>
+  </Field>
 </Elements>

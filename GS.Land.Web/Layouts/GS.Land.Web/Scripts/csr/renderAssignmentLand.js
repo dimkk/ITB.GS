@@ -18,14 +18,14 @@
         SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
             Templates: {
                 Fields: {
-                    "AssignmentExecutorMVK": { "NewForm": renderExecutorFields, "EditForm": renderExecutorFields },
-                    "AssignmentExecutorPositionMVK": { "NewForm": renderExecutorFields, "EditForm": renderExecutorFields },
-                    "AssignmentExecutorOrgMVK": { "NewForm": renderExecutorFields, "EditForm": renderExecutorFields }
+                    "AssignmentExecutorLand": { "NewForm": renderExecutorFields, "EditForm": renderExecutorFields },
+                    "AssignmentExecutorPositionLand": { "NewForm": renderExecutorFields, "EditForm": renderExecutorFields },
+                    "AssignmentExecutorOrgLand": { "NewForm": renderExecutorFields, "EditForm": renderExecutorFields }
                 },
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10052,
+            ListTemplateType: 10252,
         });
     }
 
@@ -60,17 +60,17 @@
         var f;
 
         switch (formCtx.fieldName) {
-            case "AssignmentExecutorMVK":
+            case "AssignmentExecutorLand":
                 f = function () {
                     return window.gsExecutor.AssignmentExecutorFullNameLink
                 };
                 break;
-            case "AssignmentExecutorPositionMVK":
+            case "AssignmentExecutorPositionLand":
                 f = function () {
                     return window.gsExecutor.AssignmentExecutorPositionLink
                 };
                 break;
-            case "AssignmentExecutorOrgMVK":
+            case "AssignmentExecutorOrgLand":
                 f = function () {
                     return window.gsExecutor.AssignmentExecutorOrganizationLink
                 };
@@ -101,23 +101,23 @@
 
             resultHtml += '<div class="form-group">';
 
-            var calcFieldName = renderCore.getInternalFieldName("AssignmentDependentTermTextMVK");
-            if (calcFieldName && context.CurrentItem[calcFieldName] && !context.CurrentItem["AssignmentPlanDateMVK"]) {
+            var calcFieldName = renderCore.getInternalFieldName("AssignmentDependentTermTextLand");
+            if (calcFieldName && context.CurrentItem[calcFieldName] && !context.CurrentItem["AssignmentPlanDateLand"]) {
                 resultHtml += renderFieldBlock('Срок исполнения', 2, 4, calcFieldName);
             }
             else {
-                resultHtml += renderFieldBlock('Срок исполнения', 2, 4, "AssignmentPlanDateMVK");
+                resultHtml += renderFieldBlock('Срок исполнения', 2, 4, "AssignmentPlanDateLand");
             }
-            resultHtml += renderFieldBlock('Фактический срок', 2, 4, "AssignmentFactDateMVK");
+            resultHtml += renderFieldBlock('Фактический срок', 2, 4, "AssignmentFactDateLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Ответственный', 2, 4, "AssignmentResponsibleExecutorMVK");
-            resultHtml += renderFieldBlock('Соисполнители', 2, 4, "AssignmentCoExecutorsMVK");
+            resultHtml += renderFieldBlock('Ответственный', 2, 4, "AssignmentResponsibleExecutorLand");
+            resultHtml += renderFieldBlock('Соисполнители', 2, 4, "AssignmentCoExecutorsLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Поручение', 2, 10, "AssignmentTextMVK");
+            resultHtml += renderFieldBlock('Поручение', 2, 10, "AssignmentTextLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
@@ -136,23 +136,23 @@
             resultHtml += '<div class="form-horizontal" role="form">';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Номер', 2, 4, "AssignmentNumberMVK");
-            resultHtml += renderFieldBlock('Фактический срок', 2, 4, "AssignmentFactDateMVK");
+            resultHtml += renderFieldBlock('Номер', 2, 4, "AssignmentNumberLand");
+            resultHtml += renderFieldBlock('Фактический срок', 2, 4, "AssignmentFactDateLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Тип поручения', 2, 10, "AssignmentTypeMVK");
+            resultHtml += renderFieldBlock('Тип поручения', 2, 10, "AssignmentTypeLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Статус', 2, 4, "AssignmentStatusMVK");
-            var agendaQuestionLinkHtml = renderFieldBlock('Вопрос повестки', 2, 2, "AssignmentIssueMVK", true);
+            resultHtml += renderFieldBlock('Статус', 2, 4, "AssignmentStatusLand");
+            var agendaQuestionLinkHtml = renderFieldBlock('Вопрос повестки', 2, 2, "AssignmentIssueLand", true);
             var lookupElement = renderCore.getLookupFromRenderedHtml(agendaQuestionLinkHtml);
             resultHtml += agendaQuestionLinkHtml;
             resultHtml += '<div class="col-lg-2" id="linkedAgendaQuestionTextPresentation"></div>';
             selectQuestionControlId = $(lookupElement).attr('id');
             var modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/SAMRT.Web/pages/selectIssueMVK.html?rev=" + Math.random().toString(36).substr(2),
+                "/_layouts/15/GS.Land.Web/pages/selectIssueLand.html?rev=" + Math.random().toString(36).substr(2),
                 "Выбрать",
                 2,
                 selectQuestionControlId);
@@ -162,41 +162,41 @@
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Состояние контроля', 2, 10, "AssignmentControlStateMVK");
+            resultHtml += renderFieldBlock('Состояние контроля', 2, 10, "AssignmentControlStateLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Поручение', 2, 10, "AssignmentTextMVK");
+            resultHtml += renderFieldBlock('Поручение', 2, 10, "AssignmentTextLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
             resultHtml += '<label class="col-lg-2">Срок исполнения</label>';
             resultHtml += '<div class="col-lg-2"><div class="radio"><label><input type="radio" value="ByDate" name="executionDate" id="executionDateByDateRadio" onclick="$($(\'#AssignmentPlanDate\').find(\'input\')[0]).removeAttr(\'disabled\'); $($(\'#AssignmentDaysForResolve\').find(\'input\')[0]).attr(\'disabled\', \'disabled\'); $($(\'#AssignmentDayType\').find(\'select\')[0]).attr(\'disabled\', \'disabled\'); return true;" />Абсолютный</label></div></div>';
             resultHtml += '<div class="col-lg-4" id="AssignmentPlanDate">' +
-                                renderCore.bs.applyCSS(context.RenderFieldByName(context, "AssignmentPlanDateMVK")) +
+                                renderCore.bs.applyCSS(context.RenderFieldByName(context, "AssignmentPlanDateLand")) +
                           '</div>';
             resultHtml += '</div>';
             resultHtml += '<div class="form-group">';
             resultHtml += '<div class="col-lg-offset-2 col-lg-2"><div class="radio"><label><input type="radio" value="ByAssignment" name="executionDate" id="executionDateByAssignmentRadio" onclick="$($(\'#AssignmentPlanDate\').find(\'input\')[0]).attr(\'disabled\', \'disabled\'); $($(\'#AssignmentDaysForResolve\').find(\'input\')[0]).removeAttr(\'disabled\'); $($(\'#AssignmentDayType\').find(\'select\')[0]).removeAttr(\'disabled\'); $($(\'#AssignmentPlanDate\').find(\'input\')[0]).val(null); return true;" />Относительный</label></div></div>';
             resultHtml += '<div class="col-lg-1" id="AssignmentDaysForResolve">' +
-                                renderCore.bs.applyCSS(context.RenderFieldByName(context, "AssignmentDaysForResolveMVK")) +
+                                renderCore.bs.applyCSS(context.RenderFieldByName(context, "AssignmentDaysForResolveLand")) +
                           '</div>';
             resultHtml += '<div class="col-lg-3">дней после зависимого поручения</div>';
             resultHtml += '</div>';
             resultHtml += '<div class="form-group">';
             resultHtml += '<div class="col-lg-offset-2 col-lg-1">дни</div>';
             resultHtml += '<div class="col-lg-5" id="AssignmentDayType">' +
-                                renderCore.bs.applyCSS(context.RenderFieldByName(context, "AssignmentDayTypeMVK")) +
+                                renderCore.bs.applyCSS(context.RenderFieldByName(context, "AssignmentDayTypeLand")) +
                           '</div>';
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            var assignmentLinkHtml = renderFieldBlock('Зависимое поручение', 2, 2, "AssignmentDependentAssignmentMVK", true);
+            var assignmentLinkHtml = renderFieldBlock('Зависимое поручение', 2, 2, "AssignmentDependentAssignmentLand", true);
             lookupElement = renderCore.getLookupFromRenderedHtml(assignmentLinkHtml);
             resultHtml += assignmentLinkHtml;
             selectAssignmentControlId = $(lookupElement).attr('id');
             modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/SAMRT.Web/pages/selectLinkedAssignmentMVK.html?rev=" + Math.random().toString(36).substr(2),
+                "/_layouts/15/GS.Land.Web/pages/selectLinkedAssignmentLand.html?rev=" + Math.random().toString(36).substr(2),
                 "Выбрать",
                 1,
                 selectAssignmentControlId);
@@ -208,16 +208,16 @@
 
             resultHtml += '<div class="form-group">';
             resultHtml += '<label class="col-lg-2">Исполнитель</label>';
-            context.RenderFieldByName(context, "AssignmentExecutorMVK");
-            context.RenderFieldByName(context, "AssignmentExecutorPositionMVK");
-            context.RenderFieldByName(context, "AssignmentExecutorOrgMVK");
+            context.RenderFieldByName(context, "AssignmentExecutorLand");
+            context.RenderFieldByName(context, "AssignmentExecutorPositionLand");
+            context.RenderFieldByName(context, "AssignmentExecutorOrgLand");
             window.gsExecutor = {
-                AssignmentExecutorFullNameLink: context.CurrentItem["AssignmentExecutorMVK"],
-                AssignmentExecutorPositionLink: context.CurrentItem["AssignmentExecutorPositionMVK"],
-                AssignmentExecutorOrganizationLink: context.CurrentItem["AssignmentExecutorOrgMVK"]
+                AssignmentExecutorFullNameLink: context.CurrentItem["AssignmentExecutorLand"],
+                AssignmentExecutorPositionLink: context.CurrentItem["AssignmentExecutorPositionLand"],
+                AssignmentExecutorOrganizationLink: context.CurrentItem["AssignmentExecutorOrgLand"]
             };
             modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/SAMRT.Web/pages/selectExecutor.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
+                "/_layouts/15/GS.Land.Web/pages/selectExecutor.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
 
             window.gsModals.selectExecutor = modalLink.modalId;
             resultHtml += modalLink.html;
@@ -227,11 +227,11 @@
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Соисполнители', 2, 10, "AssignmentCoExecutorsMVK");
+            resultHtml += renderFieldBlock('Соисполнители', 2, 10, "AssignmentCoExecutorsLand");
             resultHtml += '</div>';
 
             resultHtml += '<div class="form-group">';
-            resultHtml += renderFieldBlock('Примечание', 2, 10, "AssignmentNoteMVK");
+            resultHtml += renderFieldBlock('Примечание', 2, 10, "AssignmentNoteLand");
             resultHtml += '</div>';
 
             resultHtml += '</div>'; // form-horizontal
@@ -252,9 +252,9 @@
     }
 
     function formatHeader(data) {
-        var captionFmt = 'Поручение по решению Межведомственной комиссии №{0}';
+        var captionFmt = 'Поручение по решению Межведомственной комиссии по земле №{0}';
         var questionFmt = '{0} №{1} п.№{2}';
-        var pageUrlFmt = '/Lists/IssueMVKList/DispForm2.aspx?ID={0}';
+        var pageUrlFmt = '/Lists/IssueLandList/DispForm2.aspx?ID={0}';
         var addressFmt = '<strong>{0} {1}</strong>';
         var categoryFmt = '<strong>{0}</strong>';
 
@@ -332,8 +332,8 @@
         }
 
         var hasContext = document.referrer &&
-                (~document.referrer.indexOf('Lists/IssueMVKList/DispForm') ||
-                ~document.referrer.indexOf('Lists/IssueMVKList/EditForm'));
+                (~document.referrer.indexOf('Lists/IssueLandList/DispForm') ||
+                ~document.referrer.indexOf('Lists/IssueLandList/EditForm'));
 
         if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm && hasContext) {
             // в режиме создания нового поручения при наличии контекста автоматически установим ссылку на вопрос
@@ -353,8 +353,8 @@
 
         // достанем данные вопроса и заседания, чтобы отобразить шапку документа
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            var aqLink = context.ListData.Items[0].AssignmentIssueMVK;
-            var asLink = context.ListData.Items[0].AssignmentDependentAssignmentMVK;
+            var aqLink = context.ListData.Items[0].AssignmentIssueLand;
+            var asLink = context.ListData.Items[0].AssignmentDependentAssignmentLand;
             var questionId = aqLink ? aqLink.split(';')[0] : (hasContext ? getLinkId() : "");
             var assignmentId = asLink ? asLink.split(';')[0] : "";
 
@@ -365,14 +365,14 @@
 
             // связанное поручение
             if (assignmentId) {
-                var assignmentList = ctx.get_web().get_lists().getByTitle("МВК: Поручения");
+                var assignmentList = ctx.get_web().get_lists().getByTitle("Земля: Поручения");
                 var aQuery = new SP.CamlQuery();
                 aQuery.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + assignmentId + "</Value></Eq></Where></Query></View>");
                 var assignmentInst = assignmentList.getItems(aQuery);
-                ctx.load(assignmentInst, "Include(AssignmentNumberMVK, AssignmentTextMVK)");
+                ctx.load(assignmentInst, "Include(AssignmentNumberLand, AssignmentTextLand)");
             }
             
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
+            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("Земля: Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + questionId + "</Value></Eq></Where></Query></View>");
             var questionInstance = agendaQuestionList.getItems(query);
@@ -398,7 +398,7 @@
 
                 // достанем данные заседания
                 var meetingList = ctx.get_web().get_lists().getByTitle("МВК: Заседания");
-                var mId = questionInstance.get_data()[0].get_item("IssueMeetingMVK").get_lookupId();
+                var mId = questionInstance.get_data()[0].get_item("IssueMeetingLand").get_lookupId();
 
                 // установим глобальные переменные для страницы
                 window.gsLinkedData.MeetingLink = mId;
@@ -411,40 +411,40 @@
                         console.error('Не удалось запросить данные заседания');
                         return;
                     }
-                    var categoryFieldValue = questionInstance.get_data()[0].get_item("IssueCategoryMVK");
+                    var categoryFieldValue = questionInstance.get_data()[0].get_item("IssueCategoryLand");
 
                     // шапка не отображается в режиме создания нового элемента
                     if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm && hasContext) {
                         $('#linkedAgendaQuestionTextPresentation').html(
                             (String).format('{0} №{1} п.№{2}',
-                                renderCore.formatDate(meetingListInst.get_data()[0].get_item('MeetingDateMVK')),
-                                meetingListInst.get_data()[0].get_item('MeetingNumberMVK'),
-                                questionInstance.get_data()[0].get_item("IssueNumberTextMVK")));
+                                renderCore.formatDate(meetingListInst.get_data()[0].get_item('MeetingDateLand')),
+                                meetingListInst.get_data()[0].get_item('MeetingNumberLand'),
+                                questionInstance.get_data()[0].get_item("IssueNumberTextLand")));
 
                         return;
                     }
 
                     formatHeader({
                         Id: questionInstance.get_data()[0].get_item("ID"),
-                        MeetingDate: meetingListInst.get_data()[0].get_item('MeetingDateMVK'),
-                        MeetingPlace: questionInstance.get_data()[0].get_item("IssueAddressMVK"),
-                        MeetingNumber: meetingListInst.get_data()[0].get_item('MeetingNumberMVK'),
-                        QuestionNumber: questionInstance.get_data()[0].get_item("IssueNumberTextMVK"),
+                        MeetingDate: meetingListInst.get_data()[0].get_item('MeetingDateLand'),
+                        MeetingPlace: questionInstance.get_data()[0].get_item("IssueAddressLand"),
+                        MeetingNumber: meetingListInst.get_data()[0].get_item('MeetingNumberLand'),
+                        QuestionNumber: questionInstance.get_data()[0].get_item("IssueNumberTextLand"),
                         CategoryName: categoryFieldValue ? categoryFieldValue.get_lookupValue() : "",
-                        Status: context.ListData.Items[0].AssignmentStatusMVK,
-                        AssignmentNumber: context.ListData.Items[0].AssignmentNumberMVK,
-                        CadastreNumber: questionInstance.get_data()[0].get_item("IssueCadastreIdMVK")
+                        Status: context.ListData.Items[0].AssignmentStatusLand,
+                        AssignmentNumber: context.ListData.Items[0].AssignmentNumberLand,
+                        CadastreNumber: questionInstance.get_data()[0].get_item("IssueCadastreIdLand")
 
                     });
 
                     renderCore.ifget('decision', function (e) {
-                        e.innerHTML = questionInstance.get_data()[0].get_item("IssueDecisionMVK");
+                        e.innerHTML = questionInstance.get_data()[0].get_item("IssueDecisionLand");
                     });
 
                     // достанем данные последнего отчета
                     var lastReportFieldName = renderCore.getInternalFieldName('Последний отчет');
                     if (context.ListData.Items[0][lastReportFieldName]) { 
-                        var reportList = ctx.get_web().get_lists().getByTitle("МВК: Отчеты по поручению");
+                        var reportList = ctx.get_web().get_lists().getByTitle("Земля: Отчеты по поручению");
                         var rId = context.ListData.Items[0][lastReportFieldName].split(';')[0];
                         query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + rId + "</Value></Eq></Where></Query></View>");
                         var reportListInst = reportList.getItems(query);
@@ -456,12 +456,12 @@
 
                             renderCore.ifget('execution', function (e) {
                                 e.innerHTML = (String).format("<p>{0}</p> <p>{1}</p>",
-                                    context.ListData.Items[0].AssignmentStatusMVK,
-                                    reportListInst.get_data()[0].get_item("ReportTextMVK"));
+                                    context.ListData.Items[0].AssignmentStatusLand,
+                                    reportListInst.get_data()[0].get_item("ReportTextLand"));
                             });
                             renderCore.ifget('resolution', function (e) {
                                 e.innerHTML = (String).format("<p>{0}</p>",
-                                    reportListInst.get_data()[0].get_item("ReportDecisionMVK"));
+                                    reportListInst.get_data()[0].get_item("ReportDecisionLand"));
                             });
 
                         }, function() {
@@ -491,7 +491,7 @@
         // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
 
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderAssignmentMVK.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~siteLayouts/GS.Land.Web/Scripts/csr/renderAssignmentLand.js"), init);
 
         }, 'sp.js');
 

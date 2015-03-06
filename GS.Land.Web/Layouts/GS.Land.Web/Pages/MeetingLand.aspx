@@ -1,4 +1,4 @@
-﻿<%@ Assembly Name="GS.Land.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76fad1f12ae5d8a7" %>
+﻿<%@ Assembly Name="$SharePoint.Project.AssemblyFullName$" %>
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MeetingLand.aspx.cs" Inherits="GS.Land.Web.MeetingLand" DynamicMasterPageFile="~masterurl/default.master" %>
 
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">

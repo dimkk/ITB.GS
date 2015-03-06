@@ -70,9 +70,107 @@
       </View>
     </Views>
     <Forms>
-      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="DisplayForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="DispForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\IssueLandListDefinition\DispForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="wzHeader" WebPartOrder="1">
+            <![CDATA[
+            <webParts>
+              <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+                <metaData>
+                  <type name="GSWeb.WebParts.AgendaQuestionTitle.AgendaQuestionTitle, GSWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9a3cb80ac0d0c704" />
+                  <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+                </metaData>
+                <data>
+                  <properties>
+                    <property name="Title" type="string">GS.AgendaQuestionTitle</property>
+                    <property name="Header" type="string">Вопрос Межведомственной комиссии по Земле</property>
+                    <property name="QuestionAddressFieldName" type="string">IssueAddressLand</property>
+                    <property name="QuestionCadastreNumberFieldName" type="string">IssueCadastreIdLand</property>
+                    <property name="QuestionNumberFieldName" type="string">IssueNumberLand</property>
+                    <property name="QuestionCategoryLinkFieldName" type="string">IssueCategoryLand</property>
+                    <property name="QuestionMeetingLinkFieldName" type="string">IssueMeetingLand</property>
+                    <property name="MeetingsListName" type="string">MeetingLandList</property>
+                    <property name="MeetingDateFieldName" type="string">MeetingDateLand</property>
+                    <property name="MeetingNumberFieldName" type="string">MeetingNumberLand</property>
+                    <property name="MeetingAttachmentsListName" type="string">MeetingAttachmentLandList</property>
+                    <property name="MeetingAttachmentMeetingLinkFieldName" type="string">MeetingAttachmentMeetingLand</property>
+                    <property name="MeetingAttachmentExistsFieldName" type="string">MeetingAttachmentProtocolCopyLan</property>
+                  </properties>
+                </data>
+              </webPart>
+            </webParts>]]>
+          </AllUsersWebPart>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:wp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_1b5e5642_5c24_4803_a46c_94a6922ae218</ID>
+              <wp:PageType>PAGE_DISPLAYFORM</wp:PageType>
+              <wp:TemplateName>CSRListForm</wp:TemplateName>
+              <wp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderIssueLand.js</wp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
+      <Form Type="EditForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="EditForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\IssueLandListDefinition\EditForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="wzHeader" WebPartOrder="1">
+            <![CDATA[
+            <webParts>
+              <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+                <metaData>
+                  <type name="GSWeb.WebParts.AgendaQuestionTitle.AgendaQuestionTitle, GSWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9a3cb80ac0d0c704" />
+                  <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+                </metaData>
+                <data>
+                  <properties>
+                    <property name="Title" type="string">GS.AgendaQuestionTitle</property>
+                    <property name="Header" type="string">Вопрос Межведомственной комиссии по Земле</property>
+                    <property name="QuestionAddressFieldName" type="string">IssueAddressLand</property>
+                    <property name="QuestionCadastreNumberFieldName" type="string">IssueCadastreIdLand</property>
+                    <property name="QuestionNumberFieldName" type="string">IssueNumberLand</property>
+                    <property name="QuestionCategoryLinkFieldName" type="string">IssueCategoryLand</property>
+                    <property name="QuestionMeetingLinkFieldName" type="string">IssueMeetingLand</property>
+                    <property name="MeetingsListName" type="string">MeetingLandList</property>
+                    <property name="MeetingDateFieldName" type="string">MeetingDateLand</property>
+                    <property name="MeetingNumberFieldName" type="string">MeetingNumberLand</property>
+                    <property name="MeetingAttachmentsListName" type="string">MeetingAttachmentLandList</property>
+                    <property name="MeetingAttachmentMeetingLinkFieldName" type="string">MeetingAttachmentMeetingLand</property>
+                    <property name="MeetingAttachmentExistsFieldName" type="string">MeetingAttachmentProtocolCopyLan</property>
+                  </properties>
+                </data>
+              </webPart>
+            </webParts>]]>
+          </AllUsersWebPart>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:wp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_fd604c01_8495_4d45_8d16_2b63897cec4e</ID>
+              <wp:PageType>PAGE_EDITFORM</wp:PageType>
+              <wp:TemplateName>CSRListForm</wp:TemplateName>
+              <wp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderIssueLand.js</wp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
+      <Form Type="NewForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="NewForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\IssueLandListDefinition\NewForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:lfwp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_ad8f4c37-19fc-4447-ba5c-3128b5a2fd5c</ID>
+              <lfwp:PageType>PAGE_NEWFORM</lfwp:PageType>
+              <lfwp:TemplateName>CSRListForm</lfwp:TemplateName>
+              <lfwp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderIssueLand.js</lfwp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
     </Forms>
   </MetaData>
 </List>
