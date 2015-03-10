@@ -3,7 +3,7 @@ using Microsoft.SharePoint.Administration;
 using System;
 using System.Runtime.InteropServices;
 
-namespace GS.Mvk.Jobs.Features
+namespace GS.Land.Jobs.Features
 {
     /// <summary>
     /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
@@ -12,8 +12,8 @@ namespace GS.Mvk.Jobs.Features
     /// The GUID attached to this class may be used during packaging and should not be modified.
     /// </remarks>
 
-    [Guid("e00a3c0d-f090-453e-999f-e1efe57189b1")]
-    public class GsMvkTimerJobsEventReceiver : SPFeatureReceiver
+    [Guid("f3d5b91d-cdc5-408b-8ccc-08f117757658")]
+    public class GSLandJobsEventReceiver : SPFeatureReceiver
     {
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
@@ -27,6 +27,15 @@ namespace GS.Mvk.Jobs.Features
             });
         }
 
+        public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
+        {
+            SPSecurity.RunWithElevatedPrivileges(delegate()
+            {
+                SPWebApplication parentWebApp = (SPWebApplication)properties.Feature.Parent;
+                DeleteExistingJob(AssignmentProlongationJob.JobName, parentWebApp);
+                DeleteExistingJob(AssignmentStatusJob.JobName, parentWebApp);
+            });
+        }
 
         private void CreateJobs(SPWebApplication site)
         {
@@ -69,16 +78,6 @@ namespace GS.Mvk.Jobs.Features
                 return jobDeleted;
             }
             return jobDeleted;
-        }
-
-        public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
-        {
-            SPSecurity.RunWithElevatedPrivileges(delegate()
-            {
-                SPWebApplication parentWebApp = (SPWebApplication)properties.Feature.Parent;
-                DeleteExistingJob(AssignmentProlongationJob.JobName, parentWebApp);
-                DeleteExistingJob(AssignmentStatusJob.JobName, parentWebApp);
-            });
         }
     }
 }

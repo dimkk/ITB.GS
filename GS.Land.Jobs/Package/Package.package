@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="190579ee-aed8-4671-b659-aa5cc243edb3" solutionId="190579ee-aed8-4671-b659-aa5cc243edb3" resetWebServer="false" sharePointProductVersion="15.0" name="GS.Land.Jobs" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="ff89b243-0596-4e8f-b0d0-a2ab07823681" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="511fefbb-1dcb-4092-acaf-f01829a77f3e" />
+  </projectItems>
+</package>

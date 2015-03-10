@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GS.Mvk.Jobs</RootNamespace>
-    <AssemblyName>GS.Mvk.Jobs</AssemblyName>
+    <RootNamespace>GS.Land.Jobs</RootNamespace>
+    <AssemblyName>GS.Land.Jobs</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -16,7 +16,7 @@
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
     <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
-    <ProjectGuid>{8851EF99-EA6F-4359-848E-B14EACCFDE22}</ProjectGuid>
+    <ProjectGuid>{39E61C99-8C4C-4396-B559-55787B1A3523}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,31 +59,31 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\GS.Mvk.Jobs\GS.Mvk.Jobs.EventReceiver.cs">
-      <DependentUpon>GS.Mvk.Jobs.feature</DependentUpon>
+    <Compile Include="Features\GS.Land.Jobs\GS.Land.Jobs.EventReceiver.cs">
+      <DependentUpon>GS.Land.Jobs.feature</DependentUpon>
     </Compile>
-    <Compile Include="Jobs\AssignmentStatusJob.cs" />
     <Compile Include="Jobs\AssignmentProlongationJob.cs" />
+    <Compile Include="Jobs\AssignmentStatusJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\GS.Mvk.Jobs\GS.Mvk.Jobs.feature">
-      <FeatureId>{31048ab9-4f6a-47a3-9fb7-4330c362f171}</FeatureId>
+    <None Include="Features\GS.Land.Jobs\GS.Land.Jobs.feature">
+      <FeatureId>{ff89b243-0596-4e8f-b0d0-a2ab07823681}</FeatureId>
     </None>
     <None Include="Package\Package.package">
-      <PackageId>{4203A211-5B89-4253-90B9-86F9D14E3347}</PackageId>
+      <PackageId>{190579EE-AED8-4671-B659-AA5CC243EDB3}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
     <None Include="Template\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{dd113f19-cba6-4811-b096-a461ba24227b}</SharePointProjectItemId>
+      <SharePointProjectItemId>{511fefbb-1dcb-4092-acaf-f01829a77f3e}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Features\GS.Mvk.Jobs\GS.Mvk.Jobs.Template.xml">
-      <DependentUpon>GS.Mvk.Jobs.feature</DependentUpon>
+    <Content Include="Features\GS.Land.Jobs\GS.Land.Jobs.Template.xml">
+      <DependentUpon>GS.Land.Jobs.feature</DependentUpon>
     </Content>
     <Content Include="Template\Images\GS\Feature.gif" />
   </ItemGroup>
