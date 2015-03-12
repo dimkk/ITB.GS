@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e2d4932e-0cc5-47ab-a254-25ac16ba1d0f" description="Набор списков для категорий вопросов ГС.Земля" featureId="e2d4932e-0cc5-47ab-a254-25ac16ba1d0f" imageUrl="GS\Feature.gif" imageAltText="Набор списков для категорий вопросов ГС.Земля" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="$SharePoint.Type.e03c5ed6-3ac8-4000-bf0b-65791c013ebc.FullName$" scope="Site" solutionId="070a12fe-8292-479f-ab3a-f73e6711fa72" title="ГС.Земля: 02. Списки для категорий вопросов" version="AAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0ZW0uVmVyc2lvbgQAAAAGX01ham9yBl9NaW5vcgZfQnVpbGQJX1JldmlzaW9uAAAAAAgICAgBAAAAAAAAAAAAAAAAAAAACw==" deploymentPath="$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+  <projectItems>
+    <projectItemReference itemId="61141bea-a629-4f03-99ec-530e93763730" />
+  </projectItems>
+</feature>

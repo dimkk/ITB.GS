@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GS.Land.ModelXml</RootNamespace>
+    <AssemblyName>GS.Land.ModelXml</AssemblyName>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
+    <ProjectGuid>{1A6F7709-F6E5-4911-9C69-437595EDF59D}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ITB.SP.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58c67d7e59a9117f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ITB.SAMRT\ITB.SP.Tools\bin\Debug\ITB.SP.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\GS.Land.AssignmentLists\GS.Land.EventReceiver.cs">
+      <DependentUpon>GS.Land.AssignmentLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GS.Land.IssueLists\GS.Land.IssueLists.EventReceiver.cs">
+      <DependentUpon>GS.Land.IssueLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GS.Land.MeetingLists\GS.Land.MeetingLists.EventReceiver.cs">
+      <DependentUpon>GS.Land.MeetingLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GS.Land.IssueCategoryLists\GS.Land.IssueCategoryLists.EventReceiver.cs">
+      <DependentUpon>GS.Land.IssueCategoryLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ContentTypes\AssignmentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1b50d438-f8eb-491f-939d-305d259246d7}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\IssueAttachmentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ae8fef81-925d-4bf1-8e84-c1eaa8171fcf}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\IssueLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{86a8a9f8-cd1a-4a94-b42b-62e482b797cc}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\MeetingAttachmentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b6a0673c-8a2f-4f80-8b77-0f320fd1fa60}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\MeetingLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d76d9e2c-162d-4fc8-9b12-cf15fab7d018}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\IssueCategoryLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fae2e9db-3263-446f-87ad-6aeda8ed08e2}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\ReportLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0c0df3d3-4db3-4d64-8895-c3ef9f4ad371}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\GS.Land.Meeting\GS.Land.Meeting.feature">
+      <FeatureId>{ef55dd87-6f01-45c4-8f89-5e810deb9615}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.MeetingLists\GS.Land.MeetingLists.feature">
+      <FeatureId>{6f6dfd2b-bc52-4c0c-8f57-c68ac54cc3c0}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.Issue\GS.Land.Issue.feature">
+      <FeatureId>{efccc17a-7161-49f9-a9fd-0d9579b4849b}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.IssueLists\GS.Land.IssueLists.feature">
+      <FeatureId>{b9ce1980-c6f6-46a5-b5d5-aa580a1e6c9c}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.MeetingAttachmentLists\GS.Land.MeetingAttachmentLists.feature">
+      <FeatureId>{013fe6ad-c256-4405-80e3-6fbec6fa9931}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.MeetingAttachment\GS.Land.MeetingAttachment.feature">
+      <FeatureId>{89ffc137-fee5-453e-a543-dc3225115de8}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.IssueAttachment\GS.Land.IssueAttachment.feature">
+      <FeatureId>{464f16c8-4126-4266-8b14-a05cf5862adf}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.IssueAttachmentLists\GS.Land.IssueAttachmentLists.feature">
+      <FeatureId>{0affcdf5-9957-4bef-ba5d-2c8f37465611}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.Assignment\GS.Land.Assignment.feature">
+      <FeatureId>{428a2d2c-b2e5-45a2-a859-9284c00fb201}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.AssignmentLists\GS.Land.AssignmentLists.feature">
+      <FeatureId>{ab4aea52-99a3-40c1-9fe8-772bce535413}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.Report\GS.Land.Report.feature">
+      <FeatureId>{67b1f3bd-9029-4cc8-b973-2d8fbb2e09c2}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.ReportLists\GS.Land.ReportLists.feature">
+      <FeatureId>{3b485e46-dd1c-4754-a273-86fec9065be7}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.IssueCategory\GS.Land.IssueCategory.feature">
+      <FeatureId>{51602bc8-89a0-4a8d-a6e1-3c1939ec4c0d}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.IssueCategoryLists\GS.Land.IssueCategoryLists.feature">
+      <FeatureId>{7be4b35f-5be9-4047-8a94-fa66a335f8ce}</FeatureId>
+    </None>
+    <None Include="Fields\AssignmentCoExecutorsLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dc6139eb-78c0-45aa-b4fd-2048af2e9839}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentControllerLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{88b3bd8a-4962-420e-941d-ea55c0071ca0}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentControlStateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4a6d8429-4369-41ef-84c1-c1f75687f895}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDaysForResolveLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e0439539-e0b2-444d-8340-a354a1d24d30}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDayTypeLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dbb113ee-d36f-4d39-be66-e363f740c0af}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDependentAssignmentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{59144ef8-5f6e-459f-b078-0fa1b56f441a}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDependentAssignTextLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9b3a8d68-5dc9-4cf6-8da3-88555bc34682}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentDependentTermTextLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{577cdf35-b5e2-43ef-8db9-a2c093655470}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentExecutorLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{164e9c1a-de5d-43cd-b6bd-8fe8cee463a5}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentExecutorOrgLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{05e8a257-ecad-43b3-8df2-ca5ca18e7bbf}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentExecutorPositionLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f2b0428d-b857-4620-a9cd-405b8e432f36}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentFactDateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5decd659-c8c8-4fa8-a676-b75afd396ca1}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentIssueLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4ce08c8c-cc72-457a-bd98-26ca972194e4}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentLastReportLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{93f3373c-baea-4b71-be8d-d9c9f69df96b}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentNoteLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4f0de34d-0eec-41d2-bb5f-7050c5c26e78}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentNumberLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{db263e0d-a3f2-4d1d-90e7-4304d14c9e6c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentPlanDateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5a494399-97e6-4c0e-bceb-33c1a3865038}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentPlanIsDependentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{994f3527-108d-4885-9fb1-2b34246ca07f}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentProlongationCountLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f0629523-94ae-4a7b-b235-d5905db2156e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentResponsibleExecutorLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7680eeb1-4922-4266-8281-603295298d82}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentStatusLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b99d2300-540b-4fc4-b1e4-1ce489d2b34e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentTextLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cd1e7140-3ef6-4c4d-a37a-eb4459bb64fd}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\AssignmentTypeLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3a8f8582-2dee-4211-bf78-04524111e97a}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueAddressLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a93f7ba7-fa28-43f0-aaac-57f40767816c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueAttachmentIssueLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f3c41363-7677-4722-a1aa-4d8a6cbe5b22}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueCadastreIdLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9b7a9843-d1e4-4184-8df5-03f0eb05b8a0}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueCategoryLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3817b125-5924-4998-bf7b-39f14866ae59}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueCoReportersLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3fca76fa-37ca-4095-89c2-3f248130d138}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDecisionLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ba02875e-7041-4793-9c50-e47b3330979c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDecisionTypeLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8d105c76-6eed-4113-9e0b-b0ac96eedaca}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDescriptionLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4d14b786-dccc-48ad-9eba-fa30b689a79e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueInfoLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ae5b9dfd-754c-4ea7-a14e-12f90cefda0a}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueInvestorLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{89679f82-f904-4186-bc57-fac6ed05ff7d}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingDateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{98d0ef12-2443-40c1-b6eb-b4e6edb8222f}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingDateNumberLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e82a124f-0d4f-46c8-bf95-c8d374468e11}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{62f2ab6f-dfd1-4d87-bc18-58d10c5de8b5}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMeetingNumberLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8ef7f326-6bf6-4471-a94f-36d61ff334cc}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueMunicipalDistrictLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{988560a1-ce74-4850-99d7-5c571e5a58fc}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueNumberLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a5b80259-9d8a-47ec-b655-8786c127abda}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueNumberTextLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{37e95d74-08e4-4fb4-8475-a3458ac7075c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueReporterLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d0c48a79-a188-4b45-ab50-6f12bc894821}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueSettlementLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3cda92e9-445a-42ef-8802-166bd5077b5b}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueSubCategoryLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bde9e34b-f974-4efe-88cf-68f61dbe464a}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueSubnumberLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f2fe7f13-65b7-405e-9e69-525e6f650524}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueThemeLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{606c7ab4-a588-46a6-9cc0-60b9630aa838}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentDescriptionLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6ce73614-c689-45c9-8697-ef876b1f2508}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentDocTypeLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9d7ed327-ee2b-4396-9fa9-b44ceb7d5681}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentMeetingLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{09c701c1-9d1e-4007-a06f-dec4ffa4622f}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingAttachmentProtocolCopyLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{171fa60b-b233-4e6c-9d91-fc3af4e85e46}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingCommentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{403eb521-7253-484b-a72e-d7c37e7d6f80}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingDateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2d10b5a8-e118-4497-a115-f33fc54e70cc}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingDateNumberLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{70842130-2837-451f-8f2e-a2b14564a7e8}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingNumberLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2fcd6c1e-387a-480b-b3c3-b78e7a265096}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingOtherParticipantsLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{16a34228-c68c-4772-9c74-a59e7d5c32bc}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingParticipantsLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3f83d051-96e5-4241-a370-cf2b2bf620e2}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingPlaceLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c89b6f14-b7b0-4b36-9adc-aac8d60e668c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\MeetingStatusLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{81c6cb78-a01c-426c-b099-66f0f7457096}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDependentIssueLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0bbb9519-459e-4e7c-9bd1-14089491d52d}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportAssignmentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b9af294a-652f-45b2-bf09-3252b1919205}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportDateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{47e6ce4c-f9d1-4e1f-97eb-1048f4317e7a}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportDecisionLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{65d38d36-8157-44d7-b36a-411992976795}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportExpectedDateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3de6d333-946f-4839-aab5-300afdbc973e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportInfoLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{22f7d8ab-d286-47f1-a438-6df4888f5673}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportNewDeadlineLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bb0d0f8c-bf1b-4806-98ae-31663583f652}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportRequestDateLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{86e99411-9bc2-453e-971b-2aaa1f37d81c}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportResolutionCommentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d545234d-b7fd-40d4-9370-45b227a1ab4b}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportTextLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{aebb925d-8623-4280-9fa6-3135e5f9dea0}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\AssignmentLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5ba00788-0af8-4dad-88b1-79c5a318cd6f}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\IssueAttachmentLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6ba68bce-48cf-4a57-bd49-386a3b98a7ea}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\IssueLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{132f34f3-00ad-49f9-a103-26df86087976}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\MeetingAttachmentLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f58bdf1d-96c7-4207-b9a1-6bdb616949ba}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\MeetingLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fc859b37-af5b-4048-a0c5-dd8f0124cb55}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\IssueCategoryLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d56d8d43-19a1-4bc8-b981-0216bd4625c2}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\ReportLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5fd28224-9318-4c71-bfe5-2ffc8a613861}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\AssignmentLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{59d3899a-ec1e-435c-ab69-347d97ff95e0}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\IssueAttachmentLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{32d0131d-29f1-4fa7-93a0-8f6661b9e127}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\IssueLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{064d73d7-3888-4b3d-824f-2fa399cb39f6}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\MeetingAttachmentLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e336dd91-fdfe-4aa3-9d83-5a1e16366d98}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\MeetingLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{55515d99-fb6a-4cd4-ab42-65dd1acacca6}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\IssueCategoryLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{61141bea-a629-4f03-99ec-530e93763730}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\ReportLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1464218d-6a5c-4a9b-91ca-304c603388d1}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{BB4AA99B-D542-43C4-BCC2-B46DCF8F6F67}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Template\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9ee3c507-11fb-4c6b-8be2-2cfc5dff55f7}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ContentTypes\AssignmentLand\Elements.xml" />
+    <Content Include="ContentTypes\IssueAttachmentLand\Elements.xml" />
+    <Content Include="ContentTypes\IssueLand\Elements.xml" />
+    <Content Include="ContentTypes\MeetingAttachmentLand\Elements.xml" />
+    <Content Include="ContentTypes\MeetingLand\Elements.xml" />
+    <Content Include="ContentTypes\IssueCategoryLand\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ContentTypes\ReportLand\Elements.xml" />
+    <Content Include="Features\GS.Land.Meeting\GS.Land.Meeting.Template.xml">
+      <DependentUpon>GS.Land.Meeting.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.MeetingLists\GS.Land.MeetingLists.Template.xml">
+      <DependentUpon>GS.Land.MeetingLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.Issue\GS.Land.Issue.Template.xml">
+      <DependentUpon>GS.Land.Issue.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.IssueLists\GS.Land.IssueLists.Template.xml">
+      <DependentUpon>GS.Land.IssueLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.MeetingAttachmentLists\GS.Land.MeetingAttachmentLists.Template.xml">
+      <DependentUpon>GS.Land.MeetingAttachmentLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.MeetingAttachment\GS.Land.MeetingAttachment.Template.xml">
+      <DependentUpon>GS.Land.MeetingAttachment.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.IssueAttachment\GS.Land.IssueAttachment.Template.xml">
+      <DependentUpon>GS.Land.IssueAttachment.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.IssueAttachmentLists\GS.Land.IssueAttachmentLists.Template.xml">
+      <DependentUpon>GS.Land.IssueAttachmentLists.feature</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Features\GS.Land.Assignment\GS.Land.Assignment.Template.xml">
+      <DependentUpon>GS.Land.Assignment.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.AssignmentLists\GS.Land.AssignmentLists.Template.xml">
+      <DependentUpon>GS.Land.AssignmentLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.Report\GS.Land.Report.Template.xml">
+      <DependentUpon>GS.Land.Report.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.ReportLists\GS.Land.ReportLists.Template.xml">
+      <DependentUpon>GS.Land.ReportLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.IssueCategory\GS.Land.IssueCategory.Template.xml">
+      <DependentUpon>GS.Land.IssueCategory.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Land.IssueCategoryLists\GS.Land.IssueCategoryLists.Template.xml">
+      <DependentUpon>GS.Land.IssueCategoryLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Fields\AssignmentCoExecutorsLand\Elements.xml" />
+    <Content Include="Fields\AssignmentControllerLand\Elements.xml" />
+    <Content Include="Fields\AssignmentControlStateLand\Elements.xml" />
+    <Content Include="Fields\AssignmentDaysForResolveLand\Elements.xml" />
+    <Content Include="Fields\AssignmentDayTypeLand\Elements.xml" />
+    <Content Include="Fields\AssignmentDependentAssignmentLand\Elements.xml" />
+    <Content Include="Fields\AssignmentDependentAssignTextLand\Elements.xml" />
+    <Content Include="Fields\AssignmentDependentTermTextLand\Elements.xml" />
+    <Content Include="Fields\AssignmentExecutorLand\Elements.xml" />
+    <Content Include="Fields\AssignmentExecutorOrgLand\Elements.xml" />
+    <Content Include="Fields\AssignmentExecutorPositionLand\Elements.xml" />
+    <Content Include="Fields\AssignmentFactDateLand\Elements.xml" />
+    <Content Include="Fields\AssignmentIssueLand\Elements.xml" />
+    <Content Include="Fields\AssignmentLastReportLand\Elements.xml" />
+    <Content Include="Fields\AssignmentNoteLand\Elements.xml" />
+    <Content Include="Fields\AssignmentNumberLand\Elements.xml" />
+    <Content Include="Fields\AssignmentPlanDateLand\Elements.xml" />
+    <Content Include="Fields\AssignmentPlanIsDependentLand\Elements.xml" />
+    <Content Include="Fields\AssignmentProlongationCountLand\Elements.xml" />
+    <Content Include="Fields\AssignmentResponsibleExecutorLand\Elements.xml" />
+    <Content Include="Fields\AssignmentStatusLand\Elements.xml" />
+    <Content Include="Fields\AssignmentTextLand\Elements.xml" />
+    <Content Include="Fields\AssignmentTypeLand\Elements.xml" />
+    <Content Include="Fields\IssueAddressLand\Elements.xml" />
+    <Content Include="Fields\IssueAttachmentIssueLand\Elements.xml" />
+    <Content Include="Fields\IssueCadastreIdLand\Elements.xml" />
+    <Content Include="Fields\IssueCategoryLand\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\IssueCoReportersLand\Elements.xml" />
+    <Content Include="Fields\IssueDecisionLand\Elements.xml" />
+    <Content Include="Fields\IssueDecisionTypeLand\Elements.xml" />
+    <Content Include="Fields\IssueDescriptionLand\Elements.xml" />
+    <Content Include="Fields\IssueInfoLand\Elements.xml" />
+    <Content Include="Fields\IssueInvestorLand\Elements.xml" />
+    <Content Include="Fields\IssueMeetingDateLand\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\IssueMeetingDateNumberLand\Elements.xml" />
+    <Content Include="Fields\IssueMeetingLand\Elements.xml" />
+    <Content Include="Fields\IssueMeetingNumberLand\Elements.xml" />
+    <Content Include="Fields\IssueMunicipalDistrictLand\Elements.xml" />
+    <Content Include="Fields\IssueNumberLand\Elements.xml" />
+    <Content Include="Fields\IssueNumberTextLand\Elements.xml" />
+    <Content Include="Fields\IssueReporterLand\Elements.xml" />
+    <Content Include="Fields\IssueSettlementLand\Elements.xml" />
+    <Content Include="Fields\IssueSubCategoryLand\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\IssueSubnumberLand\Elements.xml" />
+    <Content Include="Fields\IssueThemeLand\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentDescriptionLand\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentDocTypeLand\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentMeetingLand\Elements.xml" />
+    <Content Include="Fields\MeetingAttachmentProtocolCopyLand\Elements.xml" />
+    <Content Include="Fields\MeetingCommentLand\Elements.xml" />
+    <Content Include="Fields\MeetingDateLand\Elements.xml" />
+    <Content Include="Fields\MeetingDateNumberLand\Elements.xml" />
+    <Content Include="Fields\MeetingNumberLand\Elements.xml" />
+    <Content Include="Fields\MeetingOtherParticipantsLand\Elements.xml" />
+    <Content Include="Fields\MeetingParticipantsLand\Elements.xml" />
+    <Content Include="Fields\MeetingPlaceLand\Elements.xml" />
+    <Content Include="Fields\MeetingStatusLand\Elements.xml" />
+    <Content Include="Fields\IssueDependentIssueLand\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\ReportAssignmentLand\Elements.xml" />
+    <Content Include="Fields\ReportDateLand\Elements.xml" />
+    <Content Include="Fields\ReportDecisionLand\Elements.xml" />
+    <Content Include="Fields\ReportExpectedDateLand\Elements.xml" />
+    <Content Include="Fields\ReportInfoLand\Elements.xml" />
+    <Content Include="Fields\ReportNewDeadlineLand\Elements.xml" />
+    <Content Include="Fields\ReportRequestDateLand\Elements.xml" />
+    <Content Include="Fields\ReportResolutionCommentLand\Elements.xml" />
+    <Content Include="Fields\ReportTextLand\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\EditForm2.aspx" />
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\NewForm2.aspx" />
+    <Content Include="ListDefinitions\AssignmentLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueAttachmentLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\IssueAttachmentLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\EditForm2.aspx" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\NewForm2.aspx" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\MeetingAttachmentLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\MeetingAttachmentLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\MeetingLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\MeetingLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueCategoryLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\IssueCategoryLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\EditForm2.aspx" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\NewForm2.aspx" />
+    <Content Include="ListDefinitions\ReportLandListDefinition\schema.xml" />
+    <Content Include="ListInstances\AssignmentLandList\Elements.xml" />
+    <Content Include="ListInstances\IssueAttachmentLandList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListInstances\IssueLandList\Elements.xml" />
+    <Content Include="ListInstances\MeetingAttachmentLandList\Elements.xml" />
+    <Content Include="ListInstances\MeetingLandList\Elements.xml" />
+    <Content Include="ListInstances\IssueCategoryLandList\Elements.xml" />
+    <Content Include="ListInstances\ReportLandList\Elements.xml" />
+    <Content Include="Template\Images\GS\Feature.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Condition="!Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(SolutionDir)\SPSF.targets" />
+  <Import Condition=" Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(MSBuildProjectDirectory)\..\SPSF.targets" />
+  <Target Name="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)" />
+  <Target Name="AfterBuild" DependsOnTargets="$(AfterBuildDependsOn)" />
+</Project>

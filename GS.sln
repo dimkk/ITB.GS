@@ -59,7 +59,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Ig.Sp.Module.Sivgk.v1", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.WebParts", "GS.WebParts\GS.WebParts.csproj", "{1D765A18-BBB0-474C-B79D-66436A24004C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Land.ContentTypes", "GS.Land.ContentTypes\GS.Land.ContentTypes.csproj", "{1A6F7709-F6E5-4911-9C69-437595EDF59D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Land.ModelXml", "GS.Land.ModelXml\GS.Land.ModelXml.csproj", "{1A6F7709-F6E5-4911-9C69-437595EDF59D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.Zkh.ContentTypes", "GS.Zkh.ContentTypes\GS.Zkh.ContentTypes.csproj", "{C971877B-B9F5-4FF7-9502-8CD2043588BE}"
 EndProject

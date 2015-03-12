@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вопросы"
+		DisplayName="Категория вопроса"
+		ID="{E2A1631A-AB09-428C-9459-70C95ECDA632}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueCategoryLand"
+		Name="IssueCategoryLand"
+		Type="Lookup"
+		List="Lists/IssueCategoryLandList"
+		ShowField="Title"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на категорию вопроса повестки заседания Земля"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>
