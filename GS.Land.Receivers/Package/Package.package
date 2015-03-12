@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="530c474c-56b8-4be1-a755-0fa937d1749d" solutionId="530c474c-56b8-4be1-a755-0fa937d1749d" resetWebServer="false" sharePointProductVersion="15.0" name="GS.Land.Receivers" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="7463d74d-91e0-41f5-acfb-ffc9904909d1" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="260e0f05-7797-4b4d-9f3b-bc929f33b8d6" />
+  </projectItems>
+</package>

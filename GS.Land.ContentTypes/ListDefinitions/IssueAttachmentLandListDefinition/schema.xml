@@ -16,7 +16,7 @@
     <ContentTypes>
       <ContentTypeRef ID="0x0101" />
       <ContentTypeRef ID="0x0120" />
-      <ContentTypeRef ID="0x0100BECB02A9639D4C5F840C486648C30337">
+      <ContentTypeRef ID="0x0120D52000BECB02A9639D4C5F840C486648C30337">
         <Folder TargetName="IssueAttachmentLand" />
       </ContentTypeRef>
     </ContentTypes>
@@ -61,25 +61,21 @@
           <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
         </ParameterBindings>
       </View>
-      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+      <View BaseViewID="1" Type="HTML" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" XslLink="main.xsl" WebPartZoneID="Main" WebPartOrder="1" Url="Forms/AllItems.aspx">
         <XslLink Default="TRUE">main.xsl</XslLink>
-        <JSLink>clienttemplates.js</JSLink>
         <RowLimit Paged="TRUE">30</RowLimit>
-        <Toolbar Type="Standard" />
         <ViewFields>
-          <FieldRef Name="LinkTitle">
-          </FieldRef>
+          <FieldRef Name="DocIcon" />
+          <FieldRef Name="LinkFilename" />
+          <FieldRef Name="Modified" />
+          <FieldRef Name="Editor" />
         </ViewFields>
         <Query>
           <OrderBy>
-            <FieldRef Name="ID">
-            </FieldRef>
+            <FieldRef Name="FileLeafRef" />
           </OrderBy>
         </Query>
-        <ParameterBindings>
-          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
-          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
-        </ParameterBindings>
+        <Aggregations Value="Off" />
       </View>
     </Views>
     <Forms>

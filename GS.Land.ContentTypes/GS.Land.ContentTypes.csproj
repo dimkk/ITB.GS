@@ -62,7 +62,10 @@
     <Compile Include="Features\GS.Land.AssignmentLists\GS.Land.EventReceiver.cs">
       <DependentUpon>GS.Land.AssignmentLists.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\GS.Land.MeetingLists\GS.Land.EventReceiver.cs">
+    <Compile Include="Features\GS.Land.IssueLists\GS.Land.IssueLists.EventReceiver.cs">
+      <DependentUpon>GS.Land.IssueLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GS.Land.MeetingLists\GS.Land.MeetingLists.EventReceiver.cs">
       <DependentUpon>GS.Land.MeetingLists.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\GS.Land.QuestionCategoryLists\GS.Land.EventReceiver.cs">

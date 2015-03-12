@@ -81,10 +81,6 @@
 				Name="IssueNumberLand"
 				Required="FALSE" />
 			<FieldRef
-				ID="{A105EC40-710D-4089-AD7B-39CEE397C956}"
-				Name="IssueNumberTextLand"
-				Required="FALSE" />
-			<FieldRef
 				ID="{A4DBB950-E99D-49CF-8671-51EBEE2E70CE}"
 				Name="IssueReporterLand"
 				Required="FALSE" />

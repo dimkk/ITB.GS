@@ -13,7 +13,7 @@
     -->
 	<!-- Parent ContentType Item -->
 	<ContentType
-		ID="0x0100BECB02A9639D4C5F840C486648C30337"
+		ID="0x0120D52000BECB02A9639D4C5F840C486648C30337"
 		Name="IssueAttachmentLand"
 		Description="Тип содержимого для вложений вопроса повестки заседания Земля"
 		Group="Земля.Типы содержимого"

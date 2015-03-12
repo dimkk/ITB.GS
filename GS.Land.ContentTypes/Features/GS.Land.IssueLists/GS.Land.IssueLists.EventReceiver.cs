@@ -3,7 +3,7 @@ using Microsoft.SharePoint;
 using System;
 using System.Runtime.InteropServices;
 
-namespace GS.Land.ContentTypes.Features.GS.Land.MeetingLists
+namespace GS.Land.ContentTypes.Features
 {
     /// <summary>
     /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
@@ -12,13 +12,11 @@ namespace GS.Land.ContentTypes.Features.GS.Land.MeetingLists
     /// The GUID attached to this class may be used during packaging and should not be modified.
     /// </remarks>
 
-    [Guid("51eb5a6f-8659-4294-81f7-73d6819f11aa")]
-    public class MeetingLandListEventReceiver : SPFeatureReceiver
+    [Guid("fac94984-e74b-4b2b-8b0f-170f90f9fe5c")]
+    public class IssueListListEventReceiver : SPFeatureReceiver
     {
-        #region Constants
-        private readonly string fieldContentTypeName = "MeetingLand";
-        private readonly string fieldName = "MeetingDateNumberLand";
-        #endregion
+        private readonly string fieldContentTypeName = "IssueLand";
+        private readonly string fieldName = "IssueNumberTextLand";
 
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
