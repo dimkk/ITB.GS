@@ -236,7 +236,6 @@
         </div>
         <div class="container">
             <button class="btn btn-default" data-bind="click: closeForm" id="oCancelButton" name="oCancelButton" style="float:right">Закрыть</button>
-            <button class="btn btn-default" data-bind="click: exportToWord" name="bExportToWord" style="float:right">Экспорт в Word</button>
         </div>
     </div>
 </asp:Content>

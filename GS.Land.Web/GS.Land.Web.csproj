@@ -79,6 +79,10 @@
     <Compile Include="Layouts\GS.Land.Web\Pages\ExecutorSelection.aspx.designer.cs">
       <DependentUpon>ExecutorSelection.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\GS.Land.Web\Pages\IssueAttachmentLand.aspx.cs">
+      <DependentUpon>IssueAttachmentLand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Layouts\GS.Land.Web\Pages\MeetingLand.aspx.cs">
       <DependentUpon>MeetingLand.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

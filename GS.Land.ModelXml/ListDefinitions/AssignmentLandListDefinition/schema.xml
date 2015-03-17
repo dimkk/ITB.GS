@@ -95,7 +95,7 @@
               <ID>g_54851d06-61af-4ead-bd33-748770279fa0</ID>
               <wp:PageType>PAGE_EDITFORM</wp:PageType>
               <wp:TemplateName>CSRListForm</wp:TemplateName>
-              <wp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderAssignmentLand.js</wp:JSLink>
+              <wp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderAssignmentLand.js | /_layouts/15/GS.Land.Web/Scripts/knockout-2.3.0.js</wp:JSLink>
             </WebPart>]]>
           </AllUsersWebPart>
         </WebParts>
@@ -110,7 +110,7 @@
               <ID>g_661b0d6b-b820-4c5e-acf9-7aa5d4a5a99f</ID>
               <lfwp:PageType>PAGE_NEWFORM</lfwp:PageType>
               <lfwp:TemplateName>CSRListForm</lfwp:TemplateName>
-              <lfwp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderAssignmentLand.js</lfwp:JSLink>
+              <lfwp:JSLink>/_layouts/15/GS.Land.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Land.Web/Scripts/csr/renderAssignmentLand.js | /_layouts/15/GS.Land.Web/Scripts/knockout-2.3.0.js</lfwp:JSLink>
             </WebPart>]]>
           </AllUsersWebPart>
         </WebParts>

@@ -397,7 +397,7 @@
                 }
 
                 // достанем данные заседания
-                var meetingList = ctx.get_web().get_lists().getByTitle("МВК: Заседания");
+                var meetingList = ctx.get_web().get_lists().getByTitle("Земля: Заседания");
                 var mId = questionInstance.get_data()[0].get_item("IssueMeetingLand").get_lookupId();
 
                 // установим глобальные переменные для страницы
