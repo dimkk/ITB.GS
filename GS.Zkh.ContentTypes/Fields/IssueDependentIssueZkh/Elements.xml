@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Справочники"
+		DisplayName="Родительская категория"
+		ID="{F6398B3B-4B7D-470C-8241-C34B5A077DA1}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueDependentIssueZkh"
+		Name="IssueDependentIssueZkh"
+		Type="Lookup"
+		List="Lists/IssueCategoryZkhList"
+		ShowField="Title"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на родительскую категорию"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE"></Field>
+</Elements>

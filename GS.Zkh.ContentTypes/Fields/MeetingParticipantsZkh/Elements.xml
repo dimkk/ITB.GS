@@ -4,7 +4,7 @@
 	<Field
 		Group="ЖКХ.Заседания"
 		DisplayName="Участники МВК"
-		ID="{B3BC5B16-2FF0-440A-88DF-FB3B9D2AEE7E}"
+		ID="{FE5EB5EA-91B1-4F7A-B1A8-EADCBA1DEA8D}"
 		SourceID="http://schemas.microsoft.com/sharepoint/v3"
 		StaticName="MeetingParticipantsZkh"
 		Name="MeetingParticipantsZkh"

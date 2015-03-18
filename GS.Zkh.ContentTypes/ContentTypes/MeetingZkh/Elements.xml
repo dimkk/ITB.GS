@@ -18,8 +18,7 @@
 		Description="Тип содержимого для заседания ЖКХ"
 		Group="ЖКХ.Типы содержимого"
 		Version="0"
-		Inherits="False"
-    Overwrite="TRUE">
+		Inherits="TRUE">
 		<FieldRefs>
 			<FieldRef
 				ID="{34A2BBA2-C5A8-44C4-BFB3-67259CC94A56}"
@@ -33,26 +32,36 @@
 				ID="{8CCF8F53-B17A-409A-8889-9C0F314D1E8D}"
 				Name="MeetingNumberZkh"
 				Required="FALSE" />
-			<FieldRef
-				ID="{8DE78DF5-E3E6-4479-8E00-7927BE3691A6}"
+      <FieldRef
+				ID="{5959A0BA-D90C-453F-8896-EE5FCED9AE38}"
+				Name="MeetingOtherParticipantsZkh"
+				Required="FALSE" />
+      <FieldRef
+				ID="{FE5EB5EA-91B1-4F7A-B1A8-EADCBA1DEA8D}"
+				Name="MeetingParticipantsZkh"
+				Required="FALSE" />
+      <FieldRef
+				ID="{54B9B4F3-D2A4-4B55-88DD-5353148CB225}"
 				Name="MeetingPlaceZkh"
 				Required="FALSE" />
-			<FieldRef
-				ID="{5CDA3D92-D541-459B-A3BF-38E8188391F1}"
+      <FieldRef
+				ID="{4C73AB75-E928-4203-8A9B-CAFD7F0968E5}"
 				Name="MeetingStatusZkh"
 				Required="FALSE" />
-      <FieldRef
-        ID="{AC04B13F-61C7-4ABA-8BF6-B53EE2F801C0}"
-        Name="MeetingDateNumberZkh"
-        Required="FALSE" />
-      <FieldRef
-        ID="{B3BC5B16-2FF0-440A-88DF-FB3B9D2AEE7E}"
-        Name="MeetingParticipantsZkh"
-        Required="FALSE" />
-      <FieldRef
-        ID="{9FF61F87-5E22-4C92-B840-584C1D1657EC}"
-        Name="MeetingOtherParticipantsZkh"
-        Required="FALSE" />
-		</FieldRefs>
-	</ContentType>
+    </FieldRefs>
+    <XmlDocuments>
+      <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+        <FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+          <Display>ListForm</Display>
+          <Edit>ListForm</Edit>
+          <New>ListForm</New>
+        </FormTemplates>
+      </XmlDocument>
+      <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
+        <FormUrls xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
+          <Display>~siteLayouts/GS.Zkh.Web/Pages/MeetingZkh.aspx</Display>
+        </FormUrls>
+      </XmlDocument>
+    </XmlDocuments>
+  </ContentType>
 </Elements>

@@ -3,5 +3,8 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="IssueZkhListDefinition\" Type="ElementManifest" />
     <ProjectItemFile Source="schema.xml" Target="IssueZkhListDefinition\" Type="ElementFile" />
+    <ProjectItemFile Source="DispForm2.aspx" Target="IssueZkhListDefinition\" Type="ElementFile" />
+    <ProjectItemFile Source="EditForm2.aspx" Target="IssueZkhListDefinition\" Type="ElementFile" />
+    <ProjectItemFile Source="NewForm2.aspx" Target="IssueZkhListDefinition\" Type="ElementFile" />
   </Files>
 </ProjectItem>

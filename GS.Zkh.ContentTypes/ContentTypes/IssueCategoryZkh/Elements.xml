@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-26 12:46:15Z
+        Created by: SPDEV\developer
+              Name: IssueCategoryZkh
+       Description: Тип контента для справочника категорий
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x01000C03675F0BBC44219ABE44FA57DE0000"
+		Name="IssueCategoryZkh"
+		Description="Тип контента для справочника категорий"
+		Group="ЖКХ.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+		</FieldRefs>
+	</ContentType>
+</Elements>

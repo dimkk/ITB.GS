@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<List xmlns:ows="Microsoft SharePoint" Title="Basic List" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" EnableContentTypes="TRUE">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="Basic List" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" EnableContentTypes="True">
   <MetaData>
     <ContentTypes>
+      <ContentTypeRef ID="0x0120" />
       <ContentTypeRef ID="0x0100014F5719DD534821B6A8A339827FB1D4">
         <Folder TargetName="AssignmentZkh" />
       </ContentTypeRef>
-      <ContentTypeRef ID="0x0120" />
     </ContentTypes>
     <Fields>
     </Fields>
@@ -18,11 +18,16 @@
             <RightsChoices>
               <RightsGroup PermAddListItems="required" />
             </RightsChoices>
-            <Then><HTML><![CDATA[<div class="tb"><img src="/_layouts/15/images/caladd.gif?rev=23" alt="" />&#160;<a class="ms-addnew" id="idAddNewItem" href="]]></HTML>
-              <URL Cmd="New" /><HTML><![CDATA[" onclick="javascript:NewItem(']]></HTML>
+            <Then>
+              <HTML><![CDATA[<div class="tb"><img src="/_layouts/15/images/caladd.gif?rev=23" alt="" />&#160;<a class="ms-addnew" id="idAddNewItem" href="]]></HTML>
+              <URL Cmd="New" />
+              <HTML><![CDATA[" onclick="javascript:NewItem(']]></HTML>
               <ScriptQuote NotAddingQuote="TRUE">
                 <URL Cmd="New" />
-              </ScriptQuote><HTML><![CDATA[', true);javascript:return false;" target="_self">]]></HTML><HTML>$Resources:core,addnewitem;</HTML><HTML><![CDATA[</a></div>]]></HTML>
+              </ScriptQuote>
+              <HTML><![CDATA[', true);javascript:return false;" target="_self">]]></HTML>
+              <HTML>$Resources:core,addnewitem;</HTML>
+              <HTML><![CDATA[</a></div>]]></HTML>
             </Then>
           </IfHasRights>
         </Toolbar>
@@ -65,9 +70,51 @@
       </View>
     </Views>
     <Forms>
-      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="DisplayForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="DispForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\AssignmentZkhListDefinition\DispForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:wp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_0fb6b814_b3a7_418b_bbbd_6a524ef6788f</ID>
+              <wp:PageType>PAGE_DISPLAYFORM</wp:PageType>
+              <wp:TemplateName>CSRListForm</wp:TemplateName>
+              <wp:JSLink>/_layouts/15/GS.Zkh.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Zkh.Web/Scripts/csr/renderAssignmentZkh.js</wp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
+      <Form Type="EditForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="EditForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\AssignmentZkhListDefinition\EditForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:wp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_54851d06-61af-4ead-bd33-748770279fa0</ID>
+              <wp:PageType>PAGE_EDITFORM</wp:PageType>
+              <wp:TemplateName>CSRListForm</wp:TemplateName>
+              <wp:JSLink>/_layouts/15/GS.Zkh.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Zkh.Web/Scripts/csr/renderAssignmentZkh.js | /_layouts/15/GS.Zkh.Web/Scripts/knockout-2.3.0.js</wp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
+      <Form Type="NewForm" Default="TRUE" UseDefaultListFormWebPart="False" Url="NewForm2.aspx" SetupPath="features\$SharePoint.Feature.DeploymentPath$\AssignmentZkhListDefinition\NewForm2.aspx">
+        <WebParts>
+          <AllUsersWebPart WebPartZoneID="Main" WebPartOrder="1">
+            <![CDATA[
+            <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:lfwp="http://schemas.microsoft.com/WebPart/v2/ListForm">
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
+              <ID>g_661b0d6b-b820-4c5e-acf9-7aa5d4a5a99f</ID>
+              <lfwp:PageType>PAGE_NEWFORM</lfwp:PageType>
+              <lfwp:TemplateName>CSRListForm</lfwp:TemplateName>
+              <lfwp:JSLink>/_layouts/15/GS.Zkh.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Zkh.Web/Scripts/csr/renderAssignmentZkh.js | /_layouts/15/GS.Zkh.Web/Scripts/knockout-2.3.0.js</lfwp:JSLink>
+            </WebPart>]]>
+          </AllUsersWebPart>
+        </WebParts>
+      </Form>
     </Forms>
   </MetaData>
 </List>

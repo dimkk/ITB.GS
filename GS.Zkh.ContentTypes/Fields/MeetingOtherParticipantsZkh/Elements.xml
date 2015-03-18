@@ -4,7 +4,7 @@
 	<Field
 		Group="ЖКХ.Заседания"
 		DisplayName="Список остальных участников"
-		ID="{9FF61F87-5E22-4C92-B840-584C1D1657EC}"
+		ID="{5959A0BA-D90C-453F-8896-EE5FCED9AE38}"
 		SourceID="http://schemas.microsoft.com/sharepoint/v3"
 		StaticName="MeetingOtherParticipantsZkh"
 		Name="MeetingOtherParticipantsZkh"

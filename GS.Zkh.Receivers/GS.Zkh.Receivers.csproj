@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GS.GS.Zkh.Receivers</RootNamespace>
+    <AssemblyName>GS.GS.Zkh.Receivers</AssemblyName>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
+    <ProjectGuid>{0CC46FD8-660C-41F6-B8B3-95F95F53FC91}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ITB.SP.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58c67d7e59a9117f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ITB.SP.Tools\v4.0_1.0.0.0__58c67d7e59a9117f\ITB.SP.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Server, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventReceivers\IssueAttachmentItem\IssueAttachmentItem.cs" />
+    <Compile Include="EventReceivers\IssueItem\IssueItem.cs" />
+    <Compile Include="EventReceivers\MeetingItem\MeetingItem.cs" />
+    <Compile Include="Features\GS.Zkh.Issue.Attachments\GS.Zkh.Issue.EventReceiver.cs">
+      <DependentUpon>GS.Zkh.Issue.Attachments.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EventReceivers\IssueAttachmentItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a8af37e0-b422-4f7d-a933-6cf473b50584}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceivers\IssueItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{59ce4383-951a-4eae-af50-055bd6f60585}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceivers\MeetingItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{38221ba8-d03a-4860-bcd6-0d44897230b0}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\GS.Zkh.Issue.Attachments\GS.Zkh.Issue.Attachments.feature">
+      <FeatureId>{9617be6c-453e-484d-aabe-e4ba508d7a71}</FeatureId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{F76A258A-2598-4257-97DE-198C6A3875C4}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Template\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ecbe87ea-6a21-4dc7-b9af-389a00bd8538}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EventReceivers\IssueAttachmentItem\Elements.xml" />
+    <Content Include="EventReceivers\IssueItem\Elements.xml" />
+    <Content Include="EventReceivers\MeetingItem\Elements.xml" />
+    <Content Include="Features\GS.Zkh.Issue.Attachments\GS.Zkh.Issue.Attachments.Template.xml">
+      <DependentUpon>GS.Zkh.Issue.Attachments.feature</DependentUpon>
+    </Content>
+    <Content Include="Template\Images\GS\Feature.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Condition="!Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(SolutionDir)\SPSF.targets" />
+  <Import Condition=" Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(MSBuildProjectDirectory)\..\SPSF.targets" />
+  <Target Name="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)" />
+  <Target Name="AfterBuild" DependsOnTargets="$(AfterBuildDependsOn)" />
+</Project>

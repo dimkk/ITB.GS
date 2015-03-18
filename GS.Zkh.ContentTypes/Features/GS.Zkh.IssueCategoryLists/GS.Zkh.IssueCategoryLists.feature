@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="7bf01554-94ed-4030-ab3d-7c8a4aeecec0" description="IssueCategoryLists Description" featureId="7bf01554-94ed-4030-ab3d-7c8a4aeecec0" imageUrl="GS\FeatureIcon_IssueCategoryLists.gif" imageAltText="IssueCategoryLists Title" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="$SharePoint.Type.5698bec3-6dda-4974-8b53-e226b374ea47.FullName$" scope="Site" solutionId="070a12fe-8292-479f-ab3a-f73e6711fa72" title="IssueCategoryLists Title" version="AAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0ZW0uVmVyc2lvbgQAAAAGX01ham9yBl9NaW5vcgZfQnVpbGQJX1JldmlzaW9uAAAAAAgICAgBAAAAAAAAAAAAAAAAAAAACw==" deploymentPath="$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+  <projectItems>
+    <projectItemReference itemId="9a864895-bfa9-433a-bd75-5408f3a36686" />
+  </projectItems>
+</feature>

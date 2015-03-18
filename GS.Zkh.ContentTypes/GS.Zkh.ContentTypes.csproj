@@ -64,6 +64,9 @@
     <Compile Include="Features\GS.Zkh.AssignmentLists\GS.Zkh.EventReceiver.cs">
       <DependentUpon>GS.Zkh.AssignmentLists.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\GS.Zkh.IssueCategoryLists\GS.Zkh.EventReceiver.cs">
+      <DependentUpon>GS.Zkh.IssueCategoryLists.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +75,9 @@
     </None>
     <None Include="ContentTypes\IssueAttachmentZkh\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{9382f800-4466-4a15-8574-620b15d90a04}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\IssueCategoryZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cfa6e952-ed19-4912-bac9-41a13ee71ca4}</SharePointProjectItemId>
     </None>
     <None Include="ContentTypes\IssueZkh\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{ff24cd82-109e-4468-b150-e8bf008bfbba}</SharePointProjectItemId>
@@ -120,6 +126,12 @@
     </None>
     <None Include="Features\GS.Zkh.ReportLists\GS.Zkh.ReportLists.feature">
       <FeatureId>{00ec5dc7-2a84-4c99-924f-935c679175be}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.IssueCategoryLists\GS.Zkh.IssueCategoryLists.feature">
+      <FeatureId>{a81885f1-3846-4550-ba14-07307bf37845}</FeatureId>
+    </None>
+    <None Include="Features\GS.Zkh.IssueCategory\GS.Zkh.IssueCategory.feature">
+      <FeatureId>{26d020d5-2fee-4a11-9a40-1d078a175696}</FeatureId>
     </None>
     <None Include="Fields\AssignmentCoExecutorsZkh\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f3018ef0-94e1-4136-b5f9-5724e5a3cf65}</SharePointProjectItemId>
@@ -201,6 +213,12 @@
     </None>
     <None Include="Fields\IssueCategoryZkh\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{a62925a5-8cb5-4331-99a9-9ed978c57035}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueDependentIssueZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c6af70f3-5e46-49de-baec-917dc6369826}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\IssueSubCategoryZkh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d4b95711-867e-4c88-800a-ecb76a843aa2}</SharePointProjectItemId>
     </None>
     <None Include="Fields\MeetingOtherParticipantsZkh\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f281ed97-12d5-4de1-8233-253d4d86f277}</SharePointProjectItemId>
@@ -317,28 +335,34 @@
       <SharePointProjectItemId>{2c6659f2-3a1c-420d-9f6f-95e650c48c84}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\AssignmentZkhListDefinition\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{9ad01ce4-2a5c-46a6-954f-cbed4414138c}</SharePointProjectItemId>
+      <SharePointProjectItemId>{f9d7ecc0-d802-4ae4-acb4-203d078750f4}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\IssueAttachmentZkhListDefinition\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{04215fb6-0fe0-4dbc-94a5-bc85c3e722da}</SharePointProjectItemId>
     </None>
+    <None Include="ListDefinitions\IssueCategoryZkhListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3d9c1e51-4f07-4b72-8c69-846fb3a10581}</SharePointProjectItemId>
+    </None>
     <None Include="ListDefinitions\IssueZkhListDefinition\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{2b30f1a7-2f79-4350-ba2d-6f7eaa13186d}</SharePointProjectItemId>
+      <SharePointProjectItemId>{422c2e65-2125-4d2f-b1dd-2af18cf048b6}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\MeetingAttachmentZkhListDefinition\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{490a344e-0941-4eae-8947-ca8d595c9e4e}</SharePointProjectItemId>
+      <SharePointProjectItemId>{e269abf5-bf70-450b-b9fd-cb1d38b247ba}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\MeetingZkhListDefinition\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{b7399b16-b781-4f76-8e94-c3bfb0d6c394}</SharePointProjectItemId>
+      <SharePointProjectItemId>{bc4c7750-8e46-497c-a03f-56965d2c245c}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\ReportZkhListDefinition\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{2d27845f-e5b7-4529-92c9-b9cde42e1c74}</SharePointProjectItemId>
+      <SharePointProjectItemId>{feaf62c3-da5f-4447-9189-688b5f2b247e}</SharePointProjectItemId>
     </None>
     <None Include="ListInstances\AssignmentZkhList\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{9f2b8a8e-58ce-4509-a430-0c0bc79a39e5}</SharePointProjectItemId>
     </None>
     <None Include="ListInstances\IssueAttachmentZkhList\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{45f4808d-70b3-4ae4-97dd-4c92e3ffde63}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\IssueCategoryZkhList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9a864895-bfa9-433a-bd75-5408f3a36686}</SharePointProjectItemId>
     </None>
     <None Include="ListInstances\IssueZkhList\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{14c5edb6-9188-449e-af25-e32bf051a7d2}</SharePointProjectItemId>
@@ -364,8 +388,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="ContentTypes\AssignmentZkh\Elements.xml" />
+    <Content Include="ContentTypes\AssignmentZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ContentTypes\IssueAttachmentZkh\Elements.xml" />
+    <Content Include="ContentTypes\IssueCategoryZkh\Elements.xml" />
     <Content Include="ContentTypes\IssueZkh\Elements.xml" />
     <Content Include="ContentTypes\MeetingAttachmentZkh\Elements.xml" />
     <Content Include="ContentTypes\MeetingZkh\Elements.xml">
@@ -408,6 +435,12 @@
     <Content Include="Features\GS.Zkh.ReportLists\GS.Zkh.ReportLists.Template.xml">
       <DependentUpon>GS.Zkh.ReportLists.feature</DependentUpon>
     </Content>
+    <Content Include="Features\GS.Zkh.IssueCategoryLists\GS.Zkh.IssueCategoryLists.Template.xml">
+      <DependentUpon>GS.Zkh.IssueCategoryLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Zkh.IssueCategory\GS.Zkh.IssueCategory.Template.xml">
+      <DependentUpon>GS.Zkh.IssueCategory.feature</DependentUpon>
+    </Content>
     <Content Include="Fields\AssignmentCoExecutorsZkh\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -428,7 +461,9 @@
     <Content Include="Fields\AssignmentLastReportZkh\Elements.xml" />
     <Content Include="Fields\AssignmentNoteZkh\Elements.xml" />
     <Content Include="Fields\AssignmentNumberZkh\Elements.xml" />
-    <Content Include="Fields\AssignmentPlanDateZkh\Elements.xml" />
+    <Content Include="Fields\AssignmentPlanDateZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Fields\AssignmentPlanIsDependentZkh\Elements.xml" />
     <Content Include="Fields\AssignmentProlongationCountZkh\Elements.xml" />
     <Content Include="Fields\AssignmentResponsibleExecutorZkh\Elements.xml" />
@@ -439,6 +474,12 @@
     <Content Include="Fields\IssueAttachmentIssueZkh\Elements.xml" />
     <Content Include="Fields\IssueCadastreIdZkh\Elements.xml" />
     <Content Include="Fields\IssueCategoryZkh\Elements.xml" />
+    <Content Include="Fields\IssueDependentIssueZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\IssueSubCategoryZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Fields\MeetingOtherParticipantsZkh\Elements.xml" />
     <Content Include="Fields\MeetingParticipantsZkh\Elements.xml" />
     <Content Include="Fields\IssueCoReportersZkh\Elements.xml" />
@@ -483,23 +524,55 @@
     <Content Include="Fields\ReportRequestDateZkh\Elements.xml" />
     <Content Include="Fields\ReportResolutionCommentZkh\Elements.xml" />
     <Content Include="Fields\ReportTextZkh\Elements.xml" />
+    <Content Include="ListDefinitions\AssignmentZkhListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\AssignmentZkhListDefinition\EditForm2.aspx" />
     <Content Include="ListDefinitions\AssignmentZkhListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\AssignmentZkhListDefinition\NewForm2.aspx" />
     <Content Include="ListDefinitions\AssignmentZkhListDefinition\schema.xml" />
     <Content Include="ListDefinitions\IssueAttachmentZkhListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\IssueAttachmentZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueCategoryZkhListDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\IssueCategoryZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueZkhListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\IssueZkhListDefinition\EditForm2.aspx" />
     <Content Include="ListDefinitions\IssueZkhListDefinition\Elements.xml" />
-    <Content Include="ListDefinitions\IssueZkhListDefinition\schema.xml" />
-    <Content Include="ListDefinitions\MeetingAttachmentZkhListDefinition\Elements.xml" />
-    <Content Include="ListDefinitions\MeetingAttachmentZkhListDefinition\schema.xml" />
-    <Content Include="ListDefinitions\MeetingZkhListDefinition\Elements.xml" />
-    <Content Include="ListDefinitions\MeetingZkhListDefinition\schema.xml" />
-    <Content Include="ListDefinitions\ReportZkhListDefinition\Elements.xml" />
-    <Content Include="ListDefinitions\ReportZkhListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueZkhListDefinition\NewForm2.aspx" />
+    <Content Include="ListDefinitions\IssueZkhListDefinition\schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\MeetingAttachmentZkhListDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\MeetingAttachmentZkhListDefinition\schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\MeetingZkhListDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\MeetingZkhListDefinition\schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\ReportZkhListDefinition\DispForm2.aspx" />
+    <Content Include="ListDefinitions\ReportZkhListDefinition\EditForm2.aspx" />
+    <Content Include="ListDefinitions\ReportZkhListDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListDefinitions\ReportZkhListDefinition\NewForm2.aspx" />
+    <Content Include="ListDefinitions\ReportZkhListDefinition\schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\AssignmentZkhList\Elements.xml" />
     <Content Include="ListInstances\IssueAttachmentZkhList\Elements.xml" />
+    <Content Include="ListInstances\IssueCategoryZkhList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\IssueZkhList\Elements.xml" />
     <Content Include="ListInstances\MeetingAttachmentZkhList\Elements.xml" />
-    <Content Include="ListInstances\MeetingZkhList\Elements.xml" />
+    <Content Include="ListInstances\MeetingZkhList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\ReportZkhList\Elements.xml" />
     <Content Include="Template\Images\GS\FeatureIcon_AssignmentZkhList.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_AssignmentZkhList2.gif" />
@@ -520,6 +593,8 @@
     <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_Assignment.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_Issue.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_IssueAttachmentZkhList.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_IssueCategory.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_IssueCategoryLists.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_MeetingZkh.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_MeetingZkh2.gif" />
     <Content Include="Template\Images\GS\ListIcon_AssignmentZkhListDefinition.gif" />

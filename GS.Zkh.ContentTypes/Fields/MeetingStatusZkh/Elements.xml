@@ -4,7 +4,7 @@
 	<Field
 		Group="ЖКХ.Заседания"
 		DisplayName="Статус"
-		ID="{5CDA3D92-D541-459B-A3BF-38E8188391F1}"
+		ID="{4C73AB75-E928-4203-8A9B-CAFD7F0968E5}"
 		SourceID="http://schemas.microsoft.com/sharepoint/v3"
 		StaticName="MeetingStatusZkh"
 		Name="MeetingStatusZkh"

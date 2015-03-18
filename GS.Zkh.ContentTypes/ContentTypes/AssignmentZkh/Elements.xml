@@ -40,6 +40,14 @@
 				ID="{3930F287-1889-40B7-8E2F-DA88767ED696}"
 				Name="AssignmentDayTypeZkh"
 				Required="FALSE" />
+      <FieldRef
+        ID="{FFF91BC3-E183-412F-A69A-C509B330C237}"
+        Name="AssignmentDependentAssignTextZkh"
+        Required="FALSE" />
+      <FieldRef
+        ID="{EE00990E-5E82-473D-919E-EBCB53F5A5E6}"
+        Name="AssignmentDependentTermTextZkh"
+        Required="FALSE" />
 			<FieldRef
 				ID="{783DB21F-5018-4C0D-9664-67A541589219}"
 				Name="AssignmentExecutorOrgZkh"
@@ -100,14 +108,6 @@
 				ID="{B577FFE6-EC76-4051-BB7F-2AFCFADF17EF}"
 				Name="AssignmentTypeZkh"
 				Required="FALSE" />
-      <FieldRef
-  ID="{FFF91BC3-E183-412F-A69A-C509B330C237}"
-  Name="AssignmentDependentAssignTextZkh"
-  Required="FALSE" />
-      <FieldRef
-  ID="{EE00990E-5E82-473D-919E-EBCB53F5A5E6}"
-  Name="AssignmentDependentTermTextZkh"
-  Required="FALSE" />
 		</FieldRefs>
 	</ContentType>
 </Elements>

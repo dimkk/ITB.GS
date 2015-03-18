@@ -46,7 +46,7 @@ namespace GS.Console
 
         static void Main(string[] args)
         {
-            string url = "http://sp2013dev:8081/";
+            string url = "http://sp2013dev:81/";
             //CleanAttachments(url, "Вложения отчета по поручению");
             //CleanOldVersions(url, "Вложения наборы вопроса повестки");
             //AddUsersToGroup(url, "users.csv", "ignored.csv", "ДТП - ОМСУ");
@@ -54,6 +54,7 @@ namespace GS.Console
             using (var site = new SPSite(url))
             {
                 DeleteLandLists(site);
+                DeleteZkhLists(site);
 
                 //SPList issueList = site.RootWeb.GetListByUrl("AgendaQuestionList");
                 //var issueMappingFromTemp = new Dictionary<string, string>();
@@ -97,6 +98,17 @@ namespace GS.Console
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueLand"]);
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingLand"]);
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueCategoryLand"]);
+        }
+
+        private static void DeleteZkhLists(SPSite site)
+        {
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportZkh"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["AssignmentZkh"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueAttachmentZkh"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingAttachmentZkh"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueZkh"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingZkh"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueCategoryZkh"]);
         }
 
         private static void DeleteListsByContentType(SPContentType contentType)

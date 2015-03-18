@@ -4,7 +4,7 @@
 	<Field
 		Group="ЖКХ.Заседания"
 		DisplayName="Место проведения заседания"
-		ID="{8DE78DF5-E3E6-4479-8E00-7927BE3691A6}"
+		ID="{54B9B4F3-D2A4-4B55-88DD-5353148CB225}"
 		SourceID="http://schemas.microsoft.com/sharepoint/v3"
 		StaticName="MeetingPlaceZkh"
 		Name="MeetingPlaceZkh"

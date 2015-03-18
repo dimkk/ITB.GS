@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вопросы"
+		DisplayName="Подкатегория вопроса"
+		ID="{34B95F52-9E5F-477A-871E-E6C0A5FDC696}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="IssueSubCategoryZkh"
+		Name="IssueSubCategoryZkh"
+		Type="Lookup"
+		List="Lists/IssueCategoryZkhList"
+		ShowField="Title"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+		Description="Ссылка на подкатегорию вопроса повестки заседания ЖКХ"
+    Overwrite="TRUE"
+    AllowDeletion="FALSE">
+  </Field>
+</Elements>

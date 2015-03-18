@@ -77,10 +77,6 @@
 				Name="IssueMunicipalDistrictZkh"
 				Required="FALSE" />
 			<FieldRef
-				ID="{E9BDD291-372E-41BA-9B9D-4A664A007E52}"
-				Name="IssueNumberTextZkh"
-				Required="FALSE" />
-			<FieldRef
 				ID="{5D8D9358-B381-46C5-AD44-BBE4A4C12018}"
 				Name="IssueNumberZkh"
 				Required="FALSE" />
@@ -100,6 +96,10 @@
 				ID="{10A141A2-C2A7-4F37-97BB-9178F88974C9}"
 				Name="IssueThemeZkh"
 				Required="FALSE" />
+      <FieldRef
+        ID="{34B95F52-9E5F-477A-871E-E6C0A5FD0000}"
+        Name="IssueSubCategoryZkh"
+        Required="FALSE" />
 		</FieldRefs>
 	</ContentType>
 </Elements>
