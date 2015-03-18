@@ -46,12 +46,15 @@ namespace GS.Console
 
         static void Main(string[] args)
         {
-            CleanAttachments("http://gs.msk.mosreg.ru:8080", "Вложения отчета по поручению");
-            //CleanOldVersions("http://gs.msk.mosreg.ru:8080", "Вложения наборы вопроса повестки");
-            //AddUsersToGroup("http://gs.msk.mosreg.ru", "users.csv", "ignored.csv", "ДТП - ОМСУ");
+            string url = "http://sp2013dev:8081/";
+            //CleanAttachments(url, "Вложения отчета по поручению");
+            //CleanOldVersions(url, "Вложения наборы вопроса повестки");
+            //AddUsersToGroup(url, "users.csv", "ignored.csv", "ДТП - ОМСУ");
 
-            using (var site = new SPSite("http://gs.msk.mosreg.ru"))
+            using (var site = new SPSite(url))
             {
+                DeleteLandLists(site);
+
                 //SPList issueList = site.RootWeb.GetListByUrl("AgendaQuestionList");
                 //var issueMappingFromTemp = new Dictionary<string, string>();
                 //foreach (string key in issueMappingToTemp.Values)
@@ -83,6 +86,29 @@ namespace GS.Console
 
             System.Console.WriteLine("Завершено");
             System.Console.ReadLine();
+        }
+
+        private static void DeleteLandLists(SPSite site)
+        {
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportLand"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["AssignmentLand"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueAttachmentLand"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingAttachmentLand"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueLand"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingLand"]);
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueCategoryLand"]);
+        }
+
+        private static void DeleteListsByContentType(SPContentType contentType)
+        {
+            if (contentType == null)
+                return;
+
+            foreach (SPContentTypeUsage usage in SPContentTypeUsage.GetUsages(contentType).Where(s => s.IsUrlToList))
+            {
+                SPList list = contentType.ParentWeb.GetList(usage.Url);
+                list.Delete();
+            }
         }
 
         private static void ShowListUsages(SPList targetList)
