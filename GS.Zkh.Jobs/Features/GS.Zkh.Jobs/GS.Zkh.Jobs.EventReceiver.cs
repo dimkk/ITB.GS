@@ -12,7 +12,7 @@ namespace GS.Zkh.Jobs.Features
     /// The GUID attached to this class may be used during packaging and should not be modified.
     /// </remarks>
 
-    [Guid("becd8aff-4c44-4307-8034-41dff45cbda1")]
+    [Guid("5BBF7784-DA81-40DA-B13C-60B3FF417AB3")]
     public class GSZkhEventReceiver : SPFeatureReceiver
     {
         public override void FeatureActivated(SPFeatureReceiverProperties properties)

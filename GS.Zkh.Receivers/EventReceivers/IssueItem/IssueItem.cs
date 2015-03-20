@@ -19,7 +19,7 @@ namespace GS.Zkh.Receivers
     /// </summary>
     public class IssueItem : SPItemEventReceiver
     {
-        private readonly string storageListTemplateId = "10256";
+        private readonly string storageListTemplateId = "10156";
         private readonly string attachmentIssueFieldName = "IssueAttachmentIssueZkh";
         private readonly string issueMeetingFieldName = "IssueMeetingZkh";
         private static readonly string issueNumberFieldName = "IssueNumberTextZkh";

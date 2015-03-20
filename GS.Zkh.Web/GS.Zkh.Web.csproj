@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GS.GS.Zkh.Web</RootNamespace>
-    <AssemblyName>GS.GS.Zkh.Web</AssemblyName>
+    <AssemblyName>GS.Zkh.Web</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -145,9 +145,9 @@
     <Content Include="Layouts\GS.Zkh.Web\Pages\SearchQuestion.aspx" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\selectAgendaQuestion.html" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\selectExecutor.html" />
-    <Content Include="Layouts\GS.Zkh.Web\Pages\selectIssueMVK.html" />
+    <Content Include="Layouts\GS.Zkh.Web\Pages\selectIssueZkh.html" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\selectLinkedAssignment.html" />
-    <Content Include="Layouts\GS.Zkh.Web\Pages\selectLinkedAssignmentMVK.html" />
+    <Content Include="Layouts\GS.Zkh.Web\Pages\selectLinkedAssignmentZkh.html" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\selectObject.html" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\bootstrap.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\bootstrap.min.js" />

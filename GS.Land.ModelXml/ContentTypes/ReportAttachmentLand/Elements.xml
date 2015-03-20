@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100AA7E2B72229047478966CD0791F94F35" Name="ReportAttachmentLand" Group="Земля.Типы содержимого" Description="Тип содержимого для вложений отчета Земля" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{1B560744-669B-478A-9E33-9C97CF21BC38}" DisplayName="Вложение отчета?" Required="FALSE" Description="Вложение отчета?" Name="ReportAttachmentIsAttachLand" />
+      <FieldRef ID="{39CE6639-B704-492D-9710-0C83E5CB5DA8}" DisplayName="Тип документа" Description="Ссылка на тип документа вложения отчета Земля" Name="ReportAttachmentDocTypeLand" />
+      <FieldRef ID="{F2D43E8D-9DD0-49AE-91CC-3A109DE6EA91}" DisplayName="Отчет по поручению" Description="Ссылка на отчет Земля" Name="ReportAttachmentReportLand" Required="TRUE" />
+      <FieldRef ID="{81B978BB-B529-4814-B1B5-267F21479BF6}" DisplayName="Описание вложения" Required="FALSE" Description="Описание вложения отчета Земля" Name="ReportAttachmentDescriptionLand" NumLines="7" Sortable="FALSE" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

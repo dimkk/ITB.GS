@@ -22,7 +22,7 @@ namespace GS.Zkh.Receivers.Features
     [Guid("674971b5-aee6-46d0-a2b0-aa8a4fa92395")]
     public class GSZkhIssueEventReceiver : SPFeatureReceiver
     {
-        private readonly string storageListTemplateId = "10256";
+        private readonly string storageListTemplateId = "10156";
         private readonly string attachmentIssueFieldName = "IssueAttachmentIssueZkh";
         private readonly string meetingListName = "MeetingZkhList";
         private readonly string meetingDateFieldName = "MeetingDateZkh";

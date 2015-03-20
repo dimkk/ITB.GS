@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GS.GS.Zkh.Receivers</RootNamespace>
-    <AssemblyName>GS.GS.Zkh.Receivers</AssemblyName>
+    <AssemblyName>GS.Zkh.Receivers</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>

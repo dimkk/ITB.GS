@@ -1,10 +1,10 @@
 ﻿$(document).ready(function() {
-	var meetingControl = $('[id^="MeetingAttachmentMeetingMVK"]');
-	var docTypeControl = $('[id^="MeetingAttachmentDocTypeMVK"]');
-	var protocolControl = $('[id^="MeetingAttachmentProtocolCopyMVK"]');
+	var meetingControl = $('[id^="MeetingAttachmentMeetingZkh"]');
+	var docTypeControl = $('[id^="MeetingAttachmentDocTypeZkh"]');
+	var protocolControl = $('[id^="MeetingAttachmentProtocolCopyZkh"]');
 	var titleControl = $('[id^="Title"]');
 
-	var meetingId = renderCore.getParentListItemId(['/Lists/MeetingMVKList/EditForm']);
+	var meetingId = renderCore.getParentListItemId(['/Lists/MeetingZkhList/EditForm']);
 	if (meetingId) {
 		meetingControl.val(meetingId);
 		meetingControl.attr('disabled', 'disabled');

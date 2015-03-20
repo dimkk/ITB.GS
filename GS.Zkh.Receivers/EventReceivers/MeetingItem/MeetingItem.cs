@@ -17,7 +17,7 @@ namespace GS.Zkh.Receivers
     /// </summary>
     public class MeetingItem : SPItemEventReceiver
     {
-        private readonly string storageListTemplateId = "10256";
+        private readonly string storageListTemplateId = "10156";
         private readonly string dateFieldName = "MeetingDateZkh";
         private readonly string numberFieldName = "MeetingNumberZkh";
 

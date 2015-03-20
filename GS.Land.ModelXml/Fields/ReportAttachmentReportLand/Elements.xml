@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Name                            ="ReportAttachmentReportLand"
+		StaticName                      ="ReportAttachmentReportLand"
+		Group                           ="Земля.Вложения.Отчеты"
+		DisplayName                     ="Отчет по поручению"
+		Description                     ="Ссылка на отчет Земля"
+		ID                              ="{F2D43E8D-9DD0-49AE-91CC-3A109DE6EA91}"
+		SourceID                        ="http://schemas.microsoft.com/sharepoint/v3"
+		Type                            ="Lookup"
+		List                            ="Lists/ReportLandList"
+		ShowField                       ="ReportInfoLand"
+		Mult                            ="False"
+		UnlimitedLengthInDocumentLibrary="False"
+    Overwrite                       ="TRUE"
+    AllowDeletion                   ="FALSE"/>
+</Elements>

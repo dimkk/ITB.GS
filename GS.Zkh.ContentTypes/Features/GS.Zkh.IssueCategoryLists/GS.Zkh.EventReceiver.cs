@@ -19,10 +19,10 @@ namespace GS.Zkh.ModelXml.Features
         #region Constants
 
         private readonly string fieldContentTypeName = "IssueCategoryZkh";
-        private readonly string fieldGuid = "{42C4C2B5-5629-40D7-AEA9-6ACF94C3DEE9}";
+        private readonly string fieldGuid = "{C3440AC5-B2A3-4997-AB71-0DF125540096}";
         private readonly string fieldName = "IssueDependentIssueZkh";
 
-        private readonly string fieldParentFeatureId = "FD420D34-ADA8-406D-8A78-AD4814B95F77";
+        private readonly string fieldParentFeatureId = "7bf01554-94ed-4030-ab3d-7c8a4aeecec0";
         private readonly string fieldGroupName = "ЖКХ.Справочники";
         private readonly string fieldDisplayName = "Родительская категория";
         private readonly string fieldDescription = "Ссылка на родительскую категорию";

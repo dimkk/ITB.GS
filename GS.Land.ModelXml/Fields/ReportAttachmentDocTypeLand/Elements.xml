@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Name                            ="ReportAttachmentDocTypeLand"
+		StaticName                      ="ReportAttachmentDocTypeLand"
+		Group                           ="Земля.Вложения.Отчеты"
+		DisplayName                     ="Тип документа"
+		Description                     ="Ссылка на тип документа вложения отчета Земля"
+		ID                              ="{39CE6639-B704-492D-9710-0C83E5CB5DA8}"
+		SourceID                        ="http://schemas.microsoft.com/sharepoint/v3"
+		Type                            ="Lookup"
+		List                            ="Lists/DocTypeBookList"
+		ShowField                       ="Title"
+		Mult                            ="False"
+		UnlimitedLengthInDocumentLibrary="False"
+    Overwrite                       ="TRUE"
+    AllowDeletion                   ="FALSE"/>
+</Elements>

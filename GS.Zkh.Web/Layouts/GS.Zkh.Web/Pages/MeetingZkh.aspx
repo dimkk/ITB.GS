@@ -236,15 +236,14 @@
         </div>
         <div class="container">
             <button class="btn btn-default" data-bind="click: closeForm" id="oCancelButton" name="oCancelButton" style="float:right">Закрыть</button>
-            <button class="btn btn-default" data-bind="click: exportToWord" name="bExportToWord" style="float:right">Экспорт в Word</button>
         </div>
     </div>
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">
-    Заседание МВК.Земля
+    Заседание ЖКХ
 </asp:Content>
 
 <asp:Content ID="PageTitleInTitleArea" ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server" >
-    Заседание МВК.Земля
+    Заседание ЖКХ
 </asp:Content>

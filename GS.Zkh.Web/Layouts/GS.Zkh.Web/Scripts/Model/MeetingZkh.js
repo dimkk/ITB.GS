@@ -537,7 +537,7 @@
     function openIssueRgCreateDialog(title) {
         var options = {
             title: title,
-            url: _spPageContextInfo.webAbsoluteUrl + "/Lists/IssueZkhList/NewForm.aspx",
+            url: _spPageContextInfo.webAbsoluteUrl + "/Lists/IssueZkhList/NewForm2.aspx",
             width: 1024,
             height: 768,
             dialogReturnValueCallback: function (dialogResult, returnValue) {
@@ -1130,7 +1130,7 @@
         this.mode = ko.observable("full");
         // ссылка на карточку вопроса
         this.httpLink = ko.observable(
-            (String).format("{0}//{1}/sites/gca/Lists/IssueZkhList/DispForm.aspx?ID={2}&ContentTypeId={3}",
+            (String).format("{0}//{1}/sites/gca/Lists/IssueZkhList/DispForm2.aspx?ID={2}&ContentTypeId={3}",
                 window.location.protocol,
                 window.location.host,
                 data.Id,
@@ -1139,7 +1139,7 @@
         );
 
         this.gotoEditQuestion = function () {
-            window.open(_spPageContextInfo.webAbsoluteUrl + '/Lists/IssueZkhList/DispForm.aspx?ID=' + data.Id, '_blank');
+            window.open(_spPageContextInfo.webAbsoluteUrl + '/Lists/IssueZkhList/DispForm2.aspx?ID=' + data.Id, '_blank');
         }
 
         this.changedReporter = ko.observable("");
@@ -1754,7 +1754,7 @@
                                 New: false
                             });
 
-                            if (enumerator.get_current().get_item("MeetingAttachmentProtocolCopyLan")) {
+                            if (enumerator.get_current().get_item("MeetingAttachmentProtocolCopyZkh")) {
                                 scancopyAttach = attach;
                             }
                             else {
@@ -1918,13 +1918,13 @@
             self.selectedAgendaQuestion().mode("full");
         };
 
-        self.addOrderRg = function () {
+        self.addOrderRg = function() {
             openOrderRgAddDialog("Добавить заявки Рабочей группы");
-        }
+        };
 
-        self.createIssueRg = function () {
+        self.createIssueRg = function() {
             openIssueRgCreateDialog("Создать вопрос Рабочей группы");
-        }
+        };
 
         // remove agenda question
         self.removeAgendaQuestion = function (agendaQuestion) {

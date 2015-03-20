@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вложения.Отчеты"
+		DisplayName="Вложение отчета?"
+		ID="{A72F61FE-5356-4512-AC07-5CA0072873BA}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportAttachmentIsAttachZkh"
+		Name="ReportAttachmentIsAttachZkh"
+		Type="Boolean"
+		Required="FALSE"
+		Description="Вложение отчета?"
+    Overwrite="TRUE">
+		<Default>0</Default>
+	</Field>
+</Elements>

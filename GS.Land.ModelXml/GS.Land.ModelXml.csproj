@@ -92,6 +92,9 @@
     <None Include="ContentTypes\IssueCategoryLand\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{fae2e9db-3263-446f-87ad-6aeda8ed08e2}</SharePointProjectItemId>
     </None>
+    <None Include="ContentTypes\ReportAttachmentLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1503713f-76cb-4f29-9f04-49e9b52d7c0a}</SharePointProjectItemId>
+    </None>
     <None Include="ContentTypes\ReportLand\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{0c0df3d3-4db3-4d64-8895-c3ef9f4ad371}</SharePointProjectItemId>
     </None>
@@ -136,6 +139,12 @@
     </None>
     <None Include="Features\GS.Land.IssueCategoryLists\GS.Land.IssueCategoryLists.feature">
       <FeatureId>{7be4b35f-5be9-4047-8a94-fa66a335f8ce}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.ReportAttachment\GS.Land.ReportAttachment.feature">
+      <FeatureId>{2fa94437-bac2-4e28-a275-c8464e50c20e}</FeatureId>
+    </None>
+    <None Include="Features\GS.Land.ReportAttachmentLists\GS.Land.ReportAttachmentLists.feature">
+      <FeatureId>{64417095-71f6-45fc-a2cf-70602f5e2f50}</FeatureId>
     </None>
     <None Include="Fields\AssignmentCoExecutorsLand\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{dc6139eb-78c0-45aa-b4fd-2048af2e9839}</SharePointProjectItemId>
@@ -187,6 +196,18 @@
     </None>
     <None Include="Fields\AssignmentPlanDateLand\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{5a494399-97e6-4c0e-bceb-33c1a3865038}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportAttachmentReportLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{08b4d04c-938c-47d8-90f3-752e1a33d0e4}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportAttachmentDocTypeLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bf33971d-0c92-4fae-ac08-65daf1331f6e}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportAttachmentDescriptionLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{585f33bf-bdee-4fe9-ae56-a3b47ed121da}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\ReportAttachmentIsAttachLand\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{22a978bf-5b5d-4dab-89fd-731e3ef61ea6}</SharePointProjectItemId>
     </None>
     <None Include="Fields\AssignmentPlanIsDependentLand\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{994f3527-108d-4885-9fb1-2b34246ca07f}</SharePointProjectItemId>
@@ -356,6 +377,9 @@
     <None Include="ListDefinitions\IssueCategoryLandListDefinition\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d56d8d43-19a1-4bc8-b981-0216bd4625c2}</SharePointProjectItemId>
     </None>
+    <None Include="ListDefinitions\ReportAttachmentLandListDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{86dcb0e2-be64-458f-990b-244e328b9b61}</SharePointProjectItemId>
+    </None>
     <None Include="ListDefinitions\ReportLandListDefinition\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{5fd28224-9318-4c71-bfe5-2ffc8a613861}</SharePointProjectItemId>
     </None>
@@ -376,6 +400,9 @@
     </None>
     <None Include="ListInstances\IssueCategoryLandList\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{61141bea-a629-4f03-99ec-530e93763730}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\ReportAttachmentLandList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f604cd12-3ece-4493-b9f4-96cdbaac91aa}</SharePointProjectItemId>
     </None>
     <None Include="ListInstances\ReportLandList\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{1464218d-6a5c-4a9b-91ca-304c603388d1}</SharePointProjectItemId>
@@ -400,6 +427,7 @@
     <Content Include="ContentTypes\IssueCategoryLand\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ContentTypes\ReportAttachmentLand\Elements.xml" />
     <Content Include="ContentTypes\ReportLand\Elements.xml" />
     <Content Include="Features\GS.Land.Meeting\GS.Land.Meeting.Template.xml">
       <DependentUpon>GS.Land.Meeting.feature</DependentUpon>
@@ -444,12 +472,21 @@
     <Content Include="Features\GS.Land.IssueCategoryLists\GS.Land.IssueCategoryLists.Template.xml">
       <DependentUpon>GS.Land.IssueCategoryLists.feature</DependentUpon>
     </Content>
+    <Content Include="Features\GS.Land.ReportAttachment\GS.Land.ReportAttachment.Template.xml">
+      <DependentUpon>GS.Land.ReportAttachment.feature</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Features\GS.Land.ReportAttachmentLists\GS.Land.ReportAttachmentLists.Template.xml">
+      <DependentUpon>GS.Land.ReportAttachmentLists.feature</DependentUpon>
+    </Content>
     <Content Include="Fields\AssignmentCoExecutorsLand\Elements.xml" />
     <Content Include="Fields\AssignmentControllerLand\Elements.xml" />
     <Content Include="Fields\AssignmentControlStateLand\Elements.xml" />
     <Content Include="Fields\AssignmentDaysForResolveLand\Elements.xml" />
     <Content Include="Fields\AssignmentDayTypeLand\Elements.xml" />
-    <Content Include="Fields\AssignmentDependentAssignmentLand\Elements.xml" />
+    <Content Include="Fields\AssignmentDependentAssignmentLand\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Fields\AssignmentDependentAssignTextLand\Elements.xml" />
     <Content Include="Fields\AssignmentDependentTermTextLand\Elements.xml" />
     <Content Include="Fields\AssignmentExecutorLand\Elements.xml" />
@@ -461,6 +498,10 @@
     <Content Include="Fields\AssignmentNoteLand\Elements.xml" />
     <Content Include="Fields\AssignmentNumberLand\Elements.xml" />
     <Content Include="Fields\AssignmentPlanDateLand\Elements.xml" />
+    <Content Include="Fields\ReportAttachmentReportLand\Elements.xml" />
+    <Content Include="Fields\ReportAttachmentDocTypeLand\Elements.xml" />
+    <Content Include="Fields\ReportAttachmentDescriptionLand\Elements.xml" />
+    <Content Include="Fields\ReportAttachmentIsAttachLand\Elements.xml" />
     <Content Include="Fields\AssignmentPlanIsDependentLand\Elements.xml" />
     <Content Include="Fields\AssignmentProlongationCountLand\Elements.xml" />
     <Content Include="Fields\AssignmentResponsibleExecutorLand\Elements.xml" />
@@ -532,19 +573,25 @@
     <Content Include="ListDefinitions\IssueLandListDefinition\EditForm2.aspx" />
     <Content Include="ListDefinitions\IssueLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\IssueLandListDefinition\NewForm2.aspx" />
-    <Content Include="ListDefinitions\IssueLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\IssueLandListDefinition\schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListDefinitions\MeetingAttachmentLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\MeetingAttachmentLandListDefinition\schema.xml" />
     <Content Include="ListDefinitions\MeetingLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\MeetingLandListDefinition\schema.xml" />
     <Content Include="ListDefinitions\IssueCategoryLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\IssueCategoryLandListDefinition\schema.xml" />
+    <Content Include="ListDefinitions\ReportAttachmentLandListDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\ReportAttachmentLandListDefinition\schema.xml" />
     <Content Include="ListDefinitions\ReportLandListDefinition\DispForm2.aspx" />
     <Content Include="ListDefinitions\ReportLandListDefinition\EditForm2.aspx" />
     <Content Include="ListDefinitions\ReportLandListDefinition\Elements.xml" />
     <Content Include="ListDefinitions\ReportLandListDefinition\NewForm2.aspx" />
     <Content Include="ListDefinitions\ReportLandListDefinition\schema.xml" />
-    <Content Include="ListInstances\AssignmentLandList\Elements.xml" />
+    <Content Include="ListInstances\AssignmentLandList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\IssueAttachmentLandList\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -552,8 +599,14 @@
     <Content Include="ListInstances\MeetingAttachmentLandList\Elements.xml" />
     <Content Include="ListInstances\MeetingLandList\Elements.xml" />
     <Content Include="ListInstances\IssueCategoryLandList\Elements.xml" />
-    <Content Include="ListInstances\ReportLandList\Elements.xml" />
+    <Content Include="ListInstances\ReportAttachmentLandList\Elements.xml" />
+    <Content Include="ListInstances\ReportLandList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Template\Images\GS\Feature.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_ReportAttachmentLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_ReportAttachmentMVK.gif" />
+    <Content Include="Template\Images\GS\ListIcon_ReportAttachmentLandListDefinition.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

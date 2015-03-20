@@ -16,7 +16,7 @@ var isCancelAddAttach = false;
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10253,
+            ListTemplateType: 10153,
         });
     }
 

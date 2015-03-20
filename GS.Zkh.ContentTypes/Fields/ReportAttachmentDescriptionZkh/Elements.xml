@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вложения.Отчеты"
+		DisplayName="Описание вложения"
+		ID="{B2337332-B777-46E6-8430-1326CD1FCB3D}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportAttachmentDescriptionZkh"
+		Name="ReportAttachmentDescriptionZkh"
+		Type="Note"
+		Sortable="FALSE"
+		NumLines="7"
+		Required="FALSE"
+		AppendOnly="FALSE"
+		UnlimitedLengthInDocumentLibrary="FALSE"
+		RichText="FALSE"
+    Overwrite="TRUE"
+		Description="Описание вложения отчета ЖКХ"></Field>
+</Elements>

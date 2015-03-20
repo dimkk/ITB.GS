@@ -52,7 +52,7 @@
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, builderButtonSpan, 4, "OrderBuilderMVK");
+        resultHtml += renderFieldBlock(context, builderButtonSpan, 4, "OrderBuilderZkh");
         resultHtml += renderFieldBlock(context, 2, 4, "OrderProjectOrgRg");
         resultHtml += '</div>';
 
@@ -62,7 +62,7 @@
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "OrderTextMVK");
+        resultHtml += renderFieldBlock(context, 2, 10, "OrderTextZkh");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
@@ -158,7 +158,7 @@
                 var url = String.format('{0}/{1}/listform.aspx?PageType=8&ListId={2}', _spPageContextInfo.webAbsoluteUrl, _spPageContextInfo.layoutsUrl, builderListId);
                 var element = String.format('<div class="col-lg-1"><button type="button" class="btn btn-default" style="margin: 0 0 5px 0" title="Добавить нового застройщика" onclick="window.open(&#039{0}&#039)">+</button></div>', url);
                 $('[id^="OrderCustomerRg"]').parent().parent().before(element);
-                $('[id^="OrderBuilderMVK"]').parent().parent().before(element);
+                $('[id^="OrderBuilderZkh"]').parent().parent().before(element);
                 InitMunicipality();
             });
         }
@@ -211,7 +211,7 @@
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {
         init();
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderIssueMVK.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderIssueZkh.js"), init);
         }, 'sp.js');
     }, 'clienttemplates.js');
 })();

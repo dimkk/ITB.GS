@@ -8,7 +8,7 @@
 		Id="DDF88504-AFD9-4A0C-91A5-371B0CBA8283"
 		Url="Lists/MeetingZkhList"
 		OnQuickLaunch="TRUE"
-		QuickLaunchUrl="Lists/MeetingZkh/AllItems.aspx"
+		QuickLaunchUrl="Lists/MeetingZkhList/AllItems.aspx"
 		RootWebOnly="FALSE"
 		TemplateType="10150">
   <Data>
