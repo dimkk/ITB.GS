@@ -14,16 +14,16 @@
     <Data>
       <Rows>
         <Row>
-          <Field Name="Title">Вопрос заседания МВК.Земля №1</Field>
-          <Field Name="IssueDescriptionLand">Описание "Вопрос заседания МВК.Земля №1"</Field>
-          <Field Name="IssueInvestorLand">Инвестор "Вопрос заседания МВК.Земля №1"</Field>
-          <Field Name="IssueCadastreIdLand">Кадастровый номер "Вопрос заседания МВК.Земля №1"</Field>
-          <Field Name="IssueDecisionLand">Решение "Вопрос заседания МВК.Земля №1"</Field>
-          <Field Name="IssueAddressLand">Адрес "Вопрос заседания МВК.Земля №1"</Field>
-          <Field Name="IssueThemeLand">Тема "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="Title">Вопрос заседания ЖКХ.Земля №1</Field>
+          <Field Name="IssueDescriptionLand">Описание "Вопрос заседания ЖКХ.Земля №1"</Field>
+          <Field Name="IssueInvestorLand">Инвестор "Вопрос заседания ЖКХ.Земля №1"</Field>
+          <Field Name="IssueCadastreIdLand">Кадастровый номер "Вопрос заседания ЖКХ.Земля №1"</Field>
+          <Field Name="IssueDecisionLand">Решение "Вопрос заседания ЖКХ.Земля №1"</Field>
+          <Field Name="IssueAddressLand">Адрес "Вопрос заседания ЖКХ.Земля №1"</Field>
+          <Field Name="IssueThemeLand">Тема "Вопрос заседания ЖКХ.Земля №1"</Field>
           <Field Name="IssueNumberLand">1</Field>
           <Field Name="IssueSubnumberLand">2</Field>
-          <Field Name="IssueInfoLand">Информация "Вопрос заседания МВК.Земля №1"</Field>
+          <Field Name="IssueInfoLand">Информация "Вопрос заседания ЖКХ.Земля №1"</Field>
           <Field Name="IssueCategoryLand">1</Field>
           <Field Name="IssueCoReportersLand">1</Field>
           <Field Name="IssueDecisionTypeLand">1</Field>

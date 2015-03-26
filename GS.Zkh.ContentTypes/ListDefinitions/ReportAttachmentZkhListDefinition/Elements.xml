@@ -3,7 +3,7 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
 	<ListTemplate
 		Name="ReportAttachmentZkhListDefinition"
-		DisplayName="Вложения отчета ЖКХ"
+		DisplayName="Вложения отчета по поручению ЖКХ"
 		Description="Список вложений отчета ЖКХ"
 		Type="10160"
 		BaseType="0"
@@ -17,7 +17,7 @@
 		EnableModeration="False"
 		SecurityBits="11"
 		Sequence="1000"
-		Image="/_layouts/15/images/itgen.png"
+		Image="/_layouts/15/images/itdl.png"
 		Hidden="FALSE"
 		HiddenList="FALSE" />
 </Elements>

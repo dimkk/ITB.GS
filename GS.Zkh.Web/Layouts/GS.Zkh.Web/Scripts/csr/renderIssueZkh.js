@@ -23,7 +23,7 @@
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10251,
+            ListTemplateType: 10151,
         });
     }
 

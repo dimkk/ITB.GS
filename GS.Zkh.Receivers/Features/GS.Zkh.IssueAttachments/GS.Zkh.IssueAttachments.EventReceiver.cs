@@ -1,3 +1,8 @@
+// <copyright file="GS.Zkh.IssueAttachments.EventReceiver.cs" company="ITB">
+// Copyright ITB. All rights reserved.
+// </copyright>
+// <author>SPDEV\smikolaytis</author>
+// <date>2015-03-26 20:56:06Z</date>
 using Microsoft.Office.DocumentManagement.DocumentSets;
 using Microsoft.Office.Server.Utilities;
 using Microsoft.SharePoint;
@@ -10,17 +15,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
-namespace GS.Zkh.Receivers.Features
+namespace GS.Zkh.Receivers
 {
-    /// <summary>
-    /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
-    /// </summary>
-    /// <remarks>
-    /// The GUID attached to this class may be used during packaging and should not be modified.
-    /// </remarks>
-
-    [Guid("674971b5-aee6-46d0-a2b0-aa8a4fa92395")]
-    public class GSZkhIssueEventReceiver : SPFeatureReceiver
+    [SharePointPermission(SecurityAction.InheritanceDemand, ObjectModel = true)]
+    public class IssueAttachmentsEventReceiver : SPFeatureReceiver
     {
         private readonly string storageListTemplateId = "10156";
         private readonly string attachmentIssueFieldName = "IssueAttachmentIssueZkh";
@@ -212,3 +210,4 @@ namespace GS.Zkh.Receivers.Features
         }
     }
 }
+

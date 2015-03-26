@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage,Microsoft.SharePoint,Version=15.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" MasterPageFile="~masterurl/default.master" %>
+
 <%@ Assembly Name="Microsoft.Web.CommandUI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Import Namespace="Microsoft.SharePoint" %>
 <%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
@@ -29,7 +30,8 @@
                 <WebPartPages:WebPartZone ID="Main" runat="server" FrameType="None" Title="loc:Main" />
             </div>
             <div id="tab-attach" class="tab-pane fade">
-                <WebPartPages:WebPartZone ID="wzAttaches" runat="server" Title="Attaches Zone"/>
+                <WebPartPages:WebPartZone ID="wzAttaches" runat="server" Title="Attaches Zone">
+                </WebPartPages:WebPartZone>
             </div>
         </div>
     </div>

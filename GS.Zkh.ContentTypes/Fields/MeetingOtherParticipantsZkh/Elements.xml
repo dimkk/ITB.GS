@@ -15,5 +15,5 @@
 		AppendOnly="TRUE"
 		UnlimitedLengthInDocumentLibrary="FALSE"
 		RichText="FALSE"
-		Description="Список остальных участников МВК"></Field>
+		Description="Список остальных участников ЖКХ"></Field>
 </Elements>

@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<!--
+  <!--
     ************************************************************************
        Application: GS
       Created date: 2015-02-19 14:13:38Z
@@ -11,95 +11,30 @@
            History: Initial Version 0
     ************************************************************************
     -->
-	<!-- Parent ContentType Item -->
-	<ContentType
-		ID="0x01008A6B36A05EC544FDA8378177E28CB315"
-		Name="IssueLand"
-		Description="Тип содержимого для вопроса повестки заседания Земля"
-		Group="Земля.Типы содержимого"
-		Version="0"
-		Inherits="TRUE">
-		<FieldRefs>
-			<FieldRef
-				ID="{AAC50413-D407-4EDB-A33E-98B3E8698F5E}"
-				Name="IssueAddressLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{D5ECD7F1-2201-40C7-B5DA-D7F34FD90292}"
-				Name="IssueCadastreIdLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{E2A1631A-AB09-428C-9459-70C95ECDA632}"
-				Name="IssueCategoryLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{A1F714C4-BD3B-4F6D-804F-360EFF63FEA9}"
-				Name="IssueCoReportersLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{D6DAFBE7-49FF-42FC-A6C7-C9C8BA70B7FF}"
-				Name="IssueDecisionLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{81E089DB-D3AD-427C-B4E4-B1C02EC2211B}"
-				Name="IssueDecisionTypeLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{C1460FA9-26AC-403A-A413-0C1DAE50F2D3}"
-				Name="IssueDescriptionLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{D432FDC3-4A2D-4FD8-90AA-8AA37D3CE332}"
-				Name="IssueInfoLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{AA342314-A947-4BF0-A269-A71BECD77C16}"
-				Name="IssueInvestorLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{81AB83B1-3894-4490-8D43-8B6066FF722A}"
-				Name="IssueMeetingDateLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{08D8CB5E-3FA2-4976-874D-067601D0CFB7}"
-				Name="IssueMeetingDateNumberLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{A53B2A01-E906-44F7-814F-1ED9AAA339EA}"
-				Name="IssueMeetingLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{5A99DCBC-3B2B-46C7-81F9-D799D431F289}"
-				Name="IssueMeetingNumberLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{37C58DB8-7316-4344-BDB3-CEA8F4A7724A}"
-				Name="IssueMunicipalDistrictLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{13073982-0FED-419B-9238-4983899A9906}"
-				Name="IssueNumberLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{A4DBB950-E99D-49CF-8671-51EBEE2E70CE}"
-				Name="IssueReporterLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{8218912F-8EED-41A2-889F-D981BDC0F841}"
-				Name="IssueSettlementLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{BD4C74B7-3DC5-485E-A1B1-922871EA0056}"
-				Name="IssueSubnumberLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{02A07603-D2D2-4FA0-AEC4-68DCDBB3E246}"
-				Name="IssueThemeLand"
-				Required="FALSE" />
-      <FieldRef
-        ID="{34B95F52-9E5F-477A-871E-E6C0A5FDC696}"
-        Name="IssueSubCategoryLand"
-        Required="FALSE" />
-		</FieldRefs>
-	</ContentType>
+  <!-- Parent ContentType Item -->
+  <ContentType ID="0x01008A6B36A05EC544FDA8378177E28CB315" Name="IssueLand" Description="Тип содержимого для вопроса повестки заседания Земля" Group="Земля.Типы содержимого" Version="0" Inherits="TRUE">
+    <FieldRefs>
+      <FieldRef ID="{AAC50413-D407-4EDB-A33E-98B3E8698F5E}" Name="IssueAddressLand" Required="FALSE" />
+      <FieldRef ID="{D5ECD7F1-2201-40C7-B5DA-D7F34FD90292}" Name="IssueCadastreIdLand" Required="FALSE" />
+      <FieldRef ID="{E2A1631A-AB09-428C-9459-70C95ECDA632}" Name="IssueCategoryLand" Required="FALSE" />
+      <FieldRef ID="{A1F714C4-BD3B-4F6D-804F-360EFF63FEA9}" Name="IssueCoReportersLand" Required="FALSE" />
+      <FieldRef ID="{D6DAFBE7-49FF-42FC-A6C7-C9C8BA70B7FF}" Name="IssueDecisionLand" Required="FALSE" />
+      <FieldRef ID="{81E089DB-D3AD-427C-B4E4-B1C02EC2211B}" Name="IssueDecisionTypeLand" Required="FALSE" />
+      <FieldRef ID="{C1460FA9-26AC-403A-A413-0C1DAE50F2D3}" Name="IssueDescriptionLand" Required="FALSE" />
+      <FieldRef ID="{D432FDC3-4A2D-4FD8-90AA-8AA37D3CE332}" Name="IssueInfoLand" Required="FALSE" />
+      <FieldRef ID="{AA342314-A947-4BF0-A269-A71BECD77C16}" Name="IssueInvestorLand" Required="FALSE" />
+      <FieldRef ID="{81AB83B1-3894-4490-8D43-8B6066FF722A}" Name="IssueMeetingDateLand" Required="FALSE" />
+      <FieldRef ID="{08D8CB5E-3FA2-4976-874D-067601D0CFB7}" Name="IssueMeetingDateNumberLand" Required="FALSE" />
+      <FieldRef ID="{A53B2A01-E906-44F7-814F-1ED9AAA339EA}" Name="IssueMeetingLand" Required="FALSE" />
+      <FieldRef ID="{5A99DCBC-3B2B-46C7-81F9-D799D431F289}" Name="IssueMeetingNumberLand" Required="FALSE" />
+      <FieldRef ID="{37C58DB8-7316-4344-BDB3-CEA8F4A7724A}" Name="IssueMunicipalDistrictLand" Required="FALSE" />
+      <FieldRef ID="{13073982-0FED-419B-9238-4983899A9906}" Name="IssueNumberLand" Required="FALSE" />
+      <FieldRef ID="{A4DBB950-E99D-49CF-8671-51EBEE2E70CE}" Name="IssueReporterLand" Required="FALSE" />
+      <FieldRef ID="{8218912F-8EED-41A2-889F-D981BDC0F841}" Name="IssueSettlementLand" Required="FALSE" />
+      <FieldRef ID="{BD4C74B7-3DC5-485E-A1B1-922871EA0056}" Name="IssueSubnumberLand" Required="FALSE" />
+      <FieldRef ID="{02A07603-D2D2-4FA0-AEC4-68DCDBB3E246}" Name="IssueThemeLand" Required="FALSE" />
+      <FieldRef ID="{34B95F52-9E5F-477A-871E-E6C0A5FDC696}" Name="IssueSubCategoryLand" Required="FALSE" />
+      <FieldRef ID="{A105EC40-710D-4089-AD7B-39CEE397C956}" DisplayName="Номер" Description="Номер вопроса повестки заседания Земля (с подномером)" Name="IssueNumberTextLand" ReadOnly="TRUE" />
+    </FieldRefs>
+  </ContentType>
 </Elements>

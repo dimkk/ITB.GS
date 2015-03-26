@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GS.GS.Zkh.Web</RootNamespace>
+    <RootNamespace>GS.Zkh.Web</RootNamespace>
     <AssemblyName>GS.Zkh.Web</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
@@ -65,19 +65,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Layouts\GS.Zkh.Web\Pages\AgendaQuestion.aspx.cs">
-      <DependentUpon>AgendaQuestion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Layouts\GS.Zkh.Web\Pages\AgendaQuestion.aspx.designer.cs">
-      <DependentUpon>AgendaQuestion.aspx.cs</DependentUpon>
-    </Compile>
     <Compile Include="Layouts\GS.Zkh.Web\Pages\ExecutorSelection.aspx.cs">
       <DependentUpon>ExecutorSelection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Layouts\GS.Zkh.Web\Pages\ExecutorSelection.aspx.designer.cs">
       <DependentUpon>ExecutorSelection.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\GS.Zkh.Web\Pages\IssueAttachmentZkh.aspx.cs">
+      <DependentUpon>IssueAttachmentZkh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Layouts\GS.Zkh.Web\Pages\MeetingZkh.aspx.cs">
       <DependentUpon>MeetingZkh.aspx</DependentUpon>
@@ -137,24 +134,20 @@
     <Content Include="Layouts\GS.Zkh.Web\Content\moment-datepicker\datepicker.css" />
     <Content Include="Layouts\GS.Zkh.Web\Content\participantsDialog.css" />
     <Content Include="Layouts\GS.Zkh.Web\Content\typeahead.js-bootstrap.css" />
-    <Content Include="Layouts\GS.Zkh.Web\Pages\AgendaQuestion.aspx" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\ExecutorSelection.aspx" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\IssueAttachmentZkh.aspx" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\MeetingZkh.aspx" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\ParticipantsSelection.aspx" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\SearchQuestion.aspx" />
-    <Content Include="Layouts\GS.Zkh.Web\Pages\selectAgendaQuestion.html" />
-    <Content Include="Layouts\GS.Zkh.Web\Pages\selectExecutor.html" />
+    <Content Include="Layouts\GS.Zkh.Web\Pages\selectExecutorZkh.html" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\selectIssueZkh.html" />
-    <Content Include="Layouts\GS.Zkh.Web\Pages\selectLinkedAssignment.html" />
     <Content Include="Layouts\GS.Zkh.Web\Pages\selectLinkedAssignmentZkh.html" />
-    <Content Include="Layouts\GS.Zkh.Web\Pages\selectObject.html" />
+    <Content Include="Layouts\GS.Zkh.Web\Pages\selectObjectZkh.html" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\bootstrap.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\bootstrap.min.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\camljs.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\clienttemplates.debug.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderAgendaQuestion.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderAssignment.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderAssignmentZkh.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderCore.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderDocumentTp.js" />
@@ -180,7 +173,7 @@
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderTasksView.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\selectIssueRgDialog.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\selectOrderRgDialog.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\executorModel.js" />
+    <Content Include="Layouts\GS.Zkh.Web\Scripts\Selects\selectExecutorZkhModel.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\gsUtils.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\init.debug.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\jquery-1.9.1.intellisense.js" />
@@ -201,11 +194,9 @@
     <Content Include="Layouts\GS.Zkh.Web\Scripts\moment.min.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\participantModel.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\searchQuestionModel.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\selectAgendaQuestionModel.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\selectIssueMVKModel.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\selectLinkedAssignmentModel.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\selectLinkedAssignmentMVKModel.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\selectObjectModel.js" />
+    <Content Include="Layouts\GS.Zkh.Web\Scripts\Selects\selectIssueZkhModel.js" />
+    <Content Include="Layouts\GS.Zkh.Web\Scripts\Selects\selectLinkedAssignmentZkhModel.js" />
+    <Content Include="Layouts\GS.Zkh.Web\Scripts\Selects\selectObjectZkhModel.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\SolidQ-SPS-JS.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\SP.Core.debug.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\SP.debug.js" />

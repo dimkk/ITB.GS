@@ -4,7 +4,7 @@ using System.Security.Permissions;
 using Microsoft.SharePoint;
 using ITB.SP.Tools;
 
-namespace GS.Zkh.ModelXml.Features
+namespace GS.Zkh.ContentTypes.Features
 {
     /// <summary>
     /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.

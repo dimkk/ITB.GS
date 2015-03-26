@@ -17,7 +17,7 @@ namespace GS.Land.ModelXml.Features
     {
         private readonly string fieldContentTypeName = "IssueLand";
         private readonly string fieldName = "IssueNumberTextLand";
-
+        
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
             //Добавлять вычисляемое поле в тип содержимого можно только после создания экземляра списка

@@ -14,7 +14,7 @@ namespace GS.Zkh.ContentTypes.Features
     /// </remarks>
 
     [Guid("60e98eda-a2bd-4fe0-9749-5b811dacf7a2")]
-    public class AssignmentListsEventReceiver : SPFeatureReceiver
+    public class AssignmentZkhListsEventReceiver : SPFeatureReceiver
     {
         #region Constants
 

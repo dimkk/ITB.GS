@@ -23,9 +23,9 @@
       <FieldRef ID="{C3F4409E-825C-44BE-925E-640FA75D1934}" Name="IssueDescriptionZkh" Required="FALSE" />
       <FieldRef ID="{761DC64B-2CA6-4A12-AC49-8A5C575A73C2}" Name="IssueInfoZkh" Required="FALSE" />
       <FieldRef ID="{CD7EFF4C-90F7-4885-AA4A-F57746406634}" Name="IssueInvestorZkh" Required="FALSE" />
-      <FieldRef ID="{100F19BD-F8EA-4762-A38B-6EE274F9A7DD}" Name="IssueMeetingDateNumberZkh" Required="FALSE" />
       <FieldRef ID="{382EC8FA-FBAB-4E4F-AEAE-DD61209511D1}" Name="IssueMeetingDateZkh" Required="FALSE" />
       <FieldRef ID="{B2F157EF-A829-44FF-9AD2-AADE273543EC}" Name="IssueMeetingNumberZkh" Required="FALSE" />
+      <FieldRef ID="{100F19BD-F8EA-4762-A38B-6EE274F9A7DD}" Name="IssueMeetingDateNumberZkh" Required="FALSE" />
       <FieldRef ID="{D5179CC4-4BB3-4F17-9EA8-0BD2725CBEB1}" Name="IssueMeetingZkh" Required="FALSE" />
       <FieldRef ID="{AF15B142-CA26-45F7-AC30-B457C9D89CC8}" Name="IssueMunicipalDistrictZkh" Required="FALSE" />
       <FieldRef ID="{5D8D9358-B381-46C5-AD44-BBE4A4C12018}" Name="IssueNumberZkh" Required="FALSE" />
@@ -34,7 +34,6 @@
       <FieldRef ID="{B9F5C921-C0FE-4072-9C94-FCB6EA97ECCF}" Name="IssueSubnumberZkh" Required="FALSE" />
       <FieldRef ID="{10A141A2-C2A7-4F37-97BB-9178F88974C9}" Name="IssueThemeZkh" Required="FALSE" />
       <FieldRef ID="{0B984378-DE26-4210-90D2-CEC3B8E29435}" Name="IssueSubCategoryZkh" Required="FALSE" />
-      <FieldRef ID="{E9BDD291-372E-41BA-9B9D-4A664A007E52}" DisplayName="Номер" Description="Номер вопроса повестки заседания ЖКХ (с подномером)" Name="IssueNumberTextZkh" ReadOnly="TRUE" />
     </FieldRefs>
   </ContentType>
 </Elements>

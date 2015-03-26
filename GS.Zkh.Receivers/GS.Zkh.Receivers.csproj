@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GS.GS.Zkh.Receivers</RootNamespace>
+    <RootNamespace>GS.Zkh.Receivers</RootNamespace>
     <AssemblyName>GS.Zkh.Receivers</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
@@ -64,8 +64,8 @@
     <Compile Include="EventReceivers\IssueAttachmentItem\IssueAttachmentItem.cs" />
     <Compile Include="EventReceivers\IssueItem\IssueItem.cs" />
     <Compile Include="EventReceivers\MeetingItem\MeetingItem.cs" />
-    <Compile Include="Features\GS.Zkh.Issue.Attachments\GS.Zkh.Issue.EventReceiver.cs">
-      <DependentUpon>GS.Zkh.Issue.Attachments.feature</DependentUpon>
+    <Compile Include="Features\GS.Zkh.IssueAttachments\GS.Zkh.IssueAttachments.EventReceiver.cs">
+      <DependentUpon>GS.Zkh.IssueAttachments.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,8 +79,8 @@
     <None Include="EventReceivers\MeetingItem\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{38221ba8-d03a-4860-bcd6-0d44897230b0}</SharePointProjectItemId>
     </None>
-    <None Include="Features\GS.Zkh.Issue.Attachments\GS.Zkh.Issue.Attachments.feature">
-      <FeatureId>{9617be6c-453e-484d-aabe-e4ba508d7a71}</FeatureId>
+    <None Include="Features\GS.Zkh.IssueAttachments\GS.Zkh.IssueAttachments.feature">
+      <FeatureId>{e555d4d9-a703-4afb-9890-7f088e6f0573}</FeatureId>
     </None>
     <None Include="Package\Package.package">
       <PackageId>{F76A258A-2598-4257-97DE-198C6A3875C4}</PackageId>
@@ -97,10 +97,12 @@
     <Content Include="EventReceivers\IssueAttachmentItem\Elements.xml" />
     <Content Include="EventReceivers\IssueItem\Elements.xml" />
     <Content Include="EventReceivers\MeetingItem\Elements.xml" />
-    <Content Include="Features\GS.Zkh.Issue.Attachments\GS.Zkh.Issue.Attachments.Template.xml">
-      <DependentUpon>GS.Zkh.Issue.Attachments.feature</DependentUpon>
+    <Content Include="Features\GS.Zkh.IssueAttachments\GS.Zkh.IssueAttachments.Template.xml">
+      <DependentUpon>GS.Zkh.IssueAttachments.feature</DependentUpon>
     </Content>
     <Content Include="Template\Images\GS\Feature.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.IssueAttachments.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_IssueAttachments.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

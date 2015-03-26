@@ -3,7 +3,7 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
 	<Field
 		Group="ЖКХ.Заседания"
-		DisplayName="Участники МВК"
+		DisplayName="Участники ЖКХ"
 		ID="{FE5EB5EA-91B1-4F7A-B1A8-EADCBA1DEA8D}"
 		SourceID="http://schemas.microsoft.com/sharepoint/v3"
 		StaticName="MeetingParticipantsZkh"
@@ -13,7 +13,7 @@
 		ShowField="ParticipantFullName"
 		Mult="TRUE"
 		UnlimitedLengthInDocumentLibrary="False"
-		Description="Ссылки на участников заседания МВК"
+		Description="Ссылки на участников заседания ЖКХ"
     Overwrite="TRUE"
     AllowDeletion="FALSE"></Field>
 </Elements>

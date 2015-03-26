@@ -217,7 +217,7 @@
                 AssignmentExecutorOrganizationLink: context.CurrentItem["AssignmentExecutorOrgZkh"]
             };
             modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/GS.Zkh.Web/pages/selectExecutor.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
+                "/_layouts/15/GS.Zkh.Web/pages/selectExecutorZkh.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
 
             window.gsModals.selectExecutor = modalLink.modalId;
             resultHtml += modalLink.html;
@@ -397,7 +397,7 @@
                 }
 
                 // достанем данные заседания
-                var meetingList = ctx.get_web().get_lists().getByTitle("МВК: Заседания");
+                var meetingList = ctx.get_web().get_lists().getByTitle("ЖКХ: Заседания");
                 var mId = questionInstance.get_data()[0].get_item("IssueMeetingZkh").get_lookupId();
 
                 // установим глобальные переменные для страницы

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="aa4f90db-41b8-47b1-b9d9-9bff1ea683c2" alwaysForceInstall="true" description="Столбцы сайта, типы содержимого и определения списка вопросов повестки заседания ЖКХ" featureId="aa4f90db-41b8-47b1-b9d9-9bff1ea683c2" imageUrl="GS\FeatureIcon_GS.Zkh.Issue.gif" imageAltText="ГС.ЖКХ: 04. Столбцы для списка вопросов повестки заседания" scope="Site" solutionId="070a12fe-8292-479f-ab3a-f73e6711fa72" title="ГС.ЖКХ: 04. Столбцы для списка вопросов повестки заседания" version="AAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0ZW0uVmVyc2lvbgQAAAAGX01ham9yBl9NaW5vcgZfQnVpbGQJX1JldmlzaW9uAAAAAAgICAgBAAAAAAAAAAAAAAAAAAAACw==" deploymentPath="$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="aa4f90db-41b8-47b1-b9d9-9bff1ea683c2" alwaysForceInstall="true" description="Столбцы сайта, типы содержимого и определения списка вопросов повестки заседания ЖКХ" featureId="aa4f90db-41b8-47b1-b9d9-9bff1ea683c2" imageUrl="GS\FeatureIcon_GS.Zkh.Issue.gif" imageAltText="ГС.ЖКХ: 04. Столбцы для списка вопросов повестки заседания" scope="Site" solutionId="f81e0b94-320f-4330-9212-a94fdd7074f6" title="ГС.ЖКХ: 04. Столбцы для списка вопросов повестки заседания" version="AAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0ZW0uVmVyc2lvbgQAAAAGX01ham9yBl9NaW5vcgZfQnVpbGQJX1JldmlzaW9uAAAAAAgICAgBAAAAAAAAAAAAAAAAAAAACw==" deploymentPath="$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
   <projectItems>
     <projectItemReference itemId="aeec9865-2b30-4da6-9a54-e27f9ee4e8a7" />
     <projectItemReference itemId="e791d96e-834f-4500-8c0e-296ea3aff806" />
@@ -10,7 +10,6 @@
     <projectItemReference itemId="32c6217f-e331-44b8-8c7f-8066590a4d35" />
     <projectItemReference itemId="48dc9ba7-0dee-47e0-acfd-98fbea0f0f69" />
     <projectItemReference itemId="ccb7d590-165c-48e5-8e22-f4092b9ba877" />
-    <projectItemReference itemId="22fb1b8d-0297-428d-8340-541359c8140f" />
     <projectItemReference itemId="d2d4a6f7-6ea0-4e8a-bb80-f5fce02e582c" />
     <projectItemReference itemId="ae01d106-c9db-4998-b07a-3877e1cd6303" />
     <projectItemReference itemId="15b92bd3-7258-4a0b-97b3-54e0282c05e3" />
@@ -22,7 +21,8 @@
     <projectItemReference itemId="1b42f66f-7b5c-4bb9-b60c-e05c39a441dc" />
     <projectItemReference itemId="d826842a-2696-4f8c-aacb-4368e66f830c" />
     <projectItemReference itemId="d4b95711-867e-4c88-800a-ecb76a843aa2" />
-    <projectItemReference itemId="422c2e65-2125-4d2f-b1dd-2af18cf048b6" />
+    <projectItemReference itemId="22fb1b8d-0297-428d-8340-541359c8140f" />
     <projectItemReference itemId="ff24cd82-109e-4468-b150-e8bf008bfbba" />
+    <projectItemReference itemId="422c2e65-2125-4d2f-b1dd-2af18cf048b6" />
   </projectItems>
 </feature>

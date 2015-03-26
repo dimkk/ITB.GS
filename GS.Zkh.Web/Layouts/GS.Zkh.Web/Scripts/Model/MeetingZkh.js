@@ -356,9 +356,9 @@
                         description = "Исполнитель - " + oldValue + " -> " + newValue;
                     }
                     break;
-                case "AgendaQuestionLink":
-                    var oldValue = assignment["AgendaQuestionLinkValue"]() == null ? "" : assignment["AgendaQuestionLinkValue"]().toString();
-                    var newValue = assignment["editAgendaQuestionLinkValue"]() == null ? "" : assignment["editAgendaQuestionLinkValue"]().toString();
+                case "IssueLink":
+                    var oldValue = assignment["IssueLinkValue"]() == null ? "" : assignment["IssueLinkValue"]().toString();
+                    var newValue = assignment["editIssueLinkValue"]() == null ? "" : assignment["editIssueLinkValue"]().toString();
                     if (oldValue != newValue) {
                         description = "Вопрос повестки - " + oldValue + " -> " + newValue;
                     }
@@ -474,14 +474,14 @@
     }
 
     function openQuestionObjectsDialog(title, data) {
-        if (data.agendaQuestionObjects().length == 0)
+        if (data.issueObjects().length == 0)
             return;
 
         var url = _spPageContextInfo.webAbsoluteUrl;
-        if (data.agendaQuestionObjects().length > 1)
+        if (data.issueObjects().length > 1)
             url = url + (String).format("/Lists/IssueObjectZkhList/AllItems.aspx?FilterField1=IssueObjectIssueIdZkh&FilterValue1={0}", data.Id());
         else
-            url = url + (String).format("/Lists/Object/DispForm.aspx?ID={0}", data.agendaQuestionObjects()[0].IssueObjectIssueIdZkh().get_lookupId());
+            url = url + (String).format("/Lists/Object/DispForm2.aspx?ID={0}", data.issueObjects()[0].IssueObjectIssueIdZkh().get_lookupId());
         var options = {
             title: title,
             url: url,
@@ -588,7 +588,7 @@
                     for (var i = 0; i < modelMetaData[fldItm].fields.get_count() ; i++) {
                         // don't load SPD created fields
                         var fldItmIntName = modelMetaData[fldItm].fields.getItemAtIndex(i).get_internalName();
-                        if ((fldItmIntName.toLowerCase().indexOf('__x') > 0) || (fldItmIntName == 'AgendaQuestionDeclarant') || (fldItmIntName == 'ContentType')) continue;
+                        if ((fldItmIntName.toLowerCase().indexOf('__x') > 0) || (fldItmIntName == 'IssueDeclarant') || (fldItmIntName == 'ContentType')) continue;
 
                         fieldsArr.push(modelMetaData[fldItm].fields.getItemAtIndex(i));
                     }
@@ -1077,7 +1077,7 @@
     }
 
     // вопрос повестки
-    function agendaQuestion(data) {
+    function issue(data) {
         for (var prop in data) {
             if (prop == 'New') {
                 this[prop] = data[prop];
@@ -1099,10 +1099,10 @@
         // вычислимое поле для идентификации вопроса в таблице
         this.calcContent = ko.computed(function () {
             var str = "";
-            //str += this.AgendaQuestionSiteName() ? "Объект: " + this.AgendaQuestionSiteName() + ";" : "";
-            //str += this.AgendaQuestionReason() ? "Основание: " + this.AgendaQuestionReason() + ";" : "";
-            //str += this.AgendaQuestionDeclarant() ? "Заявитель на комиссию: " + this.AgendaQuestionDeclarant() + ";" : "";
-            //str += this.AgendaQuestionIncomingDate() ? "Дата поступления: " + this.AgendaQuestionIncomingDate() + ";" : "";
+            //str += this.IssueSiteName() ? "Объект: " + this.IssueSiteName() + ";" : "";
+            //str += this.IssueReason() ? "Основание: " + this.IssueReason() + ";" : "";
+            //str += this.IssueDeclarant() ? "Заявитель на комиссию: " + this.IssueDeclarant() + ";" : "";
+            //str += this.IssueIncomingDate() ? "Дата поступления: " + this.IssueIncomingDate() + ";" : "";
             //str += "Тип проекта: ???" + ";";
             str += this.IssueAddressZkh() ? "Адрес объекта: " + this.IssueAddressZkh() + ";" : "";
             //str += this.IssueInvestorZkh() ? "Инвестор: " + this.IssueInvestorZkh() + ";" : "";
@@ -1134,7 +1134,7 @@
                 window.location.protocol,
                 window.location.host,
                 data.Id,
-                modelMetaData.agendaQuestion.ctId
+                modelMetaData.issue.ctId
             )
         );
 
@@ -1145,60 +1145,60 @@
         this.changedReporter = ko.observable("");
         this.changedSoreporters = ko.observable("");
 
-        this.agendaQuestionObjects = ko.observableArray([]);
+        this.issueObjects = ko.observableArray([]);
 
-        this.agendaQuestionMeasures = ko.observableArray([]);
-        //this.agendaQuestionMeasures(getMeasureList());
+        this.issueMeasures = ko.observableArray([]);
+        //this.issueMeasures(getMeasureList());
         // ToDo
-        this.agendaQuestionMeasures(null);
+        this.issueMeasures(null);
 
-        this.agendaQuestionAttachments = ko.observableArray([]);
-        this.editAgendaQuestionAttachments = ko.observableArray([]);
+        this.issueAttachments = ko.observableArray([]);
+        this.editIssueAttachments = ko.observableArray([]);
 
-        this.agendaQuestionReporterFIO = ko.observable();
-        this.editAgendaQuestionReporterFIO = ko.observable();
-        this.agendaQuestionReporterPosition = ko.observable();
-        this.editAgendaQuestionReporterPosition = ko.observable();
-        this.agendaQuestionReporterOrganizationName = ko.observable();
-        this.editAgendaQuestionReporterOrganizationName = ko.observable();
+        this.issueReporterFIO = ko.observable();
+        this.editIssueReporterFIO = ko.observable();
+        this.issueReporterPosition = ko.observable();
+        this.editIssueReporterPosition = ko.observable();
+        this.issueReporterOrganizationName = ko.observable();
+        this.editIssueReporterOrganizationName = ko.observable();
         this.changedReporterIsNull = ko.computed(function () {
             return !(
-                    this.editAgendaQuestionReporterFIO() ||
-                    this.editAgendaQuestionReporterPosition() ||
-                    this.editAgendaQuestionReporterOrganizationName()
+                    this.editIssueReporterFIO() ||
+                    this.editIssueReporterPosition() ||
+                    this.editIssueReporterOrganizationName()
             )
         }, this);
-        this.agendaQuestionSoreporters = ko.observableArray([]);
-        this.editAgendaQuestionSoreporters = ko.observableArray([]);
+        this.issueSoreporters = ko.observableArray([]);
+        this.editIssueSoreporters = ko.observableArray([]);
 
         //load reporter
 /*         this.loadReporter = function () {
-            if (this.AgendaQuestionReporterFullNameLink() == null) return;
-            var lookupId = this.AgendaQuestionReporterFullNameLink().get_lookupId();
+            if (this.IssueReporterFullNameLink() == null) return;
+            var lookupId = this.IssueReporterFullNameLink().get_lookupId();
             var reporters = $.grep(modelAllBaseParticipants, function (e) { return e.Id().toString() == lookupId.toString(); });
             if (reporters.length > 0) {
-                this.agendaQuestionReporterFIO(reporters[0].ParticipantFullName());
-                this.editAgendaQuestionReporterFIO(reporters[0].ParticipantFullName());
-                this.agendaQuestionReporterPosition(reporters[0].ParticipantPosition());
-                this.editAgendaQuestionReporterPosition(reporters[0].ParticipantPosition());
-                this.agendaQuestionReporterOrganizationName(reporters[0].ParticipantOrg());
-                this.editAgendaQuestionReporterOrganizationName(reporters[0].ParticipantOrg());
+                this.issueReporterFIO(reporters[0].ParticipantFullName());
+                this.editIssueReporterFIO(reporters[0].ParticipantFullName());
+                this.issueReporterPosition(reporters[0].ParticipantPosition());
+                this.editIssueReporterPosition(reporters[0].ParticipantPosition());
+                this.issueReporterOrganizationName(reporters[0].ParticipantOrg());
+                this.editIssueReporterOrganizationName(reporters[0].ParticipantOrg());
             }
         }.bind(this); */
 
         //load soreporters
 /*         this.loadSoreporters = function () {
-            if (this.AgendaQuestionSoreporterFullNameLink() == null) return;
+            if (this.IssueSoreporterFullNameLink() == null) return;
             var result = [];
-            $.each(this.AgendaQuestionSoreporterFullNameLink(), function () {
+            $.each(this.IssueSoreporterFullNameLink(), function () {
                 var lookupId = this.get_lookupId();
                 var reporters = $.grep(modelAllBaseParticipants, function (e) { return e.Id().toString() == lookupId.toString(); });
                 if (reporters.length > 0) {
                     result.push(reporters[0]);
                 }
             });
-            this.agendaQuestionSoreporters(result);
-            this.editAgendaQuestionSoreporters(result);
+            this.issueSoreporters(result);
+            this.editIssueSoreporters(result);
         }.bind(this); */
 
         //выбор докладчика
@@ -1236,8 +1236,8 @@
 
         //удалить содокладчика
         //this.removeSoreporter = function(soreporter) {
-        //    this.editAgendaQuestionSoreporters.remove(soreporter);
-        //    this.editAgendaQuestionSoreporterFullNameLink($.grep(this.editAgendaQuestionSoreporterFullNameLink(), function (n, i) {
+        //    this.editIssueSoreporters.remove(soreporter);
+        //    this.editIssueSoreporterFullNameLink($.grep(this.editIssueSoreporterFullNameLink(), function (n, i) {
         //        return n.get_lookupId().toString() != soreporter.Id().toString();
         //    }));
         //}.bind(this);
@@ -1248,12 +1248,12 @@
         //        var reporterObject = $.parseJSON(this.changedSoreporters());
         //        for (i = 0; i < reporterObject.length; i++) {
         //            var item = new participantEntity(reporterObject[i]);
-        //            if (!ko.utils.arrayFirst(this.editAgendaQuestionSoreporters(), function (arrItem) { return item.Id() == arrItem.Id(); })) {
-        //                this.editAgendaQuestionSoreporters.push(item);
-        //                if (this.editAgendaQuestionSoreporterFullNameLink() == null) this.editAgendaQuestionSoreporterFullNameLink([]);
+        //            if (!ko.utils.arrayFirst(this.editIssueSoreporters(), function (arrItem) { return item.Id() == arrItem.Id(); })) {
+        //                this.editIssueSoreporters.push(item);
+        //                if (this.editIssueSoreporterFullNameLink() == null) this.editIssueSoreporterFullNameLink([]);
         //                var reporterLookup = new SP.FieldLookupValue();
         //                reporterLookup.set_lookupId(reporterObject[i].Id);
-        //                this.editAgendaQuestionSoreporterFullNameLink().push(reporterLookup);
+        //                this.editIssueSoreporterFullNameLink().push(reporterLookup);
         //            }
         //        }
         //        this.changedSoreporters("");
@@ -1266,10 +1266,10 @@
         //        var reporterObject = $.parseJSON(this.changedReporter());
         //        var reporterLookup = new SP.FieldLookupValue();
         //        reporterLookup.set_lookupId(reporterObject[0].Id);
-        //        this.editAgendaQuestionReporterFullNameLink(reporterLookup);
-        //        this.editAgendaQuestionReporterFIO(reporterObject[0].ParticipantFullName);
-        //        this.editAgendaQuestionReporterPosition(reporterObject[0].ParticipantPosition);
-        //        this.editAgendaQuestionReporterOrganizationName(reporterObject[0].ParticipantOrg);
+        //        this.editIssueReporterFullNameLink(reporterLookup);
+        //        this.editIssueReporterFIO(reporterObject[0].ParticipantFullName);
+        //        this.editIssueReporterPosition(reporterObject[0].ParticipantPosition);
+        //        this.editIssueReporterOrganizationName(reporterObject[0].ParticipantOrg);
         //        this.changedReporter("");
         //    }
         //}, this);
@@ -1296,7 +1296,7 @@
         //            var lookup = new SP.FieldLookupValue();
         //            lookup.set_lookupId(jsObject.Id);
         //            this.editAgendaLinkedQuestionLink(lookup);
-        //            this.editAgendaLinkedQuestionLinkValue(jsObject.AgendaQuestionNumber);
+        //            this.editAgendaLinkedQuestionLinkValue(jsObject.IssueNumber);
         //            this.editAgendaLinkedQuestionLinkId(jsObject.Id);
         //        }
         //    }
@@ -1304,8 +1304,8 @@
 
         // additional properties
         //this.ListTheme = ko.computed(function () {
-        //    if (this.AgendaQuestionTheme()) {
-        //        return this.AgendaQuestionTheme().length > 70 ? this.AgendaQuestionNumber() + ". " + this.AgendaQuestionTheme().substring(0, 67) + "..." : this.AgendaQuestionNumber() + ". " + this.AgendaQuestionTheme();
+        //    if (this.IssueTheme()) {
+        //        return this.IssueTheme().length > 70 ? this.IssueNumber() + ". " + this.IssueTheme().substring(0, 67) + "..." : this.IssueNumber() + ". " + this.IssueTheme();
         //    }
         //    else {
         //        return null;
@@ -1323,11 +1323,11 @@
         //            }
         //        }
         //    }
-        //    this.agendaQuestionReporterFIO(this.editAgendaQuestionReporterFIO());
-        //    this.agendaQuestionReporterPosition(this.editAgendaQuestionReporterPosition());
-        //    this.agendaQuestionReporterOrganizationName(this.editAgendaQuestionReporterOrganizationName());
-        //    this.agendaQuestionSoreporters(this.editAgendaQuestionSoreporters());
-        //    this.agendaQuestionAttachments(this.editAgendaQuestionAttachments());
+        //    this.issueReporterFIO(this.editIssueReporterFIO());
+        //    this.issueReporterPosition(this.editIssueReporterPosition());
+        //    this.issueReporterOrganizationName(this.editIssueReporterOrganizationName());
+        //    this.issueSoreporters(this.editIssueSoreporters());
+        //    this.issueAttachments(this.editIssueAttachments());
         //}.bind(this);
 
         //reset to originals on cancel
@@ -1341,15 +1341,15 @@
         //            }
         //        }
         //    }
-        //    this.editAgendaQuestionReporterFIO(this.agendaQuestionReporterFIO());
-        //    this.editAgendaQuestionReporterPosition(this.agendaQuestionReporterPosition());
-        //    this.editAgendaQuestionReporterOrganizationName(this.agendaQuestionReporterOrganizationName());
-        //    this.editAgendaQuestionSoreporters(this.agendaQuestionSoreporters());
-        //    this.editAgendaQuestionAttachments(this.agendaQuestionAttachments());
+        //    this.editIssueReporterFIO(this.issueReporterFIO());
+        //    this.editIssueReporterPosition(this.issueReporterPosition());
+        //    this.editIssueReporterOrganizationName(this.issueReporterOrganizationName());
+        //    this.editIssueSoreporters(this.issueSoreporters());
+        //    this.editIssueAttachments(this.issueAttachments());
         //}.bind(this);
 
         //this.addQuestionAttachment = function () {
-        //    this.editAgendaQuestionAttachments.push(new meetingAttach({
+        //    this.editIssueAttachments.push(new meetingAttach({
         //        Id: "",
         //        AttachmentDescription: "",
         //        MeetingLink: this.Id(),
@@ -1362,17 +1362,17 @@
         //}.bind(this);
 
         //this.removeQuestionAttachment = function (attachment) {
-        //    this.editAgendaQuestionAttachments.destroy(attachment);
+        //    this.editIssueAttachments.destroy(attachment);
         //}.bind(this);
-        //    this.selectAgendaQuestionProjectType = function (dataset, dataum) {
-        //    this.editAgendaQuestionProjectType(dataum.label);
+        //    this.selectIssueProjectType = function (dataset, dataum) {
+        //    this.editIssueProjectType(dataum.label);
         //}.bind(this);
 
         this.editQuestionComment = function () { ShowCommentWindow(this); }
     }
 
     // Объект вопроса повестки
-    function agendaQuestionObject(data) {
+    function issueObject(data) {
         for (var prop in data) {
             if (prop == 'New') {
                 this[prop] = data[prop];
@@ -1518,17 +1518,19 @@
 
         for (var i = 0; i < fields.length; i++) {
             var fieldName = fields[i].get_internalName();
-
-            if ((fieldName.toLowerCase().indexOf("date") >= 0) && SPEntity.get_item(fieldName) && SPEntity.get_item(fieldName).get_lookupValue == undefined) {
-                entity[fieldName] = formatDate(SPEntity.get_item(fieldName));
-            }
-            else {
-                try {
+            try {
+                if ((fieldName.toLowerCase().indexOf("date") >= 0) &&
+                    (fieldName.toLowerCase().indexOf("datenumber") == 0) &&
+                    SPEntity.get_item(fieldName) && SPEntity.get_item(fieldName).get_lookupValue == undefined)
+                {
+                    entity[fieldName] = formatDate(SPEntity.get_item(fieldName));
+                } else {
                     entity[fieldName] = SPEntity.get_item(fieldName);
-                } catch (e) {
-                    if (console) {
-                        console.log("Не удалось обнаружить поле " + fieldName + ": " + e.message);
-                    }
+                }
+            } catch (e) {
+                entity[fieldName] = "Не удалось получить " + fieldName;
+                if (console) {
+                    console.log("Не удалось обнаружить поле " + fieldName + ": " + e.message);
                 }
             }
         }
@@ -1599,16 +1601,16 @@
         self.allQuestions = ko.observableArray([]);
         self.currentMeetingsNumber = ko.observable();
         self.meeting = ko.observable({});
-        self.agendaQuestions = ko.observableArray([]);
-        self.agendaQuestionObjects = ko.observableArray([]);
-        /*self.agendaQuestionTypes = ko.observableArray(getAvailableQuestionTypes());
+        self.issues = ko.observableArray([]);
+        self.issueObjects = ko.observableArray([]);
+        /*self.issueTypes = ko.observableArray(getAvailableQuestionTypes());
         self.assignmentTypes = ko.observableArray(getAvailableAssignmentTypes());*/
-        self.agendaQuestionTypes = ko.observableArray([]);
+        self.issueTypes = ko.observableArray([]);
         self.assignmentTypes = ko.observableArray([]);
         self.assignments = ko.observableArray([]);
         self.filteredAssignments = function (questionValue) {
             return ko.utils.arrayFilter(self.assignments(), function (assignment) {
-                return (assignment.editAgendaQuestionLinkValue().toString() === questionValue.toString());
+                return (assignment.editIssueLinkValue().toString() === questionValue.toString());
             });
         };
         self.availableMeetingStatuses = ko.observableArray([]);
@@ -1632,8 +1634,8 @@
         self.isReporter = ko.observable();
 
         var meetingList = getListByUrl(modelMetaData.meeting.listName);
-        var agendaQuestionList = getListByUrl(modelMetaData.agendaQuestion.listName);
-        //var questionObjectList = getListByUrl(modelMetaData.agendaQuestionObject.listName);
+        var issueList = getListByUrl(modelMetaData.issue.listName);
+        //var questionObjectList = getListByUrl(modelMetaData.issueObject.listName);
         var attachList = getListByUrl(modelMetaData.meetingAttachment.listName);
 
         var assignmentList; // = $.appWebContext.get_web().get_lists().getByTitle("Поручения");
@@ -1695,8 +1697,8 @@
                 var aqCamlQuery = new CamlBuilder().Where().LookupField("IssueMeetingZkh").Id().EqualTo($.listItemId).OrderBy("IssueNumberZkh");
                 var spaqQuery = new SP.CamlQuery();
                 spaqQuery.set_viewXml("<View><Query>" + aqCamlQuery.ToString() + "</Query></View>");
-                var agendaQuestionListInst = agendaQuestionList.getItems(spaqQuery);
-                $.appWebContext.load(agendaQuestionListInst);
+                var issueListInst = issueList.getItems(spaqQuery);
+                $.appWebContext.load(issueListInst);
 
                 // loading attachments
                 var atCamlQuery = new CamlBuilder().Where().LookupField("MeetingAttachmentMeetingZkh").Id().EqualTo($.listItemId);
@@ -1705,7 +1707,7 @@
                 var attachListInst = attachList.getItems(spatQuery);
                 $.appWebContext.load(attachListInst);
 
-                var spinTarget = document.getElementById("AgendaQuestionTableDiv");
+                var spinTarget = document.getElementById("IssueTableDiv");
                 if (spinTarget) {
                     $(spinTarget.children).each(function (i, e) {
                         $(e).hide();
@@ -1721,9 +1723,9 @@
                         //load questions to model
                         var questions = [];
                         var allMeetingBaseParticipants = [];
-                        var enumerator = agendaQuestionListInst.getEnumerator();
+                        var enumerator = issueListInst.getEnumerator();
                         while (enumerator.moveNext()) {
-                            var newQuest = new agendaQuestion(loadSPEntity(modelMetaData.agendaQuestion.fields, enumerator.get_current()));
+                            var newQuest = new issue(loadSPEntity(modelMetaData.issue.fields, enumerator.get_current()));
                             if (newQuest.IssueReporterZkh && newQuest.IssueReporterZkh() != null)
                                 allMeetingBaseParticipants.push(newQuest.IssueReporterZkh());
                             if (newQuest.IssueCoReportersZkh() != null)
@@ -1731,7 +1733,7 @@
                                     function () { allMeetingBaseParticipants.push(this); });
                             questions.push(newQuest);
                         }
-                        self.agendaQuestions(questions);
+                        self.issues(questions);
 
                         //load attachments file info
                         var attachs = [];
@@ -1764,7 +1766,7 @@
                         self.attachments(attachs);
                         if (scancopyAttach) self.scanAttach(scancopyAttach);
 
-                        var camlQuery = new CamlBuilder().Where().LookupField("_x0412__x043e__x043f__x0440__x04").Id().In($.map(self.agendaQuestions(), function (el) { return el.Id(); }));
+                        var camlQuery = new CamlBuilder().Where().LookupField("_x0412__x043e__x043f__x0440__x04").Id().In($.map(self.issues(), function (el) { return el.Id(); }));
                         //var camlQuery = new CamlBuilder().Where().LookupField("_x0412__x043e__x043f__x0440__x04").Id().EqualTo(883);
                         var spQuery = new SP.CamlQuery();
                         spQuery.set_viewXml("<View><Query>" + camlQuery.ToString() + "</Query></View>");
@@ -1773,7 +1775,7 @@
                         //$.appWebContext.load(questionObjects);
 
                         // loading assignments
-                        //var camlQuery = new CamlBuilder().Where().LookupField("AgendaQuestionLink").Id().In($.map(self.agendaQuestions(), function (el) { return el.Id(); }));
+                        //var camlQuery = new CamlBuilder().Where().LookupField("IssueLink").Id().In($.map(self.issues(), function (el) { return el.Id(); }));
                         //var spQuery = new SP.CamlQuery();
                         //spQuery.set_viewXml("<View><Query>" + camlQuery.ToString() + "</Query></View>");
                         //var assignmentListInst = assignmentList.getItems(spQuery);
@@ -1784,12 +1786,12 @@
                             var objectsData = [];
                             //var enumerator = questionObjects.getEnumerator();
                             //while (enumerator.moveNext()) {
-                            //    var od = loadSPEntity(modelMetaData.agendaQuestionObject.fields, enumerator.get_current());
-                            //    var newObject = new agendaQuestionObject(od);
+                            //    var od = loadSPEntity(modelMetaData.issueObject.fields, enumerator.get_current());
+                            //    var newObject = new issueObject(od);
                             //    objectsData.push(od);
                             //    objects.push(newObject);
                             //}
-                            //self.agendaQuestionObjects(objects);
+                            //self.issueObjects(objects);
 
                             //for (var i = 0; i < questions.length; i++) {
                             //    var q = questions[i];
@@ -1799,7 +1801,7 @@
                             //            fo = objects[j];
                             //    }
                             //    if (fo)
-                            //        q.agendaQuestionObjects.push(fo);
+                            //        q.issueObjects.push(fo);
                             //}
 
                             var items = [];
@@ -1807,7 +1809,7 @@
 
                             //load participants for assignments and questions
                             modelAllBaseParticipants = getParticipiantsEntities(allMeetingBaseParticipants);
-                            $.each(self.agendaQuestions(), function () {
+                            $.each(self.issues(), function () {
                                 //this.loadReporter();
                                 //this.loadSoreporters();
                             });
@@ -1845,7 +1847,7 @@
         };
 
         // actions
-        self.selectedAgendaQuestion = ko.observable();
+        self.selectedIssue = ko.observable();
         self.selectedAssignment = ko.observable();
 
         ///////////////////////////////////////////////////////////////////////
@@ -1898,24 +1900,24 @@
         // Agenda Question
 
         // edit agenda question
-        self.editAgendaQuestion = function (agendaQuestionToEdit) {
-            agendaQuestionToEdit.mode("full");
-            self.selectedAgendaQuestion(agendaQuestionToEdit);
+        self.editIssue = function (issueToEdit) {
+            issueToEdit.mode("full");
+            self.selectedIssue(issueToEdit);
         };
 
         // edit agenda question
-        self.editAgendaQuestionOnlyFiles = function (agendaQuestionToEdit) {
-            agendaQuestionToEdit.mode("onlyFiles");
-            self.selectedAgendaQuestion(agendaQuestionToEdit);
+        self.editIssueOnlyFiles = function (issueToEdit) {
+            issueToEdit.mode("onlyFiles");
+            self.selectedIssue(issueToEdit);
         };
 
         // add agenda question
-        self.addAgendaQuestion = function () {
-            var e = getNewEntity(modelMetaData.agendaQuestion.fields);
+        self.addIssue = function () {
+            var e = getNewEntity(modelMetaData.issue.fields);
             e.MeetingLink = self.meeting().MeetingNumber();
-            self.selectedAgendaQuestion(new agendaQuestion(e));
-            self.selectedAgendaQuestion().editAgendaQuestionNumber(self.agendaQuestions().length + 1);
-            self.selectedAgendaQuestion().mode("full");
+            self.selectedIssue(new issue(e));
+            self.selectedIssue().editIssueNumber(self.issues().length + 1);
+            self.selectedIssue().mode("full");
         };
 
         self.addOrderRg = function() {
@@ -1927,27 +1929,27 @@
         };
 
         // remove agenda question
-        self.removeAgendaQuestion = function (agendaQuestion) {
-            var currentNumber = agendaQuestion.IssueNumberZkh();
-            var questions = self.agendaQuestions();
+        self.removeIssue = function (issue) {
+            var currentNumber = issue.IssueNumberZkh();
+            var questions = self.issues();
 
             var number = currentNumber;
-            for (var i = questions.indexOf(agendaQuestion) + 1; i < questions.length; i++) {
-                var listItem = agendaQuestionList.getItemById(questions[i].Id());
+            for (var i = questions.indexOf(issue) + 1; i < questions.length; i++) {
+                var listItem = issueList.getItemById(questions[i].Id());
                 listItem.set_item('IssueNumberZkh', number);
                 listItem.update();
                 number++;
             }
-            var listItem = agendaQuestionList.getItemById(agendaQuestion.Id());
+            var listItem = issueList.getItemById(issue.Id());
             listItem.deleteObject();
 
             $.appWebContext.executeQueryAsync(function () {
                 number = currentNumber;
-                for (var i = questions.indexOf(agendaQuestion) + 1; i < questions.length; i++) {
+                for (var i = questions.indexOf(issue) + 1; i < questions.length; i++) {
                     questions[i].IssueNumberZkh(number);
                     number++;
                 }
-                self.agendaQuestions.remove(agendaQuestion);
+                self.issues.remove(issue);
             },
 			function (sender, args) {
 			    alert('Request failed. ' + args.get_message() +
@@ -1955,23 +1957,23 @@
 			});
         };
 
-        self.canMoveUpAgendaQuestion = function (agendaQuestion) {
-            return self.agendaQuestions().indexOf(agendaQuestion) > 0;
+        self.canMoveUpIssue = function (issue) {
+            return self.issues().indexOf(issue) > 0;
         };
 
-        self.canMoveDownAgendaQuestion = function (agendaQuestion) {
-            return self.agendaQuestions().indexOf(agendaQuestion) < self.agendaQuestions().length - 1;
+        self.canMoveDownIssue = function (issue) {
+            return self.issues().indexOf(issue) < self.issues().length - 1;
         };
 
-        self.moveAgendaQuestion = function (current, isUp) {
+        self.moveIssue = function (current, isUp) {
             console.log((isUp ? "Up" : "Down") + " question " + current.Id());
             var direction = isUp ? -1 : 1;
-            var prev = self.agendaQuestions()[self.agendaQuestions().indexOf(current) + direction];
+            var prev = self.issues()[self.issues().indexOf(current) + direction];
             var currentNumber = current.IssueNumberZkh();
             var prevNumber = prev.IssueNumberZkh();
 
-            var currentListItem = agendaQuestionList.getItemById(current.Id());
-            var prevListItem = agendaQuestionList.getItemById(prev.Id());
+            var currentListItem = issueList.getItemById(current.Id());
+            var prevListItem = issueList.getItemById(prev.Id());
             $.appWebContext.load(prevListItem);
             $.appWebContext.load(currentListItem);
 
@@ -1986,7 +1988,7 @@
                     console.log("Move question " + current.Id() + " success");
                     prev.IssueNumberZkh(currentNumber);
                     current.IssueNumberZkh(prevNumber);
-                    self.agendaQuestions(self.agendaQuestions().sort(function (a, b) {
+                    self.issues(self.issues().sort(function (a, b) {
                         return a.IssueNumberZkh() > b.IssueNumberZkh() ? 1 : -1;
                     }))
                 },
@@ -2001,50 +2003,50 @@
 				});
         }
 
-        self.moveUpAgendaQuestion = function (current) {
-            self.moveAgendaQuestion(current, true);
+        self.moveUpIssue = function (current) {
+            self.moveIssue(current, true);
         };
 
-        self.moveDownAgendaQuestion = function (current) {
-            self.moveAgendaQuestion(current, false);
+        self.moveDownIssue = function (current) {
+            self.moveIssue(current, false);
         };
 
         // accept agenda question
-        self.acceptAgendaQuestion = function () {
-            var selected = self.selectedAgendaQuestion();
-            if (checkIfNumberValid(selected.editAgendaQuestionNumber())) {
+        self.acceptIssue = function () {
+            var selected = self.selectedIssue();
+            if (checkIfNumberValid(selected.editIssueNumber())) {
                 selected.accept();
 
                 if (selected.New) {
-                    var e = newFromKOEntity(modelMetaData.agendaQuestion.fields, selected);
+                    var e = newFromKOEntity(modelMetaData.issue.fields, selected);
                     // для вновь добавляемого вопроса нет данных (полного имени) для докладчиков, 
                     // они хранятся отдельно в свойствах вопроса, но не относятся к хранимой части модели
                     // поэтому их нужно перенести
-                    e.agendaQuestionReporterFIO = selected.agendaQuestionReporterFIO();
-                    e.agendaQuestionSoreporters = selected.agendaQuestionSoreporters();
+                    e.issueReporterFIO = selected.issueReporterFIO();
+                    e.issueSoreporters = selected.issueSoreporters();
 
                     // new object to be created.
-                    var listItem = agendaQuestionList.addItem(new SP.ListItemCreationInformation());
-                    saveSPEntity(modelMetaData.agendaQuestion.fields, selected, listItem);
+                    var listItem = issueList.addItem(new SP.ListItemCreationInformation());
+                    saveSPEntity(modelMetaData.issue.fields, selected, listItem);
                     listItem.update();
                     $.appWebContext.load(listItem);
                     $.appWebContext.executeQueryAsync(function () {
                         e.Id = listItem.get_id();
                         e.New = false;
                         e.MeetingLink = self.meeting().MeetingNumber();
-                        self.agendaQuestions.push(new agendaQuestion(e));
-                        self.selectedAgendaQuestion("");
+                        self.issues.push(new issue(e));
+                        self.selectedIssue("");
                     });
-                } else self.selectedAgendaQuestion("");
+                } else self.selectedIssue("");
             } else {
                 alert("Номер вопроса должен быть числом > 0!");
             }
         };
 
         // cancel changes in agenda question
-        self.cancelAgendaQuestion = function () {
-            self.selectedAgendaQuestion().cancel();
-            self.selectedAgendaQuestion("");
+        self.cancelIssue = function () {
+            self.selectedIssue().cancel();
+            self.selectedIssue("");
         };
 
         ///////////////////////////////////////////////////////////////////////
@@ -2143,24 +2145,24 @@
                 }
 
                 // agenda questions
-                var createdAgendaQuestions = [];
-                for (var agendaQuestion in self.agendaQuestions()) {
+                var createdIssues = [];
+                for (var issue in self.issues()) {
                     // Build a request up to send with the CSOM.
-                    if (self.agendaQuestions()[agendaQuestion]._destroy) {
+                    if (self.issues()[issue]._destroy) {
                         // Handle deleted objects
                         // Deleted items that are marked "new" have never been saved to SharePoint to start with
-                        if (self.agendaQuestions()[agendaQuestion].Id() != "") {
-                            var listItem = agendaQuestionList.getItemById(self.agendaQuestions()[agendaQuestion].Id());
+                        if (self.issues()[issue].Id() != "") {
+                            var listItem = issueList.getItemById(self.issues()[issue].Id());
                             listItem.deleteObject();
                         }
                     } else {
                         // The item is neither new nor deleted, handle it as an update.
-                        var listItem = agendaQuestionList.getItemById(self.agendaQuestions()[agendaQuestion].Id());
-                        saveSPEntity(modelMetaData.agendaQuestion.fields, self.agendaQuestions()[agendaQuestion], listItem);
+                        var listItem = issueList.getItemById(self.issues()[issue].Id());
+                        saveSPEntity(modelMetaData.issue.fields, self.issues()[issue], listItem);
                         // link to parent
                         listItem.set_item("MeetingLink", self.meeting().Id());
                         listItem.update();
-                        var newProjectType = saveProjectTypeIfNew(self.allProjectsTypes(), self.agendaQuestions()[agendaQuestion].AgendaQuestionProjectType(), questionsProjectTypesList);
+                        var newProjectType = saveProjectTypeIfNew(self.allProjectsTypes(), self.issues()[issue].IssueProjectType(), questionsProjectTypesList);
                         if (newProjectType != null) self.allProjectsTypes.push({ label: newProjectType, value: newProjectType });
                     }
                 }
@@ -2180,10 +2182,10 @@
                         var listItem = self.assignments()[assignment].Id() == "" ? assignmentList.addItem(new SP.ListItemCreationInformation()) : assignmentList.getItemById(self.assignments()[assignment].Id());
                         saveSPEntity(modelMetaData.assignment.fields, self.assignments()[assignment], listItem);
                         // link to parent
-                        var linkedQuestions = $.grep(self.agendaQuestions(), function (e) { return e.AgendaQuestionNumber() == self.assignments()[assignment].AgendaQuestionLinkValue(); });
+                        var linkedQuestions = $.grep(self.issues(), function (e) { return e.IssueNumber() == self.assignments()[assignment].IssueLinkValue(); });
                         if (linkedQuestions.length > 0) {
                             if (linkedQuestions.length > 1) console.log("Duplicate agenda question numbers in this meeting");
-                            listItem.set_item("AgendaQuestionLink", linkedQuestions[0].Id());
+                            listItem.set_item("IssueLink", linkedQuestions[0].Id());
                         }
                         listItem.update();
                         if (self.assignments()[assignment].Id() == "") {
@@ -2243,7 +2245,7 @@
                 // Now we have built our request, send it to the server for processing.
                 $.appWebContext.executeQueryAsync(function () {
                     // delete from model destroyed questions
-                    for (var i = self.agendaQuestions().length - 1; i >= 0; i--) if (self.agendaQuestions()[i]._destroy) self.agendaQuestions.splice(i, 1);
+                    for (var i = self.issues().length - 1; i >= 0; i--) if (self.issues()[i]._destroy) self.issues.splice(i, 1);
 
                     //upload attachments
                     uploadAttachments(createdScanAttach, "Вложения заседаний");

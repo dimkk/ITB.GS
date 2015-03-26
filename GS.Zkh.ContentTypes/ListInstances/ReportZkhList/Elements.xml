@@ -14,16 +14,16 @@
     <Data>
       <Rows>
         <Row>
-          <Field Name="Title">Отчет по поручению МВК 1</Field>
+          <Field Name="Title">Отчет по поручению ЖКХ 1</Field>
           <Field Name="ReportAssignmentZkh">1</Field>
           <Field Name="ReportDateZkh">2014-07-15 15:30:00</Field>
           <Field Name="ReportDecisionZkh">1</Field>
           <Field Name="ReportExpectedDateZkh">2014-07-16 16:30:00</Field>
-          <Field Name="ReportInfoZkh">Информация "Отчет по поручению МВК 1"</Field>
+          <Field Name="ReportInfoZkh">Информация "Отчет по поручению ЖКХ 1"</Field>
           <Field Name="ReportNewDeadlineZkh">2014-07-17 17:30:00</Field>
           <Field Name="ReportRequestDateZkh">2014-07-14 14:30:00</Field>
-          <Field Name="ReportResolutionCommentZkh">Комментарий к резолюции "Отчет по поручению МВК 1"</Field>
-          <Field Name="ReportTextZkh">Текст "Отчет по поручению МВК 1"</Field>
+          <Field Name="ReportResolutionCommentZkh">Комментарий к резолюции "Отчет по поручению ЖКХ 1"</Field>
+          <Field Name="ReportTextZkh">Текст "Отчет по поручению ЖКХ 1"</Field>
         </Row>
       </Rows>
     </Data>

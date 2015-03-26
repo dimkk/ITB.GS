@@ -67,6 +67,12 @@
     <Compile Include="Features\GS.Zkh.IssueCategoryLists\GS.Zkh.EventReceiver.cs">
       <DependentUpon>GS.Zkh.IssueCategoryLists.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\GS.Zkh.IssueLists\GS.Zkh.EventReceiver.cs">
+      <DependentUpon>GS.Zkh.IssueLists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GS.Zkh.MeetingLists\GS.Zkh.EventReceiver.cs">
+      <DependentUpon>GS.Zkh.MeetingLists.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -517,8 +523,12 @@
     <Content Include="Fields\IssueSubCategoryZkh\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Fields\MeetingOtherParticipantsZkh\Elements.xml" />
-    <Content Include="Fields\MeetingParticipantsZkh\Elements.xml" />
+    <Content Include="Fields\MeetingOtherParticipantsZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\MeetingParticipantsZkh\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Fields\IssueCoReportersZkh\Elements.xml" />
     <Content Include="Fields\IssueDecisionZkh\Elements.xml" />
     <Content Include="Fields\IssueDecisionTypeZkh\Elements.xml" />
@@ -610,18 +620,24 @@
     <Content Include="ListDefinitions\ReportZkhListDefinition\schema.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ListInstances\AssignmentZkhList\Elements.xml" />
+    <Content Include="ListInstances\AssignmentZkhList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\IssueAttachmentZkhList\Elements.xml" />
     <Content Include="ListInstances\IssueCategoryZkhList\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ListInstances\IssueZkhList\Elements.xml" />
+    <Content Include="ListInstances\IssueZkhList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\MeetingAttachmentZkhList\Elements.xml" />
     <Content Include="ListInstances\MeetingZkhList\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ListInstances\ReportAttachmentZkhList\Elements.xml" />
-    <Content Include="ListInstances\ReportZkhList\Elements.xml" />
+    <Content Include="ListInstances\ReportZkhList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Template\Images\GS\FeatureIcon_AssignmentZkhList.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_AssignmentZkhList2.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_GS.MVK.IssueAttachment.gif" />

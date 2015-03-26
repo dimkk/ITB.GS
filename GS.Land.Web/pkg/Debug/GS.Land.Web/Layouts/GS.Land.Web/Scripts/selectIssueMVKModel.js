@@ -42,18 +42,18 @@
             var ctx = SP.ClientContext.get_current();
             var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
             var query = new SP.CamlQuery();
-            query.set_viewXml('<View><Query><Where><Eq><FieldRef Name="IssueMeetingZkh" LookupId="True" /><Value Type="Integer">' + data.ID + '</Value></Eq></Where></Query></View>');
+            query.set_viewXml('<View><Query><Where><Eq><FieldRef Name="IssueMeetingMVK" LookupId="True" /><Value Type="Integer">' + data.ID + '</Value></Eq></Where></Query></View>');
             var questionListInstance = agendaQuestionList.getItems(query);
-            ctx.load(questionListInstance, "Include(ID, IssueNumberTextZkh, IssueAddressZkh, IssueDescriptionZkh)");
+            ctx.load(questionListInstance, "Include(ID, IssueNumberTextMVK, IssueAddressMVK, IssueDescriptionMVK)");
             ctx.executeQueryAsync(function () {
                 var enumerator = questionListInstance.getEnumerator();
                 var searchResult = [];
                 while (enumerator.moveNext()) {
                     searchResult.push({
                         ID: enumerator.get_current().get_item("ID"),
-                        AgendaQuestionNumber: enumerator.get_current().get_item("IssueNumberTextZkh"),
-                        AgendaQuestionAddress: enumerator.get_current().get_item("IssueAddressZkh"),
-                        AgendaQuestionDescription: enumerator.get_current().get_item("IssueDescriptionZkh")
+                        AgendaQuestionNumber: enumerator.get_current().get_item("IssueNumberTextMVK"),
+                        AgendaQuestionAddress: enumerator.get_current().get_item("IssueAddressMVK"),
+                        AgendaQuestionDescription: enumerator.get_current().get_item("IssueDescriptionMVK")
                     });
                 }
                 self.agendaQuestionSearchResult(searchResult);
@@ -142,15 +142,15 @@
                         var query = new SP.CamlQuery();
                         query.set_viewXml(buildInCAMLQuery(idList));
                         var meetingInstance = meetingList.getItems(query);
-                        ctx.load(meetingInstance, "Include(ID, MeetingNumberZkh, MeetingDateZkh)");
+                        ctx.load(meetingInstance, "Include(ID, MeetingNumberMVK, MeetingDateMVK)");
                         ctx.executeQueryAsync(function () {
                             var enumerator = meetingInstance.getEnumerator();
                             var searchResult = [];
                             while (enumerator.moveNext()) {
                                 searchResult.push({
                                     ID: enumerator.get_current().get_item("ID"),
-                                    MeetingNumber: enumerator.get_current().get_item("MeetingNumberZkh"),
-                                    MeetingDate: formatDate(enumerator.get_current().get_item("MeetingDateZkh"))
+                                    MeetingNumber: enumerator.get_current().get_item("MeetingNumberMVK"),
+                                    MeetingDate: formatDate(enumerator.get_current().get_item("MeetingDateMVK"))
                                 });
                             }
                             self.meetingSearchResult(searchResult);

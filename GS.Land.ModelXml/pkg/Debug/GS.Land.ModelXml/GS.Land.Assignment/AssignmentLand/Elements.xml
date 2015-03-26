@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-02-20 15:00:19Z
+        Created by: SPDEV\developer
+              Name: AssignmentLand
+       Description: Тип содержимого для поручения Земля
+           History: Initial Version 0
+    ************************************************************************
+    -->
+	<!-- Parent ContentType Item -->
+	<ContentType
+		ID="0x0100237DF2A5CFE34A7DB7C2C3CE410FC5E9"
+		Name="AssignmentLand"
+		Description="Тип содержимого для поручения Земля"
+		Group="Земля.Типы содержимого"
+		Version="0"
+		Inherits="TRUE">
+		<FieldRefs>
+			<FieldRef
+				ID="{C3040B96-27F5-430F-A846-9243F0B9CE35}"
+				Name="AssignmentCoExecutorsLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{0B714B4E-79D1-47D2-9C7C-E9275609D9EB}"
+				Name="AssignmentControllerLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{EA5E1148-D219-4B90-8D0A-CB225629A47D}"
+				Name="AssignmentControlStateLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{EB3E37BA-697A-4CB4-A375-080ABBD9B99F}"
+				Name="AssignmentDaysForResolveLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{348EDF82-A0C2-4F68-BC3D-20E3360DD8D5}"
+				Name="AssignmentDayTypeLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{67534E49-5009-4AB2-B923-A29CFD35DA9E}"
+				Name="AssignmentDependentAssignTextLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{52750479-3240-4257-B703-743C3D9FB969}"
+				Name="AssignmentDependentTermTextLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{F82B717C-8CA9-4215-89C3-C14657E9AFEB}"
+				Name="AssignmentExecutorLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{12A19BD6-9C0D-429D-963E-235CFC2A62DC}"
+				Name="AssignmentExecutorOrgLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{6FAF87E5-4D65-4DA0-9451-44ECB4889A2A}"
+				Name="AssignmentExecutorPositionLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{4118C2C4-D82F-473E-A350-388285BE112A}"
+				Name="AssignmentFactDateLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{178BF3D3-3BBF-4D89-B2E7-D11F7EE2ACFE}"
+				Name="AssignmentIssueLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{55F1DCAB-7F48-4FE2-AE21-C6DB81731352}"
+				Name="AssignmentLastReportLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{55F1DCAB-7F48-4FE2-AE21-C6DB81731352}"
+				Name="AssignmentNoteLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{0E7E040F-A90E-4E89-90B2-F3BD4BF940D8}"
+				Name="AssignmentNumberLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{98BA27CD-E44B-4B55-8A89-97DA4B42CFBA}"
+				Name="AssignmentPlanDateLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{8C29C8DB-3AFC-41E3-B838-A0C1EC934BB4}"
+				Name="AssignmentPlanIsDependentLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{59AF0FB0-5AA1-485E-B7C3-DC1AE1A0DFFD}"
+				Name="AssignmentProlongationCountLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{57AF7BA3-97D5-4C0A-8D58-3F5596AA7ED3}"
+				Name="AssignmentResponsibleExecutorLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{A235C9D1-A68F-4E00-8740-D228F155A4CC}"
+				Name="AssignmentStatusLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{24F4EE0E-88F6-4E2E-895B-59C8C8A2B33A}"
+				Name="AssignmentTextLand"
+				Required="FALSE" />
+			<FieldRef
+				ID="{630577FD-D08D-457D-A43B-402C43F54292}"
+				Name="AssignmentTypeLand"
+				Required="FALSE" />
+		</FieldRefs>
+	</ContentType>
+</Elements>
