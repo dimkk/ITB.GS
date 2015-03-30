@@ -2,7 +2,7 @@
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
 
-namespace SAMRT.Web
+namespace GS.Land.Web
 {
     public partial class ExecutorSelection : LayoutsPageBase
     {

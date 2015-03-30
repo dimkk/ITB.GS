@@ -71,7 +71,7 @@
                 else {
                     $.each(rows, function (i, e) {
                         if (e.contentclass !== self.consts.objectListCT) return;
-                        if (!~e.Path.indexOf("DispForm.aspx")) return;
+                        if (!~e.Path.indexOf("DispForm2.aspx")) return;
 
                         var params = e.Path.split("?")[1] ? e.Path.split("?")[1].split("&") : null;
                         for (var i = 0; i < params.length; i++) {

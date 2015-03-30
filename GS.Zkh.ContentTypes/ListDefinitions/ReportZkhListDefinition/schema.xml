@@ -54,8 +54,11 @@
         <RowLimit Paged="TRUE">30</RowLimit>
         <Toolbar Type="Standard" />
         <ViewFields>
-          <FieldRef Name="LinkTitle">
-          </FieldRef>
+          <FieldRef Name="LinkTitle"/>
+          <FieldRef Name="ReportDateZkh"/>
+          <FieldRef Name="ReportTextZkh"/>
+          <FieldRef Name="ReportDecisionZkh"/>
+          <FieldRef Name="ReportResolutionCommentZkh"/>
         </ViewFields>
         <Query>
           <OrderBy>
@@ -199,7 +202,7 @@
             <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2" xmlns:wp="http://schemas.microsoft.com/WebPart/v2/ListForm">
               <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
               <TypeName>Microsoft.SharePoint.WebPartPages.ListFormWebPart</TypeName>
-              <ID>g_1614859C-F2A0-4C4C-81B8-728700F30C4A</ID>
+              <ID>g_65d1e125_7eda_4716_a39b_def5d6b2c260</ID>
               <wp:PageType>PAGE_EDITFORM</wp:PageType>
               <wp:TemplateName>CSRListForm</wp:TemplateName>
               <wp:JSLink>/_layouts/15/GS.Zkh.Web/Scripts/csr/rendercore.js | /_layouts/15/GS.Zkh.Web/Scripts/csr/renderReportZkh.js</wp:JSLink>

@@ -21,7 +21,6 @@
       <FieldRef ID="{1D25F8AE-DA42-4355-A28E-34EF9EE824A7}" Name="MeetingParticipantsLand" Required="FALSE" />
       <FieldRef ID="{95581E0A-7E30-4439-AD97-0103B81DD307}" Name="MeetingPlaceLand" Required="FALSE" />
       <FieldRef ID="{9956FF03-7CF4-46A4-A4C3-9914BBD47CD7}" Name="MeetingStatusLand" Required="FALSE" />
-      <FieldRef ID="{DCBACCD3-DE7D-4D9A-8003-CE477DD66FF8}" DisplayName="Дата и номер" Description="Дата проведения и номер заседания Земля" Name="MeetingDateNumberLand" ReadOnly="TRUE" />
     </FieldRefs>
     <XmlDocuments>
       <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">

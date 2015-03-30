@@ -57,7 +57,7 @@ namespace GS.Console
                 try
                 {
                     DeleteZkhLists(site);
-                    DeleteLandLists(site);
+                   // DeleteLandLists(site);
                 }
                 catch (Exception ex)
                 {

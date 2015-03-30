@@ -19,18 +19,18 @@
         self.Search = function () {
             if (!window.gsLinkedData) return;
 
-            self.isWarn(!window.gsLinkedData.AgendaQuestionLink || !window.gsLinkedData.MeetingLink);
+            self.isWarn(!window.gsLinkedData.IssueLink || !window.gsLinkedData.MeetingLink);
             if (self.isWarn()) return;
             
             var ctx = SP.ClientContext.get_current();
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
-            var camlQuery = new CamlBuilder().Where().LookupField("IssueMeetingMVK").Id().EqualTo(window.gsLinkedData.MeetingLink);
+            var issueList = ctx.get_web().get_lists().getByTitle("Вопросы повестки заседания");
+            var camlQuery = new CamlBuilder().Where().LookupField("MeetingLink").Id().EqualTo(window.gsLinkedData.MeetingLink);
             var spQuery = new SP.CamlQuery();
             spQuery.set_viewXml("<View><Query>" + camlQuery.ToString() + "</Query></View>");
-            var agendaQuestionListInst = agendaQuestionList.getItems(spQuery);
-            ctx.load(agendaQuestionListInst, "Include(ID)");
+            var issueListInst = issueList.getItems(spQuery);
+            ctx.load(issueListInst, "Include(ID)");
             ctx.executeQueryAsync(function () {
-                var enumerator = agendaQuestionListInst.getEnumerator();
+                var enumerator = issueListInst.getEnumerator();
                 var searchResult = [];
                 while (enumerator.moveNext()) {
                     searchResult.push(
@@ -38,23 +38,23 @@
                     );
                 }
                 
-                var assignmentList = ctx.get_web().get_lists().getByTitle("МВК: Поручения");
-                camlQuery = new CamlBuilder().Where().LookupField("AssignmentIssueMVK").Id().In(searchResult);
+                var assignmentList = ctx.get_web().get_lists().getByTitle("Поручения");
+                camlQuery = new CamlBuilder().Where().LookupField("IssueLink").Id().In(searchResult);
                 spQuery = new SP.CamlQuery();
                 spQuery.set_viewXml("<View><Query>" + camlQuery.ToString() + "</Query></View>");
                 var assignmentListInst = assignmentList.getItems(spQuery);
-                ctx.load(assignmentListInst, "Include(ID, AssignmentNumberMVK, AssignmentTextMVK)");
+                ctx.load(assignmentListInst, "Include(ID, AssignmentNumber, AssignmentText)");
                 ctx.executeQueryAsync(function () {
                     var aResult = [];
                     var aEnumerator = assignmentListInst.getEnumerator();
                     while (aEnumerator.moveNext()) {
-                        var aText = aEnumerator.get_current().get_item("AssignmentTextMVK");
+                        var aText = aEnumerator.get_current().get_item("AssignmentText");
                         aResult.push({
                             ID: aEnumerator.get_current().get_item("ID"),
-                            AssignmentNumber: aEnumerator.get_current().get_item("AssignmentNumberMVK"),
-                            AssignmentText: aEnumerator.get_current().get_item("AssignmentTextMVK"),
+                            AssignmentNumber: aEnumerator.get_current().get_item("AssignmentNumber"),
+                            AssignmentText: aEnumerator.get_current().get_item("AssignmentText"),
                             AssignmentContent: (String).format("№{0} - {1}",
-                                aEnumerator.get_current().get_item("AssignmentNumberMVK"),
+                                aEnumerator.get_current().get_item("AssignmentNumber"),
                                 aText ? aText.substring(0, 255) : "Текст поручения не указан")
                         });
                     }

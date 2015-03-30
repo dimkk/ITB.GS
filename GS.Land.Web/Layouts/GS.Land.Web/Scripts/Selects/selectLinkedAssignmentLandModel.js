@@ -19,18 +19,18 @@
         self.Search = function () {
             if (!window.gsLinkedData) return;
 
-            self.isWarn(!window.gsLinkedData.AgendaQuestionLink || !window.gsLinkedData.MeetingLink);
+            self.isWarn(!window.gsLinkedData.IssueLink || !window.gsLinkedData.MeetingLink);
             if (self.isWarn()) return;
             
             var ctx = SP.ClientContext.get_current();
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("Вопросы повестки заседания");
+            var issueList = ctx.get_web().get_lists().getByTitle("Вопросы повестки заседания");
             var camlQuery = new CamlBuilder().Where().LookupField("MeetingLink").Id().EqualTo(window.gsLinkedData.MeetingLink);
             var spQuery = new SP.CamlQuery();
             spQuery.set_viewXml("<View><Query>" + camlQuery.ToString() + "</Query></View>");
-            var agendaQuestionListInst = agendaQuestionList.getItems(spQuery);
-            ctx.load(agendaQuestionListInst, "Include(ID)");
+            var issueListInst = issueList.getItems(spQuery);
+            ctx.load(issueListInst, "Include(ID)");
             ctx.executeQueryAsync(function () {
-                var enumerator = agendaQuestionListInst.getEnumerator();
+                var enumerator = issueListInst.getEnumerator();
                 var searchResult = [];
                 while (enumerator.moveNext()) {
                     searchResult.push(
@@ -39,7 +39,7 @@
                 }
                 
                 var assignmentList = ctx.get_web().get_lists().getByTitle("Поручения");
-                camlQuery = new CamlBuilder().Where().LookupField("AgendaQuestionLink").Id().In(searchResult);
+                camlQuery = new CamlBuilder().Where().LookupField("IssueLink").Id().In(searchResult);
                 spQuery = new SP.CamlQuery();
                 spQuery.set_viewXml("<View><Query>" + camlQuery.ToString() + "</Query></View>");
                 var assignmentListInst = assignmentList.getItems(spQuery);

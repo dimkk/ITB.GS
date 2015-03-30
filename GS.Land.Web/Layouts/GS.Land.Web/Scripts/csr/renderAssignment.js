@@ -159,7 +159,7 @@
             resultHtml += '<div class="col-lg-2" id="linkedAgendaQuestionTextPresentation"></div>';
             selectQuestionControlId = $(lookupElement).attr('id');
             var modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/SAMRT.Web/pages/selectAgendaQuestion.html?rev=" + Math.random().toString(36).substr(2),
+                "/_layouts/15/GS.Land.Web/pages/selectIssueLand.html?rev=" + Math.random().toString(36).substr(2),
                 "Выбрать",
                 2,
                 selectQuestionControlId);
@@ -203,7 +203,7 @@
             resultHtml += assignmentLinkHtml;
             selectAssignmentControlId = $(lookupElement).attr('id');
             modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/SAMRT.Web/pages/selectLinkedAssignment.html?rev=" + Math.random().toString(36).substr(2),
+                "/_layouts/15/GS.Land.Web/pages/selectLinkedAssignmentLand.html?rev=" + Math.random().toString(36).substr(2),
                 "Выбрать",
                 1,
                 selectAssignmentControlId);
@@ -224,7 +224,7 @@
                 AssignmentExecutorOrganizationLink: context.CurrentItem["AssignmentExecutorOrganizationLink"]
             };
             modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/SAMRT.Web/pages/selectExecutor.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
+                "/_layouts/15/GS.Land.Web/pages/selectExecutorLand.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
 
             window.gsModals.selectExecutor = modalLink.modalId;
             resultHtml += modalLink.html;
@@ -498,7 +498,7 @@
         // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
 
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderAssignment.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/GS.Land.Web/Scripts/csr/renderAssignment.js"), init);
 
         }, 'sp.js');
 

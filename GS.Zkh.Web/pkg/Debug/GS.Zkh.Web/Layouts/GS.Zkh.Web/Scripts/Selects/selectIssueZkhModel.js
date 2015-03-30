@@ -11,86 +11,82 @@
     function selectQuestionModel() {
         var self = this;
         self.consts = {
-            meetingCT: "STS_ListItem_10050"
-        }
+            meetingCT: "STS_ListItem_10150"
+        };
 
         self.meetingSearch = ko.observable();
         self.meetingSearchResult = ko.observableArray([]);
-        self.agendaQuestionSearchResult = ko.observableArray([]);
+        self.issueSearchResult = ko.observableArray([]);
         self.selectedMeeting = ko.observable();
-        self.selectedAgendaQuestion = ko.observable();
+        self.selectedIssue = ko.observable();
 
-        self.onSearchStringKeyPress = function (data, event) {
+        self.onSearchStringKeyPress = function(data, event) {
             if (event.keyCode == 13) {
                 self.startSearch(self);
-            }
-            else return true;
-        }
+            } else return true;
+        };
 
-        self.startSearch = function (data, event) {
+        self.startSearch = function(data, event) {
             $("#aqDialogError").html("");
             self.meetingSearchResult.removeAll();
-            self.agendaQuestionSearchResult.removeAll();
+            self.issueSearchResult.removeAll();
             self.selectedMeeting('');
-            self.selectedAgendaQuestion('');
+            self.selectedIssue('');
             doSearch(data.meetingSearch());
-        }
+        };
 
-        self.onShowRelatedQuestions = function (data, event) {
+        self.onShowRelatedQuestions = function(data, event) {
             self.selectedMeeting(data);
-            self.selectedAgendaQuestion('');
+            self.selectedIssue('');
             var ctx = SP.ClientContext.get_current();
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("МВК: Вопросы повестки заседания");
+            var issueList = ctx.get_web().get_lists().getByTitle("ЖКХ: Вопросы повестки заседания");
             var query = new SP.CamlQuery();
-            query.set_viewXml('<View><Query><Where><Eq><FieldRef Name="IssueMeetingMVK" LookupId="True" /><Value Type="Integer">' + data.ID + '</Value></Eq></Where></Query></View>');
-            var questionListInstance = agendaQuestionList.getItems(query);
-            ctx.load(questionListInstance, "Include(ID, IssueNumberTextMVK, IssueAddressMVK, IssueDescriptionMVK)");
-            ctx.executeQueryAsync(function () {
+            query.set_viewXml('<View><Query><Where><Eq><FieldRef Name="IssueMeetingZkh" LookupId="True" /><Value Type="Integer">' + data.ID + '</Value></Eq></Where></Query></View>');
+            var questionListInstance = issueList.getItems(query);
+            ctx.load(questionListInstance, "Include(ID, IssueNumberTextZkh, IssueAddressZkh, IssueDescriptionZkh)");
+            ctx.executeQueryAsync(function() {
                 var enumerator = questionListInstance.getEnumerator();
                 var searchResult = [];
                 while (enumerator.moveNext()) {
                     searchResult.push({
                         ID: enumerator.get_current().get_item("ID"),
-                        AgendaQuestionNumber: enumerator.get_current().get_item("IssueNumberTextMVK"),
-                        AgendaQuestionAddress: enumerator.get_current().get_item("IssueAddressMVK"),
-                        AgendaQuestionDescription: enumerator.get_current().get_item("IssueDescriptionMVK")
+                        IssueNumber: enumerator.get_current().get_item("IssueNumberTextZkh"),
+                        IssueAddress: enumerator.get_current().get_item("IssueAddressZkh"),
+                        IssueDescription: enumerator.get_current().get_item("IssueDescriptionZkh")
                     });
                 }
-                self.agendaQuestionSearchResult(searchResult);
-            }, function () {
+                self.issueSearchResult(searchResult);
+            }, function() {
                 logMessage("Не удалось запросить данные вопросов");
             });
+        };
 
-
-        }
-
-        self.onSelectAgendaQuestion = function (data, event) {
-            self.selectedAgendaQuestion(data);
+        self.onSelectIssue = function(data, event) {
+            self.selectedIssue(data);
             $('#btnOK').triggerHandler('click');
-        }
+        };
 
-        self.onClose = function (data, event) {
-            if (!self.selectedAgendaQuestion()) {
+        self.onClose = function(data, event) {
+            if (!self.selectedIssue()) {
                 logMessage("Необходимо выбрать вопрос", true);
                 return;
             }
-            $(self.targetLookupId.replace(/(:|\.|\[|\]|\$)/g, "\\$1")).val(self.selectedAgendaQuestion().ID);
-            $('#linkedAgendaQuestionTextPresentation').html(
+            $(self.targetLookupId.replace(/(:|\.|\[|\]|\$)/g, "\\$1")).val(self.selectedIssue().ID);
+            $('#linkedIssueTextPresentation').html(
                 (String).format('{0} №{1} п.№{2}',
                     self.selectedMeeting().MeetingDate,
                     self.selectedMeeting().MeetingNumber,
-                    self.selectedAgendaQuestion().AgendaQuestionNumber));
+                    self.selectedIssue().IssueNumber));
 
             // установим глобальные переменные для страницы
             if ("gsLinkedData" in window) {
                 window.gsLinkedData = {
-                    AgendaQuestionLink: self.selectedAgendaQuestion().ID,
+                    IssueLink: self.selectedIssue().ID,
                     MeetingLink: self.selectedMeeting().ID
                 };
             }
-
             if (window.closeSelectQuestionModal) window.closeSelectQuestionModal();
-        }
+        };
 
         function doSearch(text) {
             var ctx = SP.ClientContext.get_current();
@@ -122,7 +118,7 @@
                 else {
                     $.each(rows, function (i, e) {
                         if (e.contentclass !== self.consts.meetingCT) return;
-                        if (!~e.Path.indexOf("DispForm.aspx")) return;
+                        if (!~e.Path.indexOf("DispForm2.aspx")) return;
 
                         var params = e.Path.split("?")[1] ? e.Path.split("?")[1].split("&") : null;
                         for (var i = 0; i < params.length; i++) {
@@ -138,19 +134,19 @@
                         logMessage("По искомой фразе не найдено ни одного заседания", true);
                     }
                     else {
-                        var meetingList = ctx.get_web().get_lists().getByTitle("МВК: Заседания");
+                        var meetingList = ctx.get_web().get_lists().getByTitle("ЖКХ: Заседания");
                         var query = new SP.CamlQuery();
                         query.set_viewXml(buildInCAMLQuery(idList));
                         var meetingInstance = meetingList.getItems(query);
-                        ctx.load(meetingInstance, "Include(ID, MeetingNumberMVK, MeetingDateMVK)");
+                        ctx.load(meetingInstance, "Include(ID, MeetingNumberZkh, MeetingDateZkh)");
                         ctx.executeQueryAsync(function () {
                             var enumerator = meetingInstance.getEnumerator();
                             var searchResult = [];
                             while (enumerator.moveNext()) {
                                 searchResult.push({
                                     ID: enumerator.get_current().get_item("ID"),
-                                    MeetingNumber: enumerator.get_current().get_item("MeetingNumberMVK"),
-                                    MeetingDate: formatDate(enumerator.get_current().get_item("MeetingDateMVK"))
+                                    MeetingNumber: enumerator.get_current().get_item("MeetingNumberZkh"),
+                                    MeetingDate: formatDate(enumerator.get_current().get_item("MeetingDateZkh"))
                                 });
                             }
                             self.meetingSearchResult(searchResult);

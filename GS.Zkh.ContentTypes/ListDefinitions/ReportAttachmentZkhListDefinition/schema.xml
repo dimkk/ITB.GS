@@ -49,8 +49,10 @@
         <RowLimit Paged="TRUE">30</RowLimit>
         <Toolbar Type="Standard" />
         <ViewFields>
-          <FieldRef Name="LinkTitle">
-          </FieldRef>
+          <FieldRef Name="LinkTitleNoMenu"/>
+          <FieldRef Name="ReportAttachmentDescriptionZkh"/>
+          <FieldRef Name="Attachments"/>
+          <FieldRef Name="ReportAttachmentDocTypeZkh"/>
         </ViewFields>
         <Query>
           <OrderBy>

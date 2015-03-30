@@ -8,6 +8,7 @@
       </ContentTypeRef>
     </ContentTypes>
     <Fields>
+      
     </Fields>
     <Views>
       <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">

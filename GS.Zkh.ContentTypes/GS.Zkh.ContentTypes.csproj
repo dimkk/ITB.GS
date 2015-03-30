@@ -634,7 +634,9 @@
     <Content Include="ListInstances\MeetingZkhList\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ListInstances\ReportAttachmentZkhList\Elements.xml" />
+    <Content Include="ListInstances\ReportAttachmentZkhList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\ReportZkhList\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -654,6 +656,7 @@
     <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.MeetingLists.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.Report.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.ReportLists.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.WebParts.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_Assignment.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_Issue.gif" />
     <Content Include="Template\Images\GS\FeatureIcon_IssueAttachmentZkhList.gif" />

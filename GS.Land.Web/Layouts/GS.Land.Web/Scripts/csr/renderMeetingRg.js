@@ -127,7 +127,7 @@
         init();
         // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderMeetingRg.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/GS.Land.Web/Scripts/csr/renderMeetingRg.js"), init);
         }, 'sp.js');
     }, 'clienttemplates.js');
 })();

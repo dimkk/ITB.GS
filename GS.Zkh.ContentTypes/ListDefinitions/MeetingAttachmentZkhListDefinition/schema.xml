@@ -33,8 +33,10 @@
         </Toolbar>
         <RowLimit>20</RowLimit>
         <ViewFields>
-          <FieldRef Name="LinkTitleNoMenu">
-          </FieldRef>
+          <FieldRef Name="LinkTitleNoMenu"/>
+          <FieldRef Name="MeetingAttachmentDescriptionZkh"/>
+          <FieldRef Name="Attachments"/>
+          <FieldRef Name="MeetingAttachmentDocTypeZkh"/>
         </ViewFields>
         <Query>
           <OrderBy>

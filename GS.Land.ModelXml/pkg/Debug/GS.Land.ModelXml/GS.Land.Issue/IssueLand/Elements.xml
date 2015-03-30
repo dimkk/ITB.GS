@@ -34,7 +34,6 @@
       <FieldRef ID="{BD4C74B7-3DC5-485E-A1B1-922871EA0056}" Name="IssueSubnumberLand" Required="FALSE" />
       <FieldRef ID="{02A07603-D2D2-4FA0-AEC4-68DCDBB3E246}" Name="IssueThemeLand" Required="FALSE" />
       <FieldRef ID="{34B95F52-9E5F-477A-871E-E6C0A5FDC696}" Name="IssueSubCategoryLand" Required="FALSE" />
-      <FieldRef ID="{A105EC40-710D-4089-AD7B-39CEE397C956}" DisplayName="Номер" Description="Номер вопроса повестки заседания Земля (с подномером)" Name="IssueNumberTextLand" ReadOnly="TRUE" />
     </FieldRefs>
   </ContentType>
 </Elements>
