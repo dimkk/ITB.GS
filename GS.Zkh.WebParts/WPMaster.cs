@@ -1,11 +1,14 @@
 ﻿//Sergey Mikolaytis
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.Administration;
 using Microsoft.SharePoint.WebPartPages;
 using System.Globalization;
+using System.Reflection;
 using System.Text;
 using System.Web.UI.WebControls.WebParts;
+using System.Xml;
 
-namespace GS.Land.WebParts
+namespace GS.Zkh.WebParts
 {
     /// <summary>
     /// Web Part Tools: Attach, Detach, Filter etc.
@@ -19,45 +22,40 @@ namespace GS.Land.WebParts
         /// <param name="pageUrl">Relative Page Url</param>
         /// <param name="zoneID">Page WebPartZone ID</param>
         /// <param name="listUrl">Url to the List of ContentType</param>
-        internal static XsltListViewWebPart AttachListView(SPWeb web, string pageUrl, string zoneID, string listUrl)
+        internal static XsltListViewWebPart AttachListView(SPWeb web, string pageUrl, string zoneID, string listUrl,
+            SPLimitedWebPartManager webParts = null)
         {
             //Connect to the page WebPartManager
-            var webParts = web.GetLimitedWebPartManager(pageUrl, PersonalizationScope.Shared);
+            if (webParts == null) webParts = web.GetLimitedWebPartManager(pageUrl, PersonalizationScope.Shared);
 
             //Get List and its DefaultView
             var list = web.GetList(listUrl);
             var view = list.DefaultView;
+
+            //SetViewStyle(web, listUrl, 0);
 
             //Init Standard WebPart
             var lvwp = new XsltListViewWebPart
             {
                 ListId = list.ID,
                 ViewGuid = view.ID.ToString(),
+                IsClientRender = false,
+                ServerRender = true,
                 AllowClose = false,
                 AllowConnect = true,
                 AllowEdit = true,
                 AllowHide = true,
                 AllowMinimize = true,
                 AllowZoneChange = true,
+                ClientRender = false,
+                AsyncRefresh = true,
+                ManualRefresh = true,
+                AutoRefresh = false,
+                ExportMode = WebPartExportMode.NonSensitiveData,
                 Description = list.Description,
                 Title = list.Title,
                 ChromeType = PartChromeType.None
             };
-
-            //Generate XmlDefinition for WebPart based on List View
-            StringBuilder xml = new StringBuilder();
-            xml.Append("<View Name=\"" + view.ID.ToString() + "\" MobileView=\"TRUE\" Type=\"HTML\"" +
-                " Hidden=\"TRUE\" DisplayName=\"\" Url=\"" + view.Url + "\" Level=\"255\" BaseViewID=\"1\"" +
-                " ContentTypeID=\"0x\" ImageUrl=\"/_layouts/images/generic.png\">");
-            xml.Append("<Query><OrderBy><FieldRef Name='ID'/></OrderBy></Query>");
-            xml.Append("<ViewFields>");
-            for (int i = 0; i < view.ViewFields.Count; i++)
-                xml.AppendFormat("<FieldRef Name=\"{0}\"/>", view.ViewFields[i]);
-            xml.Append("</ViewFields>");
-            xml.Append("<RowLimit Paged=\"TRUE\">10</RowLimit>");
-            xml.Append("<Toolbar Type=\"Standard\"/></View>");
-            xml.Append("<JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink>");
-            lvwp.XmlDefinition = xml.ToString();
 
             //Add webpart to the page
             webParts.AddWebPart(lvwp, zoneID, 1);
@@ -65,7 +63,15 @@ namespace GS.Land.WebParts
 
             return lvwp;
         }
-
+        internal static void SetViewStyle(SPWeb web, string listUrl, int style)
+        {
+            var list = web.GetList(listUrl);
+            var view = list.DefaultView;
+            for (int i = 0; i < web.ViewStyles.Count; i++)
+                if (web.ViewStyles[i].ID == style)
+                    view.ApplyStyle(web.ViewStyles[i]);
+            view.Update();
+        }
         /// <summary>
         /// Detach all XsltListViewWebPart from the page
         /// </summary>
@@ -93,10 +99,10 @@ namespace GS.Land.WebParts
         /// <param name="consumer">Consumer WebPart</param>
         /// <param name="consumerField">Consumer Connection Field Name</param>
         internal static void ConnectWebParts(SPWeb web, string pageUrl, string providerID, string providerField,
-            System.Web.UI.WebControls.WebParts.WebPart consumer, string consumerField)
+            System.Web.UI.WebControls.WebParts.WebPart consumer, string consumerField, SPLimitedWebPartManager webParts = null)
         {
             //Connect to the page WebPartManager
-            var webParts = web.GetLimitedWebPartManager(pageUrl, PersonalizationScope.Shared);
+            if (webParts == null) webParts = web.GetLimitedWebPartManager(pageUrl, PersonalizationScope.Shared);
 
             //Get provider WebPart
             var provider = webParts.WebParts[providerID];
@@ -104,7 +110,7 @@ namespace GS.Land.WebParts
             //Create Connection Objects
             var providerConnectionPoint = webParts.GetProviderConnectionPoints(provider)["ListFormRowProvider_WPQ_"];
             var consumerConnectionPoint = webParts.GetConsumerConnectionPoints(consumer)["DFWP Filter Consumer ID"];
-            var webPartTransformer = new TransformableFilterValuesToParametersTransformer()
+            var webPartTransformer = new SPRowToParametersTransformer()
             {
                 ConsumerFieldNames = new string[] { consumerField },
                 ProviderFieldNames = new string[] { providerField }
@@ -127,9 +133,18 @@ namespace GS.Land.WebParts
         internal static void AttachAndConnectListView(SPWeb web, string pageUrl, string zoneID, string listUrl,
             string providerID, string providerField, string consumerField)
         {
-            var consumer = AttachListView(web, pageUrl, zoneID, listUrl);
-            web.Update();
-            ConnectWebParts(web, pageUrl, providerID, providerField, consumer, consumerField);
+            var webParts = web.GetLimitedWebPartManager(pageUrl, PersonalizationScope.Shared);
+            var consumer = AttachListView(web, pageUrl, zoneID, listUrl, webParts);
+            //web.Update();
+            //try
+            //{
+            //    ConnectWebParts(web, pageUrl, providerID, providerField, consumer, consumerField, webParts);
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    //Log to ULS
+            //    SPDiagnosticsService.Local.WriteTrace(0, new SPDiagnosticsCategory("My Category", TraceSeverity.Unexpected, EventSeverity.Error), TraceSeverity.Unexpected, ex.Message, ex.StackTrace);
+            //}
         }
 
     }

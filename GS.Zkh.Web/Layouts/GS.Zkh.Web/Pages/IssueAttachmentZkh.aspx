@@ -37,9 +37,9 @@
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">
-Вложения вопроса повестки ЖКХ.Земля
+Вложения вопроса повестки ЖКХ
 </asp:Content>
 
 <asp:Content ID="PageTitleInTitleArea" ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
-Вложения вопроса повестки ЖКХ.Земля
+Вложения вопроса повестки ЖКХ
 </asp:Content>

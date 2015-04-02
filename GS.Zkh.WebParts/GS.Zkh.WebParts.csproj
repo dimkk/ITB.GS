@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GS.Zkh.Receivers</RootNamespace>
-    <AssemblyName>GS.Zkh.Receivers</AssemblyName>
+    <RootNamespace>GS.Zkh.WebParts</RootNamespace>
+    <AssemblyName>GS.Zkh.WebParts</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -16,7 +16,8 @@
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
     <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
-    <ProjectGuid>{0CC46FD8-660C-41F6-B8B3-95F95F53FC91}</ProjectGuid>
+    <ProjectGuid>{32181FAA-8C3F-4087-82F1-925F7695E2A0}</ProjectGuid>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,12 +39,6 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ITB.SP.Tools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58c67d7e59a9117f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ITB.SP.Tools\v4.0_1.0.0.0__58c67d7e59a9117f\ITB.SP.Tools.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Office.Server, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -61,48 +56,32 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventReceivers\IssueAttachmentItem\IssueAttachmentItem.cs" />
-    <Compile Include="EventReceivers\IssueItem\IssueItem.cs" />
-    <Compile Include="EventReceivers\MeetingItem\MeetingItem.cs" />
-    <Compile Include="Features\GS.Zkh.IssueAttachments\GS.Zkh.EventReceiver.cs">
-      <DependentUpon>GS.Zkh.IssueAttachments.feature</DependentUpon>
+    <Compile Include="Features\GS.Zkh.WebParts\GS.Zkh.WebParts.EventReceiver.cs">
+      <DependentUpon>GS.Zkh.WebParts.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WPMaster.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="EventReceivers\IssueAttachmentItem\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{a8af37e0-b422-4f7d-a933-6cf473b50584}</SharePointProjectItemId>
-    </None>
-    <None Include="EventReceivers\IssueItem\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{59ce4383-951a-4eae-af50-055bd6f60585}</SharePointProjectItemId>
-    </None>
-    <None Include="EventReceivers\MeetingItem\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{38221ba8-d03a-4860-bcd6-0d44897230b0}</SharePointProjectItemId>
-    </None>
-    <None Include="Features\GS.Zkh.IssueAttachments\GS.Zkh.IssueAttachments.feature">
-      <FeatureId>{e555d4d9-a703-4afb-9890-7f088e6f0573}</FeatureId>
+    <None Include="Features\GS.Zkh.WebParts\GS.Zkh.WebParts.feature">
+      <FeatureId>{6fcb97fd-eed9-4dc7-bfde-a2946827ba8f}</FeatureId>
     </None>
     <None Include="Package\Package.package">
-      <PackageId>{F76A258A-2598-4257-97DE-198C6A3875C4}</PackageId>
+      <PackageId>{7D7B5D50-E80B-4770-BA7A-916B433CCC65}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
     <None Include="Template\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{ecbe87ea-6a21-4dc7-b9af-389a00bd8538}</SharePointProjectItemId>
+      <SharePointProjectItemId>{e1f7f324-ba31-41ed-961e-845bf6a96f23}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="EventReceivers\IssueAttachmentItem\Elements.xml" />
-    <Content Include="EventReceivers\IssueItem\Elements.xml" />
-    <Content Include="EventReceivers\MeetingItem\Elements.xml" />
-    <Content Include="Features\GS.Zkh.IssueAttachments\GS.Zkh.IssueAttachments.Template.xml">
-      <DependentUpon>GS.Zkh.IssueAttachments.feature</DependentUpon>
+    <Content Include="Features\GS.Zkh.WebParts\GS.Zkh.WebParts.Template.xml">
+      <DependentUpon>GS.Zkh.WebParts.feature</DependentUpon>
     </Content>
-    <Content Include="Template\Images\GS\Feature.gif" />
-    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.IssueAttachments.gif" />
-    <Content Include="Template\Images\GS\FeatureIcon_GS_Zkh_IssueAttachments.gif" />
+    <Content Include="Template\Images\GS\FeatureIcon_GS.Zkh.WebParts.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

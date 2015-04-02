@@ -17,7 +17,14 @@ using System.Security.Permissions;
 
 namespace GS.Zkh.Receivers
 {
-    [SharePointPermission(SecurityAction.InheritanceDemand, ObjectModel = true)]
+    /// <summary>
+    /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
+    /// </summary>
+    /// <remarks>
+    /// The GUID attached to this class may be used during packaging and should not be modified.
+    /// </remarks>
+
+    [Guid("dcea77cb-2421-428c-be0d-4a73b55deb63")]
     public class IssueAttachmentsEventReceiver : SPFeatureReceiver
     {
         private readonly string storageListTemplateId = "10156";
@@ -210,4 +217,3 @@ namespace GS.Zkh.Receivers
         }
     }
 }
-
