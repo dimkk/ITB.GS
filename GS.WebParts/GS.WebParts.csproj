@@ -19,6 +19,7 @@
     <ProjectGuid>{1D765A18-BBB0-474C-B79D-66436A24004C}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,6 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\DocumentCount\DocumentCount.cs" />
+    <Compile Include="WebParts\DocumentCount\DocumentCountUserControl.ascx.cs">
+      <DependentUpon>DocumentCountUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\DocumentCount\DocumentCountUserControl.ascx.designer.cs">
+      <DependentUpon>DocumentCountUserControl.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebParts\NextMeeting\NextMeeting.cs" />
     <Compile Include="WebParts\NextMeeting\NextMeetingUserControl.ascx.cs">
       <DependentUpon>NextMeetingUserControl.ascx</DependentUpon>
@@ -73,10 +82,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Features\GS.WebParts.DocumentCount\GS.WebParts.DocumentCount.Template.xml">
+      <DependentUpon>GS.WebParts.DocumentCount.feature</DependentUpon>
+    </Content>
+    <Content Include="Template\Images\GS\Feature.GS.WebParts.DocumentCount.gif" />
+    <Content Include="Template\Images\GS\Feature.GS.WebParts.NextMeeting.gif" />
+    <Content Include="WebParts\DocumentCount\DocumentCountModel.js" />
+    <Content Include="WebParts\DocumentCount\DocumentCountUserControl.ascx" />
+    <Content Include="WebParts\DocumentCount\Elements.xml" />
+    <Content Include="WebParts\DocumentCount\WebPartIcon_DocumentCount.gif" />
     <Content Include="WebParts\NextMeeting\NextMeetingUserControl.ascx" />
     <Content Include="WebParts\NextMeeting\WebPartIcon_NextMeeting.gif" />
     <None Include="Features\GS.WebParts.NextMeeting\GS.WebParts.NextMeeting.feature">
       <FeatureId>{474b955f-4d92-426d-b705-22ce2632d2f3}</FeatureId>
+    </None>
+    <None Include="Features\GS.WebParts.DocumentCount\GS.WebParts.DocumentCount.feature">
+      <FeatureId>{9e2182c5-99c0-4a97-afb1-bf51ee6aa9d2}</FeatureId>
     </None>
     <None Include="packages.config" />
     <None Include="Package\Package.package">
@@ -89,6 +110,10 @@
       <SharePointProjectItemId>{13331d54-b156-412f-9103-ae9360b9355c}</SharePointProjectItemId>
     </None>
     <Content Include="WebParts\NextMeeting\NextMeeting.webpart" />
+    <Content Include="WebParts\DocumentCount\DocumentCount.webpart" />
+    <None Include="WebParts\DocumentCount\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c66a4877-fadc-489a-8c29-53a0cbf806c8}</SharePointProjectItemId>
+    </None>
     <None Include="WebParts\NextMeeting\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{02c124f1-b65c-4609-a2c5-e02b56ab13c2}</SharePointProjectItemId>
     </None>
@@ -98,7 +123,6 @@
     <Content Include="Features\GS.WebParts.NextMeeting\GS.WebParts.NextMeeting.Template.xml">
       <DependentUpon>GS.WebParts.NextMeeting.feature</DependentUpon>
     </Content>
-    <Content Include="Template\Images\GS\FeatureIcon_NextMeeting.gif" />
     <Content Include="WebParts\NextMeeting\Elements.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

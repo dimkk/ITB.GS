@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.WebPart" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="DocumentCount\" Type="ElementManifest" />
+    <ProjectItemFile Source="DocumentCount.webpart" Target="DocumentCount\" Type="ElementFile" />
+    <ProjectItemFile Source="WebPartIcon_DocumentCount.gif" Target="Images\GS\" Type="TemplateFile" />
+    <ProjectItemFile Source="DocumentCountUserControl.ascx" Target="CONTROLTEMPLATES\GS\" Type="TemplateFile" />
+    <ProjectItemFile Source="DocumentCountModel.js" Target="Layouts\GS.WebParts\DocumentCount\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="GS.WebParts" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

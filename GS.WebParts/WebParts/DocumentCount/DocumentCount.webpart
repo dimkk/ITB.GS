@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+	<webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+		<metaData>
+			<type name="GS.WebParts.DocumentCount, GS.WebParts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76fad1f12ae5d8a7" />
+			<importErrorMessage>Cannot import DocumentCount Title Web Part.</importErrorMessage>
+		</metaData>
+		<data>
+			<properties>
+				<property name="Title" type="string">Статистика по количеству документов</property>
+				<property name="Description" type="string">Веб-часть для отображения статистики по количеству документов</property>
+				<property name="CatalogIconImageUrl" type="string">/_layouts/15/images/GS/WebPartIcon_DocumentCount.gif</property>
+				<property name="TitleIconImageUrl" type="string">/_layouts/15/images/GS/WebPartIcon_DocumentCount.gif</property>
+			</properties>
+		</data>
+	</webPart>
+</webParts>
