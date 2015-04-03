@@ -18,7 +18,7 @@
 
         var ExecutorModel = function () {
             var self = this;
-            self.radioSelectedOptionValue = ko.observable("FIO");
+            self.radioSelectedOptionValue = ko.observable("Organization");
             self.searchResults = ko.observableArray([]);
             self.searchInput = ko.observable("");
 

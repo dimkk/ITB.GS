@@ -18,6 +18,8 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <SandboxedSolution>False</SandboxedSolution>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -210,6 +212,7 @@
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentList.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentMVK.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentMVKList.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderDTPAgreement.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderIssueMVK.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAgendaQuestion.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignment.js" />
@@ -228,6 +231,7 @@
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderQuestionObjectObjectField.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderQuestionObjectTitleField.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderQuestionSense.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReestrDTP.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReport.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReportAttach.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderReportAttachMVK.js" />
@@ -294,5 +298,18 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" />
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
 </Project>

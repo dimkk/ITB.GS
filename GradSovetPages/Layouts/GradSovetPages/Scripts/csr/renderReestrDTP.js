@@ -11,12 +11,8 @@
 
 	var mainBlock, omsuBlock;
 	
-    function getMeetingControl() {
-        return renderCore.getControlByFieldName('MeetingLink');
-    }
-
     function getNumberControl() {
-        return renderCore.getControlByFieldName('AgendaQuestionNumber');
+        return renderCore.getControlByFieldName('DtpNumber');
     }
 
     function init() {
@@ -57,8 +53,13 @@
         resultHtml += '<div class="form-horizontal" role="form">';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "Dtp_x2116_PP");
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpNumber");
         resultHtml += renderFieldBlock(context, 2, 4, "DtpDateOfRegistration");
+        resultHtml += '</div>';
+		
+		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPRegistryNumber");
+		resultHtml += renderFieldBlock(context, 2, 4, "DTPDateOfGiving");
         resultHtml += '</div>';
 		
         resultHtml += '<div class="form-group">';
@@ -72,20 +73,18 @@
 
         resultHtml += '<div class="form-group">';
         resultHtml += renderFieldBlock(context, 2, 4, "DtpArea");
-        resultHtml += renderFieldBlock(context, 2, 4, "DtpDistrict");
+		resultHtml += renderFieldBlock(context, 2, 4, "DTPViewingGS");
+        //resultHtml += renderFieldBlock(context, 2, 4, "DtpDistrict");
         resultHtml += '</div>';
 		
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "DtpNameOfQuestion");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 4, "DtpOmsuDate");
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpNameOfQuestion");
         resultHtml += renderFieldBlock(context, 2, 4, "DtpOmsuResult");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "DtpOmsuComment");
+		resultHtml += '</div>';
+		
+		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPObjectName");
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpObjectType");
         resultHtml += '</div>';
 
         author = context.RenderFieldByName(context, "Author");
@@ -134,8 +133,8 @@
 
             SettlementOptions = settlementControl.html();
             FillSettlement(municipalityControl.val());
-			editable('DtpArea', mainBlock);
-			editable('DtpDistrict', mainBlock);
+			//editable('DtpArea', mainBlock);
+			//editable('DtpDistrict', mainBlock);
         }, function (sender, args) {
             alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
         });
@@ -165,10 +164,14 @@
 
     function OnPostRender(context) {
 		window["WPQ2FormCtx"].PostBackRequired = true;	//Включаем постбэк для возможности прикрепления вложений
-        if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
+ 		editable('DtpNumber', false);
+       if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
             SC.OnLoaded(function () {
                 InitMunicipality();
-                var groups = SC.Context.get_web().get_currentUser().get_groups();
+				if (context.ControlMode == SPClientTemplates.ClientControlMode.NewForm) {
+					FillNumber();
+				}
+                /*var groups = SC.Context.get_web().get_currentUser().get_groups();
 				SC.Context.load(groups);
 				SC.Execute(function() {
 					console.log('Groups loaded');
@@ -177,7 +180,7 @@
 					var omsu = findGroup(groupItems, 'ДТП - ОМСУ');
 					mainBlock = (omsu.length == 0) | (write.length > 0);
 					omsuBlock = omsu.length > 0;
-					editable('Dtp_x2116_PP', mainBlock);
+					editable('DtpNumber', mainBlock);
 					editable('DtpDateOfRegistration', mainBlock);
 					editable('DtpAddress', mainBlock);
 					editable('DtpApplicant', mainBlock);
@@ -194,7 +197,7 @@
 					//}
 				}, function (sender, args) {
 					alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
-				});
+				});*/
             });
         }
 
@@ -250,6 +253,20 @@
         });
 
         return container.innerHTML;
+    }
+	
+	    function FillNumber() {
+        var numberControl = getNumberControl();
+ 
+        var query = new SP.CamlQuery();
+        query.set_viewXml(String.format("<View><Query><OrderBy><FieldRef Name='{0}' Ascending='FALSE'/></OrderBy></Query><RowLimit>1</RowLimit></View>", 'DtpNumber'));
+        var issueMaxNumber = SC.GetItems('ReestrDTP', query, 'Include(DtpNumber)');
+        SC.Execute(function () {
+            var issueNumber = issueMaxNumber.get_count() > 0 ? issueMaxNumber.getItemAtIndex(0).get_item('DtpNumber') + 1 : 1;
+            numberControl.val(issueNumber);
+        }, function (sender, args) {
+            alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+        });
     }
 
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {

@@ -9,13 +9,19 @@
     var exceptList = [];
     var renderCore;
 
+	var mainBlock, omsuBlock;
+	
+ /*   function getNumberControl() {
+        return renderCore.getControlByFieldName('DtpNumber');
+    }*/
+
     function init() {
         SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
             Templates: {
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10000,
+            ListTemplateType: 100,
         });
     }
 
@@ -40,58 +46,64 @@
             return;
         }
 
+        var builderButtonSpan = context.ControlMode === SPClientTemplates.ClientControlMode.DisplayForm ? 2 : 1;
+
         var resultHtml = '';
         resultHtml += renderItemHeader(context);
         resultHtml += '<div class="form-horizontal" role="form">';
 		
+		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 10, "DTPAgreementDocument");
+        resultHtml += '</div>';
+		
+		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPAgreementRegistryNumber");
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPAgreementApproveOrgan");
+        resultHtml += '</div>';
+		
+		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPAgreementDateStart");
+		resultHtml += renderFieldBlock(context, 2, 4, "DTPAgreementTime");
+        resultHtml += '</div>';
+		
+		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPAgreementDateOfResolution");
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPAgreementResult");
+        resultHtml += '</div>';
+
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Номер', 2, 4, "AgendaQuestionNumber");
-        resultHtml += renderFieldBlock(context, 'Кадастровый номер', 2, 4, "CadastreNumber");
+        resultHtml += renderFieldBlock(context, 2, 10, "DTPAgreementComment");
+        resultHtml += '</div>';
+		
+/*		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 4, "DTPRegistryNumber");
+		resultHtml += renderFieldBlock(context, 2, 4, "DTPDateOfGiving");
         resultHtml += '</div>';
 		
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Заседание', 2, 10, "MeetingLink");
+        resultHtml += renderFieldBlock(context, 2, 10, "DtpAddress");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Описание', 2, 10, "AgendaQuestionDescription");
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpApplicant");
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpKadastryNumber");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Адрес', 2, 10, "AgendaQuestionAddress");
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpArea");
+		resultHtml += renderFieldBlock(context, 2, 4, "DTPViewingGS");
+        //resultHtml += renderFieldBlock(context, 2, 4, "DtpDistrict");
         resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Тема', 2, 10, "AgendaQuestionTheme");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Инвестор', 2, 10, "AgendaQuestionInvestor");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Категория вопроса', 2, 10, "QuestionCategoryLink");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Докладчик', 2, 4, "AgendaQuestionReporterFullNameLink");
-        resultHtml += renderFieldBlock(context, 'Содокладчики', 2, 4, "AgendaQuestionSoreporterFullNameLink");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Муниципальный район/Городской округ', 2, 4, "IssueMunicipalityGs");
-        resultHtml += renderFieldBlock(context, 'Поселение', 2, 4, "IssueSettlementGs");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Дата поступления', 2, 4, "AgendaQuestionIncomingDate");
-        resultHtml += '</div>';
-
-        resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 'Решение', 2, 10, "AgendaQuestionProtocolDecision");
-        resultHtml += '</div>';
-
 		
+        resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpNameOfQuestion");
+        resultHtml += renderFieldBlock(context, 2, 4, "DtpOmsuResult");
+		resultHtml += '</div>';
+		
+		resultHtml += '<div class="form-group">';
+        resultHtml += renderFieldBlock(context, 2, 10, "DTPObjectName");
+        resultHtml += '</div>';
+*/
         author = context.RenderFieldByName(context, "Author");
         exceptList.push("Author");
         created = context.RenderFieldByName(context, "Created");
@@ -106,14 +118,14 @@
 
         return resultHtml;
     }
-	
-    var AllMunicipalities;
+
+ /*   var AllMunicipalities;
     var SettlementOptions;
     function GetMunicipalityControl() {
-        return $('[id^="IssueMunicipalityGs"]');
+        return $('[id^="DtpArea"]');
     }
     function GetSettlementControl() {
-        return $('[id^="IssueSettlementGs"]');
+        return $('[id^="DtpDistrict"]');
     }
     function InitMunicipality() {
         var municipalityControl = GetMunicipalityControl();
@@ -138,6 +150,8 @@
 
             SettlementOptions = settlementControl.html();
             FillSettlement(municipalityControl.val());
+			//editable('DtpArea', mainBlock);
+			//editable('DtpDistrict', mainBlock);
         }, function (sender, args) {
             alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
         });
@@ -161,49 +175,74 @@
             settlementControl.attr('disabled', 'disabled');
         else
             settlementControl.removeAttr('disabled');
+		
+		
     }
-
+*/
     function OnPostRender(context) {
-        if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
+		window["WPQ2FormCtx"].PostBackRequired = true;	//Включаем постбэк для возможности прикрепления вложений
+ 		editable('DTPAgreementDocument', true);
+ 		editable('DTPAgreementRegistryNumber', false);
+ 		editable('DTPAgreementDateStart', false);
+ 		editable('DTPAgreementTime', false);
+       if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
             SC.OnLoaded(function () {
-                InitMunicipality();
+                //InitMunicipality();
+				if (context.ControlMode == SPClientTemplates.ClientControlMode.NewForm) {
+				}
+                /*var groups = SC.Context.get_web().get_currentUser().get_groups();
+				SC.Context.load(groups);
+				SC.Execute(function() {
+					console.log('Groups loaded');
+					var groupItems = groups.get_data();
+					var write = findGroup(groupItems, 'ДТП - Полный доступ');
+					var omsu = findGroup(groupItems, 'ДТП - ОМСУ');
+					mainBlock = (omsu.length == 0) | (write.length > 0);
+					omsuBlock = omsu.length > 0;
+					editable('DtpNumber', mainBlock);
+					editable('DtpDateOfRegistration', mainBlock);
+					editable('DtpAddress', mainBlock);
+					editable('DtpApplicant', mainBlock);
+					editable('DtpKadastryNumber', mainBlock);
+					editable('DtpArea', mainBlock);
+					editable('DtpDistrict', mainBlock);
+					editable('DtpNameOfQuestion', mainBlock);
+					editable('DtpOmsuDate', mainBlock);
+					editable('DtpOmsuResult', omsuBlock);
+					editable('DtpOmsuComment', omsuBlock);
+					//if (!mainBlock) {
+					//	$('[id^="attachmentsOnClient"]').remove();
+					//	$('[id^="idAttachmentsTable"] td:odd').remove();
+					//}
+				}, function (sender, args) {
+					alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+				});*/
             });
-			
-			var hasContext = document.referrer &&
-	            (~document.referrer.indexOf('MeetingList/DispForm') ||
-	            ~document.referrer.indexOf('MeetingList/EditForm'));
-	        if (!hasContext) return;
-	        
-	        var parentId = null;
-	        var params = document.referrer.split('?')[1].split('&');
-	        for (var i = 0; i < params.length; i++) {
-	            var param = params[i].split('=');
-	            if (param[0] !== 'ID') continue;
-	
-	            parentId = param[1];
-	            break;
-	        }
-	        
-	        var selects = $("select[id^='MeetingLink']");
-	        if (selects[0]) {
-	        	$(selects[0]).val(parentId);
-	        }
         }
 
         var prefix = context.FormUniqueId + context.FormContext.listAttributes.Id;
-        $get(prefix + 'Author').innerHTML   = author;
-        $get(prefix + 'Created').innerHTML  = created;
-        $get(prefix + 'Editor').innerHTML   = editor;
+        $get(prefix + 'Author').innerHTML = author;
+        $get(prefix + 'Created').innerHTML = created;
+        $get(prefix + 'Editor').innerHTML = editor;
         $get(prefix + 'Modified').innerHTML = modified;
     }
 
+	function findGroup(groups, name) {
+		return $.grep(groups, function(e) { return e.get_title() == name });
+	}
+	
+	function editable(name, editable) {
+		if (!editable)
+			$('[id^="' + name + '"]').attr('disabled', 'disabled');
+	}
+	
     function createLabelMarkup(value, span) {
         return '<label class="col-lg-' + span + '">' + value + '</label>';
     }
 
-    function renderFieldBlock(context, label, labelSpan, inputSpan, fieldName) {
+    function renderFieldBlock(context, labelSpan, inputSpan, fieldName) {
         var resultHtml = '';
-        resultHtml += createLabelMarkup(label, labelSpan);
+        resultHtml += createLabelMarkup(renderCore.getFieldTitle(fieldName), labelSpan);
         resultHtml += '<div class="col-lg-' + inputSpan + '">';
         resultHtml += renderField(context, fieldName);
         resultHtml += '</div>';
@@ -234,19 +273,12 @@
 
         return container.innerHTML;
     }
-
-    function renderFieldBlockByDisplayName(context, label, labelSpan, inputSpan, displayName) {
-        var fieldName = renderCore.getInternalFieldName(displayName);
-        if (!fieldName)
-            return "";
-
-        return renderFieldBlock(context, label, labelSpan, inputSpan, fieldName);
-    }
+	
 
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {
         init();
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/gradsovetpages/Scripts/csr/renderAgendaQuestion.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/GradSovetPages/Scripts/csr/renderDTPAgreement.js"), init);
         }, 'sp.js');
     }, 'clienttemplates.js');
 })();
@@ -259,4 +291,6 @@ $(function () {
     $('[type="button"][id$="Button"]').css("margin", 0);
     //Увеличиваем ширину MultipleValueLookup
     $('table[id$="MultiLookup_topTable"]').css("width", "100%").find('select').parent().css("width", "50%").children().css("width", "100%");
+	//Скрываем стандартную кнопку добавления вложений
+	$('[id="Ribbon.ListForm.Edit.Actions"]').hide();
 });

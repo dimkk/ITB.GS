@@ -108,7 +108,7 @@ namespace GS.Receivers
                     if (!string.IsNullOrEmpty(controlStatus))
                         assignment["AssignmentInspectState"] = controlStatus;
 
-                    assignment.Update();
+                    assignment.SystemUpdate();
                 }
             }
             catch (Exception e)

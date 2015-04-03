@@ -172,6 +172,7 @@
                         <% if (IsIssueEditAccessible)
                            { %>
                         <button type="button" class="btn btn-default" data-bind="click: addIssueP">Добавить из плановых вопросов</button>
+						<button type="button" class="btn btn-default" onclick="window.open('/Lists/AgendaQuestionList/NewForm3.aspx', '_blank')">Создать</button>
                         <% } %>
                         <!--<button type="button" class="btn btn-primary" data-bind="click: addAgendaQuestion, enable: editEnabled" id="AddAgendaQuestionButton" name="AddAgendaQuestionButton">Добавить</button>-->
                     </div>

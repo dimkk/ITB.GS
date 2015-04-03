@@ -3,58 +3,65 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using CamlexNET;
 using ITB.SP.Tools;
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.Administration;
+using Microsoft.SharePoint.Workflow;
 
 namespace GS.Console
 {
-    class Program
+    internal class Program
     {
-        static Dictionary<string, string> issueMappingToTemp = new Dictionary<string, string>()
+        private static Dictionary<string, string> issueMappingToTemp = new Dictionary<string, string>()
         {
-            { "AgendaQuestionAddress", "AgendaQuestionAddress1" },
-            { "AgendaQuestionExtResources", "AgendaQuestionExtResources1" },
-            { "AgendaQuestionIncomingDate", "AgendaQuestionIncomingDate1" },
+            {"AgendaQuestionAddress", "AgendaQuestionAddress1"},
+            {"AgendaQuestionExtResources", "AgendaQuestionExtResources1"},
+            {"AgendaQuestionIncomingDate", "AgendaQuestionIncomingDate1"},
             //{ "AgendaQuestionReporter", "AgendaQuestionReporter1" },
-            { "AgendaQuestionReporterFullNameLink", "AgendaQuestionReporter1" },
-            { "MeetingLink", "MeetingLink1" },
-            { "AgendaQuestionDeclarant", "AgendaQuestionDeclarant1" },
-            { "AgendaQuestionInvestor", "AgendaQuestionInvestor1" },
-            { "_x0418__x043d__x0444__x043e_", "AgendaQuestionInfo" },
-            { "CadastreNumber", "CadastreNumber1" },
-            { "QuestionCategoryLink", "QuestionCategoryLink1" },
-            { "AgendaQuestionComment", "AgendaQuestionComment1" },
-            { "IssueMunicipalityGs", "IssueMunicipalityGs1" },
-            { "AgendaQuestionSiteName", "AgendaQuestionSiteName1" },
-            { "AgendaQuestionNumber", "AgendaQuestionNumber1" },
-            { "AgendaQuestionDescription", "AgendaQuestionDescription1" },
-            { "AgendaQuestionReason", "AgendaQuestionReason1" },
-            { "IssueGsIssueP", "IssueGsIssueP1" },
-            { "IssueSettlementGs", "IssueSettlementGs1" },
-            { "AgendaQuestionIsConsidered", "AgendaQuestionIsConsidered1" },
-            { "AgendaQuestionProtocolDecision", "AgendaQuestionProtocolDecision1" },
-            { "AgendaLinkedQuestionLink", "AgendaLinkedQuestionLink1" },
+            {"AgendaQuestionReporterFullNameLink", "AgendaQuestionReporter1"},
+            {"MeetingLink", "MeetingLink1"},
+            {"AgendaQuestionDeclarant", "AgendaQuestionDeclarant1"},
+            {"AgendaQuestionInvestor", "AgendaQuestionInvestor1"},
+            {"_x0418__x043d__x0444__x043e_", "AgendaQuestionInfo"},
+            {"CadastreNumber", "CadastreNumber1"},
+            {"QuestionCategoryLink", "QuestionCategoryLink1"},
+            {"AgendaQuestionComment", "AgendaQuestionComment1"},
+            {"IssueMunicipalityGs", "IssueMunicipalityGs1"},
+            {"AgendaQuestionSiteName", "AgendaQuestionSiteName1"},
+            {"AgendaQuestionNumber", "AgendaQuestionNumber1"},
+            {"AgendaQuestionDescription", "AgendaQuestionDescription1"},
+            {"AgendaQuestionReason", "AgendaQuestionReason1"},
+            {"IssueGsIssueP", "IssueGsIssueP1"},
+            {"IssueSettlementGs", "IssueSettlementGs1"},
+            {"AgendaQuestionIsConsidered", "AgendaQuestionIsConsidered1"},
+            {"AgendaQuestionProtocolDecision", "AgendaQuestionProtocolDecision1"},
+            {"AgendaLinkedQuestionLink", "AgendaLinkedQuestionLink1"},
             //{ "AgendaQuestionCoreporter", "AgendaQuestionCoreporter1" },
-            { "AgendaQuestionSoreporterFullNameLink", "AgendaQuestionCoreporter1" },
-            { "AgendaQuestionTheme", "AgendaQuestionTheme1" },
-            { "_x0422__x0438__x043f__x0020__x04", "AgendaQuestionObjectType" },
-            { "AgendaQuestionProjectType", "AgendaQuestionProjectType1" },
-            { "AgendaQuestionDecisionType", "AgendaQuestionDecisionType1" }
+            {"AgendaQuestionSoreporterFullNameLink", "AgendaQuestionCoreporter1"},
+            {"AgendaQuestionTheme", "AgendaQuestionTheme1"},
+            {"_x0422__x0438__x043f__x0020__x04", "AgendaQuestionObjectType"},
+            {"AgendaQuestionProjectType", "AgendaQuestionProjectType1"},
+            {"AgendaQuestionDecisionType", "AgendaQuestionDecisionType1"}
         };
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            string url = "http://sp2013dev:81/";
+            string url = "http://gs.msk.mosreg.ru:8080";
             //CleanAttachments(url, "Вложения отчета по поручению");
             //CleanOldVersions(url, "Вложения наборы вопроса повестки");
             //AddUsersToGroup(url, "users.csv", "ignored.csv", "ДТП - ОМСУ");
 
             using (var site = new SPSite(url))
             {
-                DeleteLandLists(site);
-                DeleteZkhLists(site);
+                //RunWorkflow(site.RootWeb.GetListByUrl("ReestrDTP"), "Согласование материалов для предварительного рассмотрения");
+                //RunWorkflow(site.RootWeb.GetListByUrl("ReestrDTP"), "Проставление статусов материалов предварительного рассмотрения");
+                //CleanList(site.RootWeb.GetListByUrl("DtpAgreement"));
+
+                //DeleteLandLists(site);
+                //DeleteZkhLists(site);
 
                 //SPList issueList = site.RootWeb.GetListByUrl("AgendaQuestionList");
                 //var issueMappingFromTemp = new Dictionary<string, string>();
@@ -87,6 +94,18 @@ namespace GS.Console
 
             System.Console.WriteLine("Завершено");
             System.Console.ReadLine();
+        }
+
+        private static void RunWorkflow(SPList targetList, string workflowName)
+        {
+            SPWorkflowAssociation wa = targetList.WorkflowAssociations.GetAssociationByName(workflowName,
+                Thread.CurrentThread.CurrentCulture);
+            SPWorkflowManager wm = targetList.ParentWeb.Site.WorkflowManager;
+            for (int i = 0; i < targetList.ItemCount; i++)
+            {
+                wm.StartWorkflow(targetList.Items[i], wa, wa.AssociationData, true);
+                System.Console.WriteLine(i + 1);
+            }
         }
 
         private static void DeleteLandLists(SPSite site)
@@ -352,6 +371,19 @@ namespace GS.Console
                 }
             }
         }
+
+        private static void CleanList(SPList targetList)
+        {
+            int count = 0;
+
+            for (int i = targetList.ItemCount - 1; i >= 0; i--)
+            {
+                using (var scope = new DisabledItemEventsScope())
+                    targetList.Items.Delete(i);
+                System.Console.WriteLine(++count);
+            }
+        }
+
     }
 
     public class DisabledItemEventsScope : SPItemEventReceiver, IDisposable
