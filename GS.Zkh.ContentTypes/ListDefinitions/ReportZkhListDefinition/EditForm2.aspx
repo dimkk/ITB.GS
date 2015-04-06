@@ -18,10 +18,10 @@
     <div class="container" id="body">
         <ul id="tabs" class="nav nav-tabs">
             <li class="active">
-                <a href="#tab-common" data-toggle="tab">Карточка поручения</a>
+                <a href="#tab-common" data-toggle="tab">Карточка отчета</a>
             </li>
             <li>
-                <a href="#tab-report" data-toggle="tab">Отчеты</a>
+                <a href="#tab-report" data-toggle="tab">Вложения</a>
             </li>
         </ul>
         <div id="tabContent" class="tab-content">

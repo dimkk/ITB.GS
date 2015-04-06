@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ListInstance
+		Title="ЖКХ: Вложения отчета по поручению"
+		Description="Список вложений отчета по поручению ЖКХ"
+		FeatureId="9fbf062a-7585-4e06-87bd-71077130a509"
+		Id="4FC353F3-9C5E-4F7B-9B0E-A61822508820"
+		Url="Lists/ReportAttachmentZkhList"
+		OnQuickLaunch="TRUE"
+		QuickLaunchUrl="Lists/ReportAttachmentZkhList/AllItems.aspx"
+		RootWebOnly="FALSE"
+		TemplateType="10160" />
+</Elements>

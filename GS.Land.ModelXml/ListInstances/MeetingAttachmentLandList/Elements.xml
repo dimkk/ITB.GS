@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="Земля: Вложения заседания" Description="Список вложений заседания Земля" FeatureId="e1263205-e478-4dca-9651-432165298f74" Id="95A4CCDB-6DA9-47AC-86E2-F21B62180FD2" Url="Lists/MeetingAttachmentLandList" OnQuickLaunch="TRUE" QuickLaunchUrl="Lists/MeetingAttachmentLandList/AllItems.aspx" RootWebOnly="FALSE" TemplateType="10255" />
+  <ListInstance 
+    Title="Земля - Вложения заседания" 
+    Description="Список вложений заседания Земля" 
+    FeatureId="e1263205-e478-4dca-9651-432165298f74" 
+    Id="95A4CCDB-6DA9-47AC-86E2-F21B62180FD2" 
+    Url="Lists/MeetingAttachmentLandList" 
+    OnQuickLaunch="TRUE" 
+    QuickLaunchUrl="Lists/MeetingAttachmentLandList/AllItems.aspx" 
+    RootWebOnly="FALSE" 
+    TemplateType="10255"/>
 </Elements>

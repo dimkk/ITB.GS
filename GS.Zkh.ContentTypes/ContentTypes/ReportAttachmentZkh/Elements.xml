@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!--
+    ************************************************************************
+       Application: GS
+      Created date: 2015-03-19 13:21:49Z
+        Created by: SPDEV\smikolaytis
+              Name: ReportAttachmentZkh
+       Description: ReportAttachmentZkh Description
+           History: Initial Version 0
+    ************************************************************************
+    -->
+  <!-- Parent ContentType Item -->
+  <ContentType ID="0x01000F4DCA13C88B49E8A2F019E4707FDEE8" Name="ReportAttachmentZkh" Description="Тип содержимого для вложений отчета ЖКХ" Group="ЖКХ.Типы содержимого" Version="0" Inherits="TRUE">
+    <FieldRefs>
+      <FieldRef ID="{A72F61FE-5356-4512-AC07-5CA0072873BA}" DisplayName="Вложение отчета?" Required="FALSE" Description="Вложение отчета?" Name="ReportAttachmentIsAttachZkh" />
+      <FieldRef ID="{B2337332-B777-46E6-8430-1326CD1FCB3D}" DisplayName="Описание вложения" Required="FALSE" Description="Описание вложения отчета ЖКХ" Name="ReportAttachmentDescriptionZkh" NumLines="7" Sortable="FALSE" />
+      <FieldRef ID="{F2E06E62-41BC-4FEF-AE26-0845ED939904}" DisplayName="Тип документа" Description="Ссылка на тип документа вложения отчета ЖКХ" Name="ReportAttachmentDocTypeZkh" />
+      <FieldRef ID="{952593B7-33E4-413F-AE16-87FA6D398519}" DisplayName="Отчет по поручению" Required="TRUE" Description="Ссылка на отчет ЖКХ" Name="ReportAttachmentReportZkh" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

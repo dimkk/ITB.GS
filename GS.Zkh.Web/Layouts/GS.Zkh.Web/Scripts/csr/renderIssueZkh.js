@@ -9,13 +9,21 @@
     var exceptList = [];
     var renderCore;
 
+    function getMeetingControl() {
+        return renderCore.getControlByFieldName('IssueMeetingZkh');
+    }
+
+    function getNumberControl() {
+        return renderCore.getControlByFieldName('IssueNumberZkh');
+    }
+
     function init() {
         SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
             Templates: {
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10251,
+            ListTemplateType: 10151,
         });
     }
 
@@ -104,7 +112,7 @@
     var AllMunicipalities;
     var SettlementOptions;
     function GetMunicipalityControl() {
-        return $('[id^="IssueMunicipalityDistrictLan"]');
+        return $('[id^="IssueMunicipalDistrictZkh"]');
     }
     function GetSettlementControl() {
         return $('[id^="IssueSettlementZkh"]');
@@ -157,12 +165,46 @@
             settlementControl.removeAttr('disabled');
     }
 
+    function FillNumber(meetingId) {
+        var numberControl = getNumberControl();
+        numberControl.val('');
+        if (!meetingId || meetingId == 0)
+            return;
+
+        var query = new SP.CamlQuery();
+        query.set_viewXml(String.format("<View><Query><Where><Eq><FieldRef Name='{0}' LookupId='TRUE'/><Value Type='Lookup'>{1}</Value></Eq></Where><OrderBy><FieldRef Name='{2}' Ascending='FALSE'/></OrderBy></Query><RowLimit>1</RowLimit></View>", 'IssueMeetingZkh', meetingId, 'IssueNumberZkh'));
+        var issueMaxNumber = SC.GetItems('IssueZkhList', query);//, 'Include(IssueNumberZkh)');
+        SC.Execute(function () {
+            var issueNumber = issueMaxNumber.get_count() > 0 ? issueMaxNumber.getItemAtIndex(0).get_item('IssueNumberZkh') + 1 : 1;
+            numberControl.val(issueNumber);
+        }, function (sender, args) {
+            alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+        });
+    }
+
     function OnPostRender(context) {
+        var numberControl = getNumberControl();
+        var meetingControl = getMeetingControl();
+
+        var meetingId = renderCore.getParentListItemId(['/Lists/MeetingZkhList/EditForm', '/Pages/MeetingZkh.aspx']);
+        if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm && meetingId) {
+            meetingControl.val(meetingId);
+            meetingControl.attr('disabled', 'disabled');
+        }
+
         if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
             SC.OnLoaded(function () {
                 InitMunicipality();
+                if (!numberControl.val())
+                    FillNumber(meetingControl.val());
             });
         }
+
+        meetingControl.change(function () {
+            FillNumber(this.value);
+        });
+
+        numberControl.attr('disabled', 'disabled');
 
         var prefix = context.FormUniqueId + context.FormContext.listAttributes.Id;
         $get(prefix + 'Author').innerHTML = author;

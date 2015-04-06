@@ -54,8 +54,14 @@
         <RowLimit Paged="TRUE">30</RowLimit>
         <Toolbar Type="Standard" />
         <ViewFields>
-          <FieldRef Name="LinkTitle">
-          </FieldRef>
+          <FieldRef Name="LinkTitle"/>
+          <FieldRef Name="AssignmentResponsibleExecutorZkh"/>
+          <FieldRef Name="AssignmentNumberZkh"/>
+          <FieldRef Name="AssignmentPlanDateZkh"/>
+          <FieldRef Name="AssignmentTextZkh"/>
+          <FieldRef Name="AssignmentControlStateZkh"/>
+          <FieldRef Name="AssignmentTypeZkh"/>
+          <FieldRef Name="AssignmentStatusZkh"/>
         </ViewFields>
         <Query>
           <OrderBy>

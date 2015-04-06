@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<!--
+  <!--
     ************************************************************************
        Application: GS
       Created date: 2015-02-18 14:45:49Z
@@ -11,43 +11,16 @@
            History: Initial Version 0
     ************************************************************************
     -->
-	<!-- Parent ContentType Item -->
-	<ContentType
-		ID="0x0100E6AB17C9C4A045C791DA5EF599E29B3F"
-		Name="MeetingLand"
-		Description="Тип содержимого для заседания Земля"
-		Group="Земля.Типы содержимого"
-		Version="0"
-		Inherits="TRUE">
-		<FieldRefs>
-			<FieldRef
-				ID="{926E11F3-36DA-4E08-AE93-AC470BBBAA00}"
-				Name="MeetingCommentLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{FA46884F-BAE2-4593-B996-6452341B1897}"
-				Name="MeetingDateLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{BADC562D-ACB0-4FE0-B0A7-6A4F011B98BD}"
-				Name="MeetingNumberLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{0F14B315-FB10-439F-B2D0-6C23787C4A4A}"
-				Name="MeetingOtherParticipantsLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{1D25F8AE-DA42-4355-A28E-34EF9EE824A7}"
-				Name="MeetingParticipantsLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{95581E0A-7E30-4439-AD97-0103B81DD307}"
-				Name="MeetingPlaceLand"
-				Required="FALSE" />
-			<FieldRef
-				ID="{9956FF03-7CF4-46A4-A4C3-9914BBD47CD7}"
-				Name="MeetingStatusLand"
-				Required="FALSE" />
+  <!-- Parent ContentType Item -->
+  <ContentType ID="0x0100E6AB17C9C4A045C791DA5EF599E29B3F" Name="MeetingLand" Description="Тип содержимого для заседания Земля" Group="Земля.Типы содержимого" Version="0" Inherits="TRUE">
+    <FieldRefs>
+      <FieldRef ID="{926E11F3-36DA-4E08-AE93-AC470BBBAA00}" Name="MeetingCommentLand" Required="FALSE" />
+      <FieldRef ID="{FA46884F-BAE2-4593-B996-6452341B1897}" Name="MeetingDateLand" Required="FALSE" />
+      <FieldRef ID="{BADC562D-ACB0-4FE0-B0A7-6A4F011B98BD}" Name="MeetingNumberLand" Required="FALSE" />
+      <FieldRef ID="{0F14B315-FB10-439F-B2D0-6C23787C4A4A}" Name="MeetingOtherParticipantsLand" Required="FALSE" />
+      <FieldRef ID="{1D25F8AE-DA42-4355-A28E-34EF9EE824A7}" Name="MeetingParticipantsLand" Required="FALSE" />
+      <FieldRef ID="{95581E0A-7E30-4439-AD97-0103B81DD307}" Name="MeetingPlaceLand" Required="FALSE" />
+      <FieldRef ID="{9956FF03-7CF4-46A4-A4C3-9914BBD47CD7}" Name="MeetingStatusLand" Required="FALSE" />
     </FieldRefs>
     <XmlDocuments>
       <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
@@ -63,5 +36,5 @@
         </FormUrls>
       </XmlDocument>
     </XmlDocuments>
-	</ContentType>
+  </ContentType>
 </Elements>

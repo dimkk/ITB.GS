@@ -7,8 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SAMRT.Web
-{
+namespace GS.Land.Web {
     
     
     public partial class ExecutorSelection {

@@ -17,7 +17,7 @@ namespace GS.Zkh.Web
 
         private readonly Lazy<bool> _isIssueEditAccessibleLazy = new Lazy<bool>(() =>
         {
-            SPList meetingList = SPContext.Current.Web.GetListByUrl("IssueMVKList");
+            SPList meetingList = SPContext.Current.Web.GetListByUrl("IssueZkhList");
             SPBasePermissions permissionMask = meetingList.GetUserEffectivePermissions(SPContext.Current.Web.CurrentUser.LoginName);
             return (permissionMask & SPBasePermissions.EditListItems) != 0;
         }); 

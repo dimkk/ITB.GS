@@ -16,7 +16,7 @@ var isCancelAddAttach = false;
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 10253,
+            ListTemplateType: 10153,
         });
     }
 
@@ -47,7 +47,7 @@ var isCancelAddAttach = false;
         resultHtml += '<div class="form-horizontal" role="form">';
 
         resultHtml += '<div class="form-group">';
-        var assignmentLinkHtml = renderFieldBlock('Поручение', 2, 4, "ReportAssignmentZkh");
+        var assignmentLinkHtml = renderFieldBlock('Отчет', 2, 4, "ReportAssignmentZkh");
         var lookupElement = renderCore.getLookupFromRenderedHtml(assignmentLinkHtml)
         assignmentLinkId = $(lookupElement).attr('id');
         // в режиме просмотра текст ссылки нужно будет заменить

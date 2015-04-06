@@ -2,7 +2,7 @@
 
     var consts = {
         fieldName: "_x041e__x0431__x044a__x0435__x04",
-        dlgUrl: "/_layouts/15/SAMRT.Web/pages/selectObject.html"
+        dlgUrl: "/_layouts/15/GS.Land.Web/pages/selectObject.html"
     };
 
     function init() {
@@ -41,7 +41,7 @@
         init();
         // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~/_layouts/15/SAMRT.Web/Scripts/csr/renderQuestionObjectObjectField.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~/_layouts/15/GS.Land.Web/Scripts/csr/renderQuestionObjectObjectField.js"), init);
         }, "sp.js");
     }, "clienttemplates.js");
 })();

@@ -6,8 +6,8 @@
         function Question(data) {
             return {
                 Id: ko.observable(data.get_item("ID")),
-                AgendaQuestionNumber: ko.observable(data.get_item("AgendaQuestionNumber")),
-                AgendaQuestionTheme: ko.observable(data.get_item("AgendaQuestionTheme"))
+                IssueNumber: ko.observable(data.get_item("IssueNumber")),
+                IssueTheme: ko.observable(data.get_item("IssueTheme"))
             };
         };
 
@@ -18,10 +18,10 @@
 
             self.search = function () {
                 var appWebContext = SP.ClientContext.get_current();
-                var agendaQuestionList = appWebContext.get_web().get_lists().getByTitle("Вопросы повестки заседания");
+                var issueList = appWebContext.get_web().get_lists().getByTitle("Вопросы повестки заседания");
                 var query = new SP.CamlQuery();
-                query.set_viewXml("<View><Query><Where><Contains><FieldRef Name='AgendaQuestionTheme'/><Value Type='Note'>" + self.searchTheme() + "</Value></Contains></Where></Query></View>");
-                var aqInstance = agendaQuestionList.getItems(query);
+                query.set_viewXml("<View><Query><Where><Contains><FieldRef Name='IssueTheme'/><Value Type='Note'>" + self.searchTheme() + "</Value></Contains></Where></Query></View>");
+                var aqInstance = issueList.getItems(query);
                 appWebContext.load(aqInstance);
                 appWebContext.executeQueryAsync(function () {
                     var result = [];

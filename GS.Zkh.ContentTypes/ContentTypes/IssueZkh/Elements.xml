@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<!--
+  <!--
     ************************************************************************
        Application: GS
       Created date: 2015-02-10 12:59:28Z
@@ -11,95 +11,29 @@
            History: Initial Version 0
     ************************************************************************
     -->
-	<!-- Parent ContentType Item -->
-	<ContentType
-		ID="0x0100E3DBF26BFED7428A9C807D4F7468E110"
-		Name="IssueZkh"
-		Description="Тип содержимого для вопроса повестки заседания ЖКХ"
-		Group="ЖКХ.Типы содержимого"
-		Version="0"
-		Inherits="TRUE">
-		<FieldRefs>
-			<FieldRef
-				ID="{BA3FE129-4D65-46A9-98B1-60BC05827F37}"
-				Name="IssueAddressZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{A6A06BE2-3076-475C-BD86-97308B169D27}"
-				Name="IssueCadastreIdZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{7D4C4015-57D5-4763-BB3A-44BFE3B02BAC}"
-				Name="IssueCategoryZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{E2959683-FF29-4FDB-99B3-2F8B45464493}"
-				Name="IssueCoReportersZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{9139C47C-80BC-4898-B176-0E0528AAEE1B}"
-				Name="IssueDecisionTypeZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{0B763194-60EE-4EFA-B7D4-C32A00327A69}"
-				Name="IssueDecisionZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{C3F4409E-825C-44BE-925E-640FA75D1934}"
-				Name="IssueDescriptionZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{761DC64B-2CA6-4A12-AC49-8A5C575A73C2}"
-				Name="IssueInfoZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{CD7EFF4C-90F7-4885-AA4A-F57746406634}"
-				Name="IssueInvestorZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{100F19BD-F8EA-4762-A38B-6EE274F9A7DD}"
-				Name="IssueMeetingDateNumberZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{382EC8FA-FBAB-4E4F-AEAE-DD61209511D1}"
-				Name="IssueMeetingDateZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{B2F157EF-A829-44FF-9AD2-AADE273543EC}"
-				Name="IssueMeetingNumberZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{D5179CC4-4BB3-4F17-9EA8-0BD2725CBEB1}"
-				Name="IssueMeetingZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{AF15B142-CA26-45F7-AC30-B457C9D89CC8}"
-				Name="IssueMunicipalDistrictZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{5D8D9358-B381-46C5-AD44-BBE4A4C12018}"
-				Name="IssueNumberZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{A57F0A68-F0F8-4481-AFB6-E5F6EBF8A4A8}"
-				Name="IssueReporterZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{AD24E4D6-6504-4E8B-B7C6-93E30F2CA7C2}"
-				Name="IssueSettlementZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{B9F5C921-C0FE-4072-9C94-FCB6EA97ECCF}"
-				Name="IssueSubnumberZkh"
-				Required="FALSE" />
-			<FieldRef
-				ID="{10A141A2-C2A7-4F37-97BB-9178F88974C9}"
-				Name="IssueThemeZkh"
-				Required="FALSE" />
-      <FieldRef
-        ID="{34B95F52-9E5F-477A-871E-E6C0A5FD0000}"
-        Name="IssueSubCategoryZkh"
-        Required="FALSE" />
-		</FieldRefs>
-	</ContentType>
+  <!-- Parent ContentType Item -->
+  <ContentType ID="0x0100E3DBF26BFED7428A9C807D4F7468E110" Name="IssueZkh" Description="Тип содержимого для вопроса повестки заседания ЖКХ" Group="ЖКХ.Типы содержимого" Version="0" Inherits="TRUE">
+    <FieldRefs>
+      <FieldRef ID="{BA3FE129-4D65-46A9-98B1-60BC05827F37}" Name="IssueAddressZkh" Required="FALSE" />
+      <FieldRef ID="{A6A06BE2-3076-475C-BD86-97308B169D27}" Name="IssueCadastreIdZkh" Required="FALSE" />
+      <FieldRef ID="{7D4C4015-57D5-4763-BB3A-44BFE3B02BAC}" Name="IssueCategoryZkh" Required="FALSE" />
+      <FieldRef ID="{E2959683-FF29-4FDB-99B3-2F8B45464493}" Name="IssueCoReportersZkh" Required="FALSE" />
+      <FieldRef ID="{9139C47C-80BC-4898-B176-0E0528AAEE1B}" Name="IssueDecisionTypeZkh" Required="FALSE" />
+      <FieldRef ID="{0B763194-60EE-4EFA-B7D4-C32A00327A69}" Name="IssueDecisionZkh" Required="FALSE" />
+      <FieldRef ID="{C3F4409E-825C-44BE-925E-640FA75D1934}" Name="IssueDescriptionZkh" Required="FALSE" />
+      <FieldRef ID="{761DC64B-2CA6-4A12-AC49-8A5C575A73C2}" Name="IssueInfoZkh" Required="FALSE" />
+      <FieldRef ID="{CD7EFF4C-90F7-4885-AA4A-F57746406634}" Name="IssueInvestorZkh" Required="FALSE" />
+      <FieldRef ID="{382EC8FA-FBAB-4E4F-AEAE-DD61209511D1}" Name="IssueMeetingDateZkh" Required="FALSE" />
+      <FieldRef ID="{B2F157EF-A829-44FF-9AD2-AADE273543EC}" Name="IssueMeetingNumberZkh" Required="FALSE" />
+      <FieldRef ID="{100F19BD-F8EA-4762-A38B-6EE274F9A7DD}" Name="IssueMeetingDateNumberZkh" Required="FALSE" />
+      <FieldRef ID="{D5179CC4-4BB3-4F17-9EA8-0BD2725CBEB1}" Name="IssueMeetingZkh" Required="FALSE" />
+      <FieldRef ID="{AF15B142-CA26-45F7-AC30-B457C9D89CC8}" Name="IssueMunicipalDistrictZkh" Required="FALSE" />
+      <FieldRef ID="{5D8D9358-B381-46C5-AD44-BBE4A4C12018}" Name="IssueNumberZkh" Required="FALSE" />
+      <FieldRef ID="{A57F0A68-F0F8-4481-AFB6-E5F6EBF8A4A8}" Name="IssueReporterZkh" Required="FALSE" />
+      <FieldRef ID="{AD24E4D6-6504-4E8B-B7C6-93E30F2CA7C2}" Name="IssueSettlementZkh" Required="FALSE" />
+      <FieldRef ID="{B9F5C921-C0FE-4072-9C94-FCB6EA97ECCF}" Name="IssueSubnumberZkh" Required="FALSE" />
+      <FieldRef ID="{10A141A2-C2A7-4F37-97BB-9178F88974C9}" Name="IssueThemeZkh" Required="FALSE" />
+      <FieldRef ID="{0B984378-DE26-4210-90D2-CEC3B8E29435}" Name="IssueSubCategoryZkh" Required="FALSE" />
+    </FieldRefs>
+  </ContentType>
 </Elements>

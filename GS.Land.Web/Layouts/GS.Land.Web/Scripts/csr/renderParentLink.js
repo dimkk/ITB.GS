@@ -61,7 +61,7 @@
         // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
 
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderParentLink.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/GS.Land.Web/Scripts/csr/renderParentLink.js"), init);
 
         }, 'sp.js');
 
@@ -80,7 +80,7 @@
 <script type="text/javascript">
    var gsRenderParams = { parentLinkFieldName: "AgendaQuestionLink", parentListName: "AgendaQuestionList" };
 </script>
-<script type="text/javascript" src="/_layouts/15/SAMRT.Web/Scripts/csr/renderParentLink.js?rev=25122013"></script>
+<script type="text/javascript" src="/_layouts/15/GS.Land.Web/Scripts/csr/renderParentLink.js?rev=25122013"></script>
 
 5. parentLinkFieldName & parentListName must have according values
 

@@ -49,6 +49,7 @@ namespace GS.Console
 
         private static void Main(string[] args)
         {
+            System.Console.WriteLine("Connecting to the server...");
             string url = "http://gs.msk.mosreg.ru:8080";
             //CleanAttachments(url, "Вложения отчета по поручению");
             //CleanOldVersions(url, "Вложения наборы вопроса повестки");
@@ -56,6 +57,18 @@ namespace GS.Console
 
             using (var site = new SPSite(url))
             {
+                try
+                {
+                    //DeleteZkhLists(site);
+                    DeleteLandLists(site);
+                }
+                catch (Exception ex)
+                {
+                    System.Console.BackgroundColor = ConsoleColor.Red;
+                    System.Console.WriteLine("Exception:" + ex.Message + Environment.NewLine +
+                        "StackTrace:" + ex.StackTrace);
+                    System.Console.BackgroundColor = ConsoleColor.Black;
+                }
                 //RunWorkflow(site.RootWeb.GetListByUrl("ReestrDTP"), "Согласование материалов для предварительного рассмотрения");
                 //RunWorkflow(site.RootWeb.GetListByUrl("ReestrDTP"), "Проставление статусов материалов предварительного рассмотрения");
                 //CleanList(site.RootWeb.GetListByUrl("DtpAgreement"));
@@ -92,7 +105,7 @@ namespace GS.Console
 
             }
 
-            System.Console.WriteLine("Завершено");
+            System.Console.WriteLine("Complete!");
             System.Console.ReadLine();
         }
 
@@ -110,35 +123,74 @@ namespace GS.Console
 
         private static void DeleteLandLists(SPSite site)
         {
-            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportLand"]);
+            System.Console.WriteLine("DeleteLandLists:");
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["AssignmentLand"]);
+            System.Console.WriteLine("    AssignmentLand removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueAttachmentLand"]);
+            System.Console.WriteLine("    IssueAttachmentLand removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingAttachmentLand"]);
+            System.Console.WriteLine("    MeetingAttachmentLand removed");
+
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportAttachmentLand"]);
+            System.Console.WriteLine("    ReportAttachmentLand removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueLand"]);
+            System.Console.WriteLine("    IssueLand removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingLand"]);
+            System.Console.WriteLine("    MeetingLand removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueCategoryLand"]);
+            System.Console.WriteLine("    IssueCategoryLand removed");
+
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportLand"]);
+            System.Console.WriteLine("    ReportLand removed");
         }
 
         private static void DeleteZkhLists(SPSite site)
         {
-            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportZkh"]);
+            System.Console.WriteLine("DeleteZkhLists:");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["AssignmentZkh"]);
+            System.Console.WriteLine("    AssignmentZkh removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueAttachmentZkh"]);
+            System.Console.WriteLine("    IssueAttachmentZkh removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingAttachmentZkh"]);
+            System.Console.WriteLine("    MeetingAttachmentZkh removed");
+
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportAttachmentZkh"]);
+            System.Console.WriteLine("    ReportAttachmentZkh removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueZkh"]);
+            System.Console.WriteLine("    IssueZkh removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["MeetingZkh"]);
+            System.Console.WriteLine("    MeetingZkh removed");
+
             DeleteListsByContentType(site.RootWeb.AvailableContentTypes["IssueCategoryZkh"]);
+            System.Console.WriteLine("    IssueCategoryZkh removed");
+
+            DeleteListsByContentType(site.RootWeb.AvailableContentTypes["ReportZkh"]);
+            System.Console.WriteLine("    ReportZkh removed");
         }
 
         private static void DeleteListsByContentType(SPContentType contentType)
         {
             if (contentType == null)
+            {
+                System.Console.WriteLine("    NULL");
                 return;
+            }
 
             foreach (SPContentTypeUsage usage in SPContentTypeUsage.GetUsages(contentType).Where(s => s.IsUrlToList))
             {
                 SPList list = contentType.ParentWeb.GetList(usage.Url);
                 list.Delete();
+                System.Console.WriteLine("    DELETE");
             }
         }
 
@@ -390,14 +442,14 @@ namespace GS.Console
     {
         public DisabledItemEventsScope()
         {
-            base.DisableEventFiring();
+            base.EventFiringEnabled = false;
         }
 
         #region IDisposable Members
 
         public void Dispose()
         {
-            base.EnableEventFiring();
+            base.EventFiringEnabled = true;
         }
 
         #endregion

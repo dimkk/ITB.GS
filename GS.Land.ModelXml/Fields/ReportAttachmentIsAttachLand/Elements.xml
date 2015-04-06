@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="Земля.Вложения.Отчеты"
+		DisplayName="Вложение отчета?"
+		ID="{1B560744-669B-478A-9E33-9C97CF21BC38}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportAttachmentIsAttachLand"
+		Name="ReportAttachmentIsAttachLand"
+		Type="Boolean"
+		Required="FALSE"
+		Description="Вложение отчета?"
+    Overwrite="TRUE">
+	</Field>
+</Elements>

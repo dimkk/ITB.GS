@@ -3,7 +3,7 @@
     var consts = {
         fieldName: "_x0420__x043e__x0434__x0438__x04",
         parentListName: "Lists/Object",
-        dlgUrl: "/_layouts/15/SAMRT.Web/pages/selectObject.html"
+        dlgUrl: "/_layouts/15/GS.Land.Web/pages/selectObject.html"
     };
 
     function init() {
@@ -42,7 +42,7 @@
         init();
         // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~/_layouts/15/SAMRT.Web/Scripts/csr/renderObjectLinkField.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~/_layouts/15/GS.Land.Web/Scripts/csr/renderObjectLinkField.js"), init);
         }, "sp.js");
     }, "clienttemplates.js");
 })();

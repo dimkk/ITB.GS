@@ -2,7 +2,7 @@
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
 	<ListInstance
-		Title="Земля: Отчеты по поручениям"
+		Title="Земля - Отчеты по поручениям"
 		Description="Список отчетов по поручениям Земля"
 		FeatureId="dacfe028-e3f7-42e8-8b20-62ff6122dd08"
 		Id="56138CFB-1785-4697-B8BA-327AD9059442"

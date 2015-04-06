@@ -211,7 +211,7 @@
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {
         init();
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderIssueMVK.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/GS.Land.Web/Scripts/csr/renderIssueMVK.js"), init);
         }, 'sp.js');
     }, 'clienttemplates.js');
 })();

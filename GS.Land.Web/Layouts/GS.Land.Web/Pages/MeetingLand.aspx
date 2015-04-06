@@ -22,7 +22,7 @@
         var modelMetaData = {
             meeting: { listName: "MeetingLandList", fields: [] },
             meetingAttachment: { listName: "MeetingAttachmentLandList", fields: [] },
-            agendaQuestion: { listName: "IssueLandList", fields: [] },
+            issue: { listName: "IssueLandList", fields: [] },
         };
     </script>
     <style>
@@ -70,8 +70,8 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Вопросы</h3>
                     </div>
-                    <div class="panel-body" id="AgendaQuestionTableDiv">
-                        <table class="table evenodd" id="AgendaQuestionTableTable">
+                    <div class="panel-body" id="IssueTableDiv">
+                        <table class="table evenodd" id="IssueTableTable">
                             <thead>
                                 <tr>
                                     <% if (IsIssueEditAccessible)
@@ -92,13 +92,13 @@
                                     <% } %>
                                 </tr>
                             </thead>
-                            <tbody data-bind="foreach: agendaQuestions">
+                            <tbody data-bind="foreach: issues">
                                 <tr>
                                     <% if (IsIssueEditAccessible)
                                        { %>
 									<td style="white-space: nowrap">
-										<button type="button" class="btn btn-default" data-bind="click: $parent.moveUpAgendaQuestion, enable: $parent.canMoveUpAgendaQuestion($data)" title="Передвинуть вверх" style="margin:0"><span class="glyphicon glyphicon-arrow-up"/></button>
-										<button type="button" class="btn btn-default" data-bind="click: $parent.moveDownAgendaQuestion, enable: $parent.canMoveDownAgendaQuestion($data)" title="Передвинуть вниз" style="margin:0"><span class="glyphicon glyphicon-arrow-down"/></button>
+										<button type="button" class="btn btn-default" data-bind="click: $parent.moveUpIssue, enable: $parent.canMoveUpIssue($data)" title="Передвинуть вверх" style="margin:0"><span class="glyphicon glyphicon-arrow-up"/></button>
+										<button type="button" class="btn btn-default" data-bind="click: $parent.moveDownIssue, enable: $parent.canMoveDownIssue($data)" title="Передвинуть вниз" style="margin:0"><span class="glyphicon glyphicon-arrow-down"/></button>
 									</td>
                                     <% } %>
                                     <td data-bind="text: IssueNumberLand"></td>
@@ -117,7 +117,7 @@
                                     <% if (IsIssueEditAccessible)
                                        { %>
 									<td>
-										<button type="button" class="btn btn-default" data-bind="click: $parent.removeAgendaQuestion" title="Удалить вопрос" style="margin:0"><span class="glyphicon glyphicon-remove"/></button>
+										<button type="button" class="btn btn-default" data-bind="click: $parent.removeIssue" title="Удалить вопрос" style="margin:0"><span class="glyphicon glyphicon-remove"/></button>
 									</td>
                                     <% } %>
                                 </tr>

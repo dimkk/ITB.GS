@@ -46,8 +46,8 @@
         </Toolbar>
         <RowLimit>20</RowLimit>
         <ViewFields>
-          <FieldRef Name="LinkTitleNoMenu">
-          </FieldRef>
+          <FieldRef Name="LinkTitleNoMenu"/>
+          <FieldRef Name="Attachments"/>
         </ViewFields>
         <Query>
           <OrderBy>

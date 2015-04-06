@@ -45,16 +45,16 @@
         resultHtml += '<div class="form-horizontal" role="form">';
 
         resultHtml += '<div class="form-group">';
-        //resultHtml += renderFieldBlock(context, 2, 4, "MeetingNumberMVK");
-        resultHtml += renderFieldBlock(context, 2, 10, "MeetingDateMVK");
+        //resultHtml += renderFieldBlock(context, 2, 4, "MeetingNumberZkh");
+        resultHtml += renderFieldBlock(context, 2, 10, "MeetingDateZkh");
         resultHtml += '</div>';
 		
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "MeetingPlaceMVK");
+        resultHtml += renderFieldBlock(context, 2, 10, "MeetingPlaceZkh");
         resultHtml += '</div>';
 
         resultHtml += '<div class="form-group">';
-        resultHtml += renderFieldBlock(context, 2, 10, "MeetingStatusMVK");
+        resultHtml += renderFieldBlock(context, 2, 10, "MeetingStatusZkh");
         resultHtml += '</div>';
 		
         author = context.RenderFieldByName(context, "Author");
@@ -74,7 +74,7 @@
 	
     function OnPostRender(context) {
 		if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm) {
-			var statusControl = renderCore.getControlByFieldName('MeetingStatusMVK');
+			var statusControl = renderCore.getControlByFieldName('MeetingStatusZkh');
 			statusControl.attr('disabled', 'disabled');
 		}
 	

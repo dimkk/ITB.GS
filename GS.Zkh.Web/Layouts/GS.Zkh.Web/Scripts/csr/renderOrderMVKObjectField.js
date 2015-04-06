@@ -1,7 +1,7 @@
 ﻿(function () {
 
     var consts = {
-        fieldName: "OrderObjectMVK",
+        fieldName: "OrderObjectZkh",
         dlgUrl: "/_layouts/15/SAMRT.Web/pages/selectObject.html"
     };
 
@@ -41,7 +41,7 @@
         init();
         // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~/_layouts/15/SAMRT.Web/Scripts/csr/renderOrderMVKObjectField.js"), init);
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~/_layouts/15/SAMRT.Web/Scripts/csr/renderOrderZkhObjectField.js"), init);
         }, "sp.js");
     }, "clienttemplates.js");
 })();

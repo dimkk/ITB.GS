@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вложения.Отчеты"
+		DisplayName="Тип документа"
+		ID="{F2E06E62-41BC-4FEF-AE26-0845ED939904}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportAttachmentDocTypeZkh"
+		Name="ReportAttachmentDocTypeZkh"
+		Type="Lookup"
+		List="Lists/DocTypeBookList"
+		ShowField="Title"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+    Overwrite="TRUE"
+		Description="Ссылка на тип документа вложения отчета ЖКХ"></Field>
+</Elements>

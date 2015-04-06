@@ -2,7 +2,7 @@
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <ListInstance
-		Title="Земля: Поручения"
+		Title="Земля - Поручения"
 		Description="Поручения Земля"
 		FeatureId="b250a6bf-ee5a-4df3-ac60-8fec977a2a87"
 		Id="B5F43BDD-12C1-4348-A369-10A4218FDE82"

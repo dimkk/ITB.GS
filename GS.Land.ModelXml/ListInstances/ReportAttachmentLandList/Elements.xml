@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ListInstance
+		Title="Земля - Вложения отчета по поручению"
+		Description="Список вложений отчета по поручению Земля"
+		FeatureId="ae5eba7f-1f04-4d93-8990-e76b796f5fe7"
+		Id="8E598D5A-4DF3-4E60-B06C-39EFFA9A8F65"
+		Url="Lists/ReportAttachmentLandList"
+		OnQuickLaunch="TRUE"
+		QuickLaunchUrl="Lists/ReportAttachmentLandList/AllItems.aspx"
+		RootWebOnly="FALSE"
+		TemplateType="10260" />
+</Elements>

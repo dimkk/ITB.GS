@@ -4,7 +4,7 @@
 	<Field
 		Group="ЖКХ.Справочники"
 		DisplayName="Родительская категория"
-		ID="{F6398B3B-4B7D-470C-8241-C34B5A077DA1}"
+		ID="{C3440AC5-B2A3-4997-AB71-0DF125540096}"
 		SourceID="http://schemas.microsoft.com/sharepoint/v3"
 		StaticName="IssueDependentIssueZkh"
 		Name="IssueDependentIssueZkh"

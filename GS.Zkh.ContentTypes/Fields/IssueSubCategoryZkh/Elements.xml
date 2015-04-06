@@ -4,7 +4,7 @@
 	<Field
 		Group="ЖКХ.Вопросы"
 		DisplayName="Подкатегория вопроса"
-		ID="{34B95F52-9E5F-477A-871E-E6C0A5FDC696}"
+		ID="{0B984378-DE26-4210-90D2-CEC3B8E29435}"
 		SourceID="http://schemas.microsoft.com/sharepoint/v3"
 		StaticName="IssueSubCategoryZkh"
 		Name="IssueSubCategoryZkh"

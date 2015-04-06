@@ -14,26 +14,27 @@
     <Data>
       <Rows>
         <Row>
-          <Field Name="Title">Поручение МВК 1</Field>
-          <Field Name="AssignmentNumberZkh">Номер "Поручение МВК 1"</Field>
+          <Field Name="Title">Поручение ЖКХ 1</Field>
+          <Field Name="AssignmentNumberZkh">Номер "Поручение ЖКХ 1"</Field>
           <Field Name="AssignmentCoExecutorsZkh">1</Field>
           <Field Name="AssignmentControllerZkh">1</Field>
           <Field Name="AssignmentControlStateZkh">1</Field>
           <Field Name="AssignmentDaysForResolveZkh">1</Field>
           <Field Name="AssignmentDayTypeZkh">1</Field>
-          <Field Name="AssignmentDependentTermTextZkh">Зависимый срок "Поручение МВК 1"</Field>
+          <Field Name="AssignmentDependentTermTextZkh">Зависимый срок "Поручение ЖКХ 1"</Field>
           <Field Name="AssignmentExecutorZkh">1</Field>
           <Field Name="AssignmentExecutorOrgZkh">1</Field>
           <Field Name="AssignmentExecutorPositionZkh">1</Field>
           <Field Name="AssignmentFactDateZkh">2014-07-18 12:30:00</Field>
           <Field Name="AssignmentIssueZkh">1</Field>
-          <Field Name="AssignmentNoteZkh">Комментарий "Поручение МВК 1"</Field>
+          <Field Name="AssignmentLastReportZkh">1</Field>
+          <Field Name="AssignmentNoteZkh">Комментарий "Поручение ЖКХ 1"</Field>
           <Field Name="AssignmentPlanDateZkh">2014-07-13 12:30:00</Field>
-          <Field Name="AssignmentPlanIsDependentZkh">Тип зависимости планируемой даты "Поручение МВК 1"</Field>
+          <Field Name="AssignmentPlanIsDependentZkh">Тип зависимости планируемой даты "Поручение ЖКХ 1"</Field>
           <Field Name="AssignmentProlongationCountZkh">1</Field>
-          <Field Name="AssignmentResponsibleExecutorZkh">Ответственный исполнитель "Поручение МВК 1"</Field>
+          <Field Name="AssignmentResponsibleExecutorZkh">Ответственный исполнитель "Поручение ЖКХ 1"</Field>
           <Field Name="AssignmentStatusZkh">1</Field>
-          <Field Name="AssignmentTextZkh">Текст "Поручение МВК 1"</Field>
+          <Field Name="AssignmentTextZkh">Текст "Поручение ЖКХ 1"</Field>
           <Field Name="AssignmentTypeZkh">1</Field>
         </Row>
       </Rows>

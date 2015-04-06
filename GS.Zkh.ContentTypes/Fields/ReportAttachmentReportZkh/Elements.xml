@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Field
+		Group="ЖКХ.Вложения.Отчеты"
+		DisplayName="Отчет по поручению"
+		ID="{952593B7-33E4-413F-AE16-87FA6D398519}"
+		SourceID="http://schemas.microsoft.com/sharepoint/v3"
+		StaticName="ReportAttachmentReportZkh"
+		Name="ReportAttachmentReportZkh"
+		Type="Lookup"
+		List="Lists/ReportZkhList"
+		ShowField="ReportInfoZkh"
+		Mult="False"
+		UnlimitedLengthInDocumentLibrary="False"
+    Overwrite="TRUE"
+		Description="Ссылка на отчет ЖКХ"></Field>
+</Elements>
