@@ -351,6 +351,13 @@
 
         window.gsLinkedData = window.gsLinkedData || {};
 
+        //Select default values for comboboxes
+        var assignmentNumberLand = $('[id^=AssignmentNumberLand]').val();
+        if (assignmentNumberLand == null || assignmentNumberLand == "") {
+            $($('[id^=AssignmentStatusLand]').children()[1]).prop('selected', true);
+            $($('[id^=AssignmentControlStateLand]').children()[1]).prop('selected', true);
+        }
+
         // достанем данные вопроса и заседания, чтобы отобразить шапку документа
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
             var aqLink = context.ListData.Items[0].AssignmentIssueLand;

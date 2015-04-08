@@ -1920,11 +1920,11 @@
         };
 
         self.addOrderRg = function () {
-            openOrderRgAddDialog("Добавить заявки Рабочей группы");
+            openOrderRgAddDialog("Добавить заявки");
         }
 
         self.createIssueRg = function () {
-            openIssueRgCreateDialog("Создать вопрос Рабочей группы");
+            openIssueRgCreateDialog("Создать вопрос");
         }
 
         // remove issue question
