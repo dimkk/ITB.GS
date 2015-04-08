@@ -301,7 +301,8 @@
             var qModel = ko.dataFor(this);
             qModel.targetLookupId = $(e.relatedTarget).data('lookup');
         });
-
+        editable('AssignmentCreationDate', false);
+		editable('AssignmentSoexecutors', false);
         $('#' + window.gsModals.selectAssignment).appendTo('body').on('shown.bs.modal', function (e) {
             var aModel = ko.dataFor(this);
 
@@ -490,7 +491,12 @@
         exceptList.push(fieldName);
         return renderCore.bs.renderFieldBlock(label, labelSpan, inputSpan, fieldName, controlInvisible);
     }
-
+	
+	function editable(name, editable) {
+		if (!editable)
+			$('[id^="' + name + '"]').attr('disabled', 'disabled');
+	}
+	
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {
 
         init();

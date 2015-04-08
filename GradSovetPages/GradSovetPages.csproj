@@ -212,6 +212,7 @@
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentList.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentMVK.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAssignmentMVKList.js" />
+    <Content Include="Layouts\GradSovetPages\Scripts\csr\renderConclusionMpr.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderDTPAgreement.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderIssueMVK.js" />
     <Content Include="Layouts\GradSovetPages\Scripts\csr\renderAgendaQuestion.js" />

@@ -181,10 +181,11 @@
 */
     function OnPostRender(context) {
 		window["WPQ2FormCtx"].PostBackRequired = true;	//Включаем постбэк для возможности прикрепления вложений
- 		editable('DTPAgreementDocument', true);
+ 		editable('DTPAgreementDocument', false);
  		editable('DTPAgreementRegistryNumber', false);
  		editable('DTPAgreementDateStart', false);
  		editable('DTPAgreementTime', false);
+		editable('DTPAgreementApproveOrgan', false);
        if (context.ControlMode !== SPClientTemplates.ClientControlMode.DisplayForm) {
             SC.OnLoaded(function () {
                 //InitMunicipality();
