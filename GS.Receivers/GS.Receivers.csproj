@@ -17,6 +17,9 @@
     <SandboxedSolution>False</SandboxedSolution>
     <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
     <ProjectGuid>{360608AF-2CF4-4F09-9BA7-F762CCA53853}</ProjectGuid>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +41,10 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Camlex.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=831792d54d5285b7, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Camlex.NET.dll.4.0.0.0\lib\net20\Camlex.NET.dll</HintPath>
+    </Reference>
     <Reference Include="GS.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76fad1f12ae5d8a7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\GS.Common\bin\Debug\GS.Common.dll</HintPath>
@@ -46,6 +53,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ITB.SAMRT\ITB.SP.Tools\bin\Debug\ITB.SP.Tools.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Server, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -65,7 +74,12 @@
   <ItemGroup>
     <Compile Include="EventReceivers\AssignmentItem\AssignmentItem.cs" />
     <Compile Include="EventReceivers\AssignmentReportItem\AssignmentReportItem.cs" />
+    <Compile Include="EventReceivers\ConclusionSetMprItem\ConclusionSetItem.cs" />
+    <Compile Include="EventReceivers\ApplicationMprItem\ApplicationItem.cs" />
     <Compile Include="EventReceivers\IssuePItem\IssuePItem.cs" />
+    <Compile Include="Features\GS.Mpr.Receivers.ApplicationItem\GS.Mpr.Receivers.ApplicationItem.EventReceiver.cs">
+      <DependentUpon>GS.Mpr.Receivers.ApplicationItem.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +91,12 @@
     </None>
     <None Include="EventReceivers\AssignmentReportItem\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{56604cb0-d7d3-41c9-8743-cac2d725328b}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceivers\ConclusionSetMprItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a90ac1c2-fc60-4806-b8a4-c3ac22f68138}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceivers\ApplicationMprItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a6d30128-7378-4870-ab27-6cc5e6e6ef64}</SharePointProjectItemId>
     </None>
     <None Include="EventReceivers\IssuePItem\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{c10e26e9-7b87-479d-b776-7bae301a48a8}</SharePointProjectItemId>
@@ -90,6 +110,13 @@
     <None Include="Features\GS.Receivers.AssignmentItem\GS.Receivers.AssignmentItem.feature">
       <FeatureId>{845153c7-ee0c-4c73-952a-764d04ebf5e9}</FeatureId>
     </None>
+    <None Include="Features\GS.Mpr.Receivers.ConclusionSetItem\GS.Mpr.Receivers.ConclusionSetItem.feature">
+      <FeatureId>{b797ea8e-c785-44a4-9e36-5f98dd5356f5}</FeatureId>
+    </None>
+    <None Include="Features\GS.Mpr.Receivers.ApplicationItem\GS.Mpr.Receivers.ApplicationItem.feature">
+      <FeatureId>{2b08224a-f816-4593-b13b-1c524cd53ed9}</FeatureId>
+    </None>
+    <None Include="packages.config" />
     <None Include="Package\Package.package">
       <PackageId>{49CFD327-42B5-4867-9AFE-83D4787D69DF}</PackageId>
     </None>
@@ -109,6 +136,8 @@
   <ItemGroup>
     <Content Include="EventReceivers\AssignmentItem\Elements.xml" />
     <Content Include="EventReceivers\AssignmentReportItem\Elements.xml" />
+    <Content Include="EventReceivers\ConclusionSetMprItem\Elements.xml" />
+    <Content Include="EventReceivers\ApplicationMprItem\Elements.xml" />
     <Content Include="EventReceivers\IssuePItem\Elements.xml" />
     <Content Include="Features\GS.Receivers.AssignmentReportItem\GS.Receivers.AssignmentReportItem.Template.xml">
       <DependentUpon>GS.Receivers.AssignmentReportItem.feature</DependentUpon>
@@ -119,7 +148,17 @@
     <Content Include="Features\GS.Receivers.AssignmentItem\GS.Receivers.AssignmentItem.Template.xml">
       <DependentUpon>GS.Receivers.AssignmentItem.feature</DependentUpon>
     </Content>
-    <Content Include="Template\Images\GS\Feature.gif" />
+    <Content Include="Features\GS.Mpr.Receivers.ConclusionSetItem\GS.Mpr.Receivers.ConclusionSetItem.Template.xml">
+      <DependentUpon>GS.Mpr.Receivers.ConclusionSetItem.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GS.Mpr.Receivers.ApplicationItem\GS.Mpr.Receivers.ApplicationItem.Template.xml">
+      <DependentUpon>GS.Mpr.Receivers.ApplicationItem.feature</DependentUpon>
+    </Content>
+    <Content Include="Template\Images\GS\GS.Receivers.IssuePItem.gif" />
+    <Content Include="Template\Images\GS\GS.Receivers.AssignmentReportItem.gif" />
+    <Content Include="Template\Images\GS\GS.Receivers.AssignmentItem.gif" />
+    <Content Include="Template\Images\GS\GS.Mpr.Receivers.ApplicationItem.gif" />
+    <Content Include="Template\Images\GS\GS.Mpr.Receivers.ConclusionSetItem.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -131,4 +170,11 @@
   <Import Condition=" Exists('$(MSBuildProjectDirectory)\..\SPSF.targets')" Project="$(MSBuildProjectDirectory)\..\SPSF.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)" />
   <Target Name="AfterBuild" DependsOnTargets="$(AfterBuildDependsOn)" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
 </Project>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e2c45827-419d-429b-a8b0-8e07dab73b2e" description="ГС.МПР - Обработчики событий списка материалов для предварительного рассмотрения" featureId="e2c45827-419d-429b-a8b0-8e07dab73b2e" imageUrl="GS\GS.Mpr.Receivers.ApplicationItem.gif" imageAltText="GS.Mpr.Receivers.ApplicationItem Feature" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="$SharePoint.Type.227afee7-fdf9-43bc-9ad1-37974069f825.FullName$" solutionId="49cfd327-42b5-4867-9afe-83d4787d69df" title="ГС.МПР - Обработчики событий списка &quot;Материалы для предварительного рассмотрения&quot;" version="AAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0ZW0uVmVyc2lvbgQAAAAGX01ham9yBl9NaW5vcgZfQnVpbGQJX1JldmlzaW9uAAAAAAgICAgBAAAAAAAAAAAAAAAAAAAACw==" deploymentPath="$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+  <projectItems>
+    <projectItemReference itemId="a6d30128-7378-4870-ab27-6cc5e6e6ef64" />
+  </projectItems>
+</feature>
