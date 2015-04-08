@@ -56,65 +56,87 @@ namespace GS.Receivers
 
         private void SetInfo(SPItemEventProperties properties)
         {
-            try
+            SPSecurity.RunWithElevatedPrivileges(() =>
             {
-                int assignmentId;
-                if (int.TryParse(Convert.ToString(properties.AfterProperties["AssignmentLink"]), out assignmentId) && assignmentId > 0)
+                try
                 {
-                    SPListItem assignment = properties.Web.GetListByUrl("AssignmentList").GetItemById(assignmentId);
-                    properties.AfterProperties["AssignmentReportRequestText"] = assignment["Инфо"];
+                    using (var site = new SPSite(properties.SiteId))
+                    using (var web = site.OpenWeb(properties.Web.ID))
+                    {
+                        int assignmentId;
+                        if (int.TryParse(Convert.ToString(properties.AfterProperties["AssignmentLink"]), out assignmentId) &&
+                            assignmentId > 0)
+                        {
+                            SPListItem assignment = web.GetListByUrl("AssignmentList").GetItemById(assignmentId);
+                            properties.AfterProperties["AssignmentReportRequestText"] = assignment["Инфо"];
+                        }
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Log.Unexpected(e, "При установке поля с информацией отчета по поручению (ID = {0}) произошло неожиданное исключение", properties.AfterProperties["ID"]);
-            }
+                catch (Exception e)
+                {
+                    Log.Unexpected(e,
+                        "При установке поля с информацией отчета по поручению (ID = {0}) произошло неожиданное исключение",
+                        properties.AfterProperties["ID"]);
+                }
+            });
         }
 
         public void UpdateAssignment(SPItemEventProperties properties)
         {
-            int assignmentId = 0;
-            try
+            SPSecurity.RunWithElevatedPrivileges(() =>
             {
-                assignmentId = properties.ListItem.GetFieldLookup("AssignmentLink").LookupId;
-                if (assignmentId > 0)
+                int assignmentId = 0;
+                try
                 {
-                    SPListItem assignment = properties.Web.GetListByUrl("AssignmentList").GetItemById(assignmentId);
-                    assignment["Последний отчет"] = new SPFieldLookupValue(properties.ListItemId, properties.ListItem.Title);
-
-                    string status = null;
-                    string controlStatus = null;
-
-                    var decision = properties.ListItem.GetFieldValue<string>("AssignmentReportResolutionDecision");
-                    if (decision == "Снять с контроля")
+                    using (var site = new SPSite(properties.SiteId))
+                    using (var web = site.OpenWeb(properties.Web.ID))
                     {
-                        status = "Исполнено";
-                        controlStatus = "Снято с контроля";
-                        var newFactDate = properties.ListItem.GetFieldValue<DateTime?>("AssignmentReportFactAnswerDate");
-                        if (newFactDate.HasValue)
-                            assignment["AssignmentFactDate"] = newFactDate.Value;
-                    }
-                    else if (decision == "Перенести срок")
-                    {
-                        status = "На исполнении";
-                        controlStatus = "На контроле";
-                        var newDate = properties.ListItem.GetFieldValue<DateTime?>("AssignmentReportResolutionNewDate");
-                        if (newDate.HasValue && newDate.Value > new DateTime(2010, 1, 1))
-                            assignment["AssignmentPlanDate"] = newDate.Value;
-                    }
+                        assignmentId = properties.ListItem.GetFieldLookup("AssignmentLink").LookupId;
+                        if (assignmentId > 0)
+                        {
+                            SPListItem assignment = web.GetListByUrl("AssignmentList").GetItemById(assignmentId);
+                            assignment["Последний отчет"] = new SPFieldLookupValue(properties.ListItemId,
+                                properties.ListItem.Title);
 
-                    if (!string.IsNullOrEmpty(status))
-                        assignment["AssignmentStatus"] = status;
-                    if (!string.IsNullOrEmpty(controlStatus))
-                        assignment["AssignmentInspectState"] = controlStatus;
+                            string status = null;
+                            string controlStatus = null;
 
-                    assignment.SystemUpdate();
+                            var decision = properties.ListItem.GetFieldValue<string>("AssignmentReportResolutionDecision");
+                            if (decision == "Снять с контроля")
+                            {
+                                status = "Исполнено";
+                                controlStatus = "Снято с контроля";
+                                var newFactDate =
+                                    properties.ListItem.GetFieldValue<DateTime?>("AssignmentReportFactAnswerDate");
+                                if (newFactDate.HasValue)
+                                    assignment["AssignmentFactDate"] = newFactDate.Value;
+                            }
+                            else if (decision == "Перенести срок")
+                            {
+                                status = "На исполнении";
+                                controlStatus = "На контроле";
+                                var newDate =
+                                    properties.ListItem.GetFieldValue<DateTime?>("AssignmentReportResolutionNewDate");
+                                if (newDate.HasValue && newDate.Value > new DateTime(2010, 1, 1))
+                                    assignment["AssignmentPlanDate"] = newDate.Value;
+                            }
+
+                            if (!string.IsNullOrEmpty(status))
+                                assignment["AssignmentStatus"] = status;
+                            if (!string.IsNullOrEmpty(controlStatus))
+                                assignment["AssignmentInspectState"] = controlStatus;
+
+                            assignment.SystemUpdate();
+                        }
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Log.Unexpected(e, "При обновлении полей поручения (ID = {0}) в обработчике событий отчета по поручению (ID = {1}) произошло неожиданное исключение", assignmentId, properties.ListItemId);
-            }
+                catch (Exception e)
+                {
+                    Log.Unexpected(e,
+                        "При обновлении полей поручения (ID = {0}) в обработчике событий отчета по поручению (ID = {1}) произошло неожиданное исключение",
+                        assignmentId, properties.ListItemId);
+                }
+            });
         }
         #endregion
     }
