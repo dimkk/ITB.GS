@@ -104,14 +104,14 @@
                         <label class="col-lg-2 control-label">Электронная версия протокола</label>
                         <div class="col-lg-10">
                             <a data-bind="attr: { href: scanAttach().FileUrl, target: '_blank' }, text: scanAttach().FileName"></a>
-                            <button type="button" class="btn btn-default" data-bind="click: deleteScanAttach, enable: editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                            <button type="button" class="btn btn-default" data-bind="click: deleteScanAttach, enable: editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                         </div>
                     </div>
                 </div>
                 <%-- Таблица вопросов повестки --%>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Вопросы</h3>
+                        <h3 class="panel-title">Вопросы</h3>Ы
                     </div>
                     <div class="panel-body" id="AgendaQuestionTableDiv">
                         <table class="table evenodd" id="AgendaQuestionTableTable">
@@ -148,17 +148,17 @@
                                         <button type="button" class="btn btn-default" data-bind="click: showObjects, style: { display: agendaQuestionObjects().length == 0 ? 'none' : '' }" style="margin:0"><span class="glyphicon glyphicon-home"></span></button>
                                     </td>-->
                                     <td>
-                                        <button type="button" class="btn btn-default" data-bind="click: showAttachments" style="margin:0"><span class="glyphicon glyphicon-paperclip"></span></button>
+                                        <button type="button" class="btn btn-default" data-bind="click: showAttachments" style="margin:0" title="Просмотреть вложения вопроса"><span class="glyphicon glyphicon-paperclip"></span></button>
                                     </td>
                                     <td>
                                         <!--<button type="button" class="btn btn-default" data-bind="click: $parent.editAgendaQuestion"><span class="glyphicon glyphicon-edit"></span></button>-->
-                                        <a data-bind="attr: { href: httpLink }" class="btn btn-default" target="_blank" role="button">
+                                        <a data-bind="attr: { href: httpLink }" class="btn btn-default" target="_blank" role="button" title="Редактировать">
 	                                        <span class="glyphicon glyphicon-edit"></span>
                                         </a>
                                     </td>
                                     <% if (IsQuestionCommentEnabled) { %>
                                     <td>
-                                        <button type="button" class="btn btn-default" data-bind="click: editQuestionComment" style="margin:0"><span class="glyphicon glyphicon-pencil"/></button>
+                                        <button type="button" class="btn btn-default" data-bind="click: editQuestionComment" style="margin:0" title="Просмотреть вопрос"><span class="glyphicon glyphicon-pencil"/></button>
                                     </td>
                                     <% } %>
                                     <!--
@@ -211,7 +211,7 @@
                                         <textarea class="form-control" data-bind="value: Descr, enable: $parent.editEnabled"></textarea>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-default" data-bind="click: $parent.removeAttach, enable: $parent.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                        <button type="button" class="btn btn-default" data-bind="click: $parent.removeAttach, enable: $parent.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -347,7 +347,7 @@
                                     <td data-bind="text: ParticipantPosition"></td>
                                     <td data-bind="text: ParticipantOrg"></td>
                                     <td>
-                                        <button type="button" class="btn btn-default" data-bind="click: $root.meeting().removeAdditionalPartcipant, enable: $root.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                        <button type="button" class="btn btn-default" data-bind="click: $root.meeting().removeAdditionalPartcipant, enable: $root.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -524,7 +524,7 @@
                                                                         <td data-bind="text: ParticipantPosition"></td>
                                                                         <td data-bind="text: ParticipantOrg"></td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeSoreporter, enable: $root.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeSoreporter, enable: $root.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -563,7 +563,7 @@
                                                                             <select class="form-control" data-bind="options: $root.availableAttachDocTypes, optionsText: 'name', optionsValue: 'id', value: DType, enable: $root.editEnabled"></select>
                                                                         </td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeQuestionAttachment, enable: $root.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeQuestionAttachment, enable: $root.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -661,7 +661,7 @@
                                                             <select data-bind="options: $root.availableAttachDocTypes, optionsText: 'name', optionsValue: 'id', value: DType, enable: $root.editEnabled" class="form-control"></select>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeReportAttach, enable: $root.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeReportAttach, enable: $root.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -703,7 +703,7 @@
                                                             <select data-bind="options: $root.availableAttachDocTypes, optionsText: 'name', optionsValue: 'id', value: DType, enable: $root.editEnabled" class="form-control"></select>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeReportAttach, enable: $root.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                                            <button type="button" class="btn btn-default" data-bind="click: $parent.removeReportAttach, enable: $root.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -892,7 +892,7 @@
                                                                     <td data-bind="text: ParticipantPosition"></td>
                                                                     <td data-bind="text: ParticipantOrg"></td>
                                                                     <td>
-                                                                        <button class="btn btn-default" data-bind="click: $parent.removeAssignSoexecutor, enable: $root.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                                                        <button class="btn btn-default" data-bind="click: $parent.removeAssignSoexecutor, enable: $root.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -931,10 +931,10 @@
                                                     <td data-bind="text: editAssignmentReportText"></td>
                                                     <td data-bind="text: editAssignmentReportResolutionDecision"></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-default" data-bind="click: $parent.editRequest"><span class="glyphicon glyphicon-edit"></span></button>
+                                                        <button type="button" class="btn btn-default" data-bind="click: $parent.editRequest" title="Редактировать"><span class="glyphicon glyphicon-edit"></span></button>
                                                     </td>
                                                     <td>
-                                                        <button type="button" class="btn btn-default" data-bind="click: $parent.removeRequest, enable: $root.editEnabled"><span class="glyphicon glyphicon-trash"></span></button>
+                                                        <button type="button" class="btn btn-default" data-bind="click: $parent.removeRequest, enable: $root.editEnabled" title="Удалить"><span class="glyphicon glyphicon-trash"></span></button>
                                                     </td>
                                                 </tr>
                                             </tbody>
