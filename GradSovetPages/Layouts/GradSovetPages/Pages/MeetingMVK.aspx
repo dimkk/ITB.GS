@@ -1025,8 +1025,9 @@
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">
-Страница заседания
+Заседание Межведомственной комиссии
 </asp:Content>
 
 <asp:Content ID="PageTitleInTitleArea" ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server" >
+Заседание Межведомственной комиссии
 </asp:Content>

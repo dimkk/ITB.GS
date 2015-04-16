@@ -21,7 +21,21 @@
                 Item: renderFields
             },
             OnPostRender: OnPostRender,
-            ListTemplateType: 100,
+            BaseViewID: "NewForm"
+        });
+        SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
+            Templates: {
+                Item: renderFields
+            },
+            OnPostRender: OnPostRender,
+            BaseViewID: "EditForm"
+        });
+        SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
+            Templates: {
+                Item: renderFields
+            },
+            OnPostRender: OnPostRender,
+            BaseViewID: "DisplayForm"
         });
     }
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+************************************************************************
+       Company: ITB
+   Application: GS
+  Created date: 2015-04-07 01:44:39Z
+    Created by: PK\developer
+  Feature Name: GS_Mpr_Receivers_ApplicationItem
+ Feature Title: GS_Mpr_Receivers_ApplicationItem Feature
+   Description: GS_Mpr_Receivers_ApplicationItem Feature Description
+       History: Initial Version 1.0.0.0 
+************************************************************************
+-->
+<!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/">
+	<ElementManifests></ElementManifests>
+</Feature>

@@ -33,22 +33,37 @@ namespace GS.Receivers
         #region Actions
         private void SetNumberAndInfo(SPItemEventProperties properties)
         {
-            try
+            SPSecurity.RunWithElevatedPrivileges(() =>
             {
-                int issueId;
-                if (int.TryParse(Convert.ToString(properties.AfterProperties["AgendaQuestionLink"]), out issueId) && issueId > 0)
+                try
                 {
-                    SPListItem issue = properties.Web.GetListByUrl("AgendaQuestionList").GetItemById(issueId);
-                    properties.AfterProperties["_x2116__x0020__x0440__x0435__x04"] = string.Format(NumberTemplate, issue[IssueGs.IssueNumberGsFieldName], properties.AfterProperties["AssignmentNumber"]);
-                    int meetingId = issue.GetFieldLookup(IssueGs.IssueMeetingGsFieldName).LookupId;
-                    SPListItem meeting = properties.Web.GetListByUrl("MeetingList").GetItemById(meetingId);
-                    properties.AfterProperties["_x0418__x043d__x0444__x043e_"] = string.Format(InfoTemplate, meeting["MeetingNumber"], meeting.GetFieldValue<DateTime>("MeetingDate").ToShortDateString(), issue[IssueGs.IssueNumberGsFieldName]);
+                    int issueId;
+                    using (var site = new SPSite(properties.SiteId))
+                    using (var web = site.OpenWeb(properties.Web.ID))
+                    {
+                        if (int.TryParse(Convert.ToString(properties.AfterProperties["AgendaQuestionLink"]),
+                                out issueId) && issueId > 0)
+                        {
+                            SPListItem issue = web.GetListByUrl("AgendaQuestionList").GetItemById(issueId);
+                            properties.AfterProperties["_x2116__x0020__x0440__x0435__x04"] =
+                                string.Format(NumberTemplate, issue[IssueGs.IssueNumberGsFieldName],
+                                    properties.AfterProperties["AssignmentNumber"]);
+                            int meetingId = issue.GetFieldLookup(IssueGs.IssueMeetingGsFieldName).LookupId;
+                            SPListItem meeting = web.GetListByUrl("MeetingList").GetItemById(meetingId);
+                            properties.AfterProperties["_x0418__x043d__x0444__x043e_"] = string.Format(InfoTemplate,
+                                meeting["MeetingNumber"],
+                                meeting.GetFieldValue<DateTime>("MeetingDate").ToShortDateString(),
+                                issue[IssueGs.IssueNumberGsFieldName]);
+                        }
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Log.Unexpected(e, "При установке поля с номером или информацией поручения (ID = {0}) произошло неожиданное исключение", properties.AfterProperties["ID"]);
-            }
+                catch (Exception e)
+                {
+                    Log.Unexpected(e,
+                        "При установке поля с номером или информацией поручения (ID = {0}) произошло неожиданное исключение",
+                        properties.AfterProperties["ID"]);
+                }
+            });
         }
         #endregion
     }

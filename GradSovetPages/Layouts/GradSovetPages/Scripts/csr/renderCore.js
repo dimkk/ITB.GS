@@ -86,20 +86,35 @@ var renderCore;
         }
     };
 
-    renderCore.getParentListItemId = function getLinkId(parentUrlContainsList) {
-        if (!document.referrer ||
-            document.referrer.indexOf('?') < 0 ||
-            !parentUrlContainsList.some(function (e) { return ~document.referrer.indexOf(e); }))
-            return null;
-
-        var params = document.referrer.split('?')[1].split('&');
+	renderCore.getParamsFromUrl = function (url) {
+        var params = url.split('?')[1].split('&');
+		var paramList = [];
         for (var i = 0; i < params.length; i++) {
             var param = params[i].split('=');
-            if (param[0] !== 'ID')
-                continue;
-            return param[1];
+            paramList.push({ Key: param[0], Value: param[1]});
         }
-        return null;
+		return paramList;
+	}
+
+    renderCore.getUrlParamValue = function (url, key) {
+		var v = renderCore.getParamsFromUrl(url).filter(function(e) {
+			return e.Key == key })[0];
+		return v ? v.Value : null;
+    };
+	
+	renderCore.getUrlId = function (url, parentUrlContainsList) {
+        if (!url ||
+            url.indexOf('?') < 0 ||
+            !parentUrlContainsList.some(function (e) { return ~url.indexOf(e); }))
+            return null;
+
+		return renderCore.getUrlParamValue(url, 'ID');
+	}
+	
+    renderCore.getParentListItemId = function (parentUrlContainsList) {
+		return window.self !== window.top ?
+			renderCore.getUrlId(window.top.document.URL, parentUrlContainsList) :
+			renderCore.getUrlId(document.referrer, parentUrlContainsList);
     };
 
     renderCore.hasParentContext = function (parentListName) {

@@ -1,16 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Code initially generated with SharePoint Software Factory, Version 4.1 , spsf.codeplex.com -->
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<ListInstance
-		Title="ЖКХ: Поручения"
-		Description="Поручения ЖКХ"
-		FeatureId="1aef0624-8f11-4a73-a111-5a53cd050c4c"
-		Id="DA3C1BF6-4EE2-4C16-A2E2-0A001091E8EC"
-		Url="Lists/AssignmentZkhList"
-		OnQuickLaunch="TRUE"
-		QuickLaunchUrl="Lists/AssignmentZkhList/AllItems.aspx"
-		RootWebOnly="FALSE"
-		TemplateType="10152">
+  <ListInstance Title="ЖКХ - Поручения" Description="Поручения ЖКХ" FeatureId="1aef0624-8f11-4a73-a111-5a53cd050c4c" Id="DA3C1BF6-4EE2-4C16-A2E2-0A001091E8EC" Url="Lists/AssignmentZkhList" OnQuickLaunch="TRUE" QuickLaunchUrl="Lists/AssignmentZkhList/AllItems.aspx" RootWebOnly="FALSE" TemplateType="10152">
     <Data>
       <Rows>
         <Row>

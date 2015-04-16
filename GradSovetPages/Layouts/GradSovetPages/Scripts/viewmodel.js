@@ -1103,7 +1103,7 @@
             if (this.agendaQuestionReporterFIO) {
                 reporters.push(this.agendaQuestionReporterFIO().trim());
             } else {
-                if (this.AgendaQuestionReporterFullNameLink()) {
+                if (this.AgendaQuestionReporterFullNameLink && this.AgendaQuestionReporterFullNameLink()) {
                     reporters.push(this.AgendaQuestionReporterFullNameLink().get_lookupValue().trim());
                 }
             }
@@ -1115,7 +1115,7 @@
                     reporters.push(this.ParticipantFullName().trim());
                 });
             } else {
-                if (this.AgendaQuestionSoreporterFullNameLink() != null) {
+                if (this.AgendaQuestionSoreporterFullNameLink && this.AgendaQuestionSoreporterFullNameLink() != null) {
                     $.each(this.AgendaQuestionSoreporterFullNameLink(), function () {
                         reporters.push(this.get_lookupValue().trim());
                     });
@@ -1170,7 +1170,7 @@
 
         //load reporter
         this.loadReporter = function () {
-            if (this.AgendaQuestionReporterFullNameLink() == null) return;
+            if (!this.AgendaQuestionReporterFullNameLink || this.AgendaQuestionReporterFullNameLink() == null) return;
             var lookupId = this.AgendaQuestionReporterFullNameLink().get_lookupId();
             var reporters = $.grep(modelAllBaseParticipants, function (e) { return e.Id().toString() == lookupId.toString(); });
             if (reporters.length > 0) {
@@ -1185,7 +1185,7 @@
 
         //load soreporters
         this.loadSoreporters = function () {
-            if (this.AgendaQuestionSoreporterFullNameLink() == null) return;
+            if (!this.AgendaQuestionSoreporterFullNameLink || this.AgendaQuestionSoreporterFullNameLink() == null) return;
             var result = [];
             $.each(this.AgendaQuestionSoreporterFullNameLink(), function () {
                 var lookupId = this.get_lookupId();
@@ -1720,8 +1720,8 @@
                         var enumerator = agendaQuestionListInst.getEnumerator();
                         while (enumerator.moveNext()) {
                             var newQuest = new agendaQuestion(loadSPEntity(modelMetaData.agendaQuestion.fields, enumerator.get_current()));
-                            if (newQuest.AgendaQuestionReporterFullNameLink() != null) allMeetingBaseParticipants.push(newQuest.AgendaQuestionReporterFullNameLink());
-                            if (newQuest.AgendaQuestionSoreporterFullNameLink != null) $.each(newQuest.AgendaQuestionSoreporterFullNameLink(), function () { allMeetingBaseParticipants.push(this); });
+                            if (newQuest.AgendaQuestionReporterFullNameLink && newQuest.AgendaQuestionReporterFullNameLink() != null) allMeetingBaseParticipants.push(newQuest.AgendaQuestionReporterFullNameLink());
+                            if (newQuest.AgendaQuestionSoreporterFullNameLink && newQuest.AgendaQuestionSoreporterFullNameLink != null) $.each(newQuest.AgendaQuestionSoreporterFullNameLink(), function () { allMeetingBaseParticipants.push(this); });
                             questions.push(newQuest);
                         }
                         self.agendaQuestions(questions);
