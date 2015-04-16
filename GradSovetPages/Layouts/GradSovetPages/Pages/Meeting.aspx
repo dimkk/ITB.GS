@@ -125,7 +125,7 @@
                                     <% if (IsQuestionCommentEnabled) { %>
                                     <th>Комментарий</th>
                                     <% } %>
-									<th></th>
+									<!--<th></th>-->
                                     <th></th>
                                     <th></th>
                                     <% if (IsQuestionCommentEnabled) { %>
@@ -144,9 +144,9 @@
                                     <% if (IsQuestionCommentEnabled) { %>
                                     <td data-bind="text: AgendaQuestionComment, css: GetDecisionFieldClass($data)"></td>
                                     <% } %>
-                                    <td>
+                                    <!--<td>
                                         <button type="button" class="btn btn-default" data-bind="click: showObjects, style: { display: agendaQuestionObjects().length == 0 ? 'none' : '' }" style="margin:0"><span class="glyphicon glyphicon-home"></span></button>
-                                    </td>
+                                    </td>-->
                                     <td>
                                         <button type="button" class="btn btn-default" data-bind="click: showAttachments" style="margin:0"><span class="glyphicon glyphicon-paperclip"></span></button>
                                     </td>
@@ -1088,8 +1088,9 @@
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">
-Страница заседания
+Заседание Градостроительного совета
 </asp:Content>
 
 <asp:Content ID="PageTitleInTitleArea" ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server" >
+Заседание Градостроительного совета
 </asp:Content>
