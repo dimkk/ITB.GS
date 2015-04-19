@@ -58,8 +58,8 @@ namespace GS.WebParts
                     MeetingDate = meeting.GetFieldValue<DateTime>(MeetingDateFieldName);
                     MeetingPlace = meeting.GetFieldValue<string>(MeetingPlaceFieldName);
                     MeetingUrl = meeting.GetDisplayUrl();
-                    ListUrl = MeetingUrl.Remove(MeetingUrl.LastIndexOf("/"));
                 }
+                ListUrl = SPContext.Current.Site.RootWeb.Url + "/Lists/" + MeetingListName;
             }
             catch (Exception ex)
             {
