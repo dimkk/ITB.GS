@@ -30,6 +30,8 @@ namespace GS.WebParts
         public string MeetingPlaceFieldName { get; set; }
         #endregion
 
+
+
         protected override void CreateChildControls()
         {
             Control control = Page.LoadControl(AscxPath);

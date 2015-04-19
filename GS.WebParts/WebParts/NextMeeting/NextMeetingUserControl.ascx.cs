@@ -34,6 +34,8 @@ namespace GS.WebParts
         protected string MeetingUrl { get; private set; }
 
         protected string ErrorMessage { get; private set; }
+
+        protected string ListUrl { get; private set; }
         #endregion
 
         protected void Page_Init(object sender, EventArgs e)
@@ -56,6 +58,7 @@ namespace GS.WebParts
                     MeetingDate = meeting.GetFieldValue<DateTime>(MeetingDateFieldName);
                     MeetingPlace = meeting.GetFieldValue<string>(MeetingPlaceFieldName);
                     MeetingUrl = meeting.GetDisplayUrl();
+                    ListUrl = MeetingUrl.Remove(MeetingUrl.LastIndexOf("/"));
                 }
             }
             catch (Exception ex)
