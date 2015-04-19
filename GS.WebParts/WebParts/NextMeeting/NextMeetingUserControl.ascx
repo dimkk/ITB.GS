@@ -3,14 +3,14 @@
 <div id="alert">
     <div class="alert_col">
         <div class="alert_col_body">
-            <div class="alert_col_caption">
-                <a href="<%= MeetingUrl %>" class="alert_titleLink"><%= Title %></a>
-            </div>
             <% if (string.IsNullOrEmpty(ErrorMessage))
                { %>
 
             <% if (IsNextMeeting)
                { %>
+            <div class="alert_col_caption">
+                <a href="<%= MeetingUrl %>" class="alert_titleLink"><%= Title %></a>
+            </div>
             <div class="alert_col_text">
                 Заседание №<b><%= MeetingNumber %></b><br />
                 <b><%= MeetingDate.ToString("d MMMM yyyy") %></b> начало в <b><%= MeetingDate.ToString("HH:mm") %></b>
@@ -26,6 +26,9 @@
             <% }
                else
                { %>
+            <div class="alert_col_caption">
+                <%= Title %>
+            </div>
             <div class="alert_col_text alert_empty">
                 <span>Заседание не назначено</span>
             </div>
