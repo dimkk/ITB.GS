@@ -4,7 +4,7 @@
     <div class="alert_col">
         <div class="alert_col_body">
             <div class="alert_col_caption">
-                <%= Title %>
+                <a href="<%= MeetingUrl %>" class="alert_titleLink"><%= Title %></a>
             </div>
             <% if (string.IsNullOrEmpty(ErrorMessage))
                { %>
@@ -32,8 +32,6 @@
             <div class="clear" style="height: 14px;"></div>
             <div class="alert_foot_panel">
                 <div class="alert_foot">
-                    <a href="#" class="alert_goto"><span>Перейти<br>
-                        к повестке</span></a>
                     <div class="alert_house alert_empty">
                         Место заседания<br>
                         не определено
