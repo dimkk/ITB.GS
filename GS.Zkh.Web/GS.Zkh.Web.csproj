@@ -168,7 +168,7 @@
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderQuestionObjectObjectField.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderQuestionObjectTitleField.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderQuestionSense.js" />
-    <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderReportAttach.js" />
+    <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderReportAttachZkh.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderReportZkh.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\renderTasksView.js" />
     <Content Include="Layouts\GS.Zkh.Web\Scripts\csr\selectIssueRgDialog.js" />

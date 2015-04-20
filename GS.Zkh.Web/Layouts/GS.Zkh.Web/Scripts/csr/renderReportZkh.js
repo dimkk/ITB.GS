@@ -117,7 +117,7 @@ var isCancelAddAttach = false;
     function getQuestionData(Id, onsuccess, onfail) {
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
             var ctx = SP.ClientContext.get_current();
-            var List = ctx.get_web().get_lists().getByTitle("Земля: Вопросы повестки заседания");
+            var List = ctx.get_web().get_lists().getByTitle("ЖКХ - Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + Id + "</Value></Eq></Where></Query></View>");
             var Instance = List.getItems(query);
@@ -149,7 +149,7 @@ var isCancelAddAttach = false;
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
             var assignmentId = Id;
             var ctx = SP.ClientContext.get_current();
-            var assignmentList = ctx.get_web().get_lists().getByTitle("Земля: Поручения");
+            var assignmentList = ctx.get_web().get_lists().getByTitle("ЖКХ - Поручения");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + assignmentId + "</Value></Eq></Where></Query></View>");
             var assignmentInstance = assignmentList.getItems(query);
@@ -188,7 +188,7 @@ var isCancelAddAttach = false;
         renderCore.ifget(prefix + 'Modified', function (e) { e.innerHTML = modified; });
 
 		//Если резолюция уже проставлена, то запрещаем добавление материалов
-		isCancelAddAttach = context.ListData.Items[0].AssignmentReportResolutionDecision != '';
+        isCancelAddAttach = isCancelAddAttach = context.ListData.Items[0].AssignmentReportResolutionDecision && context.ListData.Items[0].AssignmentReportResolutionDecision != '';;
 		
         // текст ссылки на поручение заменяем на форматированный текст
         if (context.ControlMode === SPClientTemplates.ClientControlMode.DisplayForm) {

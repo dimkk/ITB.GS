@@ -149,7 +149,7 @@
             var agendaQuestionLinkHtml = renderFieldBlock('Вопрос повестки', 2, 2, "AssignmentIssueZkh", true);
             var lookupElement = renderCore.getLookupFromRenderedHtml(agendaQuestionLinkHtml);
             resultHtml += agendaQuestionLinkHtml;
-            resultHtml += '<div class="col-lg-2" id="linkedAgendaQuestionTextPresentation"></div>';
+            resultHtml += '<div class="col-lg-2" id="linkedIssueTextPresentation"></div>';
             selectQuestionControlId = $(lookupElement).attr('id');
             var modalLink = renderCore.bs.renderModalLink(
                 "/_layouts/15/GS.Zkh.Web/pages/selectIssueZkh.html?rev=" + Math.random().toString(36).substr(2),
@@ -264,7 +264,7 @@
         renderCore.ifget('questionLink', function (e) {
             e.innerHTML = (String).format(questionFmt, renderCore.formatDate(data.MeetingDate), data.MeetingNumber, data.QuestionNumber);
         });
-        renderCore.ifget('linkedAgendaQuestionTextPresentation', function (e) {
+        renderCore.ifget('linkedIssueTextPresentation', function (e) {
             e.innerHTML = (String).format(questionFmt, renderCore.formatDate(data.MeetingDate), data.MeetingNumber, data.QuestionNumber);
         });
         renderCore.ifget('questionLink', function (e) {
@@ -367,20 +367,20 @@
             var assignmentId = asLink ? asLink.split(';')[0] : "";
 
             // установим глобальные переменные для страницы
-            window.gsLinkedData.AgendaQuestionLink = questionId;
+            window.gsLinkedData.IssueLink = questionId;
 
             var ctx = SP.ClientContext.get_current();
 
             // связанное поручение
             if (assignmentId) {
-                var assignmentList = ctx.get_web().get_lists().getByTitle("Земля: Поручения");
+                var assignmentList = ctx.get_web().get_lists().getByTitle("ЖКХ - Поручения");
                 var aQuery = new SP.CamlQuery();
                 aQuery.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + assignmentId + "</Value></Eq></Where></Query></View>");
                 var assignmentInst = assignmentList.getItems(aQuery);
                 ctx.load(assignmentInst, "Include(AssignmentNumberZkh, AssignmentTextZkh)");
             }
             
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("Земля: Вопросы повестки заседания");
+            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("ЖКХ - Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + questionId + "</Value></Eq></Where></Query></View>");
             var questionInstance = agendaQuestionList.getItems(query);
@@ -405,7 +405,7 @@
                 }
 
                 // достанем данные заседания
-                var meetingList = ctx.get_web().get_lists().getByTitle("ЖКХ: Заседания");
+                var meetingList = ctx.get_web().get_lists().getByTitle("ЖКХ - Заседания");
                 var mId = questionInstance.get_data()[0].get_item("IssueMeetingZkh").get_lookupId();
 
                 // установим глобальные переменные для страницы
@@ -423,7 +423,7 @@
 
                     // шапка не отображается в режиме создания нового элемента
                     if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm && hasContext) {
-                        $('#linkedAgendaQuestionTextPresentation').html(
+                        $('#linkedIssueTextPresentation').html(
                             (String).format('{0} №{1} п.№{2}',
                                 renderCore.formatDate(meetingListInst.get_data()[0].get_item('MeetingDateZkh')),
                                 meetingListInst.get_data()[0].get_item('MeetingNumberZkh'),
@@ -452,7 +452,7 @@
                     // достанем данные последнего отчета
                     var lastReportFieldName = renderCore.getInternalFieldName('Последний отчет');
                     if (context.ListData.Items[0][lastReportFieldName]) { 
-                        var reportList = ctx.get_web().get_lists().getByTitle("Земля: Отчеты по поручению");
+                        var reportList = ctx.get_web().get_lists().getByTitle("ЖКХ - Отчеты по поручению");
                         var rId = context.ListData.Items[0][lastReportFieldName].split(';')[0];
                         query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + rId + "</Value></Eq></Where></Query></View>");
                         var reportListInst = reportList.getItems(query);

@@ -7,15 +7,15 @@
 (function () {
 
     function init() {
-        var hasContext = document.referrer && (~document.referrer.indexOf('Lists/AssignmentReportList/DispForm') || 
-            ~document.referrer.indexOf('Lists/AssignmentReportList/EditForm'));
+        var hasContext = document.referrer && (~document.referrer.indexOf('Lists/ReportZkhList/DispForm') || 
+            ~document.referrer.indexOf('Lists/ReportZkhList/EditForm'));
         if (hasContext) {
             // регистрируем шаблон только в случае открытия новой формы из контекста формы отчета
             SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
                 Templates: {
                     Fields: {
-                        'AssignmentReportLink': { 'NewForm': renderAssignmentReportLink },
-                        'AttachmentIsForReport': {
+                        'ReportAttachmentReportZkh': { 'NewForm': renderAssignmentReportLink },
+                        'ReportAttachmentReportZkh': {
                             'NewForm': renderAttachmentIsForReport,
                             'EditForm': renderAttachmentIsForReport,
                             'DisplayForm': renderAttachmentIsForReport
@@ -23,14 +23,14 @@
                     },
                     OnPostRender: OnPostRender
                 },
-                ListTemplateType: 10004,
+                ListTemplateType: 10160,
             });
         }
         else {
             SPClientTemplates.TemplateManager.RegisterTemplateOverrides({
                 Templates: {
                     Fields: {
-                        'AttachmentIsForReport': {
+                        'ReportAttachmentIsAttachZkh': {
                             'NewForm': renderAttachmentIsForReport,
                             'EditForm': renderAttachmentIsForReport,
                             'DisplayForm': renderAttachmentIsForReport
@@ -38,7 +38,7 @@
                     },
                     OnPostRender: OnPostRenderAttach
                 },
-                ListTemplateType: 10004,
+                ListTemplateType: 10160,
             });
         }
     }
@@ -75,29 +75,23 @@
     function OnPostRender(ctx) {
         var parentId = getAssignmentReportLinkId();
         if (parentId) {
-            $('#AssignmentReportLink').html(
+            $('#ReportAttachmentReportZkh').html(
                 (String).format("Идентификатор отчета {0}", parentId));
         }
 
-        $('#AssignmentReportLink').closest('tr').css('display', 'none');
+        $('#ReportAttachmentReportZkh').closest('tr').css('display', 'none');
         OnPostRenderAttach(ctx);
     }
 
     function OnPostRenderAttach(ctx) {
-        $('#AttachmentIsForReport').closest('tr').css('display', 'none');
+        $('#ReportAttachmentIsAttachZkh').closest('tr').css('display', 'none');
     }
     
 
     SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-
         init();
-
-        // MDS
         SP.SOD.executeOrDelayUntilScriptLoaded(function () {
-
-            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderReportAttach.js"), init);
-
+            RegisterModuleInit(SPClientTemplates.Utility.ReplaceUrlTokens("~site/_layouts/15/SAMRT.Web/Scripts/csr/renderReportAttachZkh.js"), init);
         }, 'sp.js');
-
     }, 'clienttemplates.js');
 })();

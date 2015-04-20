@@ -66,7 +66,8 @@
             $('#btnOK').triggerHandler('click');
         };
 
-        self.onClose = function(data, event) {
+        self.onClose = function (data, event) {
+            debugger;
             if (!self.selectedIssue()) {
                 logMessage("Необходимо выбрать вопрос", true);
                 return;
@@ -118,7 +119,7 @@
                 else {
                     $.each(rows, function (i, e) {
                         if (e.contentclass !== self.consts.meetingCT) return;
-                        if (!~e.Path.indexOf("DispForm2.aspx")) return;
+                        //if (!~e.Path.indexOf("DispForm2.aspx")) return;
 
                         var params = e.Path.split("?")[1] ? e.Path.split("?")[1].split("&") : null;
                         for (var i = 0; i < params.length; i++) {
