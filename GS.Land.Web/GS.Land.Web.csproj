@@ -161,6 +161,7 @@
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMeetingAttachAk.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMeetingAttachRg.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderMeetingRg.js" />
+    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderReportAttachLand.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderReportLand.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderObjectCharacteristicList.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderObjectDocumentObjectField.js" />
@@ -172,7 +173,6 @@
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderQuestionObjectObjectField.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderQuestionObjectTitleField.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderQuestionSense.js" />
-    <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderReportAttach.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\renderTasksView.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\selectIssueRgDialog.js" />
     <Content Include="Layouts\GS.Land.Web\Scripts\csr\selectOrderRgDialog.js" />

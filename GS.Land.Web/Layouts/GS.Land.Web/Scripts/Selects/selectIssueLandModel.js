@@ -39,7 +39,7 @@
             self.selectedMeeting(data);
             self.selectedIssue('');
             var ctx = SP.ClientContext.get_current();
-            var issueList = ctx.get_web().get_lists().getByTitle("ЖКХ: Вопросы повестки заседания");
+            var issueList = ctx.get_web().get_lists().getByTitle("Земля - Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml('<View><Query><Where><Eq><FieldRef Name="IssueMeetingLand" LookupId="True" /><Value Type="Integer">' + data.ID + '</Value></Eq></Where></Query></View>');
             var questionListInstance = issueList.getItems(query);
@@ -67,6 +67,7 @@
         };
 
         self.onClose = function(data, event) {
+			debugger;
             if (!self.selectedIssue()) {
                 logMessage("Необходимо выбрать вопрос", true);
                 return;
@@ -118,7 +119,7 @@
                 else {
                     $.each(rows, function (i, e) {
                         if (e.contentclass !== self.consts.meetingCT) return;
-                        if (!~e.Path.indexOf("DispForm2.aspx")) return;
+                        //if (!~e.Path.indexOf("DispForm2.aspx")) return;
 
                         var params = e.Path.split("?")[1] ? e.Path.split("?")[1].split("&") : null;
                         for (var i = 0; i < params.length; i++) {
@@ -134,7 +135,7 @@
                         logMessage("По искомой фразе не найдено ни одного заседания", true);
                     }
                     else {
-                        var meetingList = ctx.get_web().get_lists().getByTitle("ЖКХ: Заседания");
+                        var meetingList = ctx.get_web().get_lists().getByTitle("Земля - Заседания");
                         var query = new SP.CamlQuery();
                         query.set_viewXml(buildInCAMLQuery(idList));
                         var meetingInstance = meetingList.getItems(query);
