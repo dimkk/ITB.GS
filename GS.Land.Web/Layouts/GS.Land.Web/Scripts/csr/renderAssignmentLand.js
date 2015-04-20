@@ -149,7 +149,7 @@
             var agendaQuestionLinkHtml = renderFieldBlock('Вопрос повестки', 2, 2, "AssignmentIssueLand", true);
             var lookupElement = renderCore.getLookupFromRenderedHtml(agendaQuestionLinkHtml);
             resultHtml += agendaQuestionLinkHtml;
-            resultHtml += '<div class="col-lg-2" id="linkedAgendaQuestionTextPresentation"></div>';
+            resultHtml += '<div class="col-lg-2" id="linkedIssueTextPresentation"></div>';
             selectQuestionControlId = $(lookupElement).attr('id');
             var modalLink = renderCore.bs.renderModalLink(
                 "/_layouts/15/GS.Land.Web/pages/selectIssueLand.html?rev=" + Math.random().toString(36).substr(2),
@@ -217,7 +217,7 @@
                 AssignmentExecutorOrganizationLink: context.CurrentItem["AssignmentExecutorOrgLand"]
             };
             modalLink = renderCore.bs.renderModalLink(
-                "/_layouts/15/GS.Land.Web/pages/selectExecutor.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
+                "/_layouts/15/GS.Land.Web/pages/selectExecutorLand.html?rev=" + Math.random().toString(36).substr(2), "Выбрать", 1, "");
 
             window.gsModals.selectExecutor = modalLink.modalId;
             resultHtml += modalLink.html;
@@ -372,14 +372,14 @@
 
             // связанное поручение
             if (assignmentId) {
-                var assignmentList = ctx.get_web().get_lists().getByTitle("Земля: Поручения");
+                var assignmentList = ctx.get_web().get_lists().getByTitle("Земля - Поручения");
                 var aQuery = new SP.CamlQuery();
                 aQuery.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + assignmentId + "</Value></Eq></Where></Query></View>");
                 var assignmentInst = assignmentList.getItems(aQuery);
                 ctx.load(assignmentInst, "Include(AssignmentNumberLand, AssignmentTextLand)");
             }
             
-            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("Земля: Вопросы повестки заседания");
+            var agendaQuestionList = ctx.get_web().get_lists().getByTitle("Земля - Вопросы повестки заседания");
             var query = new SP.CamlQuery();
             query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + questionId + "</Value></Eq></Where></Query></View>");
             var questionInstance = agendaQuestionList.getItems(query);
@@ -404,7 +404,7 @@
                 }
 
                 // достанем данные заседания
-                var meetingList = ctx.get_web().get_lists().getByTitle("Земля: Заседания");
+                var meetingList = ctx.get_web().get_lists().getByTitle("Земля - Заседания");
                 var mId = questionInstance.get_data()[0].get_item("IssueMeetingLand").get_lookupId();
 
                 // установим глобальные переменные для страницы
@@ -422,7 +422,7 @@
 
                     // шапка не отображается в режиме создания нового элемента
                     if (context.ControlMode === SPClientTemplates.ClientControlMode.NewForm && hasContext) {
-                        $('#linkedAgendaQuestionTextPresentation').html(
+                        $('#linkedIssueTextPresentation').html(
                             (String).format('{0} №{1} п.№{2}',
                                 renderCore.formatDate(meetingListInst.get_data()[0].get_item('MeetingDateLand')),
                                 meetingListInst.get_data()[0].get_item('MeetingNumberLand'),
@@ -451,7 +451,7 @@
                     // достанем данные последнего отчета
                     var lastReportFieldName = renderCore.getInternalFieldName('Последний отчет');
                     if (context.ListData.Items[0][lastReportFieldName]) { 
-                        var reportList = ctx.get_web().get_lists().getByTitle("Земля: Отчеты по поручению");
+                        var reportList = ctx.get_web().get_lists().getByTitle("Земля - Отчеты по поручению");
                         var rId = context.ListData.Items[0][lastReportFieldName].split(';')[0];
                         query.set_viewXml("<View><Query><Where><Eq><FieldRef Name='ID'/><Value Type='Text'>" + rId + "</Value></Eq></Where></Query></View>");
                         var reportListInst = reportList.getItems(query);

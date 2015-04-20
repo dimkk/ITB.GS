@@ -1519,9 +1519,7 @@
         for (var i = 0; i < fields.length; i++) {
             var fieldName = fields[i].get_internalName();
             try {
-                if ((fieldName.toLowerCase().indexOf("date") >= 0) &&
-                    (fieldName.toLowerCase().indexOf("datenumber") == 0) &&
-                    SPEntity.get_item(fieldName) && SPEntity.get_item(fieldName).get_lookupValue == undefined) {
+                if (fields[i].get_typeAsString() == 'DateTime') {
                     entity[fieldName] = formatDate(SPEntity.get_item(fieldName));
                 } else {
                     entity[fieldName] = SPEntity.get_item(fieldName);
