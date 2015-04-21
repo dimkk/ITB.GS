@@ -322,7 +322,7 @@
             $("#executionDateByDateRadio").attr("checked", "checked");
             $("#executionDateByDateRadio").triggerHandler("click");
         } else if (context.ControlMode === SPClientTemplates.ClientControlMode.EditForm) {
-            if (context.ListData.Items[0].AssignmentPlanDate) {
+            if (context.ListData.Items[0].AssignmentPlanDateMVK) {
                 $("#executionDateByDateRadio").attr("checked", "checked");
                 $("#executionDateByDateRadio").triggerHandler("click");
             } else {
