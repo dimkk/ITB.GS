@@ -1,8 +1,12 @@
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using CamlexNET;
+using CamlexNET.Interfaces;
 using ITB.SP.Tools;
 using Microsoft.SharePoint;
 using System;
 using System.Linq;
+using System.Web;
 
 namespace GS.WebParts
 {
@@ -20,6 +24,8 @@ namespace GS.WebParts
         public string MeetingNumberFieldName { get; set; }
 
         public string MeetingPlaceFieldName { get; set; }
+
+        public string MeetingTitleFilter { get; set; }
         #endregion
 
         #region Calculated Data for View
@@ -42,24 +48,33 @@ namespace GS.WebParts
         {
             try
             {
+                var expressions = new List<Expression<Func<SPListItem, bool>>>
+                {
+                    x =>
+                        x[MeetingStatusFieldName] == (DataTypes.Choice) "Планируемое" ||
+                        x[MeetingStatusFieldName] == (DataTypes.Choice) "Planning"
+                };
+                
+                if (!string.IsNullOrEmpty(MeetingTitleFilter))
+                    expressions.Add(x => ((string)x["Title"]).Contains(MeetingTitleFilter));
+
                 SPQuery query =
-                    Camlex.Query()
-                        .Where(x => x[MeetingStatusFieldName] == (DataTypes.Choice)"Планируемое" || x[MeetingStatusFieldName] == (DataTypes.Choice)"Planning")
-                        .OrderBy(o => o[MeetingDateFieldName] as Camlex.Asc)
-                        .ToSPQuery();
+                    Camlex.Query().WhereAll(expressions).OrderBy(o => o[MeetingDateFieldName] as Camlex.Asc).ToSPQuery();
+
                 query.RowLimit = 1;
 
-                SPListItem meeting = SPContext.Current.Web.GetListItems(MeetingListName, query).FirstOrDefault();
+                SPList meetingList = SPContext.Current.Web.GetListByUrl(MeetingListName);
+                SPListItem meeting = meetingList.GetItems(query).Cast<SPListItem>().FirstOrDefault();
                 IsNextMeeting = meeting != null;
 
+                ListUrl = meetingList.RootFolder.ServerRelativeUrl;
                 if (IsNextMeeting)
                 {
                     MeetingNumber = meeting.GetFieldValue<string>(MeetingNumberFieldName);
                     MeetingDate = meeting.GetFieldValue<DateTime>(MeetingDateFieldName);
                     MeetingPlace = meeting.GetFieldValue<string>(MeetingPlaceFieldName);
-                    MeetingUrl = meeting.GetDisplayUrl();
+                    MeetingUrl = meeting.GetDisplayUrl().AddUrlParam("Source", HttpContext.Current.Request.Url.ToString());
                 }
-                ListUrl = SPContext.Current.Site.RootWeb.Url + "/Lists/" + MeetingListName;
             }
             catch (Exception ex)
             {

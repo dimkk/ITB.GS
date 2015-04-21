@@ -28,9 +28,9 @@ namespace GS.WebParts
         public string MeetingNumberFieldName { get; set; }
         [Category("Настройки"), WebBrowsable, Personalizable(PersonalizationScope.Shared), FriendlyName("Имя поля места заседания")]
         public string MeetingPlaceFieldName { get; set; }
+        [Category("Настройки"), WebBrowsable, Personalizable(PersonalizationScope.Shared), FriendlyName("Фильтр названия заседания")]
+        public string MeetingTitleFilter { get; set; }
         #endregion
-
-
 
         protected override void CreateChildControls()
         {
@@ -48,6 +48,7 @@ namespace GS.WebParts
             uc.MeetingDateFieldName = MeetingDateFieldName;
             uc.MeetingStatusFieldName = MeetingStatusFieldName;
             uc.MeetingPlaceFieldName = MeetingPlaceFieldName;
+            uc.MeetingTitleFilter = MeetingTitleFilter;
         }
     }
 }
