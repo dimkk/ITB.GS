@@ -111,7 +111,7 @@
                 <%-- Таблица вопросов повестки --%>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Вопросы</h3>Ы
+                        <h3 class="panel-title">Вопросы</h3>
                     </div>
                     <div class="panel-body" id="AgendaQuestionTableDiv">
                         <table class="table evenodd" id="AgendaQuestionTableTable">
