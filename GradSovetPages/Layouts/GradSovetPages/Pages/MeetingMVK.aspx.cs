@@ -19,7 +19,7 @@ namespace GradSovetPages.Layouts.GradSovetPages.Pages
             {
                 if (!isInited)
                 {
-                    SPList configList = SPContext.Current.Web.GetList("Lists/ConfigurationList");
+                    SPList configList = SPContext.Current.Web.GetListByUrl("ConfigurationList");
                     SPListItem config = configList.GetItemById(1);
                     isQuestionCommentEnabled = SPContext.Current.Web.IsCurrentUserMemberOfGroup(new SPFieldLookupValue(config["QuestionCommentGroup"].ToString()).LookupId);
                     isInited = true;
