@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NextMeetingUserControl.ascx.cs" Inherits="GS.WebParts.NextMeetingUserControl, GS.WebParts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76fad1f12ae5d8a7" %>
 
 <div id="alert">
-    <div class="alert_col">
+    <div class="alert_col" style="<%= PanelStyle %>">
         <div class="alert_col_body">
             <div class="alert_col_caption">
                 <a href="<%= ListUrl %>" class="alert_titleLink"><%= Title %></a>

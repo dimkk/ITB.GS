@@ -30,6 +30,8 @@ namespace GS.WebParts
         public string MeetingPlaceFieldName { get; set; }
         [Category("Настройки"), WebBrowsable, Personalizable(PersonalizationScope.Shared), FriendlyName("Фильтр названия заседания")]
         public string MeetingTitleFilter { get; set; }
+        [Category("Настройки"), WebBrowsable, Personalizable(PersonalizationScope.Shared), FriendlyName("Цвет фона (hex)")]
+        public string BackgroundColor { get; set; }
         #endregion
 
         protected override void CreateChildControls()
@@ -49,6 +51,7 @@ namespace GS.WebParts
             uc.MeetingStatusFieldName = MeetingStatusFieldName;
             uc.MeetingPlaceFieldName = MeetingPlaceFieldName;
             uc.MeetingTitleFilter = MeetingTitleFilter;
+            uc.BackgroundColor = BackgroundColor;
         }
     }
 }

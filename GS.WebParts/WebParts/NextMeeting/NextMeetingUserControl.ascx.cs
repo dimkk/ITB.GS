@@ -26,6 +26,8 @@ namespace GS.WebParts
         public string MeetingPlaceFieldName { get; set; }
 
         public string MeetingTitleFilter { get; set; }
+
+        public string BackgroundColor { get; set; }
         #endregion
 
         #region Calculated Data for View
@@ -42,6 +44,17 @@ namespace GS.WebParts
         protected string ErrorMessage { get; private set; }
 
         protected string ListUrl { get; private set; }
+
+        protected string PanelStyle
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(BackgroundColor))
+                    return string.Empty;
+
+                return string.Format("background-color:#{0}", BackgroundColor.Replace("#", string.Empty));
+            }
+        }
         #endregion
 
         protected void Page_Init(object sender, EventArgs e)
