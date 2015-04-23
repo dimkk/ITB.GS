@@ -70,17 +70,17 @@
     <%-- Контейнер для всех элементов формы --%>
     <div class="container topspace">
         <%-- Вкладки --%>
-        <ul id="tabs" class="nav nav-tabs">
+        <%--<ul id="tabs" class="nav nav-tabs">
             <li class="active"><a href="#tab-common" data-toggle="tab">Общая информация</a></li>
             <!--<li class="">
                 <a href="#tab-assignment" data-toggle="tab">Поручения</a>
             </li>-->
             <li class=""><a href="#tab-additional" data-toggle="tab">Дополнительная информация</a></li>
-        </ul>
+        </ul>--%>
 
         <%-- Содержимое вкладок --%>
-        <div id="tabContent" class="tab-content">
-            <div id="tab-common" class="tab-pane fade active in">
+        <%--<div id="tabContent" class="tab-content">--%>
+            <%--<div id="tab-common" class="tab-pane fade active in">--%>
                 <div class="form-horizontal" role="form">
                     <div class="form-group topspace">
                         <div class="col-lg-2">
@@ -211,8 +211,8 @@
                         <%--<button class="btn btn-primary" data-bind="click: addAttach, enable: editEnabled">Добавить</button>--%>
                     </div>
                 </div>
-            </div>
-            <div id="tab-additional" class="tab-pane fade">
+            <%--</div>--%>
+        <%--    <div id="tab-additional" class="tab-pane fade">
                 <div class="form-horizontal" role="form">
                     <div class="form-group topspace">
                         <label for="inputNumber" class="col-lg-2 control-label">Номер</label>
@@ -303,7 +303,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
 
         <div class="container">
             <button class="btn btn-default" data-bind="click: closeForm" id="oCancelButton" name="oCancelButton" style="float:right">Закрыть</button>
